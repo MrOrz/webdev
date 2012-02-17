@@ -39,7 +39,8 @@
  * @version 1.2
  */
 var Reveal = (function(){
-	
+	"use strict";
+
 	var HORIZONTAL_SLIDES_SELECTOR = '#reveal .slides>section',
 		VERTICAL_SLIDES_SELECTOR = '#reveal .slides>section.present>section',
 
@@ -427,7 +428,9 @@ var Reveal = (function(){
 			// Enforce max and minimum index bounds
 			index = Math.max(Math.min(index, slides.length - 1), 0);
 			
-			slides[index].className = 'present';
+			slides[index].classList.remove('past');
+			slides[index].classList.remove('future');
+			slides[index].classList.add('present');
 
 			for( var i = 0; i < slides.length; i++ ) {
 				var slide = slides[i];
@@ -440,11 +443,15 @@ var Reveal = (function(){
 
 				if( i < index ) {
 					// Any element previous to index is given the 'past' class
-					slide.className = 'past';
+					if(!slide.classList.contains('past')){
+						slide.classList.add('past');
+					}
 				}
 				else if( i > index ) {
 					// Any element subsequent to index is given the 'future' class
-					slide.className = 'future';
+					if(!slide.classList.contains('future')){
+						slide.classList.add('future');
+					}
 				}
 
 				// If this element contains vertical slides
@@ -458,6 +465,14 @@ var Reveal = (function(){
 			// zeroth index
 			index = 0;
 		}
+
+		// dispatch update event
+		var evt = document.createEvent('Event');
+		evt.currentSlide = slides[index];
+		evt.initEvent('update', true, true);
+		evt.prevSlide = slides[index-1] || null;
+		evt.nextSlide = slides[index+1] || null;
+		document.body.dispatchEvent(evt);
 		
 		return index;
 		

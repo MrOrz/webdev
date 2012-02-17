@@ -4,11 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 		
-		<title>reveal.js</title>
+		<title>revealWebDev</title>
 
-		<meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
-		<meta name="author" content="Hakim El Hattab">
-		
+		<meta name="description" content="不囉唆學 HTML。以 reveal.js 製作的 HTML / CSS / JS 投影片。">
+		<meta name="author" content="MrOrz">
 		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		
 		<link rel="stylesheet" href="css/reset.css">
@@ -23,6 +22,97 @@
 			
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+				<section>
+					<h1>HTML</h1>
+					<p>替文字標上「語意」</p>
+					<blockquote>
+						每個人都應該努力培養雅量。
+					</blockquote>
+					<pre><code>
+&lt;p&gt;每個人都應該努力培養&lt;em&gt;雅量&lt;/em&gt;。&lt;/p&gt;
+					</code></pre>
+				</section>
+
+				<section>
+					<section>
+						<h1>
+							標籤們
+						</h1>
+						<p></p>
+					</section>
+
+					<section>
+						<h1>有語意的標籤</h1>
+						<p></p>
+					</section>
+					<section class="html5">
+						<h1>HTML5 語意標籤</h1>
+						<p></p>
+					</section>
+					<section>
+						<h1>無語意標籤</h1>
+						<ul>
+							<li>不知道要用什麼包</li>
+							<li>但還是想包在一起</li>
+							<li><code>&lt;div&gt;, &lt;span&gt;</code></li>
+							<li>常常搭配 CSS 套樣式、當做 javascript操作對象。</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h1>換行</h1>
+					<ul>
+						<li>會換行的標籤是 block element</li>
+						<li>不會換行的標籤叫 inline element</li>
+						<li>用 <code>&lt;br&gt;</code>在 inline element 裡頭換行</li>
+					</ul>
+					
+				</section>
+
+				<section>
+					<section>
+						<h1>大腸包小腸</h1>
+						<ul>
+							<li>HTML 標籤可以互相嵌套 (nesting)</li>
+							<li>但不能隨便包</li>
+							<li><pre><code>
+&lt;h1&gt;
+	AAAAAA
+	&lt;h2&gt;
+	BBBBB
+&lt;/h1&gt;
+							</code></pre></li>
+						</ul>
+					</section>
+
+					<section>
+						<h1>Nesting Rule</h1>
+						<ul>
+							<li>原則上 inline element 不能包 block element</li>
+							<li><code>&lt;p&gt;</code>、<code>&lt;h1&gt;</code>~<code>&lt;h6&gt;</code> 裡頭只能包 inline element</li>
+							<li><code>&lt;strong&gt;</code> 裡頭不能包 <code>&lt;div&gt;</code></li>
+							<li>但是……</li>
+						</ul>
+
+						<!-- http://www.cs.tut.fi/~jkorpela/html/nesting.html -->
+					</section>
+
+					<section>
+						<h1>主耶穌寬恕你的罪</h1>
+						<ul>
+							<li>瀏覽器寬恕你的 html 錯誤</li>
+							<li>標籤錯誤的網頁太多了</li>
+							<li>瀏覽器作者：吞下去。</li>
+						</ul>
+						<p>但 <code>&lt;p&gt;</code> 裡頭仍然不能包 <code>&lt;div&gt;</code>，<br>
+						於情不堪，於理不合，於法難容，科科。</p>
+					</section>
+
+				</section>
+
+
+				<!------------------>
 				<section>
 					<h1>Reveal.js</h1>
 					<h3 class="inverted">A CSS 3D Slideshow</h3>

@@ -37,6 +37,11 @@
  * 	
  * @author Hakim El Hattab | http://hakim.se
  * @version 1.2
+ *
+ * Edited by MrOrz
+ * Now slides can be styled with classes, and updateSlide triggers 'update'
+ * event on <body>.
+ *
  */
 var Reveal = (function(){
 	"use strict";

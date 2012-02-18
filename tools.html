@@ -8,7 +8,6 @@
   <textarea name="editor" id="editor" cols="60" rows="20"></textarea>
   <hr>
   <textarea name="" id="result" cols="60" rows="20" readonly="readonly"></textarea>
-
   <script type="text/javascript" src="lib/codemirror/codemirror.js"></script>
   <script type="text/javascript" src="lib/codemirror/zen_codemirror.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -34,18 +33,17 @@
 
     // initialize CodeMirror v1 (w/ zencoding support)
     var $result = $('#result'),
-        cm = CodeMirror.fromTextArea($('#editor').get(0), {
-          parserfile: ["parsexml.js", "parsecss.js", "tokenizejavascript.js", "parsejavascript.js", "parsehtmlmixed.js"],
-          stylesheet: ["lib/codemirror/xmlcolors.css", "lib/codemirror/jscolors.css", "lib/codemirror/csscolors.css"],
-          path: "lib/codemirror/",
-          onLoad: function(){
-            ZenEditor.bind(cm);
-          },
-          onChange: function(){
-            $result.text(cm.getCode().escape());
-          }
-        });
-        // end of var statement
+      cm = CodeMirror.fromTextArea($('#editor').get(0), {
+        parserfile: ["parsexml.js", "parsecss.js", "tokenizejavascript.js", "parsejavascript.js", "parsehtmlmixed.js"],
+        stylesheet: ["lib/codemirror/xmlcolors.css", "lib/codemirror/jscolors.css", "lib/codemirror/csscolors.css"],
+        path: "lib/codemirror/",
+        onLoad: function(){
+          ZenEditor.bind(cm);
+        },
+        onChange: function(){
+          $result.text(cm.getCode().escape());
+        }
+      });
   }());
   </script>
 </body>

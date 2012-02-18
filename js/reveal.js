@@ -445,18 +445,17 @@ var Reveal = (function(){
 				if( overviewIsActive() === false ) {
 					slide.style.display = Math.abs( index - i ) > 3 ? 'none' : 'block';
 				}
-
 				if( i < index ) {
 					// Any element previous to index is given the 'past' class
-					if(!slide.classList.contains('past')){
-						slide.classList.add('past');
-					}
+					slide.classList.remove('present');
+					slide.classList.remove('future');
+					slide.classList.add('past');
 				}
 				else if( i > index ) {
 					// Any element subsequent to index is given the 'future' class
-					if(!slide.classList.contains('future')){
-						slide.classList.add('future');
-					}
+					slide.classList.remove('past');
+					slide.classList.remove('present');
+					slide.classList.add('future');
 				}
 
 				// If this element contains vertical slides

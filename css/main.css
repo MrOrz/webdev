@@ -6,18 +6,6 @@
 
 
 /*********************************************
- * FONT-FACE DEFINITIONS
- *********************************************/
-
-@font-face {
-	font-family: 'League Gothic';
-	src: url('../assets/fonts/leaguegothic/league_gothic-webfont.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-
-/*********************************************
  * GLOBAL STYLES
  *********************************************/
 
@@ -27,8 +15,8 @@ html, body {
 	margin: 0;
 	overflow: hidden;
 	
-	font-family: 'Lato', Times, 'Times New Roman', serif;
-	font-size: 36px;
+	font-family: '文泉驛微米黑', 'LiHei Pro', '微軟正黑體';
+	font-size: 28px;
 	font-weight: 200;
 	letter-spacing: -0.02em;
 	
@@ -37,7 +25,7 @@ html, body {
 	width: 100%;
 	height: 100%;
 
-	min-height: 600px;
+	min-height: 400px;
 }
 
 html {
@@ -61,8 +49,7 @@ html {
 	
 	color: #eee;
 	
-	font-family: 'League Gothic', sans-serif;
-	line-height: 0.9em;
+	line-height: 1.5;
 	letter-spacing: 0.02em;
 	
 	text-transform: uppercase;
@@ -265,7 +252,7 @@ html {
 	position: fixed;
 	width: 100px;
 	height: 100px;
-
+	font-family: Times, 'Times New Roman', serif;
 	right: 0;
 	bottom: 0;
 }

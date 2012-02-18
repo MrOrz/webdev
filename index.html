@@ -1,337 +1,476 @@
 <!doctype html>  
-<html lang="en">
-	
-	<head>
-		<meta charset="utf-8">
-		
-		<title>revealWebDev</title>
+<html lang="zh_TW">
+  
+  <head>
+    <meta charset="utf-8">
+    
+    <title>revealWebDev</title>
 
-		<meta name="description" content="不囉唆學 HTML。以 reveal.js 製作的 HTML / CSS / JS 投影片。">
-		<meta name="author" content="MrOrz">
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-		
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/main.css">
+    <meta name="description" content="不囉唆學 HTML。以 reveal.js 製作的 HTML / CSS / JS 投影片。">
+    <meta name="author" content="MrOrz">
 
-		<link rel="stylesheet" href="lib/zenburn.css">
-	</head>
-	
-	<body>
-		
-		<div id="reveal">
-			
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>HTML</h1>
-					<p>替文字標上「語意」</p>
-					<blockquote>
-						每個人都應該努力培養雅量。
-					</blockquote>
-					<pre><code>
-&lt;p&gt;每個人都應該努力培養&lt;em&gt;雅量&lt;/em&gt;。&lt;/p&gt;
-					</code></pre>
-				</section>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styles.css">
 
-				<section>
-					<section>
-						<h1>
-							標籤們
-						</h1>
-						<p></p>
-					</section>
+    <link rel="stylesheet" href="lib/zenburn.css">
+  </head>
+  
+  <body>
+    
+    <div id="reveal">
+      
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section class="title">
+          <h1>HTML</h1>
+        </section>
 
-					<section>
-						<h1>有語意的標籤</h1>
-						<p></p>
-					</section>
-					<section class="html5">
-						<h1>HTML5 語意標籤</h1>
-						<p></p>
-					</section>
-					<section>
-						<h1>無語意標籤</h1>
-						<ul>
-							<li>不知道要用什麼包</li>
-							<li>但還是想包在一起</li>
-							<li><code>&lt;div&gt;, &lt;span&gt;</code></li>
-							<li>常常搭配 CSS 套樣式、當做 javascript操作對象。</li>
-						</ul>
-					</section>
-				</section>
+        <section>
+          <h2>替文字標上「語意」</h2>
+          <blockquote>
+            每個人都應該努力培養雅量。
+          </blockquote>
+          <pre><code contenteditable>
+&lt;p&gt;每個人都應該努力培養&lt;strong&gt;雅量&lt;/strong&gt;。&lt;/p&gt;
+          </code></pre>
+        </section>
 
-				<section>
-					<h1>換行</h1>
-					<ul>
-						<li>會換行的標籤是 block element</li>
-						<li>不會換行的標籤叫 inline element</li>
-						<li>用 <code>&lt;br&gt;</code>在 inline element 裡頭換行</li>
-					</ul>
-					
-				</section>
+        <section>
+          <section>
+            <h2>
+              標籤們
+            </h2>
+          <pre><code contenteditable>
+&lt;p&gt;每個人都應該努力培養&lt;strong&gt;雅量&lt;/strong&gt;。&lt;/p&gt;
+          </code></pre>
+          <p>&lt;p&gt; 標出「段落」（paragraph）</p>  
+          <p>&lt;strong&gt; 標出「重點」</p>
+          </section>
 
-				<section>
-					<section>
-						<h1>大腸包小腸</h1>
-						<ul>
-							<li>HTML 標籤可以互相嵌套 (nesting)</li>
-							<li>但不能隨便包</li>
-							<li><pre><code>
+          <section>
+            <h2>有語意的標籤</h2>
+            <p>p, h1~h6, ul, ol, li</p>
+            <p>strong, em</p>
+            <p>img, a</p>
+          </section>
+
+          <section class="html5">
+            <h2>HTML5 語意標籤</h2>
+            <p>section, article, figure, nav, aside</p>
+          </section>
+
+          <section>
+            <h2>無語意標籤</h2>
+            <ul>
+              <li>不知道要用什麼包</li>
+              <li>但還是想包在一起</li>
+              <li><code>&lt;div&gt;, &lt;span&gt;</code></li>
+              <li>常常搭配 CSS 套樣式、當做 javascript操作對象。</li>
+            </ul>
+          </section>
+          <section>
+            <h2>背不起來</h2>
+            <p><a href="http://www.w3schools.com/tags/default.asp" target="_blank">W3School Tag List</a></p>
+          </section>
+        </section>
+
+        <section>
+          <h2>換行</h2>
+          <ul>
+            <li>會換行的標籤是 block element</li>
+            <li>不會換行的標籤叫 inline element</li>
+            <li>用 <code>&lt;br&gt;</code>在 inline element 裡頭換行</li>
+            <li>只按 enter 是沒用的</li>
+          </ul>
+          <pre><code contenteditable>
+本版嚴禁一行文&lt;br/&gt;
+第二行&lt;br/&gt;
+第三行
+          </code></pre>
+        </section>
+
+        <section>
+          <section>
+            <h2>HTML Attributes</h2>
+            <p>HTML 標籤可以有屬性，用空白隔開</p>
+            <p>
+              <pre><code contenteditable>
+  &lt;a href="http://google.com" target="_blank"&gt;Google 首頁&lt;/a&gt;
+              </code></pre>
+            </p>
+            <p>
+              <pre><code contenteditable>
+  &lt;img src="https://www.google.com/images/srpr/logo3w.png"&gt;Google 首頁&lt;/a&gt;
+              </code></pre>
+            </p>
+            <p>
+              <pre><code>
+  &lt;button type="button"&gt;我是按鈕&lt;/button&gt;
+              </code></pre>
+            </p>
+          </section>
+          <section>
+            <h2>圖片</h2>
+            <p>相對路徑</p>
+            <p>width, height</p>
+          </section>
+          <section>
+            <h2>連結</h2>
+            <p>href, target</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>大腸包小腸</h2>
+            <ul>
+              <li>HTML 標籤可以互相嵌套 (nesting)</li>
+              <li>但不能隨便包</li>
+            </ul>
+            <p><pre><code>
 &lt;h1&gt;
-	AAAAAA
-	&lt;h2&gt;
-	BBBBB
+  AAAAAA
+  &lt;h2&gt;
+  BBBBB
 &lt;/h1&gt;
-							</code></pre></li>
-						</ul>
-					</section>
+            </code></pre></p>
+          </section>
 
-					<section>
-						<h1>Nesting Rule</h1>
-						<ul>
-							<li>原則上 inline element 不能包 block element</li>
-							<li><code>&lt;p&gt;</code>、<code>&lt;h1&gt;</code>~<code>&lt;h6&gt;</code> 裡頭只能包 inline element</li>
-							<li><code>&lt;strong&gt;</code> 裡頭不能包 <code>&lt;div&gt;</code></li>
-							<li>但是……</li>
-						</ul>
+          <section>
+            <h2>Nesting Rule</h2>
+            <ul>
+              <li>原則上 inline element 不能包 block element</li>
+              <li><code>&lt;p&gt;</code>、<code>&lt;h1&gt;</code>~<code>&lt;h6&gt;</code> 裡頭只能包 inline element</li>
+              <li><code>&lt;strong&gt;</code> 裡頭不能包 <code>&lt;div&gt;</code></li>
+              <li><code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code> 裡面只能包 <code>&lt;li&gt;</code></li>
+              <li><code>&lt;tr&gt;</code> 裡面只能包 <code>&lt;td&gt;</code>，外頭必須要有 <code>&lt;table&gt;</code></li>
+              <li>但是……</li>
+            </ul>
 
-						<!-- http://www.cs.tut.fi/~jkorpela/html/nesting.html -->
-					</section>
+            <!-- http://www.cs.tut.fi/~jkorpela/html/nesting.html -->
+          </section>
 
-					<section>
-						<h1>主耶穌寬恕你的罪</h1>
-						<ul>
-							<li>瀏覽器寬恕你的 html 錯誤</li>
-							<li>標籤錯誤的網頁太多了</li>
-							<li>瀏覽器作者：吞下去。</li>
-						</ul>
-						<p>但 <code>&lt;p&gt;</code> 裡頭仍然不能包 <code>&lt;div&gt;</code>，<br>
-						於情不堪，於理不合，於法難容，科科。</p>
-					</section>
+          <section>
+            <h2>主耶穌寬恕你的罪</h2>
+            <ul>
+              <li>瀏覽器寬恕你的 html 錯誤</li>
+              <li>標籤錯誤的網頁太多了</li>
+              <li>瀏覽器作者：吞下去。</li>
+            </ul>
+            <p>但 <code>&lt;p&gt;</code> 裡頭仍然不能包 <code>&lt;div&gt;</code>，<br>
+            於情不堪，於理不合，於法難容。</p>
+          </section>
 
-				</section>
+        </section>
 
+        <section>
+          <h2>雅量部落格</h2>
+          <pre><code>
+&lt;div class="article"&gt;
+  &lt;div class="header"&gt;
+    &lt;h1&gt;雅量&lt;/h1&gt;
+    &lt;h2&gt;
+      &lt;span class="author"&gt;宋晶宜&lt;/span&gt; - &lt;span class="time"&gt;數十年前&lt;/span&gt;
+    &lt;/h2&gt;
+  &lt;/div&gt;
+  &lt;p&gt;朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：&lt;/p&gt;
+  &lt;p&gt;「啊，好像棋盤似的。」&lt;/p&gt;
+  &lt;p&gt;「我看倒有點像稿紙。」我說。&lt;/p&gt;
+  &lt;p&gt;「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。&lt;/p&gt;
+  &lt;p&gt;我們不禁哄堂大笑……&lt;/p&gt;
+  
+  &lt;div class="link"&gt;&lt;a href="more"&gt;閱讀全文&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+          </code></pre>
+        </section>
 
-				<!------------------>
-				<section>
-					<h1>Reveal.js</h1>
-					<h3 class="inverted">A CSS 3D Slideshow</h3>
-					<script>
-						// Delicously hacky. Look away.
-						if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) )
-						document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
-					</script>
-				</section>
-				
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is an easy to use, HTML based, presentation tool. You'll need a modern browser with 
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-					<p>
-						<i><small>- <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small></i>
-					</p>
-				</section>
-				
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,<br/>
-							try pressing <a href="#/2/1">down</a>.
-						</p>
-						<a href="#/2/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+        <section>
+          <section>
+            <h2>HTML 文件架構</h2>
+            <pre><code>
+&lt;!DOCTYPE HTML&gt;
+&lt;html lang="en-US"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- 剛剛教的 HTML 標籤統統放這裡 --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            <p>之前寫的東西統統放 body</p>
+          </section>
+          <section>
+            <h2>Head</h2>
+            <p>title</p>
+            <p>meta</p>
+          </section>
+          <section>
+            <h2>雅量部落格 (完整版)</h2>
 
-				<section>
-					<h2>Holistic Overview</h2>
-					<p>
-						Press <strong>SPACE</strong> to enter the slide overview.
-					</p>
-				</section>
+<pre><code contenteditable>
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;<em>人與人偶有摩擦部落格</em>&lt;/title&gt;
+  &lt;meta name="description" content="<em>人與人偶有摩擦，我們要努力培養雅量。</em>"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  <em>
+  &lt;div class="header"&gt;
+  &lt;h1&gt;雅量&lt;/h1&gt;
+  &lt;ul class="nav"&gt;
+    &lt;li&gt;&lt;a href="articles.html"&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="article"&gt;
+  &lt;div class="header"&gt;
+    &lt;h1&gt;雅量&lt;/h1&gt;
+    &lt;h2&gt;
+      &lt;span class="author"&gt;宋晶宜&lt;/span&gt; - &lt;span class="time"&gt;數十年前&lt;/span&gt;
+    &lt;/h2&gt;
+  &lt;/div&gt;
+  &lt;p&gt;朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：&lt;/p&gt;
+  &lt;p&gt;「啊，好像棋盤似的。」&lt;/p&gt;
+  &lt;p&gt;「我看倒有點像稿紙。」我說。&lt;/p&gt;
+  &lt;p&gt;「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。&lt;/p&gt;
+  &lt;p&gt;我們不禁哄堂大笑……&lt;/p&gt;
+  
+  &lt;div class="link"&gt;&lt;a href="more"&gt;閱讀全文&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+</em>
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+          </section>
+          
+        </section>
 
-				<section>
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like:
-					</p>
-					<ul>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=cube">Cube</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=page">Page</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=concave">Concave</a></li>
-					</ul>
-				</section>
-					
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-				
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+        <!--   -->
+        <section>
+          <h1>Reveal.js</h1>
+          <h3 class="inverted">A CSS 3D Slideshow</h3>
+          <script>
+            // Delicously hacky. Look away.
+            if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) )
+            document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
+          </script>
+        </section>
+        
+        <section>
+          <h2>Heads Up</h2>
+          <p>
+            reveal.js is an easy to use, HTML based, presentation tool. You'll need a modern browser with 
+            support for CSS 3D transforms to see it in its full glory.
+          </p>
+          <p>
+            <i><small>- <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small></i>
+          </p>
+        </section>
+        
+        <!-- Example of nested vertical slides -->
+        <section>
+          <section>
+            <h2>Vertical Slides</h2>
+            <p>
+              Slides can be nested inside of other slides,<br/>
+              try pressing <a href="#/2/1">down</a>.
+            </p>
+            <a href="#/2/1" class="image">
+              <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
+            </a>
+          </section>
+          <section>
+            <h2>Basement Level 1</h2>
+            <p>Press down or up to navigate.</p>
+          </section>
+          <section>
+            <h2>Basement Level 2</h2>
+            <p>Cornify</p>
+            <a class="test" href="http://cornify.com">
+              <img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif">
+            </a>
+          </section>
+          <section>
+            <h2>Basement Level 3</h2>
+            <p>That's it, time to go back up.</p>
+            <a href="#/2" class="image">
+              <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" style="-webkit-transform: rotate(180deg);">
+            </a>
+          </section>
+        </section>
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would 
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
-				</section>
-				
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code contenteditable>
-	var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-					document.body.style['MozPerspective'] !== undefined ||
-					document.body.style['perspective'] !== undefined;
+        <section>
+          <h2>Holistic Overview</h2>
+          <p>
+            Press <strong>SPACE</strong> to enter the slide overview.
+          </p>
+        </section>
 
-	function linkify( selector ) {
-	    if( supports3DTransforms ) {
-	        
-	        var nodes = document.querySelectorAll( selector );
+        <section>
+          <h2>Transition Styles</h2>
+          <p>
+            You can select from different transitions, like:
+          </p>
+          <ul>
+            <li><a href="http://lab.hakim.se/reveal-js/?transition=cube">Cube</a></li>
+            <li><a href="http://lab.hakim.se/reveal-js/?transition=page">Page</a></li>
+            <li><a href="http://lab.hakim.se/reveal-js/?transition=concave">Concave</a></li>
+          </ul>
+        </section>
+          
+        <section>
+          <h2>Marvelous Unordered List</h2>
+          <ul>
+            <li>No order here</li>
+            <li>Or here</li>
+            <li>Or here</li>
+            <li>Or here</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Fantastic Ordered List</h2>
+          <ol>
+            <li>One is smaller than...</li>
+            <li>Two is smaller than...</li>
+            <li>Three!</li>
+          </ol>
+        </section>
 
-	        for( var i = 0, len = nodes.length; i < len; i++ ) {
-	            var node = nodes[i];
+        <section>
+          <h2>Clever Quotes</h2>
+          <p>
+            These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+            The nice thing about standards is that there are so many to choose from</q> and block:
+          </p>
+          <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+            For years there has been a theory that millions of monkeys typing at random on millions of typewriters would 
+            reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
+          </blockquote>
+        </section>
+        
+        <section>
+          <h2>Pretty Code</h2>
+          <pre><code contenteditable>
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+          document.body.style['MozPerspective'] !== undefined ||
+          document.body.style['perspective'] !== undefined;
 
-	            if( !node.className || !node.className.match( /roll/g ) ) {
-	                node.className += ' roll';
-	                node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-	            }
-	        };
-	    }
-	}
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
+          
+          var nodes = document.querySelectorAll( selector );
 
-	linkify( 'a' );
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-				
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,<br/>
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-				<section>
-					<h2>Fragmented Views</h2>
-					<p>Hit the next arrow...</p>
-					<p class="fragment">... to step through ...</p>
-					<ol>
-						<li class="fragment"><code>any type</code></li>
-						<li class="fragment"><em>of view</em></li>
-						<li class="fragment"><strong>fragments</strong></li>
-					</ol>
-				</section>
-				
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://hakim.se/experiments/html5/breakdom/" target="_blank">
-						<img width="320" height="412" src="https://s3.amazonaws.com/hakim-static/reveal-js/breakdom.png">
-					</a>
-				</section>
-				
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on github</a></li>
-						<li><a href="http://hakim.se/projects/reveal-js">Read more on my site</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
-				
-				<section>
-					<h1>THE END</h1>
-					<h3 class="inverted">BY Hakim El Hattab / hakim.se</h3>
-				</section>
-			</div>
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-			<!-- The navigational controls UI -->
-			<aside class="controls">
-				<a class="left" href="#">&#x25C4;</a>
-				<a class="right" href="#">&#x25BA;</a>
-				<a class="up" href="#">&#x25B2;</a>
-				<a class="down" href="#">&#x25BC;</a>
-			</aside>
+  linkify( 'a' );
+          </code></pre>
+          <p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+        </section>
+        
+        <section>
+          <h2>Intergalactic Interconnections</h2>
+          <p>
+            You can link between slides internally,<br/>
+            <a href="#/2/3">like this</a>.
+          </p>
+        </section>
 
-			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
-			<div class="progress"><span></span></div>
-			
-		</div>
-		
-		<script src="js/reveal.js"></script>
-		<script src="lib/highlight.js"></script>
-		<script>
-			// Parse the query string into a key/value object
-			var query = {};
-			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
-				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
-			} );
+        <section>
+          <h2>Fragmented Views</h2>
+          <p>Hit the next arrow...</p>
+          <p class="fragment">... to step through ...</p>
+          <ol>
+            <li class="fragment"><code>any type</code></li>
+            <li class="fragment"><em>of view</em></li>
+            <li class="fragment"><strong>fragments</strong></li>
+          </ol>
+        </section>
+        
+        <section>
+          <h2>Spectacular image!</h2>
+          <a class="image" href="http://hakim.se/experiments/html5/breakdom/" target="_blank">
+            <img width="320" height="412" src="https://s3.amazonaws.com/hakim-static/reveal-js/breakdom.png">
+          </a>
+        </section>
+        
+        <section>
+          <h2>Stellar Links</h2>
+          <ul>
+            <li><a href="https://github.com/hakimel/reveal.js">Source code on github</a></li>
+            <li><a href="http://hakim.se/projects/reveal-js">Read more on my site</a></li>
+            <li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>THE END</h1>
+          <h3 class="inverted">BY Hakim El Hattab / hakim.se</h3>
+        </section>
+      </div>
 
-			Reveal.initialize({
-				// Display controls in the bottom right corner
-				controls: true,
+      <!-- The navigational controls UI -->
+      <aside class="controls">
+        <a class="left" href="#">&#x25C4;</a>
+        <a class="right" href="#">&#x25BA;</a>
+        <a class="up" href="#">&#x25B2;</a>
+        <a class="down" href="#">&#x25BC;</a>
+      </aside>
 
-				// Display a presentation progress bar
-				progress: true,
+      <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+      <div class="progress"><span></span></div>
+      
+    </div>
+    
+    <script src="js/reveal.js"></script>
+    <script src="lib/highlight.js"></script>
+    <script>
+      // Parse the query string into a key/value object
+      var query = {};
+      location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+        query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+      } );
 
-				// If true; each slide will be pushed to the browser history
-				history: true,
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
 
-				// Flags if mouse wheel navigation should be enabled
-				mouseWheel: true,
+        // Display a presentation progress bar
+        progress: true,
 
-				// Apply a 3D roll to links on hover
-				rollingLinks: true,
+        // If true; each slide will be pushed to the browser history
+        history: true,
 
-				// UI style
-				theme: query.theme || 'default', // default/neon
+        // Flags if mouse wheel navigation should be enabled
+        mouseWheel: true,
 
-				// Transition style
-				transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
-			});
+        // Apply a 3D roll to links on hover
+        rollingLinks: true,
 
-			hljs.initHighlightingOnLoad();
-		</script>
+        // UI style
+        theme: query.theme || 'default', // default/neon
 
-	</body>
+        // Transition style
+        transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+      });
+
+      hljs.initHighlightingOnLoad();
+    </script>
+
+  </body>
 </html>

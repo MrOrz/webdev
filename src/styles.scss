@@ -1,0 +1,26 @@
+#reveal {
+  section {
+    &.title {}
+    &.html5 {
+      position: relative;
+      overflow: hidden;
+      &::after {
+        content: '新標準';
+        text-align: center;
+        display: block;
+        background: rgba(0, 255, 0, 0.3);
+        position: absolute;
+        padding: 3px 100px;
+        right: -85.36px;
+        top: 35.36px;
+        -moz-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); } } }
+  code em {
+    display: inline-block;
+    border: 1px solid #666;
+    padding: 3px;
+    font-style: normal;
+    border-radius: 4px; } }

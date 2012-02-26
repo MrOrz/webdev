@@ -1,9 +1,9 @@
-<!doctype html>  
+<!doctype html>
 <html lang="zh_TW">
-  
+
   <head>
     <meta charset="utf-8">
-    
+
     <title>revealWebDev</title>
 
     <meta name="description" content="不囉唆學 HTML。以 reveal.js 製作的 HTML / CSS / JS 投影片。">
@@ -15,11 +15,11 @@
 
     <link rel="stylesheet" href="lib/zenburn.css">
   </head>
-  
+
   <body>
-    
     <div id="reveal">
-      
+
+
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section class="title">
@@ -60,7 +60,7 @@
           <pre><code contenteditable>
 &lt;p&gt;每個人都應該努力培養&lt;strong&gt;雅量&lt;/strong&gt;。&lt;/p&gt;
           </code></pre>
-          <p>&lt;p&gt; 標出「段落」（paragraph）</p>  
+          <p>&lt;p&gt; 標出「段落」（paragraph）</p>
           <p>&lt;strong&gt; 標出「重點」</p>
           </section>
 
@@ -195,7 +195,7 @@
   &lt;p&gt;「我看倒有點像稿紙。」我說。&lt;/p&gt;
   &lt;p&gt;「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。&lt;/p&gt;
   &lt;p&gt;我們不禁哄堂大笑……&lt;/p&gt;
-  
+
   &lt;div class="link"&gt;&lt;a href="more"&gt;閱讀全文&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
           </code></pre>
@@ -256,7 +256,7 @@
   &lt;p&gt;「我看倒有點像稿紙。」我說。&lt;/p&gt;
   &lt;p&gt;「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。&lt;/p&gt;
   &lt;p&gt;我們不禁哄堂大笑……&lt;/p&gt;
-  
+
   &lt;div class="link"&gt;&lt;a href="more"&gt;閱讀全文&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
 </em>
@@ -264,7 +264,7 @@
 &lt;/html&gt;
             </code></pre>
           </section>
-          
+
         </section>
 
         <!--   -->
@@ -277,18 +277,18 @@
             document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
           </script>
         </section>
-        
+
         <section>
           <h2>Heads Up</h2>
           <p>
-            reveal.js is an easy to use, HTML based, presentation tool. You'll need a modern browser with 
+            reveal.js is an easy to use, HTML based, presentation tool. You'll need a modern browser with
             support for CSS 3D transforms to see it in its full glory.
           </p>
           <p>
             <i><small>- <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small></i>
           </p>
         </section>
-        
+
         <!-- Example of nested vertical slides -->
         <section>
           <section>
@@ -339,7 +339,7 @@
             <li><a href="http://lab.hakim.se/reveal-js/?transition=concave">Concave</a></li>
           </ul>
         </section>
-          
+
         <section>
           <h2>Marvelous Unordered List</h2>
           <ul>
@@ -349,7 +349,7 @@
             <li>Or here</li>
           </ul>
         </section>
-        
+
         <section>
           <h2>Fantastic Ordered List</h2>
           <ol>
@@ -366,21 +366,21 @@
             The nice thing about standards is that there are so many to choose from</q> and block:
           </p>
           <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-            For years there has been a theory that millions of monkeys typing at random on millions of typewriters would 
+            For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
             reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
           </blockquote>
         </section>
-        
+
         <section>
           <h2>Pretty Code</h2>
           <pre><code contenteditable>
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined ||
           document.body.style['MozPerspective'] !== undefined ||
           document.body.style['perspective'] !== undefined;
 
   function linkify( selector ) {
       if( supports3DTransforms ) {
-          
+
           var nodes = document.querySelectorAll( selector );
 
           for( var i = 0, len = nodes.length; i < len; i++ ) {
@@ -398,7 +398,7 @@
           </code></pre>
           <p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
         </section>
-        
+
         <section>
           <h2>Intergalactic Interconnections</h2>
           <p>
@@ -417,14 +417,14 @@
             <li class="fragment"><strong>fragments</strong></li>
           </ol>
         </section>
-        
+
         <section>
           <h2>Spectacular image!</h2>
           <a class="image" href="http://hakim.se/experiments/html5/breakdom/" target="_blank">
             <img width="320" height="412" src="https://s3.amazonaws.com/hakim-static/reveal-js/breakdom.png">
           </a>
         </section>
-        
+
         <section>
           <h2>Stellar Links</h2>
           <ul>
@@ -433,7 +433,7 @@
             <li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
           </ul>
         </section>
-        
+
         <section>
           <h1>THE END</h1>
           <h3 class="inverted">BY Hakim El Hattab / hakim.se</h3>
@@ -450,7 +450,7 @@
 
       <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
       <div class="progress"><span></span></div>
-      
+
     </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="js/reveal.js"></script>

@@ -21,12 +21,10 @@
   // $('script[type=text/x-sample]').sample();
   //
   $.fn.sample = function(){
-
-
     // 'this' should be <script> jQuery object
     //
     this.each(function(){
-      var 
+      var
       indent = 100, // shortest indent
       lines = $(this).html().split('\n'); // lines of code
 
@@ -38,15 +36,19 @@
         }
       });
 
-      // removing indent
-      $.map(lines, function(l){
+      // removing indent & empty lines
+      lines = $.map(lines, function(l){
         return l.substr(indent);
+      }).filter(function(l){
+        return l.length > 0;
       });
 
       // join linesem
       lines = lines.join('\n');
-      $('<pre></ore>').append('<code></code>').append(lines.escape).insertAfter($(this));
 
+      // output code
+      var code = $('<code></code>').append(lines.escape());
+      $('<pre></pre>').append(code).insertAfter(this);
     });
   }
 }(jQuery));

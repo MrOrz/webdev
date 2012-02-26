@@ -27,6 +27,22 @@
         </section>
 
         <section>
+          <h1>長這樣。 </h1>
+          <script type="text/x-sample" class="sample-code">
+            Yoooooo;
+            var a = function(){
+              XD();
+              rz();
+            };
+          </script>
+        </section>
+
+
+        <section>
+          <h1>怎麼寫？</h1>
+        </section>
+
+        <section>
           <h2>替文字標上「語意」</h2>
           <blockquote>
             每個人都應該努力培養雅量。
@@ -436,9 +452,10 @@
       <div class="progress"><span></span></div>
       
     </div>
-    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="js/reveal.js"></script>
     <script src="lib/highlight.js"></script>
+    <script type="text/javascript" src="js/sample.js"></script>
     <script>
       // Parse the query string into a key/value object
       var query = {};
@@ -469,6 +486,7 @@
         transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
       });
 
+      $('.sample-code').sample();
       hljs.initHighlightingOnLoad();
     </script>
 

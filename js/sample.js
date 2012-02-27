@@ -1,3 +1,4 @@
+/*global CodeMirror */
 (function($, undefined){
   "use strict";
 
@@ -47,8 +48,9 @@
       lines = lines.join('\n');
 
       // output code
-      var code = $('<code></code>').append(lines.escape());
-      $('<pre></pre>').append(code).insertAfter(this);
+
+      var $target = $('<textarea></textarea>').val(lines).insertAfter(this);
+      $(this).data('codeMirror', CodeMirror.fromTextArea($target.get(0)));
     });
   }
 }(jQuery));

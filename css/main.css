@@ -60,6 +60,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+body {
+  font-size: 175%;
+  line-height: 1.286em;
+}
+
+html > body {
+  font-size: 28px;
+}
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -69,7 +78,6 @@ html, body {
   margin: 0;
   overflow: hidden;
   font-family: '文泉驛微米黑', 'LiHei Pro', '微軟正黑體';
-  font-size: 28px;
   font-weight: 200;
   letter-spacing: -0.02em;
   color: #eee;
@@ -94,22 +102,26 @@ html {
 #reveal h1, #reveal h2, #reveal h3, #reveal h4 {
   margin: 0 0 20px 0;
   color: #eee;
-  line-height: 1.5;
+  line-height: 1.929em;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
 }
 #reveal h1 {
-  font-size: 136px;
+  font-size: 4.857em;
+  line-height: 1.059em;
 }
 #reveal h2 {
-  font-size: 76px;
+  font-size: 2.714em;
+  line-height: 1.421em;
 }
 #reveal h3 {
-  font-size: 56px;
+  font-size: 2em;
+  line-height: 1.286em;
 }
 #reveal h4 {
-  font-size: 36px;
+  font-size: 1.286em;
+  line-height: 2em;
 }
 #reveal h1.inverted, #reveal h2.inverted, #reveal h3.inverted, #reveal h4.inverted {
   color: #fff;
@@ -119,7 +131,6 @@ html {
   text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
 #reveal .slides section {
-  line-height: 1.2em;
   font-weight: normal;
 }
 #reveal .slides section .fragment {
@@ -171,13 +182,9 @@ html {
   content: '”';
 }
 #reveal pre {
-  display: block;
   position: relative;
-  margin: 10px auto;
   text-align: left;
-  font-size: 16px;
   font-family: monospace;
-  line-height: 1.2em;
   word-wrap: break-word;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
 }
@@ -185,8 +192,8 @@ html {
   font-family: monospace;
 }
 #reveal small {
-  font-size: 60%;
-  line-height: 1em;
+  font-size: 0.6em;
+  line-height: 2.143em;
   vertical-align: top;
 }
 #reveal q {
@@ -246,7 +253,8 @@ html {
   bottom: 0;
 }
 #reveal .controls a {
-  font-size: 30px;
+  font-size: 1.071em;
+  line-height: 1.2em;
   position: absolute;
   opacity: 0.1;
   color: #fff;

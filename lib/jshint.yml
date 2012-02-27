@@ -61,9 +61,6 @@ passfail: false     # true if the scan should stop on first error (per file)
 # following are relevant only if undef = true
 browser:  true      # true if the standard browser globals should be predefined
 rhino:    false     # true if the Rhino environment globals should be predefined
-windows:  false     # true if Windows-specific globals should be predefined
-widget:   false     # true if the Yahoo Widgets globals should be predefined
-devel:    false     # true if functions like alert, confirm, console, prompt etc. are predefined
 
 # jshint options
 loopfunc: true      # true if functions should be allowed to be defined within loops

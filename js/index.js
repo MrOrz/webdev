@@ -48,5 +48,9 @@
     transition: 'default' // default/cube/page/concave/linear(2d)
   });
 
-  $('.sample-code').sample();
+  $('.sample-code').sample({
+    wrapper: function(code){
+      return '<p>Result:XD </p>' + code;
+    }
+  });
 }(jQuery));

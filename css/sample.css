@@ -2,11 +2,12 @@
 .sample-container {
   margin-top: 0.643em;
   margin-bottom: 0.643em;
+  position: relative;
 }
 .sample-container pre {
+  width: 47%;
   font-size: 18px;
   line-height: 25px;
-  width: 47%;
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
@@ -19,16 +20,15 @@
   *display: inline;
 }
 .sample-container pre code {
-  z-index: 1;
+  z-index: 2;
 }
 .sample-container .iframe {
-  height: 200px;
+  width: 47%;
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  width: 47%;
   margin-left: 5%;
   vertical-align: top;
 }
@@ -36,13 +36,33 @@
   *display: inline;
 }
 .sample-container .iframe iframe {
+  vertical-align: bottom;
   width: 100%;
-  height: 100%;
-  z-index: 1;
+  z-index: 2;
   background: #dcdcdc;
 }
-.sample-container pre, .sample-container .iframe {
+.sample-container button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  left: 50%;
+  width: 10%;
+  margin-left: -5%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  vertical-align: middle;
+  background: transparent;
   z-index: 0;
+  color: white;
+  text-shadow: 0 -1px 2px black;
+  font-size: 28px;
+}
+.sample-container button:hover {
+  color: #f60;
+}
+.sample-container pre, .sample-container .iframe {
+  z-index: 1;
   position: relative;
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.1);

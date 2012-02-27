@@ -4,33 +4,51 @@
 .sample-container{
   @include leader(0.5);
   @include trailer(0.5);
+  position: relative;
   pre{
+    width: 47%;
     font-size: 18px;
     line-height: 25px;
-    width: 47%;
     @include inline-block;
     vertical-align: top;
     background: #3f3f3f;
     code{
-      z-index: 1; // covering the pseudo elems
+      z-index: 2; // covering the pseudo elems
     }
   }
   .iframe{
-    height: 200px;
-    @include inline-block;
     width: 47%;
+    @include inline-block;
     margin-left: 5%;
     vertical-align: top;
     iframe{
+      vertical-align: bottom; // eliminate trailing space
       width: 100%;
-      height: 100%;
-      z-index: 1; // covering the pseudo elems
+      z-index: 2; // covering the pseudo elems
       background: #dcdcdc;
     }
   }
 
+  button{
+    margin: 0; padding: 0; border: 0;
+    left: 50%;
+    width: 10%;
+    margin-left: -5%;
+    position: absolute;
+    top: 0; bottom: 0;
+    vertical-align: middle;
+    background: transparent;
+    z-index: 0;
+    color: white;
+    text-shadow: 0 -1px 2px #000;
+    font-size: 28px;
+    &:hover{
+      color: #f60;
+    }
+  }
+
   pre, .iframe{
-    z-index: 0; // create stacking context for pseudo elems
+    z-index: 1; // create stacking context for pseudo elems
     position: relative;
     $shadow-y-offset : 20px;
     $shadow-x-offset : 25px;

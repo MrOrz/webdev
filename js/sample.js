@@ -6,14 +6,29 @@
   var $sampleContainerSrc = $('<div class="sample-container"></div>'),
       $codeSrc = $('<code contenteditable></code>'),
       $preSrc = $('<pre></pre>'),
-      $iframeSrc = $('<div class="iframe"><iframe height="100%"></iframe></div>');
+      $iframeSrc = $('<div class="iframe"><iframe></iframe></div>'),
+      $updateBtnSrc = $('<button>&raquo;</button>'),
+
+      updateIframe = function(iframe, $pre, wrapper){
+        var doc = iframe.contentDocument;
+        doc.open(); doc.writeln( wrapper($pre.text()) ); doc.close();
+        $(iframe).height($pre.height());
+        // highligt the code
+        hljs.highlightBlock($pre.find('code').get(0));
+      };
 
   // example usage:
   // $('script[type=text/x-sample]').sample();
   //
-  $.fn.sample = function(){
+  $.fn.sample = function(options){
     // 'this' should be <script> jQuery object
     //
+    options = $.extend({
+      wrapper: function(lines){ // default wrapper: no-op
+        return lines;
+      }
+    }, options);
+
     this.each(function(){
       var
       indent = 100, // shortest indent
@@ -44,16 +59,21 @@
       var $sampleContainer = $sampleContainerSrc.clone();
 
       // append the code and append it to the container.
-      var code = $codeSrc.clone().text(lines);
-      $preSrc.clone().append(code).appendTo($sampleContainer);
+      var $code = $codeSrc.clone().text(lines),
+          $pre = $preSrc.clone().append($code).appendTo($sampleContainer);
 
-      // highligt the code
-      hljs.highlightBlock(code.get(0));
 
+      // previewing iframe
       var iframe = $iframeSrc.clone().appendTo($sampleContainer).find('iframe').get(0);
       $(iframe).ready(function(){
-        var doc = iframe.contentDocument;
-        doc.open(); doc.writeln(lines); doc.close();
+        updateIframe(iframe, $pre, options.wrapper);
+      });
+
+      // update button
+      var $updateBtn = $updateBtnSrc.clone().insertAfter($pre);
+      $updateBtn.click(function(){
+        // updating iframe and highlight the $pre again
+        updateIframe(iframe, $pre, options.wrapper);
       });
 
       // finally, insert the container below the script tag.

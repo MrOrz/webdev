@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <link rel="stylesheet" href="lib/zenburn.css">
+    <link rel="stylesheet" href="lib/codemirror2/lib/codemirror.css">
   </head>
 
   <body>
@@ -52,8 +52,8 @@
           </code></pre>
         </section>
 
-        <section>
-          <section>
+        <section id="tag-reference">
+          <section id="tag-reference2">
             <h2>
               標籤們
             </h2>
@@ -454,41 +454,9 @@
     </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="js/reveal.js"></script>
-    <script src="lib/highlight.js"></script>
+    <script src="lib/codemirror2/lib/codemirror.js"></script>
     <script type="text/javascript" src="js/sample.js"></script>
-    <script>
-      // Parse the query string into a key/value object
-      var query = {};
-      location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
-        query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
-      } );
-
-      Reveal.initialize({
-        // Display controls in the bottom right corner
-        controls: true,
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // If true; each slide will be pushed to the browser history
-        history: true,
-
-        // Flags if mouse wheel navigation should be enabled
-        mouseWheel: true,
-
-        // Apply a 3D roll to links on hover
-        rollingLinks: true,
-
-        // UI style
-        theme: query.theme || 'default', // default/neon
-
-        // Transition style
-        transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
-      });
-
-      $('.sample-code').sample();
-      hljs.initHighlightingOnLoad();
-    </script>
+    <script type="text/javascript" src="js/index.js"></script>
 
   </body>
 </html>

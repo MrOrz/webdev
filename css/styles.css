@@ -1,9 +1,7 @@
-/* line 4, /home/mrorz/workspace/revealWebDev/sass/styles.scss */
 #reveal section.html5 {
   position: relative;
   overflow: hidden;
 }
-/* line 7, /home/mrorz/workspace/revealWebDev/sass/styles.scss */
 #reveal section.html5::after {
   content: '新標準';
   text-align: center;
@@ -19,7 +17,6 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 21, /home/mrorz/workspace/revealWebDev/sass/styles.scss */
 #reveal code em {
   display: inline-block;
   border: 1px solid #666;

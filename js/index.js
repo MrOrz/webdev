@@ -1,4 +1,5 @@
 /*global Reveal, CodeMirror */
+/* handles URL query, initialize Reveal and $.sample */
 (function($, undefined){
   "use strict";
 
@@ -7,12 +8,9 @@
       $targetSlide,
       $targetSlideParent;
 
-  console.log('slideId', ''+slideId);
-
   if(slideId && $('section#'+slideId)){
     $targetSlide = $('section#'+slideId);
     $targetSlideParent = $targetSlide.parent();
-    console.log($targetSlide.get(0), $targetSlideParent.children());
     slideId = $.inArray($targetSlide.get(0), $targetSlideParent.children());
 
     // vertical slide
@@ -22,6 +20,8 @@
     }else{ // normal horizontal slide
       location.hash = '#/' + slideId;
     }
+
+    location.search = ''; // clear search
   }
 
   // initialize Reveal

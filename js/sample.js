@@ -2,21 +2,11 @@
 (function($, undefined){
   "use strict";
 
-  // string manipulations methods
-  // <p> --escape--> &lt;p&lgt; --unescape--> <p>
-
-  // use DOM createElement() instead of $('<div/>') to prevent the script
-  // within the string from executed.
-  // Ref: http://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
-  var codingDiv = document.createElement('div');
-  String.prototype.unescape = function(){
-    codingDiv.innerHTML = this;
-    return codingDiv.childNodes.length === 0 ? "" :
-      codingDiv.childNodes[0].nodeValue;
-  }
-  String.prototype.escape = function(){
-    return $(codingDiv).text(this).html();
-  };
+  // cached DOM elements
+  var $sampleContainerSrc = $('<div class="sample-container"></div>'),
+      $codeSrc = $('<code contenteditable></code>'),
+      $preSrc = $('<pre></pre>'),
+      $iframeSrc = $('<iframe></iframe>');
 
   // example usage:
   // $('script[type=text/x-sample]').sample();
@@ -47,12 +37,27 @@
       // join lines
       lines = lines.join('\n');
 
-      // output code
-      var code = $('<code></code>').attr('contenteditable', 'true').text(lines);
-      $('<pre></pre>').addClass('sample').append(code).insertAfter(this);
 
-      // highlight the code and sets event handler
+      // output stage
+      //
+      // the container of all the elements
+      var $sampleContainer = $sampleContainerSrc.clone();
+
+      // append the code and append it to the container.
+      var code = $codeSrc.clone().text(lines);
+      $preSrc.clone().append(code).appendTo($sampleContainer);
+
+      // highligt the code
       hljs.highlightBlock(code.get(0));
+
+      var iframe = $iframeSrc.clone().appendTo($sampleContainer).get(0);
+      $(iframe).ready(function(){
+        var doc = iframe.contentDocument;
+        doc.open(); doc.writeln(lines); doc.close();
+      });
+
+      // finally, insert the container below the script tag.
+      $sampleContainer.insertAfter(this);
     });
   }
 }(jQuery));

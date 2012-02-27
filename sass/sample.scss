@@ -1,4 +1,10 @@
 /* styles for sample.js */
-pre.sample{
-  width: 49%;
+
+.sample-container{
+  pre{
+    width: 49%;
+  }
+  .preview{
+    height: 100%;
+  }
 }

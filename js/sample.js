@@ -6,7 +6,7 @@
   var $sampleContainerSrc = $('<div class="sample-container"></div>'),
       $codeSrc = $('<code contenteditable></code>'),
       $preSrc = $('<pre></pre>'),
-      $iframeSrc = $('<iframe></iframe>');
+      $iframeSrc = $('<div class="iframe"><iframe height="100%"></iframe></div>');
 
   // example usage:
   // $('script[type=text/x-sample]').sample();
@@ -50,7 +50,7 @@
       // highligt the code
       hljs.highlightBlock(code.get(0));
 
-      var iframe = $iframeSrc.clone().appendTo($sampleContainer).get(0);
+      var iframe = $iframeSrc.clone().appendTo($sampleContainer).find('iframe').get(0);
       $(iframe).ready(function(){
         var doc = iframe.contentDocument;
         doc.open(); doc.writeln(lines); doc.close();

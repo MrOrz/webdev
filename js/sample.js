@@ -1,4 +1,4 @@
-/*global CodeMirror */
+/*global CodeMirror, hljs */
 (function($, undefined){
   "use strict";
 
@@ -44,13 +44,15 @@
         return l.length > 0;
       });
 
-      // join linesem
+      // join lines
       lines = lines.join('\n');
 
       // output code
+      var code = $('<code></code>').attr('contenteditable', 'true').text(lines);
+      $('<pre></pre>').addClass('sample').append(code).insertAfter(this);
 
-      var $target = $('<textarea></textarea>').val(lines).insertAfter(this);
-      $(this).data('codeMirror', CodeMirror.fromTextArea($target.get(0)));
+      // highlight the code and sets event handler
+      hljs.highlightBlock(code.get(0));
     });
   }
 }(jQuery));

@@ -1,4 +1,4 @@
-/*global Reveal, CodeMirror */
+/*global Reveal, hljs */
 /* handles URL query, initialize Reveal and $.sample */
 (function($, undefined){
   "use strict";

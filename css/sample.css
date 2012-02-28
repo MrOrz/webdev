@@ -61,7 +61,8 @@
 .sample-container button:hover {
   color: #f60;
 }
-.sample-container pre, .sample-container .iframe {
+
+.present .sample-container:hover pre, .present .sample-container:hover .iframe {
   z-index: 1;
   position: relative;
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.1);
@@ -69,7 +70,7 @@
   -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.1);
 }
-.sample-container pre::before, .sample-container pre::after, .sample-container .iframe::before, .sample-container .iframe::after {
+.present .sample-container:hover pre::before, .present .sample-container:hover pre::after, .present .sample-container:hover .iframe::before, .present .sample-container:hover .iframe::after {
   content: '';
   position: absolute;
   top: 20px;
@@ -79,7 +80,7 @@
   border: 1px solid red;
   z-index: -2;
 }
-.sample-container pre::before, .sample-container .iframe::before {
+.present .sample-container:hover pre::before, .present .sample-container:hover .iframe::before {
   -moz-border-radius-topleft: 100px;
   -webkit-border-top-left-radius: 100px;
   -o-border-top-left-radius: 100px;
@@ -102,7 +103,7 @@
   -ms-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
-.sample-container pre::after, .sample-container .iframe::after {
+.present .sample-container:hover pre::after, .present .sample-container:hover .iframe::after {
   -moz-border-radius-topright: 100px;
   -webkit-border-top-right-radius: 100px;
   -o-border-top-right-radius: 100px;

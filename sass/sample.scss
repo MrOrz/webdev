@@ -46,7 +46,9 @@
       color: #f60;
     }
   }
+}
 
+.present .sample-container:hover{
   pre, .iframe{
     z-index: 1; // create stacking context for pseudo elems
     position: relative;

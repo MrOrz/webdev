@@ -108,8 +108,9 @@ html {
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
 }
 #reveal h1 {
-  font-size: 4.857em;
-  line-height: 1.059em;
+  font-size: 7.143em;
+  line-height: 1.08em;
+  padding-top: 0.643em;
 }
 #reveal h2 {
   font-size: 2.714em;

@@ -446,8 +446,6 @@ var Reveal = (function(){
     var slides = Array.prototype.slice.call( document.querySelectorAll( selector ) );
 
     if( slides.length ) {
-      // Enforce max and minimum index bounds
-      index = Math.max(Math.min(index, slides.length - 1), 0);
 
       slides[index].classList.remove('past');
       slides[index].classList.remove('future');
@@ -571,6 +569,14 @@ var Reveal = (function(){
    * state.
    */
   writeURL = function() {
+    // Enforce max and minimum index bounds
+    indexh = Math.max(Math.min(indexh,
+             document.querySelectorAll(HORIZONTAL_SLIDES_SELECTOR).length - 1),
+             0);
+    indexv = Math.max(Math.min(indexv,
+             document.querySelectorAll(VERTICAL_SLIDES_SELECTOR).length - 1),
+             0);
+
     if( config.history ) {
       var url = '/';
 

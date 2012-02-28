@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 #: http://stackoverflow.com/questions/3108395/serve-current-directory-from-command-line
 
 require 'webrick'

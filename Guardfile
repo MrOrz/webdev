@@ -10,3 +10,9 @@ guard 'jshint-on-rails', :config_path => 'lib/jshint.yml' do
   # watch for changes to application javascript files
   watch(%r{^js/.*\.js$})
 end
+
+guard 'livereload' do
+  watch(%r{^css/.+\.css$})
+  watch(%r{^js/.+\.js$})
+  watch(%r{^.+\.html$})
+end

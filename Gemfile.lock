@@ -27,15 +27,20 @@ GEM
       guard (>= 0.10.0)
       multi_json (~> 1.0)
     jshint (0.1.1)
+    libnotify (0.7.2)
     multi_json (1.1.0)
+    rb-inotify (0.8.8)
+      ffi (>= 0.5.0)
     sass (3.1.15)
     thor (0.14.6)
 
 PLATFORMS
-  x86-mingw32
+  ruby
 
 DEPENDENCIES
   guard
   guard-compass
   guard-jshint-on-rails
   guard-livereload
+  libnotify
+  rb-inotify

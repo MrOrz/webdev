@@ -208,7 +208,7 @@ var Reveal = (function(){
           case 40: navigateDown(); break; // down
         }
 
-        slide();
+        //slide();
 
         event.preventDefault();
 
@@ -269,8 +269,6 @@ var Reveal = (function(){
       else if( point.y > window.innerHeight - ht ) {
         navigateDown();
       }
-
-      slide();
     }
   };
 
@@ -488,16 +486,7 @@ var Reveal = (function(){
       index = 0;
     }
 
-    // dispatch update event
-    var evt = document.createEvent('Event');
-    evt.currentSlide = slides[index];
-    evt.initEvent('update', true, true);
-    evt.prevSlide = slides[index-1] || null;
-    evt.nextSlide = slides[index+1] || null;
-    document.body.dispatchEvent(evt);
-
     return index;
-
   };
 
   /**
@@ -520,7 +509,13 @@ var Reveal = (function(){
 
     updateControls();
 
-    writeURL();
+    // writeURL();
+
+    // dispatch update event
+    if(typeof config.update === 'function'){
+      //console.log('updating', indexh, indexv);
+      config.update(indexh, indexv);
+    }
   };
 
   /**
@@ -660,7 +655,8 @@ var Reveal = (function(){
     if( overviewIsActive() || previousFragment() === false ) {
       indexh --;
       indexv = 0;
-      slide();
+      //slide();
+      writeURL();
     }
   };
   navigateRight = function() {
@@ -668,21 +664,24 @@ var Reveal = (function(){
     if( overviewIsActive() || nextFragment() === false ) {
       indexh ++;
       indexv = 0;
-      slide();
+      //slide();
+      writeURL();
     }
   };
   navigateUp = function() {
     // Prioritize hiding fragments
     if( overviewIsActive() || previousFragment() === false ) {
       indexv --;
-      slide();
+      //slide();
+      writeURL();
     }
   };
   navigateDown = function() {
     // Prioritize revealing fragments
     if( overviewIsActive() || nextFragment() === false ) {
       indexv ++;
-      slide();
+      //slide();
+      writeURL();
     }
   };
 

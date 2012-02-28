@@ -24,6 +24,7 @@
     location.search = ''; // clear search
   }
 
+  $('script[type="text/x-sample"]').sample();
   // initialize Reveal
   Reveal.initialize({
     // Display controls in the bottom right corner
@@ -45,10 +46,12 @@
     theme: 'default', // default/neon
 
     // Transition style
-    transition: 'default' // default/cube/page/concave/linear(2d)
+    transition: 'default', // default/cube/page/concave/linear(2d)
+
+    update: function(indexh, indexv){
+      // update prev & next slide's sample code
+      $('section.present').not('.stack').find('script[type="text/x-sample"]').sample('update');
+    }
   });
 
-  $(function(){
-    $('script[type="text/x-sample"]').sample();
-  })
 }(jQuery));

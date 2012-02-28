@@ -25,7 +25,7 @@
     // 'this' should be <script> jQuery object
     //
 
-    // method invokation
+    // method invocation
     if(typeof arguments[0] === 'string'){
       var args = arguments;
       this.each(function(){

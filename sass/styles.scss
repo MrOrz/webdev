@@ -17,11 +17,11 @@
       }
     }
   }
-  code em {
-    display: inline-block;
-    border: 1px solid #666;
-    padding: 3px;
-    font-style: normal;
-    border-radius: 4px;
+  code {
+    font-family: "Consolas", "Lucida Console", monospace;
+    color: #E3CEAB;
+  }
+  .sample-container code{
+    color: inherit;
   }
 }

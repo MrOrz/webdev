@@ -16,10 +16,10 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-#reveal code em {
-  display: inline-block;
-  border: 1px solid #666;
-  padding: 3px;
-  font-style: normal;
-  border-radius: 4px;
+#reveal code {
+  font-family: "Consolas", "Lucida Console", monospace;
+  color: #E3CEAB;
+}
+#reveal .sample-container code {
+  color: inherit;
 }

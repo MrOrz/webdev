@@ -19,9 +19,6 @@
 
   <body>
     <div id="reveal">
-
-
-      <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section class="title">
           <h1>HTML</h1>
@@ -29,7 +26,7 @@
 
         <section>
           <h2>長這樣。 </h2>
-          <script type="text/x-sample" class="sample-code">
+          <script type="text/x-sample">
             <html>
             <head>
               <title>XD</title>
@@ -42,7 +39,6 @@
           </script>
         </section>
 
-
         <section>
           <h2>怎麼寫？</h2>
         </section>
@@ -52,9 +48,9 @@
           <blockquote>
             每個人都應該努力培養雅量。
           </blockquote>
-          <pre><code contenteditable>
-&lt;p&gt;每個人都應該努力培養&lt;strong&gt;雅量&lt;/strong&gt;。&lt;/p&gt;
-          </code></pre>
+          <script type="text/x-sample">
+            <p>每個人都應該努力培養<strong>雅量</strong>。</p>
+          </script>
         </section>
 
         <section id="tag-reference">
@@ -62,11 +58,11 @@
             <h2>
               標籤們
             </h2>
-          <pre><code contenteditable>
-&lt;p&gt;每個人都應該努力培養&lt;strong&gt;雅量&lt;/strong&gt;。&lt;/p&gt;
-          </code></pre>
-          <p>&lt;p&gt; 標出「段落」（paragraph）</p>
-          <p>&lt;strong&gt; 標出「重點」</p>
+            <script type="text/x-sample">
+              <p>每個人都應該努力培養<strong>雅量</strong>。</p>
+            </script>
+          <p><code>&lt;p&gt;</code> 標出「段落」（paragraph）</p>
+          <p><code>&lt;strong&gt;</code> 標出「重點」</p>
           </section>
 
           <section id="tag-reference2">
@@ -104,11 +100,14 @@
             <li>用 <code>&lt;br&gt;</code>在 inline element 裡頭換行</li>
             <li>只按 enter 是沒用的</li>
           </ul>
-          <pre><code contenteditable>
-本版嚴禁一行文&lt;br/&gt;
-第二行&lt;br/&gt;
-第三行
-          </code></pre>
+          <script type="text/x-sample">
+            本板嚴禁一行文<br>
+            第二行<br>
+            第三行
+            和這行是同行的。
+
+            幸會幸會。
+          </script>
         </section>
 
         <section>
@@ -116,24 +115,24 @@
             <h2>HTML Attributes</h2>
             <p>HTML 標籤可以有屬性，用空白隔開</p>
             <p>
-              <pre><code contenteditable>
-  &lt;a href="http://google.com" target="_blank"&gt;Google 首頁&lt;/a&gt;
-              </code></pre>
+              <script type="text/x-sample">
+                <a href="http://google.com" target="_blank">Google 首頁</a>
+              </script>
             </p>
             <p>
-              <pre><code contenteditable>
-  &lt;img src="https://www.google.com/images/srpr/logo3w.png"&gt;Google 首頁&lt;/a&gt;
-              </code></pre>
+              <script type="text/x-sample">
+                <img src="https://www.google.com/images/srpr/logo3w.png" alt="Google Logo">
+              </script>
             </p>
             <p>
-              <pre><code>
-  &lt;button type="button"&gt;我是按鈕&lt;/button&gt;
-              </code></pre>
+              <script type="text/x-sample">
+                <button type="button">我是按鈕</button>
+              </script>
             </p>
-          </section>
-          <section>
-            <h2>圖片</h2>
-            <p>相對路徑</p>
+            </section>
+            <section>
+              <h2>圖片</h2>
+              <p>相對路徑</p>
             <p>width, height</p>
           </section>
           <section>
@@ -149,13 +148,15 @@
               <li>HTML 標籤可以互相嵌套 (nesting)</li>
               <li>但不能隨便包</li>
             </ul>
-            <p><pre><code>
-&lt;h1&gt;
-  AAAAAA
-  &lt;h2&gt;
-  BBBBB
-&lt;/h1&gt;
-            </code></pre></p>
+            <script type="text/x-sample">
+              <h1>
+                AAAAAA
+                <h2>
+                BBBBB
+                </h2>
+                CCCC
+              </h1>
+            </script>
           </section>
 
           <section>
@@ -187,40 +188,40 @@
 
         <section>
           <h2>雅量部落格</h2>
-          <pre><code>
-&lt;div class="article"&gt;
-  &lt;div class="header"&gt;
-    &lt;h1&gt;雅量&lt;/h1&gt;
-    &lt;h2&gt;
-      &lt;span class="author"&gt;宋晶宜&lt;/span&gt; - &lt;span class="time"&gt;數十年前&lt;/span&gt;
-    &lt;/h2&gt;
-  &lt;/div&gt;
-  &lt;p&gt;朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：&lt;/p&gt;
-  &lt;p&gt;「啊，好像棋盤似的。」&lt;/p&gt;
-  &lt;p&gt;「我看倒有點像稿紙。」我說。&lt;/p&gt;
-  &lt;p&gt;「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。&lt;/p&gt;
-  &lt;p&gt;我們不禁哄堂大笑……&lt;/p&gt;
+          <script type="text/x-sample">
+            <div class="article">
+              <div class="header">
+                <h1>雅量</h1>
+                <h2>
+                  <span class="author">宋晶宜</span> - <span class="time">數十年前</span>
+                </h2>
+              </div>
+              <p>朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：</p>
+              <p>「啊，好像棋盤似的。」</p>
+              <p>「我看倒有點像稿紙。」我說。</p>
+              <p>「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。</p>
+              <p>我們不禁哄堂大笑……</p>
 
-  &lt;div class="link"&gt;&lt;a href="more"&gt;閱讀全文&lt;/a&gt;&lt;/div&gt;
-&lt;/div&gt;
-          </code></pre>
+              <div class="link"><a href="more">閱讀全文</a></div>
+            </div>
+          </script>
         </section>
 
         <section>
           <section>
             <h2>HTML 文件架構</h2>
-            <pre><code>
-&lt;!DOCTYPE HTML&gt;
-&lt;html lang="en-US"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;!-- 剛剛教的 HTML 標籤統統放這裡 --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-            </code></pre>
+            <script type="x-sample">
+              <!DOCTYPE HTML>
+              <html lang="en-US">
+              <head>
+                <meta charset="UTF-8">
+                <title></title>
+              </head>
+              <body>
+                <!-- 剛剛教的 HTML 標籤統統放這裡 -->
+              </body>
+              </html>
+            </script>
             <p>之前寫的東西統統放 body</p>
           </section>
           <section>
@@ -231,43 +232,43 @@
           <section>
             <h2>雅量部落格 (完整版)</h2>
 
-<pre><code contenteditable>
-&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;<em>人與人偶有摩擦部落格</em>&lt;/title&gt;
-  &lt;meta name="description" content="<em>人與人偶有摩擦，我們要努力培養雅量。</em>"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  <em>
-  &lt;div class="header"&gt;
-  &lt;h1&gt;雅量&lt;/h1&gt;
-  &lt;ul class="nav"&gt;
-    &lt;li&gt;&lt;a href="articles.html"&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="article"&gt;
-  &lt;div class="header"&gt;
-    &lt;h1&gt;雅量&lt;/h1&gt;
-    &lt;h2&gt;
-      &lt;span class="author"&gt;宋晶宜&lt;/span&gt; - &lt;span class="time"&gt;數十年前&lt;/span&gt;
-    &lt;/h2&gt;
-  &lt;/div&gt;
-  &lt;p&gt;朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：&lt;/p&gt;
-  &lt;p&gt;「啊，好像棋盤似的。」&lt;/p&gt;
-  &lt;p&gt;「我看倒有點像稿紙。」我說。&lt;/p&gt;
-  &lt;p&gt;「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。&lt;/p&gt;
-  &lt;p&gt;我們不禁哄堂大笑……&lt;/p&gt;
+            <script type="text/x-sample">
+              <!DOCTYPE HTML>
+              <html>
+              <head>
+                <meta charset="UTF-8">
+                <title>人與人偶有摩擦部落格</title>
+                <meta name="description" content="人與人偶有摩擦，我們要努力培養雅量。">
+              </head>
+              <body>
+                <div class="header">
+                <h1>雅量</h1>
+                <ul class="nav">
+                  <li><a href="articles.html"></a></li>
+                  <li><a href=""></a></li>
+                  <li><a href=""></a></li>
+                </ul>
+              </div>
+              <div class="article">
+                <div class="header">
+                  <h1>雅量</h1>
+                  <h2>
+                    <span class="author">宋晶宜</span> - <span class="time">數十年前</span>
+                  </h2>
+                </div>
+                <p>朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：</p>
+                <p>「啊，好像棋盤似的。」</p>
+                <p>「我看倒有點像稿紙。」我說。</p>
+                <p>「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。</p>
+                <p>我們不禁哄堂大笑……</p>
 
-  &lt;div class="link"&gt;&lt;a href="more"&gt;閱讀全文&lt;/a&gt;&lt;/div&gt;
-&lt;/div&gt;
-</em>
-&lt;/body&gt;
-&lt;/html&gt;
-            </code></pre>
+                <div class="link"><a href="more">閱讀全文</a></div>
+              </div>
+
+              </body>
+              </html>
+
+            </script>
           </section>
 
         </section>
@@ -378,7 +379,7 @@
 
         <section>
           <h2>Pretty Code</h2>
-          <pre><code contenteditable>
+          <script type="text/x-sample">
   var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined ||
           document.body.style['MozPerspective'] !== undefined ||
           document.body.style['perspective'] !== undefined;
@@ -400,7 +401,7 @@
   }
 
   linkify( 'a' );
-          </code></pre>
+          </script>
           <p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
         </section>
 

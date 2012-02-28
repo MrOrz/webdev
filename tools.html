@@ -41,7 +41,7 @@
           ZenEditor.bind(cm);
         },
         onChange: function(){
-          $result.text(cm.getCode().escape());
+          $result.text(cm.getCode().unescape());
         }
       });
   }());

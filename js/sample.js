@@ -10,9 +10,10 @@
       $updateBtnSrc = $('<button>&raquo;</button>'),
 
       updateIframe = function(iframe, $pre, wrapper){
-        var doc = iframe.contentDocument;
+        var doc = iframe.contentDocument,
+            height = $pre.height() || 200;
         doc.open(); doc.writeln( wrapper($pre.text()) ); doc.close();
-        $(iframe).height($pre.height());
+        $(iframe).height(height);
         // highligt the code
         hljs.highlightBlock($pre.find('code').get(0));
       };
@@ -23,6 +24,17 @@
   $.fn.sample = function(options){
     // 'this' should be <script> jQuery object
     //
+
+    // method invokation
+    if(typeof arguments[0] === 'string'){
+      var args = arguments;
+      this.each(function(){
+        var method = $(this).data('sample')[options];
+        method.apply(this, Array.prototype.slice.call(args,1));
+      });
+      return; // do not execute the init part below
+    }
+
     options = $.extend({
       wrapper: function(lines){ // default wrapper: no-op
         return lines;
@@ -45,9 +57,15 @@
       // removing indent & empty lines
       lines = $.map(lines, function(l){
         return l.substr(indent);
-      }).filter(function(l){
-        return l.length > 0;
       });
+
+      // remove leading & trailing empty lines
+      while(lines[0] === ''){
+        lines.shift();
+      }
+      while(lines[lines.length-1] === ''){
+        lines.pop();
+      }
 
       // join lines
       lines = lines.join('\n');
@@ -55,8 +73,10 @@
 
       // output stage
       //
-      // the container of all the elements
-      var $sampleContainer = $sampleContainerSrc.clone();
+      // the container of all the elements, and
+      // insert the container below the script tag.
+      var $sampleContainer = $sampleContainerSrc.clone()
+                                                .insertAfter(this);
 
       // append the code and append it to the container.
       var $code = $codeSrc.clone().text(lines),
@@ -76,8 +96,13 @@
         updateIframe(iframe, $pre, options.wrapper);
       });
 
-      // finally, insert the container below the script tag.
-      $sampleContainer.insertAfter(this);
+
+      // install methods to data('sample')
+      $(this).data('sample', {
+        update: function(){
+          updateIframe(iframe, $pre, options.wrapper);
+        }
+      });
     });
   }
 }(jQuery));

@@ -49,7 +49,7 @@
     transition: 'default', // default/cube/page/concave/linear(2d)
 
     update: function(indexh, indexv){
-      // update prev & next slide's sample code
+      // update sample code so that 'height' of iframe is correct
       $('section.present').not('.stack').find('script[type="text/x-sample"]').sample('update');
     }
   });

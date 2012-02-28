@@ -48,7 +48,9 @@ html {
     text-transform: uppercase;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
   h1 {
-    @include adjust-font-size-to(136px); }
+    @include adjust-font-size-to(200px);
+    @include padding-leader(.5);
+  }
   h2 {
     @include adjust-font-size-to(76px); }
   h3 {

@@ -3,7 +3,6 @@
 #reveal {
   section {
     &.html5 {
-      position: relative;
       overflow: hidden;
       &::after {
         content: '新標準';
@@ -17,11 +16,6 @@
         @include rotate(45deg);
       }
     }
-
-    &.title{
-      display: table-cell;
-      vertical-align: middle;
-    }
   }
   code em {
     display: inline-block;
@@ -31,4 +25,3 @@
     border-radius: 4px;
   }
 }
-

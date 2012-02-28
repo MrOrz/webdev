@@ -1,5 +1,4 @@
 #reveal section.html5 {
-  position: relative;
   overflow: hidden;
 }
 #reveal section.html5::after {

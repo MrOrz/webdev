@@ -271,21 +271,69 @@
                 .red{
                   color: red;
                 }
-                .blue{
+                .blue{ /* change .blue to div */
                   color: blue;
                 }
               </style>
               <div class="red blue">What color is this?</div>
             </script>
           </section>
+          <section>
+            <h2>CSS Specificity</h2>
+            <p>Specificity：Selector 精準與否</p>
+            <p><img src="images/css/specificity-calculationbase.png" alt="Specificity calculation"></p>
+            <p>Source: <a href="http://css-tricks.com/specifics-on-css-specificity/">CSS Tricks</a></p>
+            <p>用字典順序比較</p>
+          </section>
+          <section>
+            <h2>打架調解委員會</h2>
+            <script type="text/x-sample">
+              <style>
+                .red{
+                  color: red;
+                }
+                div{
+                  color: blue;
+                }
+              </style>
+              <div class="red blue">What color is this?</div>
+            </script>
+            <ul>
+              <li class="fragment"><code>color</code> 同時被 <code>.red</code> 和 <code>div</code> 這兩個 selector 定義了</li>
+              <li class="fragment">Specificity of <code>.red</code> : 0,0,1,0</li>
+              <li class="fragment">Specificity of <code>div</code> : 0,0,0,1</li>
+              <li class="fragment">0,0,1,0 > 0,0,0,1 故套用 <code>.red</code> 對 color 的定義</li>
+            </ul>
+          </section>
+          <section>
+            <h2>練習</h2>
+            <p><img src="images/css/cssspecificity-calc-1.png" alt=""></p>
+          </section>
+          <section>
+            <h2>練習</h2>
+            <p><img src="images/css/cssspecificity-calc-4.png" alt=""></p>
+          </section>
         </section>
 
-        <!--
-Speicificity ===
-prob statement
-calculation
-examples
+        <section class="chapter">
+          <h2>Debugging</h2>
+        </section>
 
+        <section>
+          <section>
+            <h2>CSS 看起來怪怪的嗎？</h2>
+
+            <ol>
+              <li class="fragment"><kbd>ctrl+shift+i</kbd> 永遠是好朋友</li>
+              <li class="fragment">在 <a href="http://jsfiddle.net" target="_blank">jsfiddle</a> 上面做測試，或拿去問人</li>
+            </ol>
+          </section>
+        </section>
+
+        <section>
+          <h1>未完待續</h1>
+        </section>
+        <!--
 box model ===
 margin, border, outline, padding
 上右下左、上 左右 下、上下 左右

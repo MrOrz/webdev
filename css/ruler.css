@@ -1,0 +1,34 @@
+#ruler {
+  background: rgba(153, 153, 153, 0.5);
+  border: 1px solid #999;
+  -moz-border-radius: 2;
+  -webkit-border-radius: 2;
+  -o-border-radius: 2;
+  -ms-border-radius: 2;
+  -khtml-border-radius: 2;
+  border-radius: 2;
+  z-index: 9999;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+  -moz-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-duration: 0.7s;
+  -webkit-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+}
+#ruler:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+#ruler .text {
+  color: #000;
+  font-size: 15px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+}

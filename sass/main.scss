@@ -45,7 +45,6 @@ html {
     color: #eee;
     @include adjust-leading-to(1.5);
     letter-spacing: 0.02em;
-    text-transform: uppercase;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
   h1 {
     @include adjust-font-size-to(200px);

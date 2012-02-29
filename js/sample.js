@@ -19,8 +19,12 @@
         }
         doc.open(); doc.writeln( wrapper($pre.text()) ); doc.close();
         $(iframe).height(height);
+
         // highligt the code
-        hljs.highlightBlock($pre.find('code').get(0));
+        var $code = $pre.find('code'), // get $code to get unhighlighted text
+            ret = hljs.highlightAuto($code.text());
+        $code.html(ret.value);
+        $code.addClass(ret.language)
 
         return iframe; // return the (possibly new) iframe
       };

@@ -35,21 +35,16 @@
               <article>
                 <header>
                   <h1>雅量</h1>
-                  <h2>
-                    <span class="author">宋晶宜</span> - <span class="time">數十年前</span>
-                  </h2>
+                  <div> <span class="author">宋晶宜</span> - <span class="time">數十年前</span> </div>
                 </header>
                 <p>朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：</p>
-                <p>「啊，好像棋盤似的。」</p>
-                <p>「我看倒有點像稿紙。」我說。</p>
-                <p>「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。</p>
-                <p>我們不禁哄堂大笑……</p>
+                <blockquote>「啊，好像棋盤似的。」</blockquote>
 
                 <footer>
+                  <a href="more">閱讀全文</a>
                   <div class="social-buttons">
                     <a href="like">讚</a> | <a href="plusone">+1</a>
                   </div>
-                  <a href="more">閱讀全文</a>
                 </footer>
               </article>
             </script>
@@ -285,7 +280,8 @@
               <form action="http://postecho.heroku.com/"
                enctype="multipart/form-data" method="post">
 
-                <input type="text" name="a">
+                <input type="text" name="a"
+                 placeholder="請輸入文字">
                 <input type="password" name="b">
                 <br>
 
@@ -349,6 +345,7 @@
             <h2>Class</h2>
             <p><code>class</code> <code>id</code></p>
             <p><code>title</code> <code>style</code></p>
+              <!-- TODO: introducing these common attr -->
           </section>
           <section>
             <h2>HTML Attributes</h2>
@@ -360,6 +357,7 @@
               <code>src</code><br>
               <code>width</code>, <code>height</code><br>
               <code>alt</code>
+              <!-- TODO: introducing these attr & location -->
             </p>
             <script type="text/x-sample">
               <a href="http://google.com" target="_blank">Google 首頁</a>
@@ -368,6 +366,7 @@
               <code>href</code>
               <code>target</code><br>
             </p>
+            <!-- TODO: introducing these attr -->
           </section>
         </section> <!-- HTML attributes -->
 
@@ -384,19 +383,40 @@
               第三行
               和這行是同行的。<br>
               <br>
-
+              <!-- 自以為是分隔線的註解 -->
               系              色望<br>
               系 色望
             </script>
             <p>用 <code>&lt;br&gt;</code> 換行</p>
-            <p><code>&amp;nbsp;</code>代表「空白」<a href="http://www.w3schools.com/tags/ref_entities.asp" target="_blank">character entity</a></p>
+            <p><code>&amp;nbsp;</code> 代表「空白」<a href="http://www.w3schools.com/tags/ref_entities.asp" target="_blank">character entity</a></p>
+            <p><code>&lt;-- --&gt;</code> 是多行註解</p>
           </section>
           <section>
-            <h2>Inline &amp; Block Elements</h2>
+            <h2>To 換 or not to 換</h2>
+            <script type="text/x-sample">
+              <h1>前出師表</h1>
+              <div>諸葛亮</div>
+              臣亮言：<blockquote>先帝創業未半，而<em>中道崩殂</em>。今天下三分，益州疲弊，此誠<strong>危急存亡之秋</strong>也。</blockquote>
+            </script>
             <ul>
-              <li>會換行的標籤是 block element</li>
-              <li>不會換行的標籤叫 inline element</li>
+              <li><code>&lt;em&gt;</code>、<code>&lt;strong&gt;</code> 可以和其他 element 在同一列</li>
+              <li><code>&lt;h1&gt;</code><code>&lt;div&gt;</code><code>&lt;blockquote&gt;</code> 會換行，自成一列</li>
             </ul>
+          </section>
+          <section>
+            <h2>Inline &amp; Block elements</h2>
+            <ul>
+              <li>不會換行的叫 inline element</li>
+              <li>會換行的是 block element</li>
+            </ul>
+            <script type="text/x-sample">
+              1<em>2</em>3<strong>4</strong>5<span>6</span>7
+              <input type="radio" name="" id="">8
+            </script>
+            <script type="text/x-sample">
+              <h1>1</h1>2<p>3</p>4<div>5</div>6<article>7</article>8
+
+            </script>
           </section>
         </section> <!-- Block & Inline & Whitespace -->
 
@@ -480,51 +500,57 @@
         <section>
           <section>
             <h2>雅量部落格</h2>
-            <script type="text/x-sample">
-              <div class="article">
-                <div class="header">
+            <script type="text/x-sample" class="small">
+              <article>
+                <header>
                   <h1>雅量</h1>
-                  <h2>
-                    <span class="author">宋晶宜</span> - <span class="time">數十年前</span>
-                  </h2>
-                </div>
-                <p>朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：</p>
-                <p>「啊，好像棋盤似的。」</p>
-                <p>「我看倒有點像稿紙。」我說。</p>
-                <p>「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。</p>
-                <p>我們不禁哄堂大笑……</p>
+                  <div>
+                    <span class="author">宋晶宜</span>
+                     - <span class="time">數十年前</span>
+                  </div>
+                </header>
 
-                <div class="link"><a href="more">閱讀全文</a></div>
-              </div>
+                <p>朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：</p>
+                <blockquote>「啊，好像棋盤似的。」</blockquote>
+
+                <footer>
+                  <a href="more">閱讀全文</a>
+                  <div class="social-buttons">
+                    <a href="like">讚</a> | <a href="plusone">+1</a>
+                  </div>
+                </footer>
+              </article>
             </script>
           </section>
           <section>
             <h2>HTML 文件架構</h2>
-            <script type="x-sample">
-              <!DOCTYPE HTML>
-              <html lang="en-US">
+            <script type="text/x-sample">
+              <html>
               <head>
                 <meta charset="UTF-8">
                 <title></title>
               </head>
               <body>
-                <!-- 剛剛教的 HTML 標籤統統放這裡 -->
+                <p>剛剛教的 HTML 標籤統統放這裡</p>
               </body>
               </html>
             </script>
-            <p>之前寫的東西統統放 body</p>
+            <p>之前寫的東西統統放 &lt;body&gt;</p>
           </section>
           <section>
             <h2>HTML 文件架構</h2>
-            <p>Head</p>
-            <p>title</p>
-            <p>meta</p>
+            <ul>
+              <li class="fragment"><code>&lt;head&gt;</code> 存放「不是網頁內文」的其他資訊。</li>
+              <li class="fragment"><code>&lt;title&gt;</code> 會顯示在瀏覽器分頁標題的主題。</li>
+              <li class="fragment"><code>&lt;meta&gt;</code> 放關於網頁的其他資訊，有 <code>name</code> 和 <code>content</code> 屬性</code>。</li>
+              <li class="fragment"><code>&lt;body&gt;</code> 放網頁內容。</li>
+              <li class="fragment"><code>&lt;html&gt;</code> 包住 <code>&lt;head&gt;</code> 和 <code>&lt;body&gt;</code>。</li>
+            </ul>
           </section>
           <section>
             <h2>雅量部落格 (完整版)</h2>
 
             <script type="text/x-sample" class="small">
-              <!DOCTYPE HTML>
               <html>
               <head>
                 <meta charset="UTF-8">
@@ -532,30 +558,24 @@
                 <meta name="description" content="人與人偶有摩擦，我們要努力培養雅量。">
               </head>
               <body>
-                <div class="header">
-                <h1>雅量</h1>
-                <ul class="nav">
-                  <li><a href="articles.html"></a></li>
-                  <li><a href=""></a></li>
-                  <li><a href=""></a></li>
-                </ul>
-              </div>
-              <div class="article">
-                <div class="header">
-                  <h1>雅量</h1>
-                  <h2>
-                    <span class="author">宋晶宜</span> - <span class="time">數十年前</span>
-                  </h2>
-                </div>
-                <p>朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：</p>
-                <p>「啊，好像棋盤似的。」</p>
-                <p>「我看倒有點像稿紙。」我說。</p>
-                <p>「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。</p>
-                <p>我們不禁哄堂大笑……</p>
-
-                <div class="link"><a href="more">閱讀全文</a></div>
-              </div>
-
+                <header>
+                  <h1>人與人偶有摩擦部落格</h1>
+                  <nav>
+                    <ul>
+                      <li><a href="aboutme.html">關於我</a></li>
+                      <li><a href="login.html">登入</a></li>
+                    </ul>
+                  </nav>
+                </header>
+                <article>
+                  <!-- 中略 -->
+                  Blahblahblah
+                  <!-- 中略 -->
+                </article>
+                <!-- 可能有數篇文章 -->
+                <footer>
+                  <p>All Rights Reserved.</p>
+                </footer>
               </body>
               </html>
 

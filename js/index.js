@@ -24,7 +24,7 @@
     location.search = ''; // clear search
   }
 
-  $('script[type="text/x-sample"]').sample();
+
   // initialize Reveal
   Reveal.initialize({
     // Display controls in the bottom right corner

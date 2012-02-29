@@ -30,27 +30,257 @@
           </ul>
         </section>
         <section>
+          <section>
+            <h2>長這樣</h2>
+            <script type="text/x-sample" class="nopreview">
+              html, body {
+                position: relative;
+                padding: 0; margin: 0;
+                overflow: hidden;
+                font-family: '文泉驛微米黑', 'LiHei Pro', '微軟正黑體';
+                font-weight: 200;
+                letter-spacing: -0.02em;
+                color: #eee; width: 100%; height: 100%;
+                min-height: 400px;
+              }
 
+              table {
+                border-collapse: collapse;
+                border-spacing: 0;
+              }
+            </script>
+          </section>
+          <section>
+            <h2>CSS Syntax</h2>
+            <p>
+              <img src="images/css/selector.gif" alt="Selection and declaration">
+            </p>
+            <p><a href="http://w3schools.com/css/css_syntax.asp">Source: W3Schools</a></p>
 
+          </section>
+          <section>
+            <h2>怎麼加進 HTML</h2>
+            <p>在 <code>&lt;head&gt;</code> 中加入</p>
+            <script type="text/x-sample" class="nopreview">
+              <link rel="stylesheet" type="text/css" href="path/to/style.css">
+            </script>
+            <p>或直接把 CSS 寫在 <code>&lt;style&gt;</code> 裡；</p>
+              <script type="text/x-sample">
+                <style type="text/css">
+                  div {
+                    color: blue;
+                  }
+                </style>
+                <div>I am div!</div>
+              </script>
+            <p><code>&lt;style&gt;</code> 可放在 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code> 均可。</p>
 
+          </section>
+
+          <section>
+            <h2>CSS Reset</h2>
+            <script type="text/x-sample" class="small">
+              <html>
+              <head>
+                <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.4.1/build/cssreset/cssreset-min.css">
+              </head>
+              <body>
+                <h1>民意調查</h1>
+                <form action="http://postecho.heroku.com/" method="post">
+                  <p>你覺得這衣料看起來像？</p>
+                  <ul>
+                    <li>
+                      <input type="checkbox" name="like[]"
+                       id="board" value="盤">
+                      <label for="board">棋盤</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="like[]"
+                       id="paper" value="紙">
+                      <label for="paper">稿紙</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="like[]"
+                       id="cake" value="糕">
+                      <label for="cake">綠豆糕</label>
+                    </li>
+                  </ul>
+                  <input type="submit" value="送出">
+                </form>
+              </body>
+              </html>
+            </script>
+            <p>覆蓋掉瀏覽器預設的 style。</p>
+          </section>
+        </section> <!-- Introduction -->
+
+        <section id="attribute" class="chapter">
+          <h2>CSS Selectors</h2>
         </section>
+        <section>
+          <section>
+            <h2>Tag, .Class, #Id</h2>
+            <script type="text/x-sample">
+              <style type="text/css">
+                div {
+                  color: blue;
+                }
+                .b{
+                  font-weight: bold;
+                }
+                #u{
+                  text-decoration: underline;
+                }
+                div.b{ /* 具有 b 這個 class 的 div */
+                  font-size: small;
+                }
+              </style>
+              <!-- -->
+              <div>I am div!</div>
+              <div class="b">I am a bold div!</div>
+              <p class="b">I am also bold</p>
+              <span id="u" class="b">I am a bold span with underline</span>
+            </script>
+          </section>
+          <section>
+            <h2>Descendant &amp; Child Selector</h2>
+            <script type="text/x-sample">
+              <style type="text/css">
+                div{ padding: 3px; }
+                .root div{ /* descendents of .root */
+                  background: rgba(0,100,0,0.2);
+                }
+                .root>div{ /* children of .root */
+                  border: 1px solid green;
+                }
+              </style>
+              <!-- -->
+              <div class="root">
+                Parent div has
+                <div>Child div 1</div> and
+                <div>Child div 2, which has some
+                  <div>Young kids</div>
+                </div>
+              </div>
+
+            </script>
+          </section>
+          <section>
+            <h2>Attribute Selector</h2>
+            <script type="text/x-sample">
+              <style type="text/css">
+                input[type=text]{
+                  border: 1px solid blue;
+                }
+                [name^=txt]{
+                  /* 'name' starting with 'txt' */
+                  background: pink;
+                }
+              </style>
+              <!-- -->
+              Login: <input type="text" name="txtName"><br>
+              Password: <input type="password" name="txtPassword"><br>
+              <input type="checkbox" name="optCheckbox">Remember Me
+            </script>
+          </section>
+          <section>
+            <h2>Pseudo-Class</h2>
+            <script type="text/x-sample">
+              <style type="text/css">
+                a:link{
+                  text-decoration: none;
+                  /* remove underline */
+                  color: blue;
+                }
+                a:visited{
+                  color: blue;
+                }
+                a:hover{
+                  text-decoration: underline;
+                  color: red;
+                }
+                a:active{
+                  color: yellow;
+                }
+              </style>
+              <!-- -->
+              <a href="html.html">HTML tutorial</a>
+            </script>
+            <p>避免定義相互覆蓋的順序：<em>L</em>o<em>V</em>e <em>HA</em>te</p>
+          </section>
+          <section>
+            <h2>Pseudo-Element</h2>
+            <script type="text/x-sample">
+              <style type="text/css">
+                blockquote::before{
+                  content: open-quote;
+                }
+                blockquote::after{
+                  content: close-quote;
+                }
+              </style>
+              <!-- -->
+              <blockquote>先帝創業未半</blockquote>
+            </script>
+            <p><code>::before</code> 像是一個 <code>&lt;span&gt;</code> 加在 start tag 之後</p>
+            <p><code>::after</code> 像是一個 <code>&lt;span&gt;</code> 加在 end tag 之前</p>
+          </section>
+        </section>
+
+        <section class="chapter">
+          <h2>Simple Styles</h2>
+        </section>
+
+        <section>
+          <section>
+            <h2>background</h2>
+            <script type="text/x-sample">
+              <style type="text/css">
+                div{
+                  width: 80px; height: 70px;
+                  background: url(images/css/selector.gif) left center no-repeat;
+                }
+              </style>
+              <div></div>
+            </script>
+          </section>
+          <section>
+            <h2>fonts</h2>
+            <script type="text/x-sample">
+              <style>
+                div{
+                  font: 16px/1.5 monospace;
+                  text-decoration: underline;
+                }
+              </style>
+              <div>Monospaced Fonts</div> and normal fonts
+            </script>
+          </section>
+        </section>
+
+
+        <section class="chapter">
+          <h2>CSS Specificity</h2>
+        </section>
+
+        <section>
+          <section>
+            <h2>兩個定義打架</h2>
+            <script type="text/x-sample">
+              <style>
+                .red{
+                  color: red;
+                }
+                .blue{
+                  color: blue;
+                }
+              </style>
+              <div class="red blue">What color is this?</div>
+            </script>
+          </section>
+        </section>
+
         <!--
-
-INTRO ===
-長這樣
-語法 (selector + rule)
-怎麼加進 HTML
-CSS Reset
-
-Selectors ===
-Selector
-selector operator
-comments
-
-simple styles ===
-color, background
-font-family, font-size, font-weight, font-style
-
 Speicificity ===
 prob statement
 calculation
@@ -93,9 +323,12 @@ jsfiddle.net
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
     <script src="js/reveal.js"></script>
     <script src="lib/highlight.js"></script>
-    <script type="text/javascript" src="js/sample.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/ruler.js"></script>
+    <script type="text/javascript" src="js/sample.js"></script>
+    <script type="text/javascript">
+      $('script[type="text/x-sample"]').sample();
+    </script>
+    <script type="text/javascript" src="js/index.js"></script>
 
   </body>
 </html>

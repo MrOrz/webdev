@@ -10,12 +10,19 @@
       $updateBtnSrc = $('<button>&raquo;</button>'),
 
       updateIframe = function(iframe, $pre, wrapper){
-        var doc = iframe.contentDocument,
+        var doc = iframe.contentDocument, newiframe,
             height = $pre.height() || 200;
+        if(!doc){ // if cannot get iframe content, create a new one
+          newiframe = $('<iframe></iframe>').insertBefore(iframe).get(0);
+          $(iframe).remove();
+          iframe = newiframe; doc = iframe.contentDocument;
+        }
         doc.open(); doc.writeln( wrapper($pre.text()) ); doc.close();
         $(iframe).height(height);
         // highligt the code
         hljs.highlightBlock($pre.find('code').get(0));
+
+        return iframe; // return the (possibly new) iframe
       };
 
   // example usage:
@@ -76,6 +83,7 @@
       // the container of all the elements, and
       // insert the container below the script tag.
       var $sampleContainer = $sampleContainerSrc.clone()
+                                                .addClass(this.className)
                                                 .insertAfter(this);
 
       // append the code and append it to the container.
@@ -93,14 +101,14 @@
       var $updateBtn = $updateBtnSrc.clone().insertAfter($pre);
       $updateBtn.click(function(){
         // updating iframe and highlight the $pre again
-        updateIframe(iframe, $pre, options.wrapper);
+        iframe = updateIframe(iframe, $pre, options.wrapper);
       });
 
 
       // install methods to data('sample')
       $(this).data('sample', {
         update: function(){
-          updateIframe(iframe, $pre, options.wrapper);
+          iframe = updateIframe(iframe, $pre, options.wrapper);
         }
       });
     });

@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>revealWebDev</title>
+    <title>學 HTML</title>
 
     <meta name="description" content="不囉唆學 HTML。以 reveal.js 製作的 HTML / CSS / JS 投影片。">
     <meta name="author" content="MrOrz">
@@ -25,121 +25,348 @@
           <p>MrOrz</p>
         </section>
 
-        <section>
-          <h2>長這樣。 </h2>
-          <script type="text/x-sample">
-            <html>
-            <head>
-              <title>XD</title>
-            </head>
-            <body>
-              <h1>YOooo</h1>
-              <p>Hello world!</p>
-            </body>
-            </html>
-          </script>
-        </section>
-
-        <section>
-          <h2>怎麼寫？</h2>
-        </section>
-
-        <section>
-          <h2>替文字標上「語意」</h2>
-          <blockquote>
-            每個人都應該努力培養雅量。
-          </blockquote>
-          <script type="text/x-sample">
-            <p>每個人都應該努力培養<strong>雅量</strong>。</p>
-          </script>
-        </section>
-
-        <section id="tag-reference">
+        <section id="introduction">
           <section>
-            <h2>
-              標籤們
-            </h2>
+            <h2>長這樣。 </h2>
+            <script type="text/x-sample" class="small">
+              <article>
+                <header>
+                  <h1>雅量</h1>
+                  <h2>
+                    <span class="author">宋晶宜</span> - <span class="time">數十年前</span>
+                  </h2>
+                </header>
+                <p>朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：</p>
+                <p>「啊，好像棋盤似的。」</p>
+                <p>「我看倒有點像稿紙。」我說。</p>
+                <p>「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。</p>
+                <p>我們不禁哄堂大笑……</p>
+
+                <footer>
+                  <div class="social-buttons">
+                    <a href="like">讚</a> | <a href="plusone">+1</a>
+                  </div>
+                  <a href="more">閱讀全文</a>
+                </footer>
+              </article>
+            </script>
+          </section>
+          <section>
+            <h2>用啥寫</h2>
+            <div class="img-board" style="height: 200px;">
+              <img src="" alt="NotePad" class="fragment">
+              <img src="" alt="NotePad++" class="fragment">
+              <img src="" alt="Vim" class="fragment">
+              <img src="" alt="SublimeText" class="fragment">
+            </div>
+            <p class="fragment">任何文字編輯器</p>
+          </section>
+          <section>
+            <h2>怎麼開</h2>
+            <div class="img-board" style="height: 200px;">
+              <img class="fragment" src="" alt="html file in file browser">
+              <img class="fragment" src="" alt="browser opens">
+            </div>
+          </section>
+          <section>
+            <h2>給別人看</h2>
+            <ul>
+              <li class="fragment"><code>file://......只有自己這台電腦能看得到</code></li>
+              <li class="fragment"><a href="http://oper.cc.ntu.edu.tw/docs/student_homepage.html" target="_blank">臺大師生個人網頁空間</a></li>
+              <li class="fragment">Dropbox Public Folder</li>
+            </ul>
+          </section>
+        </section> <!-- Introduction -->
+
+        <section id="tag-concept" class="chapter">
+          <h2>標籤概念</h2>
+        </section>
+
+        <section>
+
+          <section>
+            <h2>HT<em>ML</em></h2>
+            <p>Markup Language</p>
+            <p>Markup: 標籤</p>
+            <!-- TODO: L-folder -->
+          </section>
+
+          <section>
+            <h2>替文字標上「語意」</h2>
+            <blockquote>
+              每個人都應該努力培養雅量。
+            </blockquote>
             <script type="text/x-sample">
               <p>每個人都應該努力培養<strong>雅量</strong>。</p>
             </script>
-          <p><code>&lt;p&gt;</code> 標出「段落」（paragraph）</p>
-          <p><code>&lt;strong&gt;</code> 標出「重點」</p>
+            <p><code>&lt;p&gt;</code> 標出「段落」</a></p>
+            <p><code>&lt;strong&gt;</code> 標出「重點」</p>
           </section>
 
-          <section id="tag-reference2">
-            <h2>有語意的標籤</h2>
-            <p>p, h1~h6, ul, ol, li</p>
-            <p>strong, em</p>
-            <p>img, a</p>
+          <section>
+            <h2>有些標籤有特異功能</h2>
+            <script type="text/x-sample">
+              <img src="http://www.google.com.tw/logos/2012/rossini12-hp.jpg" alt="羅西尼220歲誕辰">
+
+              <a href="http://www.google.com" target="_blank">Google 首頁</a>
+
+              <input type="checkbox" name="tos" id="chk-tos">
+              <label for="chk-tos">我已詳閱並同意使用者條款</label>
+            </script>
           </section>
 
-          <section class="html5">
-            <h2>HTML5 語意標籤</h2>
-            <p>section, article, figure, nav, aside</p>
+          <section>
+            <h2>細查其紋理</h2>
+            <!-- TODO: make tags more obvious -->
+            <div class="img-board">
+              <img src="images/html/wiki.png" alt="Wikipedia" width="900" style="position: relative; border: 0; margin: 0;">
+              <div class="fragment">
+                <div class="box" style="left: 0; top: 0; bottom: 0; width: 140px; border-color: rgba(255,0,0,.5); color: red;" data-name="div"></div>
+                <div class="box" style="right: 0; top: 0; bottom: 0; width: 750px; border-color: rgba(0,0,255,.5); color: blue;" data-name="div"></div>
+              </div>
+
+              <div class="fragment">
+                <div class="box" style="left: 23px;top: 62px;width: 90px; height: 180px; color: green; border-color: rgba(0,255,0,.5);" data-name="ul"></div>
+                <div class="box" style="top: 20px; height: 110px; left: 160px; width: 430px; color: green; border-color: rgba(0,255,0,.5);" data-name="p"></div>
+              </div>
+            </div>
+            <!-- 平靜如水的情感翻起滔天巨浪來 -->
           </section>
 
+        </section> <!-- Tag Concept -->
+
+        <section id="tag-reference" class="chapter">
+          <h2>標籤大觀</h2>
+          <p><a href="http://www.w3schools.com/tags/default.asp" target="_blank">w3schools Tag List</a></p>
+        </section>
+
+        <section>
+
+          <section>
+            <h2>標籤和語意</h2>
+            <script type="text/x-sample">
+              <h1>雅量</h1>
+              <h2>
+                <span class="author">宋晶宜</span> - <span class="time">數十年前</span>
+              </h2>
+              <p>人總會去尋求自己喜歡的事物，每個人的看法或觀點不同，並沒有什麼關係，重要的是──人與人之間，應該有<em>彼此容忍</em>和<em>尊重對方</em>的看法與觀點的<strong>雅量</strong>。</p>
+            </script>
+            <p>
+              <code>&lt;h1&gt;</code>~<code>&lt;h6&gt;</code>：標題。<br>
+              <code>&lt;p&gt;</code>：段落。<br>
+              <code>&lt;strong&gt;</code>：重點；
+              <code>&lt;em&gt;</code>：強調。
+            </p>
+          </section>
+
+          <section>
+            <h2>標籤和語意</h2>
+            <script type="text/x-sample" class="small">
+              <p>你覺得這衣料看起來像？</p>
+              <ol>
+                 <li>棋盤</li>
+                 <li>稿紙</li>
+                 <li>綠豆糕</li>
+              </ol>
+
+              <hr>
+
+              <dl>
+                 <dt>先帝</dt>
+                 <dd>指蜀昭烈帝劉備。</dd>
+                 <dt>崩殂</dt>
+                 <dd>天子之死曰「崩」；「殂」，也是死的意思。</dd>
+              </dl>
+            </script>
+            <p>
+              <code>&lt;hr&gt;</code>：分隔線。<br>
+              <code>&lt;ul&gt;</code>：有序/無序列表；<code>&lt;li&gt;</code>：列表的項目。<br>
+              <code>&lt;dl&gt;</code>：定義列表；
+              <code>&lt;dt&gt;</code>：被定義的項目；
+              <code>&lt;dd&gt;</code>：定義。<br>
+            </p>
+          </section>
+
+          <section>
+            <h2>表格</h2>
+            <script type="text/x-sample" class="small">
+              <table border="1">
+                <tr>
+                  <th rowspan="2" colspan="2">囚犯兩難</th>
+                  <th colspan="2">B 的選擇</th>
+                </tr>
+                <tr>
+                  <th>沉默</th> <th>坦承</th>
+                </tr>
+                <tr>
+                  <th rowspan="2">A 的選擇</th>
+                  <th>沉默</th>
+                  <td>各坐牢 1 個月</td>
+                  <td>A 坐牢 1 年<br>B 釋放</td>
+                </tr>
+                <tr>
+                  <th>坦承</th>
+                  <td>A 釋放<br>B 坐牢 1 年</td>
+                  <td>各坐牢 3 個月</td>
+                </tr>
+              </table>
+            </script>
+            <p>加上 <code style="border-radius: 3px; border: 1px solid #666;"> style="background: pink;"</code> 著色</p>
+          </section>
+
+          <section>
+            <h2>標籤神秘力量</h2>
+            <script type="text/x-sample">
+              <img src="http://www.google.com.tw/logos/2012/rossini12-hp.jpg" alt="羅西尼220歲誕辰">
+
+              <a href="http://www.google.com" target="_blank">Google 首頁</a> | <a href="css.html">CSS Tutorial</a>
+            </script>
+            <p><code>&lt;img&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;iframe&gt;</code></p>
+          </section>
+
+          <section>
+            <h2>表單</h2>
+            <!-- TODO: Echoer -->
+            <script type="text/x-sample" class="small">
+              <h1>民意調查</h1>
+              <form action="http://postecho.heroku.com/" method="post">
+                <p>
+                  <label for="what">你想要努力培養什麼呢？</label>
+                  <input type="text" name="w" id="what">
+                </p>
+                <p>你覺得這衣料看起來像？</p>
+                <ul>
+                  <li>
+                    <input type="checkbox" name="like[]"
+                     id="board" value="盤">
+                    <label for="board">棋盤</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="like[]"
+                     id="paper" value="紙">
+                    <label for="paper">稿紙</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="like[]"
+                     id="cake" value="糕">
+                    <label for="cake">綠豆糕</label>
+                  </li>
+                </ul>
+                <input type="submit" value="送出">
+              </form>
+            </script>
+          </section>
+          <section>
+            <h2>表單</h2>
+            <script type="text/x-sample" class="small">
+              <form action="http://postecho.heroku.com/"
+               enctype="multipart/form-data" method="post">
+
+                <input type="text" name="a">
+                <input type="password" name="b">
+                <br>
+
+                <input type="checkbox" name="c[]" value="c0">
+                <input type="checkbox" name="c[]" value="c1">
+                <input type="radio" name="d" value="d0">
+                <input type="radio" name="d" value="d1" id="radio-1">
+                <label for="radio-1">LABEL</label>
+                <br>
+
+                <textarea name="e" cols="30"
+                 rows="5"></textarea>
+                <input type="file" name="f">
+                <input type="submit" value="上傳">
+
+              </form>
+            </script>
+            <p>使用 <code>&lt;input type="file"&gt;</code> 請在 <code>&lt;form&gt;</code> 加入 <code>enctype="multipart/form-data"</code></p>
+          </section>
           <section>
             <h2>無語意標籤</h2>
             <ul>
               <li>不知道要用什麼包</li>
               <li>但還是想包在一起</li>
               <li><code>&lt;div&gt;, &lt;span&gt;</code></li>
-              <li>常常搭配 CSS 套樣式、當做 javascript操作對象。</li>
+              <li>常常搭配 CSS 套樣式、當做 javascript 操作對象。</li>
+              <!-- TODO: example! -->
             </ul>
           </section>
+
+          <section class="html5">
+            <h2>HTML5 語意標籤</h2>
+            <p><code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code></p>
+            <!-- TODO: wiki demo -->
+          </section>
+
           <section>
-            <h2>背不起來</h2>
+            <h2>欲知詳情</h2>
             <p><a href="http://www.w3schools.com/tags/default.asp" target="_blank">W3School Tag List</a></p>
           </section>
+        </section> <!-- Tag Reference -->
+
+        <section id="attribute" class="chapter">
+          <h2>屬性</h2>
         </section>
 
         <section>
-          <h2>換行</h2>
-          <ul>
-            <li>會換行的標籤是 block element</li>
-            <li>不會換行的標籤叫 inline element</li>
-            <li>用 <code>&lt;br&gt;</code>在 inline element 裡頭換行</li>
-            <li>只按 enter 是沒用的</li>
-          </ul>
-          <script type="text/x-sample">
-            本板嚴禁一行文<br>
-            第二行<br>
-            第三行
-            和這行是同行的。
-
-            幸會幸會。
-          </script>
-        </section>
-
-        <section>
+          <section>
+            <h2>Class</h2>
+            <p><code>class</code> <code>id</code></p>
+            <p><code>title</code> <code>style</code></p>
+          </section>
           <section>
             <h2>HTML Attributes</h2>
             <p>HTML 標籤可以有屬性，用空白隔開</p>
+            <script type="text/x-sample">
+              <img src="https://www.google.com/images/srpr/logo3w.png" alt="Google Logo">
+            </script>
             <p>
-              <script type="text/x-sample">
-                <a href="http://google.com" target="_blank">Google 首頁</a>
-              </script>
+              <code>src</code><br>
+              <code>width</code>, <code>height</code><br>
+              <code>alt</code>
             </p>
+            <script type="text/x-sample">
+              <a href="http://google.com" target="_blank">Google 首頁</a>
+            </script>
             <p>
-              <script type="text/x-sample">
-                <img src="https://www.google.com/images/srpr/logo3w.png" alt="Google Logo">
-              </script>
+              <code>href</code>
+              <code>target</code><br>
             </p>
-            <p>
-              <script type="text/x-sample">
-                <button type="button">我是按鈕</button>
-              </script>
-            </p>
-            </section>
-            <section>
-              <h2>圖片</h2>
-              <p>相對路徑</p>
-            <p>width, height</p>
+          </section>
+        </section> <!-- HTML attributes -->
+
+        <section id="block" class="chapter">
+          <h2>斷行與空白</h2>
+        </section>
+
+        <section>
+          <section>
+            <h2>換行 or not 換行</h2>
+            <script type="text/x-sample">
+              本板嚴禁一行文<br>
+              第二行<br>
+              第三行
+              和這行是同行的。<br>
+              <br>
+
+              系              色望<br>
+              系 色望
+            </script>
+            <p>用 <code>&lt;br&gt;</code> 換行</p>
+            <p><code>&amp;nbsp;</code>代表「空白」<a href="http://www.w3schools.com/tags/ref_entities.asp" target="_blank">character entity</a></p>
           </section>
           <section>
-            <h2>連結</h2>
-            <p>href, target</p>
+            <h2></h2>
+            <ul>
+              <li>會換行的標籤是 block element</li>
+              <li>不會換行的標籤叫 inline element</li>
+            </ul>
           </section>
+        </section> <!-- Block & Inline & Whitespace -->
+
+        <section id="nesting" class="chapter">
+          <h2>巢狀標籤</h2>
         </section>
 
         <section>
@@ -185,6 +412,10 @@
             於情不堪，於理不合，於法難容。</p>
           </section>
 
+        </section> <!-- Nesting of tags -->
+
+        <section id="layout" class="chapter">
+          <h2>頁面架構</h2>
         </section>
 
         <section>
@@ -206,6 +437,10 @@
               <div class="link"><a href="more">閱讀全文</a></div>
             </div>
           </script>
+        </section> <!-- Layout of whole page -->
+
+        <section id="browsers" class="chapter">
+          <h2>瀏覽器們</h2>
         </section>
 
         <section>
@@ -233,7 +468,7 @@
           <section>
             <h2>雅量部落格 (完整版)</h2>
 
-            <script type="text/x-sample">
+            <script type="text/x-sample" class="small">
               <!DOCTYPE HTML>
               <html>
               <head>
@@ -272,7 +507,7 @@
             </script>
           </section>
 
-        </section>
+        </section> <!-- Browser issues -->
 
         <!--   -->
         <section>

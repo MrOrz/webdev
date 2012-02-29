@@ -16,6 +16,22 @@
         @include rotate(45deg);
       }
     }
+    &.chapter{
+      h2{
+        @include adjust-font-size-to(120px);
+        position: relative;
+        margin-top: 160px;
+        margin-bottom: 180px; // space for arrows
+      }
+      h2::after{
+        position: absolute;
+        content: '➫';
+        width: 100% ;
+        left: 0;
+        top: 100%;
+        font-size: 200px;
+      }
+    }
   }
   code {
     font-family: "Consolas", "Lucida Console", monospace;

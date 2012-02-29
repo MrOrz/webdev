@@ -1,10 +1,98 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-<body>
-  <!--http://css-tricks.com/specifics-on-css-specificity/ -->
-</body>
+<!doctype html>
+<html lang="zh_TW">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>學 CSS</title>
+
+    <meta name="description" content="不囉唆學 CSS。以 reveal.js 製作的 HTML / CSS / JS 投影片。">
+    <meta name="author" content="MrOrz">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/sample.css">
+
+    <link rel="stylesheet" href="lib/zenburn.css">
+
+  </head>
+
+  <body>
+    <div id="reveal">
+      <div class="slides">
+        <section>
+          <h1>CSS</h1>
+          <ul class="nav">
+            <li><a href="html.html">HTML</a></li>
+            <li>Javascript</li>
+          </ul>
+        </section>
+        <section>
+          
+
+
+        </section>
+        <!--
+
+INTRO ===
+長這樣
+語法 (selector + rule)
+怎麼加進 HTML
+CSS Reset
+
+Selectors ===
+Selector
+selector operator
+comments
+
+simple styles ===
+color, background
+font-family, font-size, font-weight, font-style
+
+Speicificity ===
+prob statement
+calculation
+examples
+
+box model ===
+margin, border, outline, padding
+上右下左、上 左右 下、上下 左右
+margin 注意事項: collapse margin, 會頂開上面
+margin: 0 auto;
+display: switch back and forth from 'block'
+
+
+positioning ===
+position
+parent
+z-index
+
+Debugging ===
+inspector
+jsfiddle.net
+
+        -->
+      </div>
+
+      <!-- The navigational controls UI -->
+      <aside class="controls">
+        <a class="left" href="#">&#x25C4;</a>
+        <a class="right" href="#">&#x25BA;</a>
+        <a class="up" href="#">&#x25B2;</a>
+        <a class="down" href="#">&#x25BC;</a>
+      </aside>
+
+      <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+      <div class="progress"><span></span></div>
+
+    </div>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="lib/highlight.js"></script>
+
+    <script type="text/javascript" src="js/sample.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+  </body>
 </html>

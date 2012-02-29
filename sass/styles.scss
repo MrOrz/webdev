@@ -1,6 +1,15 @@
 @import 'common';
 
 #reveal {
+  .nav li{
+    @include inline-block;
+    padding: 0 1em;
+    border-right: 1px dotted #ccc;
+    @include text-shadow(0 -1px 2px rgba(#000, .6));
+    &:last-child{
+      border: 0;
+    }
+  }
   section {
     &.html5 {
       overflow: hidden;
@@ -41,8 +50,15 @@
     color: inherit;
   }
   .sample-container.small pre{
-    font-size: 10px;
+    font-size: 11px;
     line-height: 16px;
+  }
+  .sample-container.nopreview{
+    button, .iframe{display: none;}
+    pre{
+      width: 90%;
+      margin: 0 auto;
+    }
   }
   .img-board{ /* div that puts images freely */
     position: relative;

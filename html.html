@@ -51,27 +51,25 @@
           </section>
           <section>
             <h2>用啥寫</h2>
-            <div class="img-board" style="height: 200px;">
-              <!-- TODO: finish these icons -->
-              <img src="" alt="NotePad" class="fragment">
-              <img src="" alt="NotePad++" class="fragment">
-              <img src="" alt="Vim" class="fragment">
-              <img src="" alt="SublimeText" class="fragment">
+            <div class="img-board" style="height: 450px;">
+              <img width="200" src="images/html/notepad.png" alt="NotePad" class="fragment" style="left: 246px; top: 0;">
+              <img width="200" src="images/html/np++.png" alt="NotePad++" class="fragment" style="left: 450px; top: 0;">
+              <img width="200" src="images/html/vim.png" alt="Vim" class="fragment" style="left: 246px; top: 204px;">
+              <img width="200" src="images/html/st2.png" alt="SublimeText" class="fragment"  style="left: 450px; top: 204px;">
             </div>
             <p class="fragment">任何文字編輯器</p>
           </section>
           <section>
             <h2>怎麼開</h2>
             <div class="img-board" style="height: 200px;">
-              <!-- TODO: finish these icons -->
-              <img class="fragment" src="" alt="html file in file browser">
-              <img class="fragment" src="" alt="browser opens">
+              <img width="500" style="margin-left: -250px;" class="fragment" src="images/html/browse01.png" alt="html file in file browser">
+              <img width="500" style="margin-left: -250px;" class="fragment" src="images/html/browse02.png" alt="browser opens">
             </div>
           </section>
           <section>
             <h2>給別人看</h2>
             <ul>
-              <li class="fragment"><code>file://......只有自己這台電腦能看得到</code></li>
+              <li><code>file://......</code>URL 只有自己這台電腦能看得到</li>
               <li class="fragment"><a href="http://oper.cc.ntu.edu.tw/docs/student_homepage.html" target="_blank">臺大師生個人網頁空間</a></li>
               <li class="fragment"><a href="http://db.tt/yYMBZpN" target="_blank">Dropbox</a> Public Folder</li>
             </ul>
@@ -133,7 +131,6 @@
 
           <section>
             <h2>細查其紋理</h2>
-            <!-- TODO: make tags more obvious -->
             <div class="img-board">
               <img src="images/html/wiki.png" alt="Wikipedia" width="900" style="position: relative; border: 0; margin: 0;">
               <div class="fragment">
@@ -244,7 +241,6 @@
 
           <section>
             <h2>表單</h2>
-            <!-- TODO: Echoer -->
             <script type="text/x-sample" class="small">
               <h1>民意調查</h1>
               <form action="http://postecho.heroku.com/" method="post">
@@ -307,7 +303,6 @@
               <li>不知道要用什麼包但還是想包在一起</li>
               <li><code>&lt;div&gt;, &lt;span&gt;</code></li>
               <li>常常搭配 CSS 套樣式、當做 javascript 操作對象。</li>
-              <!-- TODO: example! -->
             </ul>
 
             <script type="text/x-sample">
@@ -326,8 +321,19 @@
 
           <section class="html5">
             <h2>HTML5 語意標籤</h2>
-            <p><code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code></p>
-            <!-- TODO: wiki demo -->
+            <p>
+              <code>&lt;section&gt;</code>：章節 / 小節 <br>
+              <code>&lt;article&gt;</code>：一篇文章<br>
+              <code>&lt;section&gt;</code> 可以包 <code>&lt;article&gt;</code>，
+              <code>&lt;article&gt;</code> 也可以包 <code>&lt;section&gt;</code>。
+            </p>
+            <hr>
+            <p>
+              <code>&lt;nav&gt;</code>：導覽選單 <br>
+              <code>&lt;header&gt;</code>,<code>&lt;footer&gt;</code>：文章段落或整個頁面的開頭、結尾
+            </p>
+            <hr>
+            <p><a href="?layout">後面的範例</a>會用到。</p>
           </section>
 
           <section>
@@ -342,31 +348,44 @@
 
         <section>
           <section>
-            <h2>Class</h2>
-            <p><code>class</code> <code>id</code></p>
-            <p><code>title</code> <code>style</code></p>
-              <!-- TODO: introducing these common attr -->
+            <h2>通用屬性</h2>
+            <p>HTML element 可以有屬性，用空白隔開。<br>大部分 HTML element 都有下面屬性：</p>
+            <script type="text/x-sample" class="small">
+              <style> /* style TAG */
+                div { margin-top: -20px;
+                      text-align: right;
+                      border-top: 1px solid grey;}
+                .time { color: grey; }
+              </style>
+              <h1>雅量</h1>
+              <div>
+                <span style="font-size: 18px;" title="天津市人，民國三十七年出生。">宋晶宜</span> - <span class="time">數十年前</span>
+              </div>
+            </script>
+            <ul>
+              <li class="fragment"><code>class</code>,<code>id</code>：替該 element 加上一個 classname / unique ID，使 CSS 的 selector 能選取 / 讓 javascript 方便操作。</li>
+              <li class="fragment"><code>title</code>：工具提示（tooltip）</li>
+              <li class="fragment"><code>style</code>：加上 CSS Declaration。勿和 <code>&lt;style&gt;</code> 標籤混淆。</li>
+            </ul>
+
           </section>
           <section>
-            <h2>HTML Attributes</h2>
-            <p>HTML 標籤可以有屬性，用空白隔開</p>
+            <h2>屬性</h2>
             <script type="text/x-sample">
               <img src="https://www.google.com/images/srpr/logo3w.png" alt="Google Logo">
             </script>
-            <p>
-              <code>src</code><br>
-              <code>width</code>, <code>height</code><br>
-              <code>alt</code>
-              <!-- TODO: introducing these attr & location -->
-            </p>
+            <ul>
+              <li><code>src</code>：圖片的相對路徑或絕對路徑</li>
+              <li><code>width</code>, <code>height</code>：指定其一→等比例縮放</li>
+              <li><code>alt</code>：替代文字</li>
+            </ul>
             <script type="text/x-sample">
               <a href="http://google.com" target="_blank">Google 首頁</a>
             </script>
-            <p>
-              <code>href</code>
-              <code>target</code><br>
-            </p>
-            <!-- TODO: introducing these attr -->
+            <ul>
+              <li><code>href</code>：目標的相對路徑或絕對路徑</li>
+              <li><code>target</code>：值為 "_blank" 時，會開新視窗</li>
+            </ul>
           </section>
         </section> <!-- HTML attributes -->
 
@@ -389,7 +408,7 @@
             </script>
             <p>用 <code>&lt;br&gt;</code> 換行</p>
             <p><code>&amp;nbsp;</code> 代表「空白」<a href="http://www.w3schools.com/tags/ref_entities.asp" target="_blank">character entity</a></p>
-            <p><code>&lt;-- --&gt;</code> 是多行註解</p>
+            <p><code>&lt;!-- --&gt;</code> 是多行註解</p>
           </section>
           <section>
             <h2>To 換 or not to 換</h2>
@@ -589,14 +608,6 @@
         </section>
 
         <section>
-          <section>
-            <h2>大餅</h2>
-            <!-- TODO: market share -->
-          </section>
-          <section>
-            <h2>看上去如何</h2>
-            <!-- TODO: browser screenshots of our wiki -->
-          </section>
           <section>
             <h2>IE 與 HTML5</h2>
             <p>在 <code>&lt;head&gt;</code> 與 &lt;/head&gt; 中間加上</p>

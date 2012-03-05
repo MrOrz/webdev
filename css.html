@@ -209,6 +209,35 @@
             <p>避免定義相互覆蓋的順序：<em>L</em>o<em>V</em>e <em>HA</em>te</p>
           </section>
           <section>
+            <h2>Pseudo-Class</h2>
+            <script type="text/x-sample" class="small>
+              <style type="text/css">
+                tr{
+                  background: #ccc;
+                }
+                tr:nth-child(2) {
+                  background: #eee;
+                }
+              </style>
+              <!-- -->
+              <table>
+                <tr>
+                  <td>Elephant</td>
+                  <td>3kg</td>
+                </tr>
+                <tr>
+                  <td>Eggplant</td>
+                  <td>300g</td>
+                </tr>
+                <tr>
+                  <td>Earplug</td>
+                  <td>10g</td>
+                </tr>
+              </table>
+              
+            </script>
+          </section>
+          <section>
             <h2>Pseudo-Element</h2>
             <script type="text/x-sample">
               <style type="text/css">

@@ -470,7 +470,7 @@
           <section>
             <h2>Generic font family</h2>
             <!-- http://www.certifiedchinesetranslation.com/openaccess/CSS/fonts.html
-http://jsfiddle.net/YYu8w/ -->
+            http://jsfiddle.net/YYu8w/ -->
             <script type="text/x-sample" class="small">
               <dl>
                 <dt>Serif</dt>
@@ -577,6 +577,27 @@ http://jsfiddle.net/YYu8w/ -->
 
           </section>
           <section>
+            <h2>margin 二三事</h2>
+            <ul>
+              <li class="fragment"><code>border</code> 以外，和其他元件的距離</li>
+              <li class="fragment">inline 元素的 <code>margin-top</code>、<code>margin-bottom</code> 會被忽略</li>
+              <li class="fragment">block 元素的 <code>margin-top</code>, <code>margin-bottom</code> 密接時，有時只會表現較大的那一個 （collapsing margin）</li>
+              <li class="fragment"><code>margin-top</code> 可能會超出父元素。</li>
+              <li class="fragment"><code>margin-left</code> 和 <code>margin-right</code> 同為 <code>auto</code> 時，元素會置中。 </li>
+            </ul>
+            <!-- TODO: collapsing margin 範例，和頂出 container 的 margin,
+            還有置中對齊 -->
+          </section>
+          <section>
+            <h2>border 與 padding</h2>
+            <ul>
+              <li class="fragment"><code>border</code> 會佔有空間、推開周圍元素；<code>outline</code> 則不會。</li>
+              <li class="fragment"><code>padding</code> 是 <code>border</code> 與內文的間隙。</li>
+              <li class="fragment">元素的背景顏色會填滿 <code>border</code> 內的空間</li>
+              <li class="fragment">背景顏色的寬 = 元素 <code>width</code> + 左右之 <code>padding</code>；高亦如是。</li>
+            </ul>
+          </section>
+          <section>
             <h2>切換 box model</h2>
             <p><code>box-sizing: border-box;</code></p>
             <p>width = <em>border + padding</em> + content</p>
@@ -597,208 +618,223 @@ http://jsfiddle.net/YYu8w/ -->
             </script>
           </section>
 
-          <section>
-            <h2>其他</h2>
-            <p>collapse margin</p>
-            <p>頂開上面的 margin</p>
-            <p>margin: 0 auto</p>
-            <!-- TODO: 補上範例！ -->
-          </section>
         </section>
 
         <section class="chapter">
           <h2>Box &amp; Layout</h2>
+          <p><a href="http://www.w3.org/TR/CSS2/visuren.html#block-formatting" href="_blank">CSS spec</a></p>
         </section>
+
         <section>
-          
+          <section>
+            <h2>文字的方向</h2>
+            （前後出師表）
+            <p>文字由左邊往右邊，超過邊界就折到下一行</p>
+          </section>
+          <section>
+            <h2>Normal Flow</h2>
+            <p>
+              文字可視為 inline elements。
+              Inline elements 水平排列，而 block elements 垂直排列。</p>
+          </section>
+          <section>
+            <h2>inline 與 block 的切換</h2>
+            <pre><code>display: inline;</code></pre>
+            <pre><code>display: block;</code></pre>
+          </section>
+          <section>
+            <h2>float</h2>
+            <p>程咬金不走中路，但還是被圍毆。</p>
+          </section>
+          <section>
+            <h2>position: absolute</h2>
+            <p>被無視。</p>
+          </section>
+          <section>
+            <h2>position: fixed</h2>
+            <p>不但被無視，還陰魂不散。</p>
+          </section>
+          <section>
+            <h2>從 normal flow 起飛</h2>
+            <script type="text/x-sample">
+              <style>
+                .outer{
+                  color: violet;
+                  background: pink;
+                  /* position: absolute; */
+                  /* float: right; */
+                  /* width: 100px; height: 100px; */
+                }
+                .inner{
+                  color: purple;
+                }
+              </style>
+              文件內容的前面，
+              <span class="outer">遇到了一個 outer span，
+              <span class="inner">還有裡面的 span，</span>
+              只好離開 outer span，</span>
+              和文件內容說再見。
+            </script>
+            <p>把 span 用 float or absolute positioning 拉出去展(現)了</p>
+          </section>
+          <section>
+            <h2>3 Positioning Schemes</h2>
+            <ul>
+              <li>
+                Normal Flow<br />
+                display: 預設值, position: static; float: none;
+              </li>
+              <li>floats<br>
+                float: left | right
+              </li>
+              <li>absolute positioning <br>
+                position: absolute | fixed
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>三角關係</h2>
+            <ul>
+              <li>若 display 為 none 則無視 position, float</li>
+              <li>
+                否則，若 position 為 absolute 或 fixed, 無視 float。  http://jsfiddle.net/49aV7/
+                大部分的 inline element 的 display 被設為 block（有 padding 與 width, height 等）。</li>
+              <li>否則，若 float 不是 none，則 display 被設成上面那樣。</li>
+              <li>否則，使用 CSS 內設定的 display。</li>
+            </ul>
+            <hr>
+            <p>換句話說：</p>
+            <ul>
+              <li>如果用 display: none 把元素藏起來，那連 box 都沒有， position 和 float 都不用設。</li>
+              <li>如果設了 position:absolute | fixed 就不用設 float 了。</li>
+              <li>如果設了 float 就不用設 display 了。</li>
+              <li>從 normal flow 中起飛的 element 可使用 width, height 等 CSS 規則</li>
+            </ul>
+          </section>
+          <section>
+            <h2>細說 display</h2>
+            <ul>
+              <li>none: 啥都沒有（因為沒有 box），一丁點都不剩。</li>
+              <li>inline: 當成 inline element，沒有 width, height 等</li>
+              <li>block: 當成 block</li>
+              <li><inline-block: 當成 inline element 來排版（左到右） 但又有 width, height, margin, padding/li>
+              <li>table 系列：當成 table 來排版，見<  a href="http://www.w3.org/TR/CSS2/tables.html#table-display"對照</a>。
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>細說 position</h2>
+            <p>
+              element 套用後，起飛變成 absolute positioning:
+            </p>
+            <ul>
+              <li>
+                absolute 相對於第一個非 static 的 parent
+              </li>
+              <li>
+                fixed 相對於瀏覽器網頁視窗（viewport）
+              </li>
+            </ul>
+            <p>element 套用後，仍身處 normal flow 與世推移：</p>
+            <ul>
+              <li>relative 不安份亂動</li>
+              <li>static 預設值</li>
+            </ul>
+          </section>
+          <section>
+            <h2>細說 position (2)</h2>
+            <p>absolute, fixed, relative 用 left, top, bottom, right 調位置。
+            </p>
+            <p>absolute positioning 的元素不會撐開 parent block。</p>
+          </section>
+          <section>
+            <h2>細說 float</h2>
+            <script type="text/x-sample">
+              /* 人浮於事 */
+              事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事<span>人</spam>事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事
+            </script>
+            <p>套用後自 normal flow 中起飛。</p>
+            <p>特色：其他 normal flow 圍著它（文繞圖）</p>
+            不會撐開 parent，要 clear（只對 block 有用）
+          </section>
+        </section>
+
+        <section class="chapter">
+          <h2>Z-index</h2>
+        </section>
+
+        <section>
+          <section>
+            <p>Render 網頁就是蓋房子。</p>
+            <p>瀏覽器這樣蓋房子：</p>
+            <ol>
+              <li>normal flow 中的 block elements</li>
+              <li>float elements</li>
+              <li>文字等 inline elements</li>
+              <li>position != static 的 element</li>
+            </ol>
+            <p>先蓋的會被壓在下面。</p>
+          </section>
+          <section>
+            <h2>Z-Index</h2>
+            <p>「stacking context」堆起 element，是地基。</p>
+            <p>z-index 越大，在 stacking context 中越上層。</p>
+            <p>每個 stacking context 上的房子都這樣蓋：</p>
+            <ul>
+              <li>stacking context 之背景與邊界</li>
+              <li>負 z-index 的 element</li>
+              <li>地表：上一頁的那些東西。<br>z-index:0 的 element 和 position!=static 為同一層。</li>
+              <li>正 z-index 的 element</li>
+            </ul>
+              <!-- 
+                http://jsfiddle.net/49aV7/
+                http://jsfiddle.net/49aV7/1
+
+            -->
+
+            <p></p>
+          </section>
+          <section>
+            <h2>stacking context</h2>
+            <ul>
+              <li class="fragment">stacking context 裡面也可以有子 stacking context。</li>
+              <li class="fragment">position != static 且 z-index != auto 的 element</li>
+              <li class="fragment">opacity < 1 的 eleent 也會被視為一個 stacking context。原因請參考 http://www.w3.org/TR/css3-color/#transparency。</li>
+              <li class="fragment">stacking context 在同儕間會被視為不可分割的一層，其他 stacking context 沒辦法插進來。</li>
+            </ul>
+            <!--  TODO: pics! -->
+          </section>
         </section>
         <!--
+          Vertical-align
+          ====
 
-=========================================================================
-box generation & layout ====
-=========================================================================
+          Cool CSS3
+          ====
+          box-shadow & text-shadow
+          --
 
-display, position, float
-http://www.w3.org/TR/CSS2/visuren.html#block-formatting
+          transform 變形
+          --
 
-文字的方向
----
-（前後出師表）
-左邊往右邊，超過邊界就折到下一行
-
-
-normal flow
----
-Block 這種 block element 會和其他東西垂直排列。
-
-display
---
-display: inline, display: block;
+          transition 漸變
+          --
+          duration + property
 
 
-float
---
-程咬金不走中路，但還是被圍毆。
-
-position: absolute
---
-被無視。
-
-position: float;
---
-不但被無視，還陰魂不散。
+          漸層
+          --
+          很煩
+          不如 ultimate gradient generator
 
 
-從 normal flow 起飛
---
-「被拉出」 normal flow
-<style>
-  .outer{
-    color: violet;
-    background: pink;
-    /* position: absolute; */
-    /* float: right; */
-    /* width: 100px; height: 100px; */
-  }
-  .inner{
-    color: purple;
-  }
-</style>
-   文件內容的前面，
-      <span class="outer">遇到了一個 outer span，
-      <span class="inner">還有裡面的 span，</span>
-      只好離開 outer span，</span>
-      和文件內容說再見。
+          Media Query
+          --
+          "Responsive Web Design"
 
-把 span 用 float or absolute positioning 拉出去展(現)了
-
-
-3 Positioning Schemes
----
-1. normal flow (display: 預設值, position: static; float: none)
-2. floats (float: left|right)
-3. absolute positioning (position: absolute | fixed)
-
-三角關係
----
-1. 若 display 為 none 則無視 position, float
-2. 否則，若 position 為 absolute 或 fixed, 無視 float。  http://jsfiddle.net/49aV7/
-   大部分的 inline element 的 display 被設為 block（有 padding 與 width, height 等）。
-3. 否則，若 float 不是 none，則 display 被設成上面那樣。
-4. 否則，使用 CSS 內設定的 display。
-
-i.e.
-0. 如果用 display: none 把元素藏起來，那 position 和 float 都不用設。
-1. 如果設了 position:absolute | fixed 就不用設 float 了。
-2. 如果設了 float 就不用設 display 了。
-3. 從 normal flow 中起飛的 element 可使用 width, height 等 CSS 規則
-
-細說 display
---
-none: 啥都沒有。沒有寬高、沒有留白空間(margin, padding)，一丁點都不剩。
-inline: 當成 inline element，沒有 width, height 等
-block: 當成 block
-inline-block: 當成 inline element 來排版（左到右） 但又有 width, height, margin, padding
-table 系列：當成 table 來排版，見對照：http://www.w3.org/TR/CSS2/tables.html#table-display）
-
-
-細說 position
---
-element 套用後，起飛變成 absolute positioning:
-  absolute 相對於第一個非 static 的 parent
-  fixed 相對於瀏覽器網頁視窗（viewport）
-
-element 套用後，仍身處 normal flow 與世推移：
-  relative 不安份亂動
-  static 預設值
-
-
-細說 position (2)
-absolute, fixed, relative 用 left, top, bottom, right 調位置。
-absolute positioning 的元素不會撐開 parent block。
-
-
-細說 float
---
-
-/* 人浮於事 */
-事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事<span>人</spam>事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事
-
-套用後自 normal flow 中起飛
-特色：其他 normal flow 會圍著它（文繞圖）
-不會撐開 parent
-要 clear（只對 block 有用）
-
-互相覆蓋的
---
-  地表上還是有先後順序，下到上分別為：
-
-  normal flow 中的 block elements
-  float elements
-  文字等 inline elements
-  position != static 的 element。
-
-
-Z-Index
-====
-z-index
---
-「stacking context」堆起 element，上面的 element 會蓋過下面。
-z-index 越大，在 stacking context 中越上層。
-
-一個 stacking context 中，下到上分別為：
-  堆出 stacking context 的 element 的背景與邊界
-  負 z-index 的 element
-  地表：上一頁的那些東西。 z-index:0 的 element 和 position!=static 為同一層。
-  正 z-index 的 element
-
-
-  http://jsfiddle.net/49aV7/
-  http://jsfiddle.net/49aV7/1
-
-
-同一層中，後者（比較晚寫在 html 裡的）會蓋過前者。
-
-
-stacking context
---
-stacking context 裡面也可以有子 stacking context。
-position != static 且 z-index != auto 的 element，會形成一個 stacking context。
-opacity < 1 的 eleent 也會被視為一個 stacking context。原因請參考 http://www.w3.org/TR/css3-color/#transparency。
-
-stacking context 在同儕間會被視為不可分割的一層，其他 stacking context 沒辦法插進來。
-TODO: 圖！
-
-
-Vertical-align
-====
-
-Cool CSS3
-====
-box-shadow & text-shadow
---
-
-transform 變形
---
-
-transition 漸變
---
-duration + property
-
-
-漸層
---
-很煩
-不如 ultimate gradient generator
-
-
-Media Query
---
-"Responsive Web Design"
-
-max-width: xxx == width < xxx
-min-width: xxx == width > xxx
-        -->
+          max-width: xxx == width < xxx
+          min-width: xxx == width > xxx
+                  -->
 
         <section class="chapter">
           <h2>CSS3 實務</h2>

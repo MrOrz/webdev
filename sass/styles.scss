@@ -87,8 +87,17 @@
       }
     }
   }
+  .three-column, .two-column{
+    @include inline-block;
+    vertical-align: top;
+    img{
+      width: 100%;
+    }
+  }
   .three-column{
     width: 30%;
-    @include inline-block;
+  }
+  .two-column{
+    width: 45%;
   }
 }

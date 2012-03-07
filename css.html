@@ -210,7 +210,7 @@
           </section>
           <section>
             <h2>Pseudo-Class</h2>
-            <script type="text/x-sample" class="small>
+            <script type="text/x-sample" class="small">
               <style type="text/css">
                 tr{
                   background: #ccc;
@@ -234,7 +234,7 @@
                   <td>10g</td>
                 </tr>
               </table>
-              
+
             </script>
           </section>
           <section>
@@ -363,18 +363,253 @@
           <h1>未完待續</h1>
         </section>
         <!--
+
+=========================================================================
+CSS Values ===
+=========================================================================
+
+Units
+--
+em  1em is equal to the current font size. 2em means 2 times the size of the current font. E.g., if an element is displayed with a font of 12 pt, then '2em' is 24 pt. The 'em' is a very useful unit in CSS, since it can adapt automatically to the font that the reader uses
+
+px  pixels (a dot on the computer screen)
+
+% percentage
+
+(ex: width, height)
+
+Inheritance
+--
+font-size, color 預設為 "inherit"
+
+** input 等不會繼承自 body
+
+=========================================================================
+Typography
+=========================================================================
+
+Generic font families
+---
+http://www.certifiedchinesetranslation.com/openaccess/CSS/fonts.html
+http://jsfiddle.net/YYu8w/
+
+browser 會有預設
+
+
+Serif, sans-serif, Monospace
+--
+http://en.wikipedia.org/wiki/Sans-serif 的圖
+黑體、明體
+monospace 等寬字體
+
+
+font-family
+--
+http://w3schools.com/cssref/css_websafe_fonts.asp
+若電腦裡沒有，則用後面的
+最後補上 Generic font family
+
+
+大小與行高
+--
+字體大小單位：px
+
+行高：1.x or px
+line-height
+有複雜的 inheritance
+http://cindylu520.iteye.com/blog/670512
+http://www.maxdesign.com.au/articles/css-line-height/
+
+
+粗體與斜體
+--
+font-style: normal, italic
+font-weight: nromal, bold, 100~900
+
+http://jsfiddle.net/YYu8w/3/
+
+
+底線、刪除線、小寫大型字
+--
+text-decoration: underline, strikethrough
+font-variant: small-cap
+
+=======================================================================
 box model ===
+=======================================================================
+// http://www.w3.org/TR/CSS2/box.html
+
 margin, border, outline, padding
+---
+<div>心室肥大</div>
 上右下左、上 左右 下、上下 左右
+
+width -> padding -> border -> margin
+
+切換box model [CSS3 新標準]
+---
+box-sizing: border-box -> border + padding + content = width
+<ul class="nav">
+  display: inline-block
+  <li>左青龍</li> 50%
+  <li>右白虎</li> 50%
+</ul>
+
 margin 注意事項: collapse margin, 會頂開上面
 margin: 0 auto;
-display: switch back and forth from 'block'
 
 
-positioning ===
-position
-parent
+=========================================================================
+box generation & layout ====
+=========================================================================
+
+display, position, float
+http://www.w3.org/TR/CSS2/visuren.html#block-formatting
+
+文字的方向
+---
+（前後出師表）
+左邊往右邊，超過邊界就折到下一行
+
+
+normal flow
+---
+Block 這種 block element 會和其他東西垂直排列。
+
+display
+--
+display: inline, display: block;
+
+
+float
+--
+程咬金不走中路，但還是被圍毆。
+
+position: absolute
+--
+被無視。
+
+position: float;
+--
+不但被無視，還陰魂不散。
+
+
+從 normal flow 起飛
+--
+「被拉出」 normal flow
+<style>
+  .outer{
+    color: violet;
+    background: pink;
+    /* position: absolute; */
+    /* float: right; */
+    /* width: 100px; height: 100px; */
+  }
+  .inner{
+    color: purple;
+  }
+</style>
+   文件內容的前面，
+      <span class="outer">遇到了一個 outer span，
+      <span class="inner">還有裡面的 span，</span>
+      只好離開 outer span，</span>
+      和文件內容說再見。
+
+把 span 用 float or absolute positioning 拉出去展(現)了
+
+
+3 Positioning Schemes
+---
+1. normal flow (display: 預設值, position: static; float: none)
+2. floats (float: left|right)
+3. absolute positioning (position: absolute | fixed)
+
+三角關係
+---
+1. 若 display 為 none 則無視 position, float
+2. 否則，若 position 為 absolute 或 fixed, 無視 float。  http://jsfiddle.net/49aV7/
+   大部分的 inline element 的 display 被設為 block（有 padding 與 width, height 等）。
+3. 否則，若 float 不是 none，則 display 被設成上面那樣。
+4. 否則，使用 CSS 內設定的 display。
+
+i.e.
+0. 如果用 display: none 把元素藏起來，那 position 和 float 都不用設。
+1. 如果設了 position:absolute | fixed 就不用設 float 了。
+2. 如果設了 float 就不用設 display 了。
+3. 從 normal flow 中起飛的 element 可使用 width, height 等 CSS 規則
+
+細說 display
+--
+none: 啥都沒有。沒有寬高、沒有留白空間(margin, padding)，一丁點都不剩。
+inline: 當成 inline element，沒有 width, height 等
+block: 當成 block
+inline-block: 當成 inline element 來排版（左到右） 但又有 width, height, margin, padding
+table 系列：當成 table 來排版，見對照：http://www.w3.org/TR/CSS2/tables.html#table-display）
+
+
+細說 position
+--
+element 套用後，起飛變成 absolute positioning:
+  absolute 相對於第一個非 static 的 parent
+  fixed 相對於瀏覽器網頁視窗（viewport）
+
+element 套用後，仍身處 normal flow 與世推移：
+  relative 不安份亂動
+  static 預設值
+
+
+細說 position (2)
+absolute, fixed, relative 用 left, top, bottom, right 調位置。
+absolute positioning 的元素不會撐開 parent block。
+
+
+細說 float
+--
+
+/* 人浮於事 */
+事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事<span>人</spam>事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事
+
+套用後自 normal flow 中起飛
+特色：其他 normal flow 會圍著它（文繞圖）
+不會撐開 parent
+要 clear（只對 block 有用）
+
+互相覆蓋的
+--
+  地表上還是有先後順序，下到上分別為：
+
+  normal flow 中的 block elements
+  float elements
+  文字等 inline elements
+  position != static 的 element。
+
 z-index
+--
+「stacking context」堆起 element，上面的 element 會蓋過下面。
+z-index 越大，在 stacking context 中越上層。
+
+一個 stacking context 中，下到上分別為：
+  堆出 stacking context 的 element 的背景與邊界
+  負 z-index 的 element
+  地表：上一頁的那些東西。 z-index:0 的 element 和 position!=static 為同一層。
+  正 z-index 的 element
+
+
+  http://jsfiddle.net/49aV7/
+  http://jsfiddle.net/49aV7/1
+
+
+同一層中，後者（比較晚寫在 html 裡的）會蓋過前者。
+
+
+stacking context
+--
+stacking context 裡面也可以有子 stacking context。
+position != static 且 z-index != auto 的 element，會形成一個 stacking context。
+opacity < 1 的 eleent 也會被視為一個 stacking context。原因請參考 http://www.w3.org/TR/css3-color/#transparency。
+
+stacking context 在同儕間會被視為不可分割的一層，其他 stacking context 沒辦法插進來。
+TODO: 圖！
 
 Debugging ===
 inspector

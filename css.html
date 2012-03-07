@@ -413,10 +413,12 @@
               <li><code>em</code>: 1em = 當前自行大小</li>
               <li><code>%</code>: 父元素值的百分比</li>
             </ul>
-            <script type="text/x-sample">
+            <script type="text/x-sample" class="small">
               <style type="text/css">
-                div{
+                body{
                   font-size: 24px;
+                }
+                div{
                   border: 1px solid green;
                 }
               </style>
@@ -431,22 +433,37 @@
             <p>某些 CSS 屬性有「<code>inherit</code>」這種值</p>
             <p>如：<code>font-size</code>, <code>color</code>，預設為 <code>inherit</code></p>
             <script type="text/x-sample">
-              p{
-                color: red;
-                font-size: 32px;
-              }
-              /* span 之 color, font-size 預設為 inherit */
+              <style type="text/css">
+                p{
+                  color: red;
+                  font-size: 32px;
+                }
+                /* span 之 color, font-size 預設為 inherit */
+              </style>
               <p>陟罰臧否，<span>不宜異同</span></p>
             </script>
-            <p>但 <code>input</code>, <code>textarea</code>, <code>select</code>, <code>button</code> 等元素不會自動 inherit 自父元素。</p>
-            <p>設成 <code>inherit</code> 也沒用（因為這些元素的外觀預設為作業系統之樣式）</p>
+          </section>
+          <section>
+            <h2>inherit (續)</h2>
+            <p> <code>input</code>, <code>textarea</code>, <code>select</code>, <code>button</code> 等元素，樣式不會自動 inherit 自父元素。</p>
+            <script type="text/x-sample">
+              <style type="text/css">
+                body /*, button */{
+                  color: purple;
+                }
+                /* button{
+                  color: inherit;
+                }*/
+              </style>
+              <button>按鈕</button>與愉快的夥伴們。
+            </script>
           </section>
         </section>
 
         <section class="chapter">
-          <h1>
+          <h2>
             Typography
-          </h1>
+          </h2>
         </section>
 
         <section>
@@ -490,7 +507,7 @@ http://jsfiddle.net/YYu8w/ -->
           <section>
             <h2>font-family</h2>
             <p class="fragment">字體在使用者電腦裡沒有 → 用下一個</p>
-            <p class="fragemt"><a href="http://w3schools.com/cssref/css_websafe_fonts.asp">常用之 font-family</a></p>
+            <p class="fragment"><a href="http://w3schools.com/cssref/css_websafe_fonts.asp">常用之 font-family</a></p>
           </section>
           <section>
             <h2>Web font</h2>
@@ -498,16 +515,14 @@ http://jsfiddle.net/YYu8w/ -->
             <p class="fragment">通常抓下來不能直接裝在電腦上</p>
             <p class="fragment"></p>
             <p class="fragment"><a href="http://www.google.com/webfonts" target="_blank">Google Web Font</a> 英文的 Webfont</p>
-            <p><a href="http://fontsquirrel.com/fontface/generator" target="_blank">@font-face generator</a> 上傳字型檔後，會幫你轉檔成 web-font 並提供範例</p>
+            <p class="fragment"><a href="http://fontsquirrel.com/fontface/generator" target="_blank">@font-face generator</a> 上傳字型檔後，會幫你轉檔成 web-font 並提供範例</p>
           </section>
           <section>
             <h2>大小與行高</h2>
-            <p><code>font-size: 12px</code> + <code>line-height:16px</code> + <code>font-family: sans-serif</code> =</p>
-            <pre><code>
-              font: 12px/16px sans-serif;
-            </code></pre>
-            <p><code>line-height</code> 的單位：無單位（幾倍於字體大小）</p>
-            <!-- http://www.maxdesign.com.au/articles/css-line-height/ -->
+            <p><code>font-size: 12px</code> + <br /><code>line-height:16px</code> + <br /><code>font-family: sans-serif</code> =</p>
+            <pre><code>font: 12px/16px sans-serif;</code></pre><br />
+            <p><code>line-height</code> 的單位：無單位（幾倍於字體大小） or <code>px</code>。
+            <a href="http://www.maxdesign.com.au/articles/css-line-height/" target="_blank">(更多)</a></p>
           </section>
           <section>
             <h2>粗體與斜體</h2>
@@ -518,50 +533,56 @@ http://jsfiddle.net/YYu8w/ -->
 
           </section>
           <section>
-            <h2>底線、刪除線、小寫大型字</h2>
-            <p><code>text-decoration: none | underline | line-through</code></p>
+            <h2>底線、刪除線、大寫小字</h2>
+            <p><code>text-decoration: none</code> | <code>underline</code> | <code>line-through</code></p>
             <p><code>font-variant: small-cap</code></p>
             <!-- TODO:examples! -->
           </section>
         </section>
         <section class="chapter">
-          <h1>Box Model</h1>
+          <h2>Box Model</h2>
           <p><a href="http://www.w3.org/TR/CSS2/box.html" target="_blank">CSS Spec</a></p>
         </section>
 
         <section>
           <section>
             <h2>margin, border, padding</h2>
-            <img src="../images/css/boxdim.png" alt="Box model from CSS2 spec">
-            <img src="../images/css/boxdimeg.png" alt="Box model from CSS2 spec">
+            <img src="images/css/boxdim.png" alt="Box model from CSS2 spec">
+            <img src="images/css/boxdimeg.png" alt="Box model from CSS2 spec">
           </section>
           <section>
             <h2>心室肥大</h2>
 
 
-            <script type="text/x-sample">
-            <style type="text/css">
-            </style>
-            .heart{
-              border: 15px solid red;
-              width: 50px; height: 25px;
-              font-size: 20px;
-              margin: 20px;
-              padding: 10px;
-            }
-            腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸<span class="heart">心室肥大</span>腸腸腸腸腸腸腸腸腸腸
-            腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+            <script type="text/x-sample" class="reset">
+              <style type="text/css">
+              .heart{
+                display: inline-block;
+                border: 15px solid red;
+                width: 90px; height: 25px;
+                font-size: 20px;
+                margin: 20px;
+                padding: 10px;
+              }
+              </style>
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+              <span class="heart">心室肥大</span>
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
             </script>
 
 
           </section>
           <section>
             <h2>切換 box model</h2>
-            <p><code>box-sizing: border-box</code>: 寬 = border + padding + content
-            </p>
-            <script type="text/x-sample">
+            <p><code>box-sizing: border-box;</code></p>
+            <p>width = <em>border + padding</em> + content</p>
+            <script type="text/x-sample" class="reset">
               <style type="text/css">
-                nav li{
+                .nav li{
                   display: inline-block;
                   width: 50%;
                   border: 3px solid blue;
@@ -571,8 +592,7 @@ http://jsfiddle.net/YYu8w/ -->
               </style>
 
               <ul class="nav">
-                <li>左青龍</li>
-                <li>右白虎</li>
+                <li>左青龍</li><li>右白虎</li>
               </ul>
             </script>
           </section>
@@ -584,6 +604,10 @@ http://jsfiddle.net/YYu8w/ -->
             <p>margin: 0 auto</p>
             <!-- TODO: 補上範例！ -->
           </section>
+        </section>
+
+        <section class="chapter">
+          <h2>Box &amp; Layout</h2>
         </section>
         <!--
 
@@ -744,6 +768,10 @@ inspector
 jsfiddle.net
 
         -->
+
+        <section class="chapter">
+          <h2>排版</h2>
+        </section>
       </div>
 
       <!-- The navigational controls UI -->

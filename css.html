@@ -429,6 +429,24 @@
             </script>
           </section>
           <section>
+            <h2>CSS color</h2>
+            <script type="text/x-sample">
+              <p style="background: #FFFF00">
+              Color set by using hex value
+              </p>
+
+              <p style="background: rgba(255,255,0, 1)">
+              Color set by using rgba value
+              </p>
+
+              <p style="background: yellow">
+              Color set by using color name
+              </p>
+            </script>
+            <p><a href="http://www.w3schools.com/cssref/css_colors.asp">W3Schools CSS Colors</a></p>
+
+          </section>
+          <section>
             <h2>inherit</h2>
             <p>某些 CSS 屬性有「<code>inherit</code>」這種值</p>
             <p>如：<code>font-size</code>, <code>color</code>，預設為 <code>inherit</code></p>
@@ -479,13 +497,13 @@
                 <dd style="font-family: sans-serif;">The quick brown fox jumps over the lazy dog. 0123456789</dd>
                 <dt>Cursive</dt>
                 <dd style="font-family: cursive;">The quick brown fox jumps over the lazy dog. 0123456789</dd>
-                <dt>Fantacy</dt>
-                <dd style="font-family: fantacy;">The quick brown fox jumps over the lazy dog. 0123456789</dd>
+                <dt>Fantasy</dt>
+                <dd style="font-family: fantasy;">The quick brown fox jumps over the lazy dog. 0123456789</dd>
                 <dt>Monospace</dt>
                 <dd style="font-family: monospace;">The quick brown fox jumps over the lazy dog. 0123456789</dd>
               </dl>
             </script>
-            <p>瀏覽器對各種 Generic font family 有預設字體，</p>
+            <p>瀏覽器對各種 Generic font family 有預設字體</p>
           </section>
           <section>
             <h2>襯線、無襯線、等寬</h2>
@@ -507,36 +525,70 @@
           <section>
             <h2>font-family</h2>
             <p class="fragment">字體在使用者電腦裡沒有 → 用下一個</p>
+            <p class="fragment">最後一個通常放 Generic font family 當捕手。</p>
             <p class="fragment"><a href="http://w3schools.com/cssref/css_websafe_fonts.asp">常用之 font-family</a></p>
           </section>
           <section>
             <h2>Web font</h2>
-            <p class="fragment">Browser 來抓字體，用於顯示</p>
-            <p class="fragment">通常抓下來不能直接裝在電腦上</p>
-            <p class="fragment"></p>
+            <p class="fragment">Server 提供字體給 Browser 來抓</p>
+            <p class="fragment">通常抓下來不能直接裝在電腦上，只能顯示</p>
             <p class="fragment"><a href="http://www.google.com/webfonts" target="_blank">Google Web Font</a> 英文的 Webfont</p>
-            <p class="fragment"><a href="http://fontsquirrel.com/fontface/generator" target="_blank">@font-face generator</a> 上傳字型檔後，會幫你轉檔成 web-font 並提供範例</p>
+            <p class="fragment"><a href="http://fontsquirrel.com/fontface/generator" target="_blank">@font-face generator</a> 上傳字型檔後，會轉檔為 web font 並提供範例</p>
           </section>
           <section>
             <h2>大小與行高</h2>
             <p><code>font-size: 12px</code> + <br /><code>line-height:16px</code> + <br /><code>font-family: sans-serif</code> =</p>
             <pre><code>font: 12px/16px sans-serif;</code></pre><br />
-            <p><code>line-height</code> 的單位：無單位（幾倍於字體大小） or <code>px</code>。
+            <p><code>line-height</code> ：純數字（幾倍於字體大小） or <code>N px</code>。
             <a href="http://www.maxdesign.com.au/articles/css-line-height/" target="_blank">(更多)</a></p>
           </section>
           <section>
             <h2>粗體與斜體</h2>
             <p><code>font-style: normal | italic;</code></p>
             <p><code>font-weight: normal | bold | 數字</code></p>
-            <!-- TODO: 把 fiddle 拿下來 -->
-            http://jsfiddle.net/YYu8w/3/
+            <script type="text/x-sample" class="small">
+              <head>
+                <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Crimson+Text:400,700italic,400italic,600,600italic,700">
+                <style type="text/css">
+                  body{font: 20px/1.2 "Crimson Text"; }
+                </style>
+              </head>
+
+               <body>
+                <p>Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+                <p style="font-style: italic;"> Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+                <p style="font-weight: 600;">600: Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+                <p style="font-weight: 700;">700: Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+               </body>
+              ​
+            </script>
 
           </section>
           <section>
             <h2>底線、刪除線、大寫小字</h2>
             <p><code>text-decoration: none</code> | <code>underline</code> | <code>line-through</code></p>
-            <p><code>font-variant: small-cap</code></p>
-            <!-- TODO:examples! -->
+            <p><code>font-variant: small-caps</code></p>
+            <script type="text/x-sample" class="small">
+              <head>
+                <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Crimson+Text:400,700italic,400italic,600,600italic,700">
+                <style type="text/css">
+                  body{font: 20px/1.2 "Crimson Text"; }
+                </style>
+              </head>
+
+               <body>
+                <p>Grumpy
+                  <span style="text-decoration: underline;">wizards
+                  </span> make
+                  <span style="text-decoration: line-through;">
+                    toxic brew
+                  </span> for the evil
+                  <span style="font-variant: small-caps;">
+                    Queen and Jack
+                  </span></p>
+               </body>
+              ​
+            </script>
           </section>
         </section>
         <section class="chapter">
@@ -548,7 +600,6 @@
           <section>
             <h2>margin, border, padding</h2>
             <img src="images/css/boxdim.png" alt="Box model from CSS2 spec">
-            <img src="images/css/boxdimeg.png" alt="Box model from CSS2 spec">
           </section>
           <section>
             <h2>心室肥大</h2>
@@ -559,6 +610,7 @@
               .heart{
                 display: inline-block;
                 border: 15px solid red;
+                background: pink;
                 width: 90px; height: 25px;
                 font-size: 20px;
                 margin: 20px;
@@ -574,19 +626,44 @@
               腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
             </script>
 
+            <p>注意 <code>.heart</code> 的寬度與高度</p>
 
           </section>
+
           <section>
             <h2>margin 二三事</h2>
+            <script type="text/x-sample" class="reset small">
+              <style type="text/css">
+                li{
+                  margin: 20px;
+                  border: 1px solid grey;
+                }
+                span{
+                  margin: 20px;
+                }
+                ul{
+                  margin-top: 10px;
+                  width: 200px;
+                  margin-left: auto; margin-right: auto;
+                }
+                /* body{
+                  background: grey;
+                }*/
+              </style>
+              <span>你覺得這塊衣料像？</span>
+              <ul>
+                <li>棋盤</li>
+                <li>稿紙</li>
+                <li>綠豆糕</li>
+              </ul>
+            </script>
             <ul>
-              <li class="fragment"><code>border</code> 以外，和其他元件的距離</li>
+              <li class="fragment">從 <code>border</code> 向外算，和其他元件的距離</li>
               <li class="fragment">inline 元素的 <code>margin-top</code>、<code>margin-bottom</code> 會被忽略</li>
               <li class="fragment">block 元素的 <code>margin-top</code>, <code>margin-bottom</code> 密接時，有時只會表現較大的那一個 （collapsing margin）</li>
               <li class="fragment"><code>margin-top</code> 可能會超出父元素。</li>
               <li class="fragment"><code>margin-left</code> 和 <code>margin-right</code> 同為 <code>auto</code> 時，元素會置中。 </li>
             </ul>
-            <!-- TODO: collapsing margin 範例，和頂出 container 的 margin,
-            還有置中對齊 -->
           </section>
           <section>
             <h2>border 與 padding</h2>
@@ -628,30 +705,74 @@
         <section>
           <section>
             <h2>文字的方向</h2>
-            （前後出師表）
             <p>文字由左邊往右邊，超過邊界就折到下一行</p>
+            <script type="text/x-sample" class="small">
+              臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急之秋也。然侍衛之臣，不懈於內﹔忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。
+              宮中府中，俱為一體，陟(音：至)罰臧否，不宜異同。若有作奸犯科，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。
+              <strong>
+                  程咬金
+              </strong>
+              侍中、侍郎郭攸之、費禕(音：衣)、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰能，是以眾議舉寵為督。愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。
+            </script>
           </section>
           <section>
             <h2>Normal Flow</h2>
+            <script type="text/x-sample" class="small">
+              臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急之秋也。然侍衛之臣，不懈於內﹔忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。
+              宮中府中，俱為一體，陟(音：至)罰臧否，不宜異同。若有作奸犯科，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。
+              <div style="font-weight: bold;">
+                  程咬金
+              </div>
+              侍中、侍郎郭攸之、費禕(音：衣)、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰能，是以眾議舉寵為督。愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。
+            </script>
             <p>
-              文字可視為 inline elements。
+              文字可視為 inline elements。<br>
               Inline elements 水平排列，而 block elements 垂直排列。</p>
           </section>
           <section>
-            <h2>inline 與 block 的切換</h2>
-            <pre><code>display: inline;</code></pre>
-            <pre><code>display: block;</code></pre>
-          </section>
-          <section>
             <h2>float</h2>
+            <script type="text/x-sample" class="small">
+              <style type="text/css">
+                strong{float: left; color: red;}
+              </style>
+              臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急之秋也。然侍衛之臣，不懈於內﹔忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。
+              宮中府中，俱為一體，陟(音：至)罰臧否，不宜異同。若有作奸犯科，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。
+              <strong>
+                  程咬金
+              </strong>
+              侍中、侍郎郭攸之、費禕(音：衣)、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰能，是以眾議舉寵為督。愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。
+            </script>
             <p>程咬金不走中路，但還是被圍毆。</p>
           </section>
           <section>
-            <h2>position: absolute</h2>
+            <h2><code>position: absolute</code></h2>
+            <script type="text/x-sample" class="small">
+              <style type="text/css">
+                strong{position: absolute; color: red;}
+              </style>
+              臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急之秋也。然侍衛之臣，不懈於內﹔忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。
+              宮中府中，俱為一體，陟(音：至)罰臧否，不宜異同。若有作奸犯科，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。
+              <strong>
+                  程咬金
+              </strong>
+              侍中、侍郎郭攸之、費禕(音：衣)、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰能，是以眾議舉寵為督。愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。
+            </script>
             <p>被無視。</p>
           </section>
           <section>
-            <h2>position: fixed</h2>
+            <h2><code>position: fixed</code></h2>
+              <script type="text/x-sample" class="small">
+              <style type="text/css">
+                body{font-size: 18px;}
+                strong{position: fixed; color: red;}
+              </style>
+              臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急之秋也。然侍衛之臣，不懈於內﹔忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。
+              宮中府中，俱為一體，陟(音：至)罰臧否，不宜異同。若有作奸犯科，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。
+              <strong>
+                  程咬金
+              </strong>
+              侍中、侍郎郭攸之、費禕(音：衣)、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰能，是以眾議舉寵為督。愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。
+            </script>
             <p>不但被無視，還陰魂不散。</p>
           </section>
           <section>
@@ -659,11 +780,12 @@
             <script type="text/x-sample">
               <style>
                 .outer{
-                  color: violet;
                   background: pink;
+              /* top, width, height 對 inline 沒作用 */
+                  top: 200px;
+                  width: 100px; height: 100px;
                   /* position: absolute; */
-                  /* float: right; */
-                  /* width: 100px; height: 100px; */
+                  /* float: left; */
                 }
                 .inner{
                   color: purple;
@@ -675,87 +797,136 @@
               只好離開 outer span，</span>
               和文件內容說再見。
             </script>
-            <p>把 span 用 float or absolute positioning 拉出去展(現)了</p>
+            <p>把 <code>.outer</code> 用 float or absolute positioning 拉出去展(現)了</p>
           </section>
           <section>
             <h2>3 Positioning Schemes</h2>
             <ul>
               <li>
-                Normal Flow<br />
-                display: 預設值, position: static; float: none;
+                <strong>Normal Flow</strong><br />
+                <code>display</code>: 預設值, <code>position</code>: <code>static</code>; <code>float</code>: <code>none</code>;
               </li>
-              <li>floats<br>
-                float: left | right
+              <li><strong>floats</strong><br>
+                <code>float</code>: <code>left</code> | <code>right</code>
               </li>
-              <li>absolute positioning <br>
-                position: absolute | fixed
+              <li><strong>absolute positioning</strong><br>
+                <code>position</code>: <code>absolute</code> | <code>fixed</code>
               </li>
             </ul>
           </section>
           <section>
             <h2>三角關係</h2>
-            <ul>
-              <li>若 display 為 none 則無視 position, float</li>
+            <p><code>position</code> 覆蓋 <code>float</code> 覆蓋 <code>display</code></p>
+            <ul class="fragment">
+              <li><code>display</code> 為 <code>none</code>  →  無視 <code>position</code>, <code>float</code></li>
               <li>
-                否則，若 position 為 absolute 或 fixed, 無視 float。  http://jsfiddle.net/49aV7/
-                大部分的 inline element 的 display 被設為 block（有 padding 與 width, height 等）。</li>
-              <li>否則，若 float 不是 none，則 display 被設成上面那樣。</li>
-              <li>否則，使用 CSS 內設定的 display。</li>
+                否則，<code>position</code> 為 <code>absolute</code> 或 <code>fixed</code> → 無視 <code>float</code> (<a href="http://jsfiddle.net/49aV7/" target="_blank">例</a>)。
+                此時大部分的 inline element 的 <code>display</code> 變成 <code>block</code>（能指定 <code>width</code>, <code>height</code> 等）。</li>
+              <li>否則，<code>float</code> 不是 <code>none</code>  →  <code>display</code> 也會變成 <code>block</code>。</li>
+              <li>否則，使用 CSS 內設定的 <code>display</code> 。</li>
             </ul>
-            <hr>
-            <p>換句話說：</p>
-            <ul>
-              <li>如果用 display: none 把元素藏起來，那連 box 都沒有， position 和 float 都不用設。</li>
-              <li>如果設了 position:absolute | fixed 就不用設 float 了。</li>
-              <li>如果設了 float 就不用設 display 了。</li>
-              <li>從 normal flow 中起飛的 element 可使用 width, height 等 CSS 規則</li>
-            </ul>
+            <div class="fragment">
+              <hr>
+              <p>換句話說：</p>
+              <ul>
+                <li>如果用 <code>display: none</code> 把元素藏起來，那連 box 都沒有， <code>position</code> 和 <code>float</code> 都不用設。</li>
+                <li>如果設了 <code>position:absolute</code> | <code>fixed</code> 就不用設 <code>float</code> 了。</li>
+                <li>如果設了 <code>float</code> 就不用設 <code>display</code> 了。</li>
+                <li>從 normal flow 中起飛的 element 可使用 <code>width</code>, <code>height</code> 等 CSS 規則</li>
+              </ul>
+            </div>
           </section>
           <section>
-            <h2>細說 display</h2>
+            <h2>細說 <code>display</code></h2>
             <ul>
-              <li>none: 啥都沒有（因為沒有 box），一丁點都不剩。</li>
-              <li>inline: 當成 inline element，沒有 width, height 等</li>
-              <li>block: 當成 block</li>
-              <li><inline-block: 當成 inline element 來排版（左到右） 但又有 width, height, margin, padding/li>
-              <li>table 系列：當成 table 來排版，見<  a href="http://www.w3.org/TR/CSS2/tables.html#table-display"對照</a>。
+              <li><code>none</code>: 啥都沒有（因為沒有 box），一丁點都不剩。</li>
+              <li><code>inline</code>: 一秒變 inline element</li>
+              <li><code>block</code>: 一秒變 block element</li>
+              <li><code>inline-block</code>: 當成 inline element 來排版（左到右）<br>但又有 <code>width</code>, <code>height</code>等</li>
+              <li>table 系列：當成 table 來排版，見<a href="http://www.w3.org/TR/CSS2/tables.html#table-display">對照</a>。
               </li>
             </ul>
           </section>
           <section>
-            <h2>細說 position</h2>
+            <h2>細說 <code>position</code></h2>
             <p>
               element 套用後，起飛變成 absolute positioning:
             </p>
             <ul>
               <li>
-                absolute 相對於第一個非 static 的 parent
+                <code>absolute</code>: 相對於第一個非 <code>static</code> 的 parent
               </li>
               <li>
-                fixed 相對於瀏覽器網頁視窗（viewport）
+                <code>fixed</code>: 相對於瀏覽器網頁視窗（viewport）
               </li>
             </ul>
+            <hr>
             <p>element 套用後，仍身處 normal flow 與世推移：</p>
             <ul>
-              <li>relative 不安份亂動</li>
-              <li>static 預設值</li>
+              <li><code>relative</code>: 不安份亂動</li>
+              <li><code>static</code>: 預設值</li>
             </ul>
           </section>
           <section>
-            <h2>細說 position (2)</h2>
-            <p>absolute, fixed, relative 用 left, top, bottom, right 調位置。
+            <h2>細說 <code>position</code> (2)</h2>
+            <p><code>absolute</code>, <code>fixed</code>, <code>relative</code> 用 <code>left</code>, <code>top</code>, <code>bottom</code>, <code>right</code> 調位置。
             </p>
             <p>absolute positioning 的元素不會撐開 parent block。</p>
+            <script type="text/x-sample" class="small">
+              <style type="text/css">
+                nav{
+                  border: 1px solid brown;
+                  position: relative;
+                  margin: 2em;
+                }
+                div{
+                  position: absolute; top: 0.5em;
+                }
+                div:first-child{
+                  left: 2em;
+                }
+                div:last-child{
+                  right: 2em;
+                }
+              </style>
+              <nav>
+                <div>稿紙</div>
+                <div>綠豆糕</div>
+              </nav>
+            </script>
+            </script>
           </section>
           <section>
             <h2>細說 float</h2>
-            <script type="text/x-sample">
-              /* 人浮於事 */
-              事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事<span>人</spam>事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事
+            <script type="text/x-sample" class="small reset">
+              <style type="text/css">
+                /* 人浮於事 */
+                span{
+                  float: left;
+                  font-size: 30px;
+                }
+              </style>
+              事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事是<span>人</span>是事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事
             </script>
             <p>套用後自 normal flow 中起飛。</p>
             <p>特色：其他 normal flow 圍著它（文繞圖）</p>
-            不會撐開 parent，要 clear（只對 block 有用）
+            <hr>
+            <p>不會撐開 parent，要 clear</p>
+            <script type="text/x-sample" class="small">
+              <style type="text/css">
+                nav{
+                  border: 1px solid brown;
+                }
+                div{
+                  float: left; padding: 0.5em 2em;
+                }
+              </style>
+              <nav>
+                <div>稿紙</div>
+                <div>綠豆糕</div>
+                <!-- <p style="clear: left;"></p> -->
+              </nav>
+            </script>
           </section>
         </section>
 
@@ -765,44 +936,45 @@
 
         <section>
           <section>
-            <p>Render 網頁就是蓋房子。</p>
-            <p>瀏覽器這樣蓋房子：</p>
+            <h2>Render 網頁 == 蓋房子</h2>
+            <p>瀏覽器這樣蓋房子 (下項蓋過上項)</p>
             <ol>
               <li>normal flow 中的 block elements</li>
               <li>float elements</li>
               <li>文字等 inline elements</li>
-              <li>position != static 的 element</li>
+              <li><code>position</code> != <code>static</code> 的 element</li>
             </ol>
-            <p>先蓋的會被壓在下面。</p>
+            <br>
+            <img src="images/css/ground-stacking.png" alt="疊疊">
+            <p>若兩元素同一層，則先蓋的會被壓在下面。</p>
           </section>
           <section>
             <h2>Z-Index</h2>
             <p>「stacking context」堆起 element，是地基。</p>
             <p>z-index 越大，在 stacking context 中越上層。</p>
             <p>每個 stacking context 上的房子都這樣蓋：</p>
-            <ul>
+            <ol style="vertical-align: middle;">
               <li>stacking context 之背景與邊界</li>
-              <li>負 z-index 的 element</li>
-              <li>地表：上一頁的那些東西。<br>z-index:0 的 element 和 position!=static 為同一層。</li>
+              <li>負 <code>z-index</code> 的 element</li>
+              <li>地表：上一頁的東西 + <br><code>z-index:0</code> 的 element。</li>
               <li>正 z-index 的 element</li>
-            </ul>
-              <!-- 
+            </ol>
+            <img src="images/css/stacking.png" alt="疊疊疊" style="vertical-align: middle; margin-top: 0;">
+              <!--
                 http://jsfiddle.net/49aV7/
                 http://jsfiddle.net/49aV7/1
+              -->
 
-            -->
-
-            <p></p>
           </section>
           <section>
             <h2>stacking context</h2>
+            <img src="images/css/stacking-contexts.png" alt="疊中有疊"><br>
             <ul>
               <li class="fragment">stacking context 裡面也可以有子 stacking context。</li>
               <li class="fragment">position != static 且 z-index != auto 的 element</li>
-              <li class="fragment">opacity < 1 的 eleent 也會被視為一個 stacking context。原因請參考 http://www.w3.org/TR/css3-color/#transparency。</li>
-              <li class="fragment">stacking context 在同儕間會被視為不可分割的一層，其他 stacking context 沒辦法插進來。</li>
+              <li class="fragment">opacity < 1 的 eleent 也會被視為一個 stacking context。<br>原因請參考<a href="http://www.w3.org/TR/css3-color/#transparency">W3C 標準</a>。</li>
+              <li class="fragment">stacking context 為不可分割的「一層」，<br>其他 stacking context 沒辦法插進來。</li>
             </ul>
-            <!--  TODO: pics! -->
           </section>
         </section>
         <section class="chapter">
@@ -827,8 +999,8 @@
             <h2>說在前面</h2>
             <p>CSS3 看似光鮮亮麗，但……</p>
             <p>標準還沒有正式完成</p>
-            <p>瀏覽器各自為政，加上了如 -webkit, -moz 的名字</p>
-            <p>用 <a href="http://css3generator.com/" target="blank;">Generator</a> 寫 CSS3。</p>
+            <p>瀏覽器各自為政，加上了如 -webkit, -moz 前綴</p>
+            <p class="fragment">用 <a href="http://css3generator.com/" target="blank;">Generator</a> 寫 CSS3。</p>
           </section>
           <section>
             <h2>box-shadow 與 text-shadow</h2>

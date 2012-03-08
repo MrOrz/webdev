@@ -164,10 +164,10 @@
               <li><code>.root div</code>: .root 的子孫中為 div 者。</li>
               <li><code>.root>div</code>: .root 的孩子裡為 div 者。</li>
             </ul>
-            <script type="text/x-sample" class="smallx">
+            <script type="text/x-sample" class="small">
               <style type="text/css">
                 div{ padding: 3px; }
-                .root div{ /* descendents of .root */
+                .root div{ /* descendants of .root */
                   background: rgba(0,100,0,0.2);
                 }
                 .root>div{ /* children of .root */
@@ -667,6 +667,27 @@
           </section>
           <section>
             <h2>border 與 padding</h2>
+            <script type="text/x-sample" class="reset small">
+              <style type="text/css">
+              .heart{
+                display: inline-block;
+                border: 15px solid red;
+                background: pink;
+                width: 90px; height: 25px;
+                font-size: 20px;
+                margin: 20px;
+                padding: 10px;
+              }
+              </style>
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+              <span class="heart">心室肥大</span>
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+              腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸腸
+            </script>
+
             <ul>
               <li class="fragment"><code>border</code> 會佔有空間、推開周圍元素；<code>outline</code> 則不會。</li>
               <li class="fragment"><code>padding</code> 是 <code>border</code> 與內文的間隙。</li>
@@ -797,21 +818,21 @@
               只好離開 outer span，</span>
               和文件內容說再見。
             </script>
-            <p>把 <code>.outer</code> 用 float or absolute positioning 拉出去展(現)了</p>
+            <p>把 <code>.outer</code> 用 float or absolute positioning 拉出去展<small>(現)</small>了</p>
           </section>
           <section>
             <h2>3 Positioning Schemes</h2>
             <ul>
-              <li>
-                <strong>Normal Flow</strong><br />
-                <code>display</code>: 預設值, <code>position</code>: <code>static</code>; <code>float</code>: <code>none</code>;
-              </li>
-              <li><strong>floats</strong><br>
-                <code>float</code>: <code>left</code> | <code>right</code>
-              </li>
-              <li><strong>absolute positioning</strong><br>
-                <code>position</code>: <code>absolute</code> | <code>fixed</code>
-              </li>
+              <h3>Normal Flow</h3>
+                <p><code>display</code>: 預設值, <code>position</code>: <code>static</code>; <code>float</code>: <code>none</code>;</p>
+              <h3>floats</h3>
+                <p>
+                  <code>float</code>: <code>left</code> | <code>right</code>
+                </p>
+              <h3>absolute positioning</h3>
+                <p>
+                  <code>position</code>: <code>absolute</code> | <code>fixed</code>
+                </p>
             </ul>
           </section>
           <section>

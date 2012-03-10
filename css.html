@@ -8,6 +8,7 @@
 
     <meta name="description" content="不囉唆學 CSS。以 reveal.js 製作的 HTML / CSS / JS 投影片。">
     <meta name="author" content="MrOrz">
+    <meta name="email" content="johnsonliang7@gmail.com">
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -120,7 +121,7 @@
         <section>
           <section>
             <h2>Tag, .Class, #Id</h2>
-            <script type="text/x-sample">
+            <script type="text/x-sample" class="small">
               <style type="text/css">
                 div {
                   color: blue;
@@ -144,16 +145,16 @@
           </section>
           <section>
             <h2>Tag, .Class, #Id</h2>
-            <div class="three-column fragment">
+            <div class="fragment">
               <h3><code>div.tall</code></h3>
               <p>有 tall class 之 div</p>
             </div>
 
-            <div class="three-column fragment">
+            <div class="fragment">
               <h3><code>#target.highlight</code></h3>
               <p>有 lightlight class 且 ID 為 target 之 element</p>
             </div>
-            <div class="three-column fragment">
+            <div class="fragment">
               <h3><code>.box.widget</code></h3>
               <p>同時有 box 和 widget 兩個 class 之 element</p>
             </div>
@@ -1004,11 +1005,46 @@
         <section>
           <section>
             <h2>表格裡的 Vertial align</h2>
-            <!-- TODO: 表格 DEMO -->
+            <script type="text/x-sample" class="small reset">
+              <!-- CSS Resetted -->
+              <style>
+                table {margin: 1em;}
+                th, tr{vertical-align: center; }
+                th{font-weight: bold; }
+              </style>
+              <table border="1">
+                <tr>
+                  <th rowspan="2" colspan="2">囚犯兩難</th>
+                  <th colspan="2">B 的選擇</th>
+                </tr>
+                <tr>
+                  <th>沉默</th> <th>坦承</th>
+                </tr>
+                <tr>
+                  <th rowspan="2">A 的選擇</th>
+                  <th>沉默</th>
+                  <td>各坐牢 1 個月</td>
+                  <td>A 坐牢 1 年<br>B 釋放</td>
+                </tr>
+                <tr>
+                  <th>坦承</th>
+                  <td>A 釋放<br>B 坐牢 1 年</td>
+                  <td>各坐牢 3 個月</td>
+                </tr>
+              </table>
+            </script>
           </section>
           <section>
             <h2>一般的 vertical align</h2>
-            <!-- TODO: vertical align -->
+            <script type="text/x-sample" class="reset">
+              <style type="text/css">
+                strong{
+                  font-size: 40px;
+                  /*vertical-align: baseline;*/
+                }
+              </style>
+              <p>每個人都應該努力培養<strong>雅量</strong>。</p>
+            </script>
           </section>
         </section>
 
@@ -1025,27 +1061,77 @@
           </section>
           <section>
             <h2>box-shadow 與 text-shadow</h2>
-            <!-- TODO: code example -->
+
+            <script type="text/x-sample" class="small">
+              <style type="text/css">
+                div{
+                  text-shadow: 0 1px rgba(255,255,255,.4);
+                  box-shadow: inset 0 2px 1px rgba(255,255,255,.3),
+                              0 2px 1px rgba(0,0,0,.7);
+                  padding: 10px;
+                  background: #555;
+                }
+              </style>
+              <div>This is a div!</div>
+            </script>
           </section>
           <section>
             <h2>transform 形變</h2>
-            <!-- TODO: code example -->
+            <script type="text/x-sample" class="small">
+              <style type="text/css">
+                div{
+                  -webkit-transform: scale(0.5);
+                  -webkit-transform: rotate(45deg);
+                  text-align: center;
+                  padding: 10px;
+                  background: #555;
+                }
+              </style>
+              <div>This is a div!</div>
+            </script>
           </section>
           <section>
             <h2>transition 漸變</h2>
-            <!-- TODO: code example -->
-            設定 duration 和 property
+            <p>設定 duration 和 property</p>
+            <script type="text/x-sample" class="small">
+              <style type="text/css">
+                div{
+                  text-align: center; padding: 10px; background: #555;
+                  -webkit-transition-property: opacity;
+                  -webkit-transition-duration: .5s;
+                  opacity: .7;
+                }
+                div:hover{
+                  opacity: 1;
+                }
+              </style>
+              <div>This is a div!</div>
+            </script>
           </section>
           <section>
            <h2>漸層</h2>
             <!-- TODO: code example -->
-            <!--Ultimate gradient generator-->
+            <p>語法猥瑣</p>
+            <p>每個瀏覽器都不一樣</p>
+            <p>同瀏覽器每個版本也都不一樣</p>
+            <p class="fragment"><a href="http://www.colorzilla.com/gradient-editor/">Ultimate Gradient Editor</a> comes to rescue!</p>
+            <script type="text/x-sample" class="small">
+              <style type="text/css">
+                div{
+                  text-shadow: 0 1px rgba(255,255,255,.4);
+                  box-shadow: inset 0 2px 1px rgba(255,255,255,.3),
+                              0 2px 1px rgba(0,0,0,.7);
+                  padding: 10px;
+                  background: #555;
+                }
+              </style>
+              <div>This is a div!</div>
+            </script>
           </section>
           <section>
             <h2>Media Query</h2>
-            <!-- TODO: code example -->
-            "Responsive Web Design"
-
+            <p>"Responsive Web Design"</p>
+            <p><a href="http://webdesignerwall.com/tutorials/css3-media-queries">Web Designer Wall - CSS3 Media Queries</a></p>
             <!--max-width: xxx == width < xxx
             min-width: xxx == width > xxx-->
           </section>
@@ -1059,11 +1145,10 @@
         <section>
           <section>
             <h2>側欄</h2>
-            <p>目標網頁 | 空白網頁</p>
+            <p><a href="http://www.csszengarden.com/">目標網頁</a></p>
           </section>
           <section>
             <h2>下拉式選單</h2>
-            <p>目標網頁 | 空白網頁</p>
             <ul>
               <li class="fragment">橫向排列的 <code>li</code> 元素</li>
               <li class="fragment">漸層與陰影</li>

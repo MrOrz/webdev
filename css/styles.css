@@ -14,6 +14,9 @@
 #reveal .nav li:last-child {
   border: 0;
 }
+#reveal ul ul {
+  margin-left: 1em;
+}
 #reveal section.html5 {
   overflow: hidden;
 }
@@ -108,16 +111,13 @@
   vertical-align: middle;
   *vertical-align: auto;
   vertical-align: top;
+  margin: 0 1%;
 }
 #reveal .three-column, #reveal .two-column {
   *display: inline;
 }
-#reveal .three-column img, #reveal .two-column img {
-  width: 100%;
-}
 #reveal .three-column {
   width: 30%;
-  margin: 0 1%;
 }
 #reveal .two-column {
   width: 45%;

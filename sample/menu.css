@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.nav>li{
+  /* 讓 <li> 能橫著排（如 inline 元素之 normal flow） */
+  display: inline-block;
+  /* 設定 absolute positioning 之 .submenu 的位置參考 */
+  position: relative;
+
+  /* 外觀樣式 */
+  border: 1px solid green;
+  border-right: 0;
+  padding: .5em 1em;
+}
+/* 外觀樣式 */
+.nav>li:last-child{
+  border-right: 1px solid green;
+}
+
+.submenu{
+  /* 讓 .submenu 變成 absolute positioning */
+  position: absolute;
+  /* 隱藏 .submenu */
+  display: none;
+
+  /* 外觀樣式 */
+  left: -1px; top: 100%; width: 100%;
+  text-align: center;
+  background: #3c3;
+  border: 1px solid green;
+}
+
+.nav>li:hover .submenu{
+  /* 滑鼠移到 .nav 的 li 上時，顯示 .submenu */
+  display: block;
+}
+/* 外觀樣式 */
+.submenu li{
+  padding: .5em 0;
+  color: black;
+  cursor: pointer;
+}
+/* 外觀樣式 */
+.submenu li:hover{
+  color: white;
+}

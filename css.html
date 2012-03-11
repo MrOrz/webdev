@@ -56,7 +56,7 @@
             <p>
               <img src="images/css/selector.gif" alt="Selection and declaration">
             </p>
-            <p><a href="http://w3schools.com/css/css_syntax.asp">Source: W3Schools</a></p>
+            <p><a href="http://w3schools.com/css/css_syntax.asp" target="_blank">Source: W3Schools</a></p>
 
           </section>
           <section>
@@ -355,7 +355,7 @@
             <h2>CSS Specificity</h2>
             <p>Specificity：Selector 精準與否</p>
             <p><img src="images/css/specificity-calculationbase.png" alt="Specificity calculation"></p>
-            <p>Source: <a href="http://css-tricks.com/specifics-on-css-specificity/">CSS Tricks</a></p>
+            <p>Source: <a href="http://css-tricks.com/specifics-on-css-specificity/" target="_blank">CSS Tricks</a></p>
             <p>用字典順序比較</p>
           </section>
           <section>
@@ -444,7 +444,7 @@
               Color set by using color name
               </p>
             </script>
-            <p><a href="http://www.w3schools.com/cssref/css_colors.asp">W3Schools CSS Colors</a></p>
+            <p><a href="http://www.w3schools.com/cssref/css_colors.asp" target="_blank">W3Schools CSS Colors</a></p>
 
           </section>
           <section>
@@ -527,7 +527,7 @@
             <h2>font-family</h2>
             <p class="fragment">字體在使用者電腦裡沒有 → 用下一個</p>
             <p class="fragment">最後一個通常放 Generic font family 當捕手。</p>
-            <p class="fragment"><a href="http://w3schools.com/cssref/css_websafe_fonts.asp">常用之 font-family</a></p>
+            <p class="fragment"><a href="http://w3schools.com/cssref/css_websafe_fonts.asp" target="_blank">常用之 font-family</a></p>
           </section>
           <section>
             <h2>Web font</h2>
@@ -821,7 +821,7 @@
             </script>
             <p>把 <code>.outer</code> 用 float or absolute positioning 拉出去展<small>(現)</small>了</p>
           </section>
-          <section>
+          <section id="positioning-schemes">
             <h2>3 Positioning Schemes</h2>
             <ul>
               <h3>Normal Flow</h3>
@@ -865,7 +865,7 @@
               <li><code>inline</code>: 一秒變 inline element</li>
               <li><code>block</code>: 一秒變 block element</li>
               <li><code>inline-block</code>: 當成 inline element 來排版（左到右）<br>但又有 <code>width</code>, <code>height</code>等</li>
-              <li>table 系列：當成 table 來排版，見<a href="http://www.w3.org/TR/CSS2/tables.html#table-display">對照</a>。
+              <li>table 系列：當成 table 來排版，見<a href="http://www.w3.org/TR/CSS2/tables.html#table-display" target="_blank">對照</a>。
               </li>
             </ul>
           </section>
@@ -994,7 +994,7 @@
             <ul>
               <li class="fragment">stacking context 裡面也可以有子 stacking context。</li>
               <li class="fragment">position != static 且 z-index != auto 的 element</li>
-              <li class="fragment">opacity < 1 的 eleent 也會被視為一個 stacking context。<br>原因請參考<a href="http://www.w3.org/TR/css3-color/#transparency">W3C 標準</a>。</li>
+              <li class="fragment">opacity < 1 的 eleent 也會被視為一個 stacking context。<br>原因請參考<a href="http://www.w3.org/TR/css3-color/#transparency" target="_blank">W3C 標準</a>。</li>
               <li class="fragment">stacking context 為不可分割的「一層」，<br>其他 stacking context 沒辦法插進來。</li>
             </ul>
           </section>
@@ -1114,7 +1114,7 @@
             <p>語法猥瑣</p>
             <p>每個瀏覽器都不一樣</p>
             <p>同瀏覽器每個版本也都不一樣</p>
-            <p class="fragment"><a href="http://www.colorzilla.com/gradient-editor/">Ultimate Gradient Editor</a> comes to rescue!</p>
+            <p class="fragment"><a href="http://www.colorzilla.com/gradient-editor/" target="_blank">Ultimate Gradient Editor</a> comes to rescue!</p>
             <script type="text/x-sample" class="small">
               <style type="text/css">
                 div{
@@ -1131,7 +1131,7 @@
           <section>
             <h2>Media Query</h2>
             <p>"Responsive Web Design"</p>
-            <p><a href="http://webdesignerwall.com/tutorials/css3-media-queries">Web Designer Wall - CSS3 Media Queries</a></p>
+            <p><a href="http://webdesignerwall.com/tutorials/css3-media-queries" target="_blank">Web Designer Wall - CSS3 Media Queries</a></p>
             <!--max-width: xxx == width < xxx
             min-width: xxx == width > xxx-->
           </section>
@@ -1145,17 +1145,49 @@
         <section>
           <section>
             <h2>側欄</h2>
-            <p><a href="http://www.csszengarden.com/">目標網頁</a></p>
+            <p>想要做的<a href="http://www.csszengarden.com/" target="_blank">目標網頁</a></p>
+            <p class="fragment">右欄 <code>#linkList</code> 固定 → 將它自 normal flow 中拿出來。</p>
+            <div class="fragment">
+              <p><a href="#position-schemes">之前的投影片</a>提到兩種從 normal flow 拿出的方法：</p>
+              <ul>
+                <li>Absolute positioning: 設置 <code>position: absolute</code></li>
+                <li>float: 設置 <code>float: right</code></li>
+              </ul>
+              <p><code>position: fixed</code> 與 <code>float: left</code> 不適用於這裡。</p>
+            </div>
+          </section>
+          <section>
+            <h2>側欄（續）</h2>
+            <p>左欄（<code>#intro</code>, <code>#supportingText</code>）隨視窗大小而動</p>
+            <ul class="fragment">
+              <li>若 <code>#linkList</code> 使用 <code>float: right</code><br>
+                 → 左欄什麼都不用設（留在 normal flow 中）<br>
+                 注意若左欄較 #linkList 長，那麼會變這樣 →
+                 <img src="images/css/column.jpg" alt="float: right" style="vertical-align: -130px;">
+              </li>
+              <li>若使用 <code>position: absolute</code><br>
+                → 左欄須設 padding-right (不然左欄會和 #linkList 疊在一起)<br>
+                <a href="sample/zengarden.html" target="_blank">範例結果</a>(<a href="sample/zengarden.css" target="_blank">範例 CSS 檔</a>)
+              </li>
+            </ul>
           </section>
           <section>
             <h2>下拉式選單</h2>
             <ul>
-              <li class="fragment">橫向排列的 <code>li</code> 元素</li>
-              <li class="fragment">漸層與陰影</li>
-              <li class="fragment">巢狀 list</li>
+              <li class="fragment">橫向排列的 <code>li</code> 元素<br>
+                <ul>
+                  <li>可以用 <code>float</code></li>
+                  <li>可以用 <code>display: inline-block</code></li>
+                </ul>
+              </li>
+              <li class="fragment">巢狀 list: <code>&lt;li&gt;</code> 裡可以有 <code>&lt;ul&gt;</code></li>
               <li class="fragment"><code>:hover</code> magic</li>
             </ul>
+            <p class="fragment">
+              <a href="sample/menu.html" target="_blank">範例結果</a>(<a href="sample/menu.css" target="_blank">範例 CSS 檔</a>)
+            </p>
           </section>
+
         </section>
 
         <section class="chapter">
@@ -1173,7 +1205,7 @@
               <li>……族繁不及備載。</li>
             </ul>
             <hr>
-            <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-how-to-target-ie6-ie7-and-ie8-uniquely-with-4-characters/">CSS hacks</a></p>
+            <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-how-to-target-ie6-ie7-and-ie8-uniquely-with-4-characters/" target="_blank">CSS hacks</a></p>
             <script type="text/x-sample" class="nopreview">
               body {
                color: red; /* all browsers, of course */
@@ -1198,12 +1230,12 @@
           <section>
             <h2>能不能用？</h2>
             <figure class="two-column">
-              <img src="images/css/caniuse.jpg" alt="caniuse">
-              <figcaption><a href="http://caniuse.com/">caniuse.com</a></figcaption>
+              <img src="images/css/caniuse.jpg" height="250" alt="caniuse">
+              <figcaption><a href="http://caniuse.com/" target="_blank">caniuse.com</a></figcaption>
             </figure>
             <figure class="two-column">
-              <img src="images/css/quirksmode.jpg" alt="quirksmode">
-              <figcaption><a href="http://quirksmode.org/compatibility.html">quirksmode.org</a></figcaption>
+              <img src="images/css/quirksmode.jpg" height="250" alt="quirksmode">
+              <figcaption><a href="http://quirksmode.org/compatibility.html" target="_blank">quirksmode.org</a></figcaption>
             </figure>
           </section>
         </section>
@@ -1214,12 +1246,12 @@
         <section>
           <section>
             <h2>SCSS &amp; LESS</h2>
-            <figure>
-              <img src="images/css/sass.jpg" alt="">
+            <figure class="two-column">
+              <img src="images/css/sass.jpg" height="250" alt="">
               <figcaption><a href="http://sass-lang.com/" target="_blank">SASS / SCSS</a></figcaption>
             </figure>
-            <figure>
-              <img src="images/css/less.jpg" alt="">
+            <figure class="two-column">
+              <img src="images/css/less.jpg" height="250" alt="">
               <figcaption>
                 <a href="http://lesscss.org/" target="_blank">LESS</a>
               </figcaption>
@@ -1229,16 +1261,16 @@
           </section>
           <section>
             <h2>SCSS &amp; LESS (續)</h2>
-            <figure>
-              <img src="images/css/sass.jpg" alt="">
+            <figure class="two-column">
+              <img src="images/css/sass.jpg" height="250" alt="">
               <figcaption><a href="http://sass-lang.com/" target="_blank">SASS / SCSS</a></figcaption>
               <ul>
                 <li>Compass 函式庫</li>
                 <li>為 Rails 採用</li>
               </ul>
             </figure>
-            <figure>
-              <img src="images/css/less.jpg" alt="">
+            <figure class="two-column">
+              <img src="images/css/less.jpg" height="250" alt="">
               <figcaption>
                 <a href="http://lesscss.org/" target="_blank">LESS</a>
               </figcaption>

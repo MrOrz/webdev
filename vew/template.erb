@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh_TW">
+
+  <head>
+    <meta charset="utf-8">
+    <%= @header %>
+  </head>
+
+  <body>
+    <div id="reveal">
+      <div class="slides">
+        <%= @body %>
+      </div>
+
+      <!-- The navigational controls UI -->
+      <aside class="controls">
+        <a class="left" href="#">&#x25C4;</a>
+        <a class="right" href="#">&#x25BA;</a>
+        <a class="up" href="#">&#x25B2;</a>
+        <a class="down" href="#">&#x25BC;</a>
+      </aside>
+
+      <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+      <div class="progress"><span></span></div>
+
+    </div>
+    <%= @footer %>
+  </body>
+
+</html>

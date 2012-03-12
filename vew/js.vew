@@ -5,15 +5,13 @@
 :email johnsonliang7@gmail.com
 
 :stylesheet_link_tag css/main.css, css/styles.css, css/sample.css, css/jquery-ui.css
-:stylesheet_link_tag css/ruler.css, css/zenburn.css
+:stylesheet_link_tag css/ruler.css, lib/zenburn.css
 
 :javascript_include_tag js/jquery.min.js
 :javascript_include_tag https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js
-:javascript_include_tag js/reveal.js, lib/highlight.js, js/ruler.js, js/sample.js, js/init.js, js/index.js
+:javascript_include_tag js/reveal.js, lib/highlight.js, js/sample.js, js/init-js.js, js/index.js
 
 !SLIDE
-
-
 Javascript
 ===
 {:.nav}
@@ -26,60 +24,16 @@ Javascript
   !SLIDE
   長這樣
   -----
-  {:.nopreview}
+  {:.demo.small}
   ~~~
-    html, body {
-      position: relative;
-      padding: 0; margin: 0;
-      overflow: hidden;
-      font-family: '文泉驛微米黑', 'LiHei Pro', '微軟正黑體';
-      font-weight: 200;
-      letter-spacing: -0.02em;
-      color: #eee; width: 100%; height: 100%;
-      min-height: 400px;
-    }
-
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
-  ~~~
-
-  !SLIDE
-  CSS Syntax
-  ---
-
-    ![images/css/selector.gif](Selection and declaration)
-
-    [http://w3schools.com/css/css_syntax.asp](Source: W3Schools)
-
-
-  !SLIDE
-  怎麼加進 HTML
-  ------------
-
-  在 `<head>` 中加入
-
-  {:.nopreview}
-  ~~~~~~~
-   <link rel="stylesheet" type="text/css" href="path/to/style.css">
-  ~~~~~~~
-
-  或直接把 CSS 寫在 `<style>` 裡；
-
-  ~~~~~~~
-    <style type="text/css">
-      div {
-        color: blue;
+    var form = document.getElementById('submitform');
+    form.addEventListener('submit', function(e){
+      var checkbox = document.getElementById('tos');
+      if(!ckechbox.checked){
+        alert('請詳閱出師表。');
+        e.preventDefault();
       }
-    </style>
-    <div>I am div!</div>
-  ~~~~~~~
-
-  `<style>` 可放在 `<head>` 或 `<body>` 均可。
+    });
+  ~~~
 
 !ENDSTACK
-
-!SLIDE.chapter#attribute
-CSS Selectors
----

@@ -7,27 +7,7 @@
       $codeSrc = $('<code contenteditable></code>'),
       $preSrc = $('<pre></pre>'),
       $iframeSrc = $('<div class="iframe"><iframe></iframe></div>'),
-      $updateBtnSrc = $('<button>&raquo;</button>'),
-
-      updateIframe = function(iframe, $pre, wrapper){
-        var doc = iframe.contentDocument, newiframe,
-            height = $pre.height() || 200;
-        if(!doc){ // if cannot get iframe content, create a new one
-          newiframe = $('<iframe></iframe>').insertBefore(iframe).get(0);
-          $(iframe).remove();
-          iframe = newiframe; doc = iframe.contentDocument;
-        }
-        doc.open(); doc.writeln( wrapper($pre.text()) ); doc.close();
-        $(iframe).height(height);
-
-        // highligt the code
-        var $code = $pre.find('code'), // get $code to get unhighlighted text
-            ret = hljs.highlightAuto($code.text());
-        $code.html(ret.value);
-        $code.addClass(ret.language)
-
-        return iframe; // return the (possibly new) iframe
-      };
+      $updateBtnSrc = $('<button>&raquo;</button>');
 
   // example usage:
   // $('script[type=text/x-sample]').sample();
@@ -49,8 +29,35 @@
     options = $.extend({
       wrapper: function(lines){ // default wrapper: no-op
         return lines;
-      }
+      },
+      preview: true
     }, options);
+
+    // update Iframe
+    var updateIframe = function(iframe, $pre, wrapper){
+      if(!options.preview){
+        return;
+      }
+      var doc = iframe.contentDocument, newiframe,
+          height = $pre.height() || 200;
+      if(!doc){ // if cannot get iframe content, create a new one
+        newiframe = $('<iframe></iframe>').insertBefore(iframe).get(0);
+        $(iframe).remove();
+        iframe = newiframe; doc = iframe.contentDocument;
+      }
+      doc.open(); doc.writeln( wrapper($pre.text()) ); doc.close();
+      $(iframe).height(height);
+
+      // highligt the code
+      var $code = $pre.find('code'), // get $code to get unhighlighted text
+          ret = hljs.highlightAuto($code.text());
+      $code.html(ret.value);
+      $code.addClass(ret.language)
+
+      return iframe; // return the (possibly new) iframe
+    };
+
+
 
     this.each(function(){
       var

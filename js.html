@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/sample.css">
 <link rel="stylesheet" href="css/jquery-ui.css">
 <link rel="stylesheet" href="css/ruler.css">
-<link rel="stylesheet" href="css/zenburn.css">
+<link rel="stylesheet" href="lib/zenburn.css">
   </head>
 
   <body>
@@ -23,78 +23,31 @@
 <p></p>
 <p></p>
 <section>
-<p></p>
-<p></p>
 <h1>Javascript</h1>
-<ul class='nav'>
-<li><a href='html.html'>HTML</a></li>
-<li><a href='css.html'>CSS</a></li>
+<ul class="nav">
+<li><a href="html.html">HTML</a></li>
+<li><a href="css.html">CSS</a></li>
 </ul>
 <p></p>
-<p><small><a href='http://yuiblog.com/assets/crockford/javascript.zip'>The Javascript Programming Language - Douglas Crockford</a></small></p>
+<p><small><a href="http://yuiblog.com/assets/crockford/javascript.zip">The Javascript Programming Language - Douglas Crockford</a></small></p>
 <p></p>
 </section>
 <section>
 <section>
 <h2>長這樣</h2>
-<script type='text/x-sample' class='nopreview'>
-    html, body {
-      position: relative;
-      padding: 0; margin: 0;
-      overflow: hidden;
-      font-family: '文泉驛微米黑', 'LiHei Pro', '微軟正黑體';
-      font-weight: 200;
-      letter-spacing: -0.02em;
-      color: #eee; width: 100%; height: 100%;
-      min-height: 400px;
-    }
-
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
-
-</script>
-<p></p>
-</section>
-<section>
-<h2>CSS Syntax</h2>
-<p></p>
-<p><img src='images/css/selector.gif' alt='Selection and declaration'></p>
-<p></p>
-<p><a href='http://w3schools.com/css/css_syntax.asp'>Source: W3Schools</a></p>
-<p></p>
-<p></p>
-</section>
-<section>
-<h2>怎麼加進 HTML</h2>
-<p class='nopreview'></p>
-<p>在 <code>&lt;head&gt;</code> 中加入</p>
-<p></p>
-<script type='text/x-sample' class='nopreview'>
-   <link rel="stylesheet" type="text/css" href="path/to/style.css">
-
-</script>
-<p></p>
-<p>或直接把 CSS 寫在 <code>&lt;style&gt;</code> 裡；</p>
-<p></p>
-<script type='text/x-sample' class='nopreview'>
-    <style type="text/css">
-      div {
-        color: blue;
+<script type="text/x-sample" class="demo small">
+    var form = document.getElementById('submitform');
+    form.addEventListener('submit', function(e){
+      var checkbox = document.getElementById('tos');
+      if(!ckechbox.checked){
+        alert('請詳閱出師表。');
+        e.preventDefault();
       }
-    </style>
-    <div>I am div!</div>
+    });
 
 </script>
 <p></p>
-<p><code>&lt;style&gt;</code> 可放在 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code> 均可。</p>
-<p></p>
 </section>
-</section>
-<p></p>
-<section>
-<h2>CSS Selectors</h2>
 </section>
       </div>
 
@@ -114,9 +67,8 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/reveal.js"></script>
 <script type="text/javascript" src="lib/highlight.js"></script>
-<script type="text/javascript" src="js/ruler.js"></script>
 <script type="text/javascript" src="js/sample.js"></script>
-<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript" src="js/init-js.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
   </body>
 

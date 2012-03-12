@@ -1,0 +1,60 @@
+3rd week: super shallow JS + quick jQuery
+
+
+牛刀小試
+var statement - weak typing
+operators, including += -=, excluding ++, --
+console.log
+
+Javascript 檔
+<script></script>
+jsfiddle!
+(來 inspector 看一下)
+<script src="">
+
+
+Javascript is like C:
+statements: document.writeln().
+loops (for, while), if-else if-else-endif, switch, try-catch, comments ....
+
+Difference: function passing around like variables. anonymous functions.
+
+Objects
+Arrays
+Argumenting things (not to the DOM objects like DOMevents!)
+
+jQuery: Manipulating DOM elements
+jquery object looks like an array
+what can jQuery do
+The Key to write app: Event, event, event!
+
+-
+
+4nd week: more JS
+
+Javascript's key ideas.
+
+Implied globals. Why? no linker.
+
+javascript loading: end of body tag, or join all altogether
+
+Scopes: C-style stack frame v.s. Javascript's environments
+=> closures, containing environments even if containing function has returned.
+Yes the memory DOES leak.
+http://code.google.com/intl/zh-TW/chrome/devtools/docs/memory-analysis-101.html
+
+http://dmitrysoshnikov.com/ecmascript/es5-chapter-3-2-lexical-environments-ecmascript-implementation/
+
+Prototypes: argumenting default data types. (controversial?)
+Object as Array's prototype
+for-in loop and && hasOwnProperty
+
+
+Function can have methods and members.
+'this' keyword: function itself, blahblahblah. Important: within setTimeout! this -> (global)= window
+Function.prototype.apply & call
+
+Constructors. (not very useful because we use Backbone Models instead)
+
+http://ejohn.org/apps/learn/
+

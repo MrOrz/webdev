@@ -14,6 +14,9 @@
 #reveal .nav li:last-child {
   border: 0;
 }
+#reveal ul ul {
+  margin-left: 1em;
+}
 #reveal section.html5 {
   overflow: hidden;
 }
@@ -54,7 +57,7 @@
 #reveal .sample-container code {
   color: inherit;
 }
-#reveal .sample-container.small pre {
+#reveal .sample-container.small pre, #reveal pre.small {
   font-size: 11px;
   line-height: 16px;
 }
@@ -73,6 +76,7 @@
   position: absolute;
 }
 #reveal .img-board .box {
+  /* in HTML slides */
   position: absolute;
   border: 4px solid black;
   -moz-border-radius: 15px;
@@ -99,4 +103,22 @@
   left: 100%;
   top: 100%;
   content: "</" attr(data-name) ">";
+}
+#reveal .three-column, #reveal .two-column {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  vertical-align: top;
+  margin: 0 1%;
+}
+#reveal .three-column, #reveal .two-column {
+  *display: inline;
+}
+#reveal .three-column {
+  width: 30%;
+}
+#reveal .two-column {
+  width: 45%;
 }

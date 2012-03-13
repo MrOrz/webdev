@@ -52,7 +52,7 @@
   .sample-container code{
     color: inherit;
   }
-  .sample-container.small pre{
+  .sample-container.small pre, pre.small{
     font-size: 11px;
     line-height: 16px;
   }

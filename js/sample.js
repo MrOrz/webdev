@@ -12,6 +12,9 @@
   // example usage:
   // $('script[type=text/x-sample]').sample();
   //
+  // <script> tags within <script type="text/x-sample"> should be written as
+  // &lt;script&gt;
+  //
   $.fn.sample = function(options){
     // 'this' should be <script> jQuery object
     //
@@ -88,7 +91,9 @@
       // join lines
       lines = lines.join('\n');
 
-
+      // substitute escaped <script> and </script> tags
+      lines = lines.replace(/&lt;(\/?script.*?)&gt;/g, "<$1>");
+      
       // output stage
       //
       // the container of all the elements, and

@@ -12,7 +12,7 @@ guard 'jshint-on-rails', :config_path => 'lib/jshint.yml' do
 end
 
 guard 'shell' do
-  watch(%r{^vew/(.*)}) do |m|
+  watch(%r{^vew/(.*)\.vew$}) do |m|
     `vebdew g`
     puts "Vew compiled: #{m[1]}"
   end

@@ -27,25 +27,90 @@
 <ul class="nav">
 <li><a href="html.html">HTML</a></li>
 <li><a href="css.html">CSS</a></li>
+<li><a href="advancedjs.html">Advanced JS</a></li>
 </ul>
 <p></p>
-<p><small><a href="http://yuiblog.com/assets/crockford/javascript.zip">The Javascript Programming Language - Douglas Crockford</a></small></p>
+</section>
+<section>
+<h2>長這樣</h2>
+<script type="text/x-sample" class="demo small">
+  var form = document.getElementById('submitform');
+  form.addEventListener('submit', function(e){
+    var checkbox = document.getElementById('tos');
+    if(!checkbox.checked){
+      alert('請詳閱出師表。');
+      e.preventDefault();
+    }
+  });
+
+</script>
+<p class="chapter"></p>
+<p>Javascript 操作 DOM (HTML 的 API) 的範例。</p>
+<p></p>
+</section>
+<section>
+<h2>牛刀小試</h2>
 <p></p>
 </section>
 <section>
 <section>
-<h2>長這樣</h2>
-<script type="text/x-sample" class="demo small">
-    var form = document.getElementById('submitform');
-    form.addEventListener('submit', function(e){
-      var checkbox = document.getElementById('tos');
-      if(!ckechbox.checked){
-        alert('請詳閱出師表。');
-        e.preventDefault();
-      }
-    });
+<h2>怎麼寫</h2>
+<p><code>ctrl + shift + j</code> 打開 Javascript Console。</p>
+<p></p>
+<p><img src="images/js/console.png" alt="Javascript console">。</p>
+<p></p>
+<p>輸入一行 Javascript (黑色)，輸出一行回傳值 （藍色）</p>
+<p></p>
+</section>
+<section>
+<h2>變數與型別</h2>
+<ul>
+<li>Javascript 為弱型別（weak typing）語言</li>
+<li>用 <code>var</code> 敘述定義變數，變數可以是任何型態的東西</li>
+<li>但不代表 Javascript 沒有型態；亂弄會出錯。</li>
+<li>大小寫敏感</li>
+</ul>
+<p></p>
+<script type="text/x-sample">
+    var a = "str";
+    a = {}; // 換型態
 
 </script>
+<p></p>
+</section>
+<section>
+<h2>運算子</h2>
+<p>+=, -=</p>
+<p></p>
+</section>
+<section>
+<h2>輸出文字</h2>
+<p><code>console.log</code></p>
+<p></p>
+</section>
+<section>
+<h2>JavaSCRIPT</h2>
+<p class="fragment">寫在一個檔案裡面，才有「腳本」的 FU</p>
+<p></p>
+<p>指令一行一行寫，沒有道理寫不完。</p>
+<p></p>
+<p><div class="fragment"></p>
+<p><small>用 <code>&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code> 包住，放在 HTML 裡</small></p>
+<p></p>
+<script type="text/x-sample">
+      &lt;script type="text/javascript"&gt;
+        console.log("<script> 標籤裡好溫暖喔 (羞)");
+      &lt;/script&gt;
+      <p>一片空白。</p>
+
+</script>
+<p></div></p>
+<h2></h2>
+<p class="fragment"></p>
+<p><small>另外寫成一個 *.js 檔，用 <code>&lt;script type=&quot;text/javascript&quot; src=&quot;路徑與檔名&quot;&gt;&lt;/script&gt;</code> 引入 HTML。</small></p>
+<p></p>
+<p><code>&lt;script&gt;</code> 寫在 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code> 裡都可以。瀏覽器一讀到就會立即執行（Load-and-go）。</p>
+<p></p>
 <p></p>
 </section>
 </section>

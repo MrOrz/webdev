@@ -25,16 +25,48 @@ Argumenting things (not to the DOM objects like DOMevents!)
 
 jQuery: Manipulating DOM elements
 jquery object looks like an array
-what can jQuery do
+what can jQuery do: <del>find & destroy</del> 找到它、<del>面對它、</del>處理它<del>、放下它</del>。
+api.jquery.com：分類，一個一個介紹。
 The Key to write app: Event, event, event!
+  DOM event propagation
+  on(), off()
+jQuery
 
+Debugging
+  console.log
+  左邊有三角形
+  但物件可能已經改變柳。
+
+  break points
+    可以看 call stack
+
+  下面：pause on uncaught exception
 -
 
 4nd week: more JS
 
+歷史：why "JAVA"script?
+
+  Oak:窗外有一橡樹，引以為號焉
+  咖啡廳會議: Java。
+
+Javascript v.s. DOM
+
+  DOM：HTML 的 API，讓我們用程式控制網頁內容。 
+  window, document, DOMDivElement.....: DOM elements
+  document.writeln, document.getElementByID: DOM 提供的 method。
+  每個瀏覽器的 DOM 有些差異，jQuery 把他們整合成一種。
+  
+  Javascript：語言本身，提供了 Object, Array, String 等型態的物件。
+
+
 Javascript's key ideas.
 
-Implied globals. Why? no linker.
+
+沒寫 var 也可以。但會變成 Implied globals. Why? Load and go + no linker.
+JSHint!
+"use strict"
+
 
 javascript loading: end of body tag, or join all altogether
 

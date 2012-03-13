@@ -17,23 +17,89 @@ Javascript
 {:.nav}
 * [html.html](HTML)
 * [css.html](CSS)
+* [advancedjs.html](Advanced JS)
 
-<small>[http://yuiblog.com/assets/crockford/javascript.zip](The Javascript Programming Language - Douglas Crockford)</small>
+!SLIDE
+長這樣
+-----
+{:.demo.small}
+~~~
+  var form = document.getElementById('submitform');
+  form.addEventListener('submit', function(e){
+    var checkbox = document.getElementById('tos');
+    if(!checkbox.checked){
+      alert('請詳閱出師表。');
+      e.preventDefault();
+    }
+  });
+~~~
+
+Javascript 操作 DOM (HTML 的 API) 的範例。
+
+{:.chapter}
+!SLIDE
+牛刀小試
+--------
 
 !STACK
   !SLIDE
-  長這樣
-  -----
-  {:.demo.small}
+  怎麼寫
+  ------
+  `ctrl + shift + j` 打開 Javascript Console。
+
+  ![images/js/console.png](Javascript console)。
+
+  輸入一行 Javascript (黑色)，輸出一行回傳值 （藍色）
+
+  !SLIDE
+  變數與型別
+  ----------
+  * Javascript 為弱型別（weak typing）語言
+  * 用 `var` 敘述定義變數，變數可以是任何型態的東西
+  * 但不代表 Javascript 沒有型態；亂弄會出錯。
+  * 大小寫敏感
+
   ~~~
-    var form = document.getElementById('submitform');
-    form.addEventListener('submit', function(e){
-      var checkbox = document.getElementById('tos');
-      if(!ckechbox.checked){
-        alert('請詳閱出師表。');
-        e.preventDefault();
-      }
-    });
+    var a = "str";
+    a = {}; // 換型態
   ~~~
+
+  !SLIDE
+  運算子
+  ------
+  +=, -=
+
+  !SLIDE
+  輸出文字
+  --------
+  `console.log`
+
+  !SLIDE
+  JavaSCRIPT 
+  ------
+  寫在一個檔案裡面，才有「腳本」的 FU
+
+  {:.fragment}
+  指令一行一行寫，沒有道理寫不完。
+  
+  <div class="fragment">
+    <small>用 `<script type="text/javascript"></script>` 包住，放在 HTML 裡</small>
+
+    ~~~
+      &lt;script type="text/javascript"&gt;
+        console.log("<script> 標籤裡好溫暖喔 (羞)");
+      &lt;/script&gt;
+      <p>一片空白。</p>
+    ~~~
+  </div>
+
+  ----
+
+  {:.fragment}
+  <small>另外寫成一個 *.js 檔，用 `<script type="text/javascript" src="路徑與檔名"></script>` 引入 HTML。</small>
+
+  {:.fragment}
+  `<script>` 寫在 `<head>` 或 `<body>` 裡都可以。瀏覽器一讀到就會立即執行（Load-and-go）。
+
 
 !ENDSTACK

@@ -1,0 +1,43 @@
+:title 學深一點的 Javascript
+
+:description 不囉唆學 Javascript reveal.js 製作的 HTML / CSS / JS 投影片。
+:author MrOrz
+:email johnsonliang7@gmail.com
+
+:stylesheet_link_tag css/main.css, css/styles.css, css/sample.css, css/jquery-ui.css
+:stylesheet_link_tag css/ruler.css, lib/zenburn.css
+
+:javascript_include_tag js/jquery.min.js
+:javascript_include_tag https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js
+:javascript_include_tag js/reveal.js, lib/highlight.js, js/sample.js, js/init-js.js, js/index.js
+
+!SLIDE
+Advanced JS
+===
+{:.nav}
+* [html.html](HTML)
+* [css.html](CSS)
+* [js.html](Javascript)
+
+<small>[http://yuiblog.com/assets/crockford/javascript.zip](The Javascript Programming Language - Douglas Crockford)</small>
+
+!SLIDE
+  `&&` 和 `||`
+  ----------------
+
+  `&&` 和 `||` 其實不一定要傳回 true 或 false。
+
+  `&&` : Guard Operator (Logical AND)
+  ```
+    data && data.result
+  ```
+  {:.fragment}
+  * `data` truthy → 回傳 data.result
+  {:.fragment}
+  * 保護 data.result
+  {:.fragment}
+  * 要不然 data 是 undefined 時會有 `TypeError: Cannot read property 'result' of undefined`
+  
+  ----
+
+  || : Default Operator (Logical OR)

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh_TW">
+
+  <head>
+    <meta charset="utf-8">
+    <title>學深一點的 Javascript</title>
+<meta name="description" content="不囉唆學 Javascript reveal.js 製作的 HTML / CSS / JS 投影片。">
+<meta name="author" content="MrOrz">
+<meta name="email" content="johnsonliang7@gmail.com">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/sample.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/ruler.css">
+<link rel="stylesheet" href="lib/zenburn.css">
+  </head>
+
+  <body>
+    <div id="reveal">
+      <div class="slides">
+        <p></p>
+<p></p>
+<p></p>
+<p></p>
+<section>
+<h1>Advanced JS</h1>
+<ul class="nav">
+<li><a href="html.html">HTML</a></li>
+<li><a href="css.html">CSS</a></li>
+<li><a href="js.html">Javascript</a></li>
+</ul>
+<p></p>
+<p><small><a href="http://yuiblog.com/assets/crockford/javascript.zip">The Javascript Programming Language - Douglas Crockford</a></small></p>
+<p></p>
+</section>
+<section>
+<h2>`&&` 和 `||`</h2>
+<ul class="fragment">
+<li><code>data</code> truthy → 回傳 data.result</li>
+</ul>
+<ul class="fragment">
+<li>保護 data.result</li>
+</ul>
+<ul class="fragment">
+<li>要不然 data 是 undefined 時會有 <code>TypeError: Cannot read property &apos;result&apos; of undefined</code></li>
+</ul>
+<p></p>
+<p><code>&amp;&amp;</code> 和 <code>||</code> 其實不一定要傳回 true 或 false。</p>
+<p></p>
+<p><code>&amp;&amp;</code> : Guard Operator (Logical AND)</p>
+<p><code></code>`</p>
+<p>data && data.result</p>
+<p><code></code>`</p>
+<h2></h2>
+<p></p>
+<p>|| : Default Operator (Logical OR)</p>
+</section>
+      </div>
+
+      <!-- The navigational controls UI -->
+      <aside class="controls">
+        <a class="left" href="#">&#x25C4;</a>
+        <a class="right" href="#">&#x25BA;</a>
+        <a class="up" href="#">&#x25B2;</a>
+        <a class="down" href="#">&#x25BC;</a>
+      </aside>
+
+      <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+      <div class="progress"><span></span></div>
+
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/reveal.js"></script>
+<script type="text/javascript" src="lib/highlight.js"></script>
+<script type="text/javascript" src="js/sample.js"></script>
+<script type="text/javascript" src="js/init-js.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+  </body>
+
+</html>

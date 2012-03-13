@@ -34,27 +34,95 @@
 <p></p>
 </section>
 <section>
-<h2>`&&` 和 `||`</h2>
-<ul class="fragment">
-<li><code>data</code> truthy → 回傳 data.result</li>
-</ul>
-<ul class="fragment">
-<li>保護 data.result</li>
-</ul>
-<ul class="fragment">
-<li>要不然 data 是 undefined 時會有 <code>TypeError: Cannot read property &apos;result&apos; of undefined</code></li>
-</ul>
+<h2><code>&amp;&amp;</code> 和 <code>||</code></h2>
 <p></p>
 <p><code>&amp;&amp;</code> 和 <code>||</code> 其實不一定要傳回 true 或 false。</p>
 <p></p>
 <p><code>&amp;&amp;</code> : Guard Operator (Logical AND)</p>
-<p><code></code>`</p>
-<p>data && data.result</p>
-<p><code></code>`</p>
+<pre><code><!--
+-->data &amp;&amp; data.result
+<!--
+--></code></pre>
+<ul class="fragment">
+<li><code>data</code> truthy → 回傳 data.result</li>
+<li>保護 data.result</li>
+<li>要不然 data 是 undefined 時會有 <code>TypeError: Cannot read property &apos;result&apos; of undefined</code></li>
+</ul>
 <h2></h2>
 <p></p>
 <p>|| : Default Operator (Logical OR)</p>
+<p></p>
+<p></p>
+<p></p>
 </section>
+<section>
+<h2>why "JAVA"script?</h2>
+<p></p>
+<p>Oak:窗外有一橡樹，引以為號焉</p>
+<p>咖啡廳會議: Java。</p>
+<p></p>
+</section>
+<section>
+<h2>Javascript v.s. DOM</h2>
+<p></p>
+<p>DOM：HTML 的 API，讓我們用程式控制網頁內容。</p>
+<p>window, document, DOMDivElement.....: DOM elements</p>
+<p>document.writeln, document.getElementByID: DOM 提供的 method。</p>
+<p>每個瀏覽器的 DOM 有些差異，jQuery 把他們整合成一種。</p>
+<h2></h2>
+<p></p>
+<p>Javascript：語言本身，提供了 Object, Array, String 等型態的物件。</p>
+<p></p>
+</section>
+<section>
+<h2>雞毛蒜皮：分號</h2>
+<ul>
+<li>有加分號</li>
+<li>暗示有 "semicolon insertion"</li>
+<li>沒有理由強制你用分號</li>
+</ul>
+<p></p>
+<p><a href="http://mislav.uniqpath.com/2010/05/semicolons/">Semicolons in JavaScript are optional</a></p>
+<p>分號擁護者的理由與辯駁</p>
+<p></p>
+<p>這份教材:</p>
+<p></p>
+<p></p>
+<p>說了一大堆，還是那句老話：「你自己決定吧！」 -- 劉墉</p>
+<p></p>
+</section>
+<section>
+<h2>Javascript's key ideas.</h2>
+<p></p>
+<p>TBD</p>
+<p></p>
+</section>
+<section>
+<h2>var statements</h2>
+<ul>
+<li>為了要 Load-and-go，沒有 linker。</li>
+<li>Library 間用 global scope 來溝通。</li>
+<li>建立規範時的缺陷</li>
+<li>錯誤已經造成。CommonJS / <a href="http://requirejs.org/">RequireJS</a> 嘗試修補。</li>
+</ul>
+<p></p>
+<p>沒寫 var 也可以。但會變成全域變數 (Implied global)。</p>
+<p></p>
+<p></p>
+<p>function 開頭加上 "use strict". TODO: example!</p>
+<p>使用 JSHint!</p>
+<p></p>
+</section>
+<section>
+<h2><code>&lt;script&gt;</code> 放哪裡？</h2>
+<ul>
+<li>放在 body tag 後面</li>
+<li>把 js 檔案接起來</li>
+<li>使用 javascript loader 如 head.js 或 require.js</li>
+<p>TODO: waterfall chart of js loading</p>
+<p></p>
+</section>
+</ul>
       </div>
 
       <!-- The navigational controls UI -->

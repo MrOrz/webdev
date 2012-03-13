@@ -12,94 +12,231 @@
 :javascript_include_tag js/reveal.js, lib/highlight.js, js/sample.js, js/init-js.js, js/index.js
 
 !SLIDE
-Javascript
-===
-{:.nav}
-* [html.html](HTML)
-* [css.html](CSS)
-* [advancedjs.html](Advanced JS)
+  Javascript
+  ===
+  {:.nav}
+  * [html.html](HTML)
+  * [css.html](CSS)
+  * [advancedjs.html](Advanced JS)
 
 !SLIDE
-長這樣
------
-{:.demo.small}
-~~~
-  var form = document.getElementById('submitform');
-  form.addEventListener('submit', function(e){
-    var checkbox = document.getElementById('tos');
-    if(!checkbox.checked){
-      alert('請詳閱出師表。');
-      e.preventDefault();
-    }
-  });
-~~~
+  長這樣
+  -----
+  {:.demo.small}
+  ~~~
+    var form = document.getElementById('submitform');
+    form.addEventListener('submit', function(e){
+      var checkbox = document.getElementById('tos');
+      if(!checkbox.checked){
+        alert('請詳閱出師表。');
+        e.preventDefault();
+      }
+    });
+    form.addEventListener('focus', function(){
+      console.log('focus');
+    })
+  ~~~
 
-Javascript 操作 DOM (HTML 的 API) 的範例。
+    * Javascript 操作 DOM (HTML 的 API) 的範例。
+    * 變數需要事先定義，但不指定型別。
 
 {:.chapter}
 !SLIDE
-牛刀小試
---------
+  牛刀小試
+  --------
 
 !STACK
   !SLIDE
-  怎麼寫
-  ------
-  `ctrl + shift + j` 打開 Javascript Console。
+    怎麼寫
+    ------
+    `ctrl + shift + j` 打開 Javascript Console。
 
-  ![images/js/console.png](Javascript console)。
+    ![images/js/console.png](Javascript console)。
 
-  輸入一行 Javascript (黑色)，輸出一行回傳值 （藍色）
-
-  !SLIDE
-  變數與型別
-  ----------
-  * Javascript 為弱型別（weak typing）語言
-  * 用 `var` 敘述定義變數，變數可以是任何型態的東西
-  * 但不代表 Javascript 沒有型態；亂弄會出錯。
-  * 大小寫敏感
-
-  ~~~
-    var a = "str";
-    a = {}; // 換型態
-  ~~~
+    輸入一行 Javascript (黑色)，輸出一行回傳值 （藍色）
 
   !SLIDE
-  運算子
-  ------
-  +=, -=
-
-  !SLIDE
-  輸出文字
-  --------
-  `console.log`
-
-  !SLIDE
-  JavaSCRIPT 
-  ------
-  寫在一個檔案裡面，才有「腳本」的 FU
-
-  {:.fragment}
-  指令一行一行寫，沒有道理寫不完。
-  
-  <div class="fragment">
-    <small>用 `<script type="text/javascript"></script>` 包住，放在 HTML 裡</small>
+    變數與型別
+    ----------
+    * Javascript 為弱型別（weak typing）語言
+    * 用 `var` 敘述定義變數，變數可以是任何型態的東西
+    * 但不代表 Javascript 沒有型態；亂弄會出錯。
+    * 大小寫敏感
 
     ~~~
-      &lt;script type="text/javascript"&gt;
-        console.log("<script> 標籤裡好溫暖喔 (羞)");
-      &lt;/script&gt;
-      <p>一片空白。</p>
+      var a = "str";
+      a = {}; // 換型態
     ~~~
-  </div>
 
-  ----
+  !SLIDE
+    運算子
+    ------
+    +: 左右為數字的時候 → 加起兩個數字，
+    否則當成字串接起來
 
-  {:.fragment}
-  <small>另外寫成一個 *.js 檔，用 `<script type="text/javascript" src="路徑與檔名"></script>` 引入 HTML。</small>
+    +=, -=
 
-  {:.fragment}
-  `<script>` 寫在 `<head>` 或 `<body>` 裡都可以。瀏覽器一讀到就會立即執行（Load-and-go）。
+  !SLIDE
+    輸出文字
+    --------
+    `console.log`
 
+  !SLIDE
+    JavaSCRIPT 
+    ------
+    寫在一個檔案裡面，才有「腳本」的 FU
+
+    {:.fragment}
+    指令一行一行寫，沒有道理寫不完。
+    
+    <div class="fragment">
+      <small>用 `<script type="text/javascript"></script>` 包住，放在 HTML 裡</small>
+
+      ~~~
+        &lt;script type="text/javascript"&gt;
+          console.log("<script> 標籤裡好溫暖喔 (羞)");
+        &lt;/script&gt;
+        <p>一片空白。</p>
+      ~~~
+    </div>
+
+    ----
+
+  !SLIDE
+    Javascript file
+    ---------------
+
+    * 另外寫成一個 *.js 檔
+    *  `<script type="text/javascript" src="路徑與檔名"></script>`
+
+    ~~~
+        &lt;script type="text/javascript" src="sample/included.js"&gt;&lt;/script&gt;
+        <p>仍然一片空白。</p>
+    ~~~
+
+    {:.fragment}
+    `<script>` 寫在 `<head>` 或 `<body>` 裡都可以。瀏覽器一讀到就會立即執行（Load-and-go）。
+
+  !SLIDE
+    jsfiddle
+    --------
+    用 inspector 來看一下 [http://jsfiddle.net](jsfiddle.net)。
 
 !ENDSTACK
+
+{:.chapter}
+!SLIDE
+  JS 和 C 很像
+  -----
+
+!STACK
+  !SLIDE
+    `if` 條件
+    --
+    if-else if-else-endif
+
+  !SLIDE
+    迴圈
+    ---
+    for, while
+
+  !SLIDE
+    switch case
+    -----------
+
+  !SLIDE
+    comments
+    ---
+
+  !SLIDE
+    `try-catch`
+    ---
+    catch 只有一個
+    很少用
+
+!ENDSTACK
+
+{:.chapter}
+!SLIDE
+  JS 又和 C 不一樣
+  ---
+
+!STACK
+  !SLIDE
+    Functions
+    ---
+    'first-class'
+    anonymous
+
+    function statement, function declairation
+
+  !SLIDE
+    Objects
+    ---
+    `{}`
+
+  !SLIDE
+    Augmenting Objects
+    ---
+
+
+  !SLIDE
+    Arrays
+    ---
+    `[]`
+  !SLIDE
+    Array Methods
+    ---
+    lalala
+
+!ENDSTACK
+
+{:.chapter} 
+!SLIDE
+jQuery
+------
+替你操控 DOM (HTML 的 API)
+
+!STACK
+  !SLIDE
+    開始用 jQuery
+    ---
+
+    神秘咒語
+    ```
+      <script type="text/javascript"
+       src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+      </script>
+    ```
+
+    然後施魔法
+
+    {:.small}
+    ~~~
+      <p></p>
+
+      &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
+      &lt;script type="text/javascript"&gt;
+        $('p').text('jQuery 好 Q!');
+      &lt;/script&gt;
+    ~~~
+
+  !SLIDE
+    大改造!! 劇的 Before After
+    ---
+    BEFORE
+    ~~~
+      var form = document.getElementById('submitform');
+      form.addEventListener('submit', function(e){
+        var checkbox = document.getElementById('tos');
+        if(!checkbox.checked){
+          alert('請詳閱出師表。');
+          e.preventDefault();
+        }
+      });
+    ~~~
+
+    document.getElementById, addEventListener 真他X的長
+
+!ENDSTACK
+

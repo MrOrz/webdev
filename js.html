@@ -34,21 +34,27 @@
 <section>
 <h2>長這樣</h2>
 <script type="text/x-sample" class="demo small">
-  var form = document.getElementById('submitform');
-  form.addEventListener('submit', function(e){
-    var checkbox = document.getElementById('tos');
-    if(!checkbox.checked){
-      alert('請詳閱出師表。');
-      e.preventDefault();
-    }
-  });
+    var form = document.getElementById('submitform');
+    form.addEventListener('submit', function(e){
+      var checkbox = document.getElementById('tos');
+      if(!checkbox.checked){
+        alert('請詳閱出師表。');
+        e.preventDefault();
+      }
+    });
+    form.addEventListener('focus', function(){
+      console.log('focus');
+    })
 
 </script>
-<p class="chapter"></p>
-<p>Javascript 操作 DOM (HTML 的 API) 的範例。</p>
+<ul>
+<li>Javascript 操作 DOM (HTML 的 API) 的範例。</li>
+<li>變數需要事先定義，但不指定型別。</li>
+</ul>
+<p></p>
 <p></p>
 </section>
-<section>
+<section class="chapter">
 <h2>牛刀小試</h2>
 <p></p>
 </section>
@@ -72,14 +78,17 @@
 </ul>
 <p></p>
 <script type="text/x-sample">
-    var a = "str";
-    a = {}; // 換型態
+      var a = "str";
+      a = {}; // 換型態
 
 </script>
 <p></p>
 </section>
 <section>
 <h2>運算子</h2>
+<p>+: 左右為數字的時候 → 加起兩個數字，</p>
+<p>否則當成字串接起來</p>
+<p></p>
 <p>+=, -=</p>
 <p></p>
 </section>
@@ -90,30 +99,164 @@
 </section>
 <section>
 <h2>JavaSCRIPT</h2>
-<p class="fragment">寫在一個檔案裡面，才有「腳本」的 FU</p>
+<p>寫在一個檔案裡面，才有「腳本」的 FU</p>
 <p></p>
-<p>指令一行一行寫，沒有道理寫不完。</p>
+<p class="fragment">指令一行一行寫，沒有道理寫不完。</p>
 <p></p>
 <p><div class="fragment"></p>
 <p><small>用 <code>&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code> 包住，放在 HTML 裡</small></p>
 <p></p>
 <script type="text/x-sample">
-      &lt;script type="text/javascript"&gt;
-        console.log("<script> 標籤裡好溫暖喔 (羞)");
-      &lt;/script&gt;
-      <p>一片空白。</p>
+        &lt;script type="text/javascript"&gt;
+          console.log("<script> 標籤裡好溫暖喔 (羞)");
+        &lt;/script&gt;
+        <p>一片空白。</p>
 
 </script>
 <p></div></p>
 <h2></h2>
-<p class="fragment"></p>
-<p><small>另外寫成一個 *.js 檔，用 <code>&lt;script type=&quot;text/javascript&quot; src=&quot;路徑與檔名&quot;&gt;&lt;/script&gt;</code> 引入 HTML。</small></p>
 <p></p>
-<p><code>&lt;script&gt;</code> 寫在 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code> 裡都可以。瀏覽器一讀到就會立即執行（Load-and-go）。</p>
+</section>
+<section>
+<h2>Javascript file</h2>
+<ul>
+<li>另外寫成一個 *.js 檔</li>
+<li><code>&lt;script type=&quot;text/javascript&quot; src=&quot;路徑與檔名&quot;&gt;&lt;/script&gt;</code></li>
+</ul>
 <p></p>
+<p></p>
+<script type="text/x-sample">
+        &lt;script type="text/javascript" src="sample/included.js"&gt;&lt;/script&gt;
+        <p>仍然一片空白。</p>
+
+</script>
+<p></p>
+<p class="fragment"><code>&lt;script&gt;</code> 寫在 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code> 裡都可以。瀏覽器一讀到就會立即執行（Load-and-go）。</p>
+<p></p>
+</section>
+<section>
+<h2>jsfiddle</h2>
+<p>用 inspector 來看一下 <a href="http://jsfiddle.net">jsfiddle.net</a>。</p>
 <p></p>
 </section>
 </section>
+<p></p>
+<section class="chapter">
+<h2>JS 和 C 很像</h2>
+<p></p>
+</section>
+<section>
+<section>
+<h2><code>if</code> 條件</h2>
+<p>if-else if-else-endif</p>
+<p></p>
+</section>
+<section>
+<h2>迴圈</h2>
+<p>for, while</p>
+<p></p>
+</section>
+<section>
+<h2>switch case</h2>
+<p></p>
+</section>
+<section>
+<h2>comments</h2>
+<p></p>
+</section>
+<section>
+<h2><code>try-catch</code></h2>
+<p>catch 只有一個</p>
+<p>很少用</p>
+<p></p>
+</section>
+</section>
+<p></p>
+<section class="chapter">
+<h2>JS 又和 C 不一樣</h2>
+<p></p>
+</section>
+<section>
+<section>
+<h2>Functions</h2>
+<p>'first-class'</p>
+<p>anonymous</p>
+<p></p>
+<p>function statement, function declairation</p>
+<p></p>
+</section>
+<section>
+<h2>Objects</h2>
+<p><code>{}</code></p>
+<p></p>
+</section>
+<section>
+<h2>Augmenting Objects</h2>
+<p></p>
+<p></p>
+</section>
+<section>
+<h2>Arrays</h2>
+<p><code>[]</code></p>
+</section>
+<section>
+<h2>Array Methods</h2>
+<p>lalala</p>
+<p></p>
+</section>
+</section>
+<p></p>
+<p></p>
+<section class="chapter">
+<h2>jQuery</h2>
+<p>替你操控 DOM (HTML 的 API)</p>
+<p></p>
+</section>
+<section>
+<section>
+<h2>開始用 jQuery</h2>
+<p></p>
+<p>神秘咒語</p>
+<pre><code><!--
+-->&lt;script type=&quot;text/javascript&quot;
+ src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&quot;&gt;
+&lt;/script&gt;
+<!--
+--></code></pre>
+<p></p>
+<p>然後施魔法</p>
+<p></p>
+<script type="text/x-sample" class="small">
+      <p></p>
+
+      &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
+      &lt;script type="text/javascript"&gt;
+        $('p').text('jQuery 好 Q!');
+      &lt;/script&gt;
+
+</script>
+<p></p>
+</section>
+<section>
+<h2>大改造!! 劇的 Before After</h2>
+<p>BEFORE</p>
+<script type="text/x-sample">
+      var form = document.getElementById('submitform');
+      form.addEventListener('submit', function(e){
+        var checkbox = document.getElementById('tos');
+        if(!checkbox.checked){
+          alert('請詳閱出師表。');
+          e.preventDefault();
+        }
+      });
+
+</script>
+<p></p>
+<p>document.getElementById, addEventListener 真他X的長</p>
+<p></p>
+</section>
+</section>
+<p></p>
       </div>
 
       <!-- The navigational controls UI -->

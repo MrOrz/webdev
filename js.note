@@ -23,6 +23,8 @@ Objects
 Arrays
 Argumenting things (not to the DOM objects like DOMevents!)
 
+
+
 jQuery: Manipulating DOM elements
 jquery object looks like an array
 what can jQuery do: <del>find & destroy</del> 找到它、<del>面對它、</del>處理它<del>、放下它</del>。
@@ -45,37 +47,21 @@ Debugging
 
 4nd week: more JS
 
-歷史：why "JAVA"script?
 
-  Oak:窗外有一橡樹，引以為號焉
-  咖啡廳會議: Java。
-
-Javascript v.s. DOM
-
-  DOM：HTML 的 API，讓我們用程式控制網頁內容。 
-  window, document, DOMDivElement.....: DOM elements
-  document.writeln, document.getElementByID: DOM 提供的 method。
-  每個瀏覽器的 DOM 有些差異，jQuery 把他們整合成一種。
-  
-  Javascript：語言本身，提供了 Object, Array, String 等型態的物件。
-
-
-Javascript's key ideas.
-
-
-沒寫 var 也可以。但會變成 Implied globals. Why? Load and go + no linker.
-JSHint!
-"use strict"
-
-
-javascript loading: end of body tag, or join all altogether
-
+!SLIDE
+  Memory Leak
+  ----
 Scopes: C-style stack frame v.s. Javascript's environments
 => closures, containing environments even if containing function has returned.
 Yes the memory DOES leak.
 http://code.google.com/intl/zh-TW/chrome/devtools/docs/memory-analysis-101.html
 
 http://dmitrysoshnikov.com/ecmascript/es5-chapter-3-2-lexical-environments-ecmascript-implementation/
+
+
+!SLIDE
+  prototype
+  ----
 
 Prototypes: argumenting default data types. (controversial?)
 Object as Array's prototype

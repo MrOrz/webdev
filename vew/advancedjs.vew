@@ -33,11 +33,75 @@ Advanced JS
   ```
   {:.fragment}
   * `data` truthy → 回傳 data.result
-  {:.fragment}
   * 保護 data.result
-  {:.fragment}
   * 要不然 data 是 undefined 時會有 `TypeError: Cannot read property 'result' of undefined`
   
   ----
 
   || : Default Operator (Logical OR)
+
+
+
+!SLIDE
+  why "JAVA"script?
+  ----
+
+  Oak:窗外有一橡樹，引以為號焉
+  咖啡廳會議: Java。
+
+!SLIDE
+  Javascript v.s. DOM
+  ----
+
+  DOM：HTML 的 API，讓我們用程式控制網頁內容。 
+  window, document, DOMDivElement.....: DOM elements
+  document.writeln, document.getElementByID: DOM 提供的 method。
+  每個瀏覽器的 DOM 有些差異，jQuery 把他們整合成一種。
+
+  ---
+
+  Javascript：語言本身，提供了 Object, Array, String 等型態的物件。
+
+!SLIDE
+  雞毛蒜皮：分號
+  ------
+
+  [http://mislav.uniqpath.com/2010/05/semicolons/](Semicolons in JavaScript are optional)
+  分號擁護者的理由與辯駁
+
+  這份教材:
+
+  * 有加分號
+  * 暗示有 "semicolon insertion"
+  * 沒有理由強制你用分號
+
+  說了一大堆，還是那句老話：「你自己決定吧！」 -- 劉墉
+
+!SLIDE
+  Javascript's key ideas.
+  ----
+  
+  TBD
+
+!SLIDE
+  var statements
+  ----
+
+  沒寫 var 也可以。但會變成全域變數 (Implied global)。
+  
+    * 為了要 Load-and-go，沒有 linker。
+    * Library 間用 global scope 來溝通。
+    * 建立規範時的缺陷
+    * 錯誤已經造成。CommonJS / [http://requirejs.org/](RequireJS) 嘗試修補。
+
+  function 開頭加上 "use strict". TODO: example!
+  使用 JSHint!
+
+!SLIDE
+  `<script>` 放哪裡？
+  ----
+  TODO: waterfall chart of js loading
+
+  * 放在 body tag 後面
+  * 把 js 檔案接起來
+  * 使用 javascript loader 如 head.js 或 require.js

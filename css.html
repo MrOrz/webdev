@@ -830,7 +830,7 @@
                 <p>
                   <code>float</code>: <code>left</code> | <code>right</code>
                 </p>
-              <h3>absolute positioning</h3>
+              <h3>Absolute Positioning</h3>
                 <p>
                   <code>position</code>: <code>absolute</code> | <code>fixed</code>
                 </p>
@@ -890,10 +890,40 @@
             </ul>
           </section>
           <section>
+            <h2><code>position: absolute</code></h2>
+            <script type="text/x-sample" class="reset small">
+              <div class="world">
+                開闊的世界
+                <div class="parents">
+                  無奈的 static 父母 ˊˋ
+                  <div class="child">死小孩 :D</div>
+                </div>
+              </div>
+
+              <style type="text/css">
+                .world{
+                  margin: 50px; padding: 50px;
+                  border: 5px solid green;
+                  background: #696;
+                  position: relative;
+                }
+                .parents{
+                  border: 1px solid brown;
+                }
+                .child{
+                  position: absolute;
+                  left: 1em; top: 1em;
+                }
+              </style>
+            </script>
+
+            <p>你我都曾經 <code>position: absolute</code>。</p>
+          </section>
+          <section>
             <h2>細說 <code>position</code> (2)</h2>
             <p><code>absolute</code>, <code>fixed</code>, <code>relative</code> 用 <code>left</code>, <code>top</code>, <code>bottom</code>, <code>right</code> 調位置。
             </p>
-            <p>absolute positioning 的元素不會撐開 parent block。</p>
+            <p>Absolute positioning 的元素不會撐開 parent block。</p>
             <script type="text/x-sample" class="small">
               <style type="text/css">
                 nav{

@@ -82,13 +82,13 @@
     `console.log`
 
   !SLIDE
-    JavaSCRIPT 
+    JavaSCRIPT
     ------
     寫在一個檔案裡面，才有「腳本」的 FU
 
     {:.fragment}
     指令一行一行寫，沒有道理寫不完。
-    
+
     <div class="fragment">
       <small>用 `<script type="text/javascript"></script>` 包住，放在 HTML 裡</small>
 
@@ -191,7 +191,7 @@
 
 !ENDSTACK
 
-{:.chapter} 
+{:.chapter}
 !SLIDE
 jQuery
 ------
@@ -222,7 +222,7 @@ jQuery
     ~~~
 
   !SLIDE
-    大改造!! 劇的 Before After
+    大改造!! 劇的 Before-After
     ---
     BEFORE
     ~~~
@@ -236,7 +236,16 @@ jQuery
       });
     ~~~
 
-    document.getElementById, addEventListener 真他X的長
+    document.getElementById, addEventListener
+
+  !SLIDE
+    なんということでしょう!
+    ---
+    AFTER
+    ~~~
+
+    ~~~
+    <iframe width="80" height="84" src="http://www.youtube.com/embed/E9gfiTAhScM?rel=0" frameborder="0" allowfullscreen></iframe>
 
 !ENDSTACK
 

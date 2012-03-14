@@ -26,10 +26,16 @@
 
   // enable highlighting for all <pre><code> elements
   $('pre>code').each(function(){
-    var $this = $(this);
+    var $this = $(this),
+        lang = $this.parent().data('lang');
+    // Only do highlighting only when not contained in sample-container
+    if($this.parents('.sample-container').length){
+      return;
+    }
 
-    // do highlighting only when not contained in sample-container
-    if(!$this.parents('.sample-container').length){
+    if(lang){
+      $(this).html( hljs.highlight(lang, $(this).text()).value );
+    }else{
       $(this).html( hljs.highlightAuto($(this).text()).value );
     }
   });

@@ -224,74 +224,73 @@ jQuery
     ~~~
 
   !SLIDE
-    大改造!! 劇的 Before-After
+    大改造!! 劇的 Before After
     ---
     物件 5927：不方便的 API
-    {:.demo-dom.small}
+    {:.demo-dom-native.small[data-lang=javascript]}
     ~~~
-      &lt;script type="text/javascript"&gt;
-        // 偵測是否同意出師表
-        var form = document.querySelector('#submitform');
+      // 偵測是否同意出師表
+      var form = document.querySelector('#submitform');
 
-        form.addEventListener('submit', function(e){
-          if(!document.querySelector('#tos').checked){
-            alert('請詳閱出師表。');
-            e.preventDefault();
-          }
-        });
+      form.addEventListener('submit', function(e){
+        if(!document.querySelector('#tos').checked){
+          alert('請詳閱出師表。');
+          e.preventDefault();
+        }
+      });
 
-        // 增加推薦人
-        document.querySelector('.add-referral')
-                .addEventListener('click', function(){
+      // 增加推薦人
+      document.querySelector('.add-referral')
+              .addEventListener('click', function(){
 
-          // 開一個 buffer，建立下面架構：
-          /*
-            <p>
-              <input type="text" name="referral">
-              <a class="del">刪除</a>
-            </p>
-          */
-          var buffer = document.createDocumentFragment(),
-              p      = buffer.appendChild(
-                          document.createElement('p')),
-              txt    = p.appendChild(
-                          document.createElement('input')),
-              del    = p.appendChild(
-                          document.createElement('a'));
+        // 開一個 buffer，建立下面架構：
+        /*
+          <p>
+            <input type="text" name="referral">
+            <a class="del" href="javascript:;">刪除</a>
+          </p>
+        */
+        var buffer = document.createDocumentFragment(),
+            p      = buffer.appendChild(
+                        document.createElement('p')),
+            txt    = p.appendChild(
+                        document.createElement('input')),
+            del    = p.appendChild(
+                        document.createElement('a'));
 
-          txt.setAttribute('type', 'text');
-          txt.setAttribute('name', 'referral');
-          del.setAttribute('class', 'del');
-          del.innerHTML = '刪除';
+        txt.setAttribute('type', 'text');
+        txt.setAttribute('name', 'referral');
+        del.setAttribute('class', 'del');
+        del.setAttribute('href', 'javascript:;');
+        del.innerHTML = '刪除';
 
-          // 把 buffer 內容塞進 DOM
-          document.querySelector('#referrals')
-                  .appendChild(buffer);
-        });
+        // 把 buffer 內容塞進 DOM
+        document.querySelector('#referrals')
+                .appendChild(buffer);
+      });
 
-        // 刪除推薦人
-        form.addEventListener('click', function(e){
-          // 若 'click' 事件來自 <a class="del">
-          if(e.target.hasClass('del')){
-            // 把包著 <a class="del"> 之 <p> 整個移除。
-            var p = e.target.parent;
-            p.parent.removeChild(p);
-          }
-        });
-
-      &lt;/script&gt;
+      // 刪除推薦人
+      form.addEventListener('click', function(e){
+        // 若 'click' 事件來自 <a class="del">
+        if(e.target.className === 'del'){
+          // 把包著 <a class="del"> 之 <p> 整個移除。
+          var p = e.target.parentNode;
+          p.parentNode.removeChild(p);
+        }
+      });
     ~~~
 
     DOM 這個 API 很長，相當困擾。
 
   !SLIDE
-    Reform 匠：jQuery
+    匠：jQuery
     ---
 
     ### SPEC
 
     * 表單送出時，檢查是否接受出師表
     * 按「增加推薦人」時，蓋一個下面的東西：
+      {:.small[style=width: 400px; margin: 0 auto 1em;]}
       ```
         <p>
           <input type="text" name="referral">
@@ -300,125 +299,86 @@ jQuery
       ```
     * 按裡頭的「刪除」時，把整個 `<p>` 移除。
 
-    ### HTML 架構
-
-    {:.small}
-    ```
-      <form id="submitform" action="sample/back.html">
-        <p>推薦其他人給後主：</p>
-        <div id="referrals">
-          <a href="javascript:;" class="add-referral">增加推薦人</a>
-        </div>
-        <input id="tos" name="tos" type="checkbox">
-        <label for="tos">
-          我已詳閱並接受<a href="http://zh.wikipedia.org/zh-tw/%E5%87%BA%E5%B8%AB%E8%A1%A8">前出師表</a>。
-        </label>
-        <input type="submit" value="上書">
-      </form>
-    ```
-
     ### 希望
       寫少一點，作到的事情更多。
 
   !SLIDE
     BEFORE
     ---
-    {:.demo-dom.small}
+    {:.demo-dom-native.small}
     ~~~
-      &lt;script type="text/javascript"&gt;
-        var form = document.querySelector('#submitform');
-
-        // 偵測是否同意出師表
-        form.addEventListener('submit', function(e){
-          if(!document.querySelector('#tos').checked){
-            alert('請詳閱出師表。');
-            e.preventDefault();
-          }
-        });
-
-        // 增加推薦人
-        document.querySelector('.add-referral')
-                .addEventListener('click', function(){
-
-          // 開一個 buffer，建立下面架構：
-          /*
-            <p>
-              <input type="text" name="referral">
-              <a class="del">刪除</a>
-            </p>
-          */
-          var buffer = document.createDocumentFragment(),
-              p      = buffer.appendChild(
-                          document.createElement('p')),
-              txt    = p.appendChild(
-                          document.createElement('input')),
-              del    = p.appendChild(
-                          document.createElement('a'));
-
-          txt.setAttribute('type', 'text');
-          txt.setAttribute('name', 'referral');
-          del.setAttribute('class', 'del');
-          del.innerHTML = '刪除';
-
-          // 把 buffer 內容塞進 DOM
-          document.querySelector('#referrals')
-                  .appendChild(buffer);
-        });
-
-        // 刪除推薦人
-        form.addEventListener('click', function(e){
-          // 若 'click' 事件來自 <a class="del">
-          if(e.target.hasClass('del')){
-            // 把包著 <a class="del"> 之 <p> 整個移除。
-            var p = e.target.parent;
-            p.parent.removeChild(p);
-          }
-        });
-
-      &lt;/script&gt;
-    ~~~
-
-  !SLIDE
-    AFTER
-    ---
-
-    <iframe width="80" height="84" src="http://www.youtube.com/embed/E9gfiTAhScM?rel=0" frameborder="0" allowfullscreen></iframe>
-
-    なんということでしょう!
-
-    AFTER
-    {:.demo-dom.small}
-    ~~~
-      &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
-      &lt;script type="text/javascript"&gt;
-      var form = $('#submitform');
+      var form = document.querySelector('#submitform');
 
       // 偵測是否同意出師表
-      form.on('submit', function(e){
-        if($('#tos').attr('checked')){
+      form.addEventListener('submit', function(e){
+        if(!document.querySelector('#tos').checked){
           alert('請詳閱出師表。');
           e.preventDefault();
         }
       });
 
       // 增加推薦人
-      $('.add-referral').on('click', function(){
-        // 把下面內容塞進 DOM
-        /*
-          <p>
-            <input type="text" name="referral">
-            <a class="del">刪除</a>
-          </p>
-        */
-        $('<p><input type="text" name="referral"><a class="del">刪除</a></p>').appendTo('#referrals');
+      document.querySelector('.add-referral')
+              .addEventListener('click', function(){
+
+        // 開一個 buffer，建立下面架構：
+        var buffer = document.createDocumentFragment(),
+            p      = buffer.appendChild(
+                        document.createElement('p')),
+            txt    = p.appendChild(
+                        document.createElement('input')),
+            del    = p.appendChild(
+                        document.createElement('a'));
+
+        txt.setAttribute('type', 'text');
+        txt.setAttribute('name', 'referral');
+        del.setAttribute('class', 'del');
+        del.setAttribute('href', 'javascript:;');
+        del.innerHTML = '刪除';
+
+        // 把 buffer 內容塞進 DOM
+        document.querySelector('#referrals')
+                .appendChild(buffer);
       });
 
       // 刪除推薦人
-      form.on('click', '.del', function(){
+      form.addEventListener('click', function(e){
+        // 若 'click' 事件來自 <a class="del">
+        if(e.target.className === 'del'){
+          // 把包著 <a class="del"> 之 <p> 整個移除。
+          var p = e.target.parentNode;
+          p.parentNode.removeChild(p);
+        }
+      });
+    ~~~
+
+  !SLIDE
+    AFTER
+    ---
+
+    <!--<iframe width="150" height="40" style="position: absolute; right: 0; top: 0; opacity: 0.1;" src="http://www.youtube.com/embed/E9gfiTAhScM?rel=0" frameborder="0"></iframe>-->
+
+    なんということでしょう!
+
+    {:.demo-dom-jquery.small[data-lang=javascript]}
+    ~~~
+      $('#submitform').on('submit', function(e){
+        // 偵測是否同意出師表
+        if($('#tos').attr('checked')){
+          alert('請詳閱出師表。');
+          e.preventDefault();
+        }
+      }).on('click', '.del', function(){
+        // 刪除推薦人
         // 把包著 <a class="del"> 之 <p> 整個移除。
         $(this).parents('p').remove();
       });
-      &lt;/script&gt;
+
+      // 增加推薦人
+      $('.add-referral').on('click', function(){
+        // 把下面內容塞進 DOM
+        $('<p><input type="text" name="referral"><a class="del">刪除</a></p>').appendTo('#referrals');
+      });
     ~~~
 
 !ENDSTACK
@@ -433,23 +393,161 @@ jQuery
     神奇的 `$`
     ---
 
+    {:[data-lang=javascript][style=width: 220px; margin: 0 auto 1em;]}
     ```
       $(SELECTOR)
     ```
 
     * `$` 是一個 function。
-    * 傳入 css selector → 回傳找到的 element
+    * 傳入 [http://api.jquery.com/category/selectors/](css selector) → 回傳找到的 element
     * 傳入 HTML tag → 回傳新蓋的 element
 
     ---
 
     element 被包在 jQuery obejct 裡頭。
 
+    {:[height=190]}![images/js/jqObj.png](obj)
+
   !SLIDE
     jQuery Object
     ---
 
-    長怎樣呢？
+    {:[width=900]}![images/js/jqObj.png](obj)
 
-    []
+    * 看起來像陣列
+    * 有 length 屬性
+    * 有[http://api.jquery.com](很多 method) 可以用
 
+!ENDSTACK
+
+{:.chapter}
+!SLIDE
+  jQuery API
+  ---
+
+!STACK
+  !SLIDE
+    Manipulation
+    ---
+    操弄 DOM 結構與屬性
+
+    * [http://api.jquery.com/category/css/](讀取 / 新增 class 或 CSS style)
+    * [讀取 / 新增 / 移除屬性](http://api.jquery.com/category/attributes/)
+    * 在 [http://api.jquery.com/category/manipulation/dom-insertion-inside/](裡面) [http://api.jquery.com/category/manipulation/dom-insertion-outside/](旁邊) 插入/移除 DOM element
+    * [http://api.jquery.com/category/manipulation/dom-insertion-around/](包覆)目前 DOM element
+
+    {:.jquery.small}
+    ~~~
+      // TODO:
+      // innerWidth, width, outerWidth
+      // addClass
+
+      // attr, removeAttr
+
+      // clone
+      // append, appendTo
+      // remove
+
+      // wrap
+    ~~~
+
+    ---
+
+    [http://api.jquery.com/category/manipulation/](Manipulation - jQuery API)
+
+  !SLIDE
+    Traversing
+    ---
+    從目前 element 找到另一個 element
+
+    * [http://api.jquery.com/category/traversing/tree-traversal/](找親戚)
+    * [http://api.jquery.com/category/traversing/filtering/](過濾)目前的 jQuery object
+
+    {:.jquery.small}
+    ~~~
+      // TODO:
+      // find()
+      // parentts()
+      //  all using conosole.log
+
+      // not()
+    ~~~
+
+    ---
+
+    [http://api.jquery.com/category/traversing/](Traversing - jQuery API)
+
+  !SLIDE
+    Events
+    ---
+    互動的主要要素
+
+    {:.jquery.small}
+    ~~~
+      // on
+    ~~~
+
+    ---
+
+    [http://api.jquery.com/category/events/](Events - jQuery API)
+
+  !SLIDE
+    Effects
+    ---
+    特效！
+
+    ---
+
+    [http://api.jquery.com/category/effects/](Effects - jQuery API)
+
+!ENDSTACK
+
+{:.chapter}
+!STACK
+  jQuery UI
+  ---
+
+[http://jqueryui.com/demos/](jQuery UI)
+
+!STACK
+  !SLIDE
+    jQuery UI
+    ---
+
+    * [http://jqueryui.com/demos/sortable/](拖曳等等)的互動
+    * [http://jqueryui.com/demos/dialog/](對話視窗)之類的 Widgets
+    * 更多[http://jqueryui.com/demos/show/](特效)
+
+
+{:.chapter}
+!SLIDE
+  console
+  ---
+
+!STACK
+  !SLIDE
+    console.log
+    ---
+    * 有三角形
+    * 物件可能會變
+
+  !SLIDE
+    中斷點
+    ---
+
+    * 開發人員工具的「Scripts」 面板
+    * 選擇要 debug 的檔案
+    * 中斷時可用 console
+    * "Pause on uncaught exception" 按鈕
+
+!ENDSTACK
+
+!SLIDE
+  END
+  ===
+
+  {:.nav}
+  * [html.html](HTML)
+  * [css.html](CSS)
+  * [js.html](Javascript)
+  * [advancedjs.html](Advanced JS)

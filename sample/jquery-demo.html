@@ -1,7 +1,7 @@
-<form id="submitform" action="sample/back.html">
-  <p>推薦其他人給後主：</p>
+<form id="submitform" action="back.html">
+  <p>推薦其他人給後主： <a href="javascript:;" class="add-referral">增加推薦人</a></p>
   <div id="referrals">
-    <a href="javascript:;" class="add-referral">增加推薦人</a>
+
   </div>
   <input id="tos" name="tos" type="checkbox">
   <label for="tos">
@@ -17,7 +17,7 @@
 
   // 偵測是否同意出師表
   form.on('submit', function(e){
-    if($('#tos').attr('checked')){
+    if(! $('#tos').attr('checked')){
       alert('請詳閱出師表。');
       e.preventDefault();
     }
@@ -29,10 +29,10 @@
     /*
       <p>
         <input type="text" name="referral">
-        <a class="del">刪除</a>
+        <a class="del" href="javscript:;">刪除</a>
       </p>
     */
-    $('<p><input type="text" name="referral"><a class="del">刪除</a></p>').appendTo('#referrals');
+    $('<p><input type="text" name="referral"><a class="del" href="javascript:;">刪除</a></p>').appendTo('#referrals');
   });
 
   // 刪除推薦人

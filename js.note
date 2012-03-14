@@ -1,4 +1,4 @@
-3rd week: super shallow JS + quick jQuery
+4rd week: super shallow JS + quick jQuery
 
 
 牛刀小試
@@ -32,7 +32,7 @@ api.jquery.com：分類，一個一個介紹。
 The Key to write app: Event, event, event!
   DOM event propagation
   on(), off()
-jQuery
+jQuery UI
 
 Debugging
   console.log

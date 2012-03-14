@@ -47,11 +47,11 @@
     })
 
 </script>
+<p></p>
 <ul>
 <li>Javascript 操作 DOM (HTML 的 API) 的範例。</li>
 <li>變數需要事先定義，但不指定型別。</li>
 </ul>
-<p></p>
 <p></p>
 </section>
 <section class="chapter">
@@ -114,16 +114,16 @@
 
 </script>
 <p></div></p>
-<h2></h2>
+<hr>
 <p></p>
 </section>
 <section>
 <h2>Javascript file</h2>
+<p></p>
 <ul>
 <li>另外寫成一個 *.js 檔</li>
 <li><code>&lt;script type=&quot;text/javascript&quot; src=&quot;路徑與檔名&quot;&gt;&lt;/script&gt;</code></li>
 </ul>
-<p></p>
 <p></p>
 <script type="text/x-sample">
         &lt;script type="text/javascript" src="sample/included.js"&gt;&lt;/script&gt;
@@ -136,7 +136,7 @@
 </section>
 <section>
 <h2>jsfiddle</h2>
-<p>用 inspector 來看一下 <a href="http://jsfiddle.net">jsfiddle.net</a>。</p>
+<p>用 inspector 來看一下 <a href="http://jsfiddle.net" target="_blank">jsfiddle.net</a>。</p>
 <p></p>
 </section>
 </section>
@@ -182,6 +182,8 @@
 <p>'first-class'</p>
 <p>anonymous</p>
 <p></p>
+<p>function argument: 沒有 default value 喔。</p>
+<p></p>
 <p>function statement, function declairation</p>
 <p></p>
 </section>
@@ -205,7 +207,6 @@
 <p></p>
 </section>
 </section>
-<p></p>
 <p></p>
 <section class="chapter">
 <h2>jQuery</h2>
@@ -239,24 +240,343 @@
 </section>
 <section>
 <h2>大改造!! 劇的 Before After</h2>
-<p>BEFORE</p>
-<script type="text/x-sample">
-      var form = document.getElementById('submitform');
+<p>物件 5927：不方便的 API</p>
+<script type="text/x-sample" class="demo-dom-native small" data-lang="javascript">
+      // 偵測是否同意出師表
+      var form = document.querySelector('#submitform');
+
       form.addEventListener('submit', function(e){
-        var checkbox = document.getElementById('tos');
-        if(!checkbox.checked){
+        if(!document.querySelector('#tos').checked){
           alert('請詳閱出師表。');
           e.preventDefault();
         }
       });
 
+      // 增加推薦人
+      document.querySelector('.add-referral')
+              .addEventListener('click', function(){
+
+        // 開一個 buffer，建立下面架構：
+        /*
+          <p>
+            <input type="text" name="referral">
+            <a class="del" href="javascript:;">刪除</a>
+          </p>
+        */
+        var buffer = document.createDocumentFragment(),
+            p      = buffer.appendChild(
+                        document.createElement('p')),
+            txt    = p.appendChild(
+                        document.createElement('input')),
+            del    = p.appendChild(
+                        document.createElement('a'));
+
+        txt.setAttribute('type', 'text');
+        txt.setAttribute('name', 'referral');
+        del.setAttribute('class', 'del');
+        del.setAttribute('href', 'javascript:;');
+        del.innerHTML = '刪除';
+
+        // 把 buffer 內容塞進 DOM
+        document.querySelector('#referrals')
+                .appendChild(buffer);
+      });
+
+      // 刪除推薦人
+      form.addEventListener('click', function(e){
+        // 若 'click' 事件來自 <a class="del">
+        if(e.target.className === 'del'){
+          // 把包著 <a class="del"> 之 <p> 整個移除。
+          var p = e.target.parentNode;
+          p.parentNode.removeChild(p);
+        }
+      });
+
 </script>
 <p></p>
-<p>document.getElementById, addEventListener 真他X的長</p>
+<p>DOM 這個 API 很長，相當困擾。</p>
+<p></p>
+</section>
+<section>
+<h2>匠：jQuery</h2>
+<h3>SPEC</h3>
+<p></p>
+<p></p>
+<ul>
+<li>表單送出時，檢查是否接受出師表</li>
+<li>按「增加推薦人」時，蓋一個下面的東西：</li>
+</ul>
+<pre class="small" style="width: 400px; margin: 0 auto 1em;"><code><!--
+-->&lt;p&gt;
+  &lt;input type=&quot;text&quot; name=&quot;referral&quot;&gt;
+  &lt;a class=&quot;del&quot;&gt;刪除&lt;/a&gt;
+&lt;/p&gt;
+<!--
+--></code></pre>
+<ul>
+<li>按裡頭的「刪除」時，把整個 <code>&lt;p&gt;</code> 移除。</li>
+</ul>
+<h3>希望</h3>
+<p></p>
+<p>寫少一點，作到的事情更多。</p>
+<p></p>
+</section>
+<section>
+<h2>BEFORE</h2>
+<script type="text/x-sample" class="demo-dom-native small">
+      var form = document.querySelector('#submitform');
+
+      // 偵測是否同意出師表
+      form.addEventListener('submit', function(e){
+        if(!document.querySelector('#tos').checked){
+          alert('請詳閱出師表。');
+          e.preventDefault();
+        }
+      });
+
+      // 增加推薦人
+      document.querySelector('.add-referral')
+              .addEventListener('click', function(){
+
+        // 開一個 buffer，建立下面架構：
+        var buffer = document.createDocumentFragment(),
+            p      = buffer.appendChild(
+                        document.createElement('p')),
+            txt    = p.appendChild(
+                        document.createElement('input')),
+            del    = p.appendChild(
+                        document.createElement('a'));
+
+        txt.setAttribute('type', 'text');
+        txt.setAttribute('name', 'referral');
+        del.setAttribute('class', 'del');
+        del.setAttribute('href', 'javascript:;');
+        del.innerHTML = '刪除';
+
+        // 把 buffer 內容塞進 DOM
+        document.querySelector('#referrals')
+                .appendChild(buffer);
+      });
+
+      // 刪除推薦人
+      form.addEventListener('click', function(e){
+        // 若 'click' 事件來自 <a class="del">
+        if(e.target.className === 'del'){
+          // 把包著 <a class="del"> 之 <p> 整個移除。
+          var p = e.target.parentNode;
+          p.parentNode.removeChild(p);
+        }
+      });
+
+</script>
+<p></p>
+</section>
+<section>
+<h2>AFTER</h2>
+<p></p>
+<p><!--<iframe width="150" height="40" style="position: absolute; right: 0; top: 0; opacity: 0.1;" src="http://www.youtube.com/embed/E9gfiTAhScM?rel=0" frameborder="0"></iframe>--></p>
+<p></p>
+<p>なんということでしょう!</p>
+<p></p>
+<script type="text/x-sample" class="demo-dom-jquery small" data-lang="javascript">
+      $('#submitform').on('submit', function(e){
+        // 偵測是否同意出師表
+        if($('#tos').attr('checked')){
+          alert('請詳閱出師表。');
+          e.preventDefault();
+        }
+      }).on('click', '.del', function(){
+        // 刪除推薦人
+        // 把包著 <a class="del"> 之 <p> 整個移除。
+        $(this).parents('p').remove();
+      });
+
+      // 增加推薦人
+      $('.add-referral').on('click', function(){
+        // 把下面內容塞進 DOM
+        $('<p><input type="text" name="referral"><a class="del">刪除</a></p>').appendTo('#referrals');
+      });
+
+</script>
 <p></p>
 </section>
 </section>
 <p></p>
+<section class="chapter">
+<h2>jQuery Object</h2>
+<p></p>
+</section>
+<section>
+<section>
+<h2>神奇的 <code>$</code></h2>
+<p></p>
+<pre data-lang="javascript" style="width: 220px; margin: 0 auto 1em;"><code><!--
+-->$(SELECTOR)
+<!--
+--></code></pre>
+<p></p>
+<ul>
+<li><code>$</code> 是一個 function。</li>
+<li>傳入 <a href="http://api.jquery.com/category/selectors/" target="_blank">css selector</a> → 回傳找到的 element</li>
+<li>傳入 HTML tag → 回傳新蓋的 element</li>
+</ul>
+<hr>
+<p></p>
+<p>element 被包在 jQuery obejct 裡頭。</p>
+<p></p>
+<p><img src="images/js/jqObj.png" alt="obj" height="190"></p>
+<p></p>
+</section>
+<section>
+<h2>jQuery Object</h2>
+<p></p>
+<p><img src="images/js/jqObj.png" alt="obj" width="900"></p>
+<p></p>
+<ul>
+<li>看起來像陣列</li>
+<li>有 length 屬性</li>
+<li>有<a href="http://api.jquery.com" target="_blank">很多 method</a> 可以用</li>
+</ul>
+<p></p>
+</section>
+</section>
+<p></p>
+<section class="chapter">
+<h2>jQuery API</h2>
+<p></p>
+</section>
+<section>
+<section>
+<h2>Manipulation</h2>
+<p>操弄 DOM 結構與屬性</p>
+<p></p>
+<ul>
+<li><a href="http://api.jquery.com/category/css/" target="_blank">讀取 / 新增 class 或 CSS style</a></li>
+<li><a href="讀取 / 新增 / 移除屬性">http://api.jquery.com/category/attributes/</a></li>
+<li>在 <a href="http://api.jquery.com/category/manipulation/dom-insertion-inside/" target="_blank">裡面</a> <a href="http://api.jquery.com/category/manipulation/dom-insertion-outside/" target="_blank">旁邊</a> 插入/移除 DOM element</li>
+<li><a href="http://api.jquery.com/category/manipulation/dom-insertion-around/" target="_blank">包覆</a>目前 DOM element</li>
+</ul>
+<p></p>
+<script type="text/x-sample" class="jquery small">
+      // TODO:
+      // innerWidth, width, outerWidth
+      // addClass
+
+      // attr, removeAttr
+
+      // clone
+      // append, appendTo
+      // remove
+
+      // wrap
+
+</script>
+<hr>
+<p></p>
+<p><a href="http://api.jquery.com/category/manipulation/" target="_blank">Manipulation - jQuery API</a></p>
+<p></p>
+</section>
+<section>
+<h2>Traversing</h2>
+<p>從目前 element 找到另一個 element</p>
+<p></p>
+<ul>
+<li><a href="http://api.jquery.com/category/traversing/tree-traversal/" target="_blank">找親戚</a></li>
+<li><a href="http://api.jquery.com/category/traversing/filtering/" target="_blank">過濾</a>目前的 jQuery object</li>
+</ul>
+<p></p>
+<script type="text/x-sample" class="jquery small">
+      // TODO:
+      // find()
+      // parentts()
+      //  all using conosole.log
+
+      // not()
+
+</script>
+<hr>
+<p></p>
+<p><a href="http://api.jquery.com/category/traversing/" target="_blank">Traversing - jQuery API</a></p>
+<p></p>
+</section>
+<section>
+<h2>Events</h2>
+<p>互動的主要要素</p>
+<p></p>
+<script type="text/x-sample" class="jquery small">
+      // on
+
+</script>
+<hr>
+<p></p>
+<p><a href="http://api.jquery.com/category/events/" target="_blank">Events - jQuery API</a></p>
+<p></p>
+</section>
+<section>
+<h2>Effects</h2>
+<p>特效！</p>
+<hr>
+<p></p>
+<p><a href="http://api.jquery.com/category/effects/" target="_blank">Effects - jQuery API</a></p>
+<p></p>
+</section>
+</section>
+<p></p>
+<section class="chapter">
+<h2>jQuery UI</h2>
+<p></p>
+<p><a href="http://jqueryui.com/demos/" target="_blank">jQuery UI</a></p>
+<p></p>
+</section>
+<section>
+<section>
+<h2>jQuery UI</h2>
+<p></p>
+<ul>
+<li><a href="http://jqueryui.com/demos/sortable/" target="_blank">拖曳等等</a>的互動</li>
+<li><a href="http://jqueryui.com/demos/dialog/" target="_blank">對話視窗</a>之類的 Widgets</li>
+<li>更多<a href="http://jqueryui.com/demos/show/" target="_blank">特效</a></li>
+</ul>
+<p></p>
+<p></p>
+</section>
+<section class="chapter">
+<h2>console</h2>
+<p></p>
+</section>
+</section>
+<section>
+<section>
+<h2>console.log</h2>
+<ul>
+<li>有三角形</li>
+<li>物件可能會變</li>
+</ul>
+<p></p>
+</section>
+<section>
+<h2>中斷點</h2>
+<p></p>
+<ul>
+<li>開發人員工具的「Scripts」 面板</li>
+<li>選擇要 debug 的檔案</li>
+<li>中斷時可用 console</li>
+<li>"Pause on uncaught exception" 按鈕</li>
+</ul>
+<p></p>
+</section>
+</section>
+<p></p>
+<section>
+<h1>END</h1>
+<p></p>
+<ul class="nav">
+<li><a href="html.html">HTML</a></li>
+<li><a href="css.html">CSS</a></li>
+<li><a href="js.html">Javascript</a></li>
+<li><a href="advancedjs.html">Advanced JS</a></li>
+</section>
+</ul>
       </div>
 
       <!-- The navigational controls UI -->

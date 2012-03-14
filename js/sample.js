@@ -37,7 +37,7 @@
     }, options);
 
     // update Iframe
-    var updateIframe = function(iframe, $pre, wrapper){
+    var updateIframe = function(iframe, $pre, wrapper, lang){
       if(!options.preview){
         return;
       }
@@ -52,8 +52,12 @@
       $(iframe).height(height);
 
       // highligt the code
-      var $code = $pre.find('code'), // get $code to get unhighlighted text
-          ret = hljs.highlightAuto($code.text());
+      var $code = $pre.find('code'), ret // get $code to get unhighlighted text
+      if(lang){
+        ret = hljs.highlight(lang, $code.text());
+      }else{
+        ret = hljs.highlightAuto($code.text());
+      }
       $code.html(ret.value);
       $code.addClass(ret.language)
 
@@ -65,7 +69,8 @@
     this.each(function(){
       var
       indent = 100, // shortest indent
-      lines = $(this).html().split('\n'); // lines of code
+      lines = $(this).html().split('\n'),// lines of code
+      lang = $(this).data('lang');
 
       // finding indent
       $.each(lines, function(){
@@ -93,7 +98,7 @@
 
       // substitute escaped <script> and </script> tags
       lines = lines.replace(/&lt;(\/?script.*?)&gt;/g, "<$1>");
-      
+
       // output stage
       //
       // the container of all the elements, and
@@ -110,21 +115,26 @@
       // previewing iframe
       var iframe = $iframeSrc.clone().appendTo($sampleContainer).find('iframe').get(0);
       $(iframe).ready(function(){
-        updateIframe(iframe, $pre, options.wrapper);
+        updateIframe(iframe, $pre, options.wrapper, lang);
       });
 
       // update button
       var $updateBtn = $updateBtnSrc.clone().insertAfter($pre);
       $updateBtn.click(function(){
         // updating iframe and highlight the $pre again
-        iframe = updateIframe(iframe, $pre, options.wrapper);
+        iframe = updateIframe(iframe, $pre, options.wrapper, lang);
       });
 
+
+      // intercept scroll within the plugin
+      $pre.on('mousewheel DOMMouseScroll', function(e){
+        e.stopPropagation();
+      });
 
       // install methods to data('sample')
       $(this).data('sample', {
         update: function(){
-          iframe = updateIframe(iframe, $pre, options.wrapper);
+          iframe = updateIframe(iframe, $pre, options.wrapper, lang);
         }
       });
     });

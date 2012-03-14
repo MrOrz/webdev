@@ -101,4 +101,10 @@
   .two-column{
     width: 45%;
   }
+
+  // styles for each individual slides
+  .sample-container.demo-dom-native pre, .sample-container.demo-dom-jquery pre{
+    max-height: 350px;
+    overflow: auto;
+  }
 }

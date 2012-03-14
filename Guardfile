@@ -13,7 +13,8 @@ end
 
 guard 'shell' do
   watch(%r{^vew/(.*)\.vew$}) do |m|
-    `vebdew g`
+    #`vebdew g`
+    puts `ruby -I../vebdew/lib -rubygems ../vebdew/bin/vebdew g`
     puts "Vew compiled: #{m[1]}"
   end
 end

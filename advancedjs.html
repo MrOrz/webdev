@@ -30,7 +30,7 @@
 <li><a href="js.html">Javascript</a></li>
 </ul>
 <p></p>
-<p><small><a href="http://yuiblog.com/assets/crockford/javascript.zip">The Javascript Programming Language - Douglas Crockford</a></small></p>
+<p><small><a href="http://yuiblog.com/assets/crockford/javascript.zip" target="_blank">The Javascript Programming Language - Douglas Crockford</a></small></p>
 <p></p>
 </section>
 <section>
@@ -48,7 +48,7 @@
 <li>保護 data.result</li>
 <li>要不然 data 是 undefined 時會有 <code>TypeError: Cannot read property &apos;result&apos; of undefined</code></li>
 </ul>
-<h2></h2>
+<hr>
 <p></p>
 <p>|| : Default Operator (Logical OR)</p>
 <p></p>
@@ -69,24 +69,24 @@
 <p>window, document, DOMDivElement.....: DOM elements</p>
 <p>document.writeln, document.getElementByID: DOM 提供的 method。</p>
 <p>每個瀏覽器的 DOM 有些差異，jQuery 把他們整合成一種。</p>
-<h2></h2>
+<hr>
 <p></p>
 <p>Javascript：語言本身，提供了 Object, Array, String 等型態的物件。</p>
 <p></p>
 </section>
 <section>
 <h2>雞毛蒜皮：分號</h2>
+<p></p>
+<p><a href="http://mislav.uniqpath.com/2010/05/semicolons/" target="_blank">Semicolons in JavaScript are optional</a></p>
+<p>分號擁護者的理由與辯駁</p>
+<p></p>
+<p>這份教材:</p>
+<p></p>
 <ul>
 <li>有加分號</li>
 <li>暗示有 "semicolon insertion"</li>
 <li>沒有理由強制你用分號</li>
 </ul>
-<p></p>
-<p><a href="http://mislav.uniqpath.com/2010/05/semicolons/">Semicolons in JavaScript are optional</a></p>
-<p>分號擁護者的理由與辯駁</p>
-<p></p>
-<p>這份教材:</p>
-<p></p>
 <p></p>
 <p>說了一大堆，還是那句老話：「你自己決定吧！」 -- 劉墉</p>
 <p></p>
@@ -99,15 +99,15 @@
 </section>
 <section>
 <h2>var statements</h2>
+<p></p>
+<p>沒寫 var 也可以。但會變成全域變數 (Implied global)。</p>
+<p></p>
 <ul>
 <li>為了要 Load-and-go，沒有 linker。</li>
 <li>Library 間用 global scope 來溝通。</li>
 <li>建立規範時的缺陷</li>
-<li>錯誤已經造成。CommonJS / <a href="http://requirejs.org/">RequireJS</a> 嘗試修補。</li>
+<li>錯誤已經造成。CommonJS / <a href="http://requirejs.org/" target="_blank">RequireJS</a> 嘗試修補。</li>
 </ul>
-<p></p>
-<p>沒寫 var 也可以。但會變成全域變數 (Implied global)。</p>
-<p></p>
 <p></p>
 <p>function 開頭加上 "use strict". TODO: example!</p>
 <p>使用 JSHint!</p>
@@ -115,12 +115,12 @@
 </section>
 <section>
 <h2><code>&lt;script&gt;</code> 放哪裡？</h2>
+<p>TODO: waterfall chart of js loading</p>
+<p></p>
 <ul>
 <li>放在 body tag 後面</li>
 <li>把 js 檔案接起來</li>
 <li>使用 javascript loader 如 head.js 或 require.js</li>
-<p>TODO: waterfall chart of js loading</p>
-<p></p>
 </section>
 </ul>
       </div>

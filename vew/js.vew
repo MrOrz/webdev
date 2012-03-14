@@ -55,31 +55,53 @@
 
     輸入一行 Javascript (黑色)，輸出一行回傳值 （藍色）
 
+    試試 `3+2`, `Math.sin(Math.PI)`, `0.1 + 0.2`
+
   !SLIDE
     變數與型別
     ----------
     * Javascript 為弱型別（weak typing）語言
-    * 用 `var` 敘述定義變數，變數可以是任何型態的東西
+    * 用 `var` 敘述定義變數
+    * 變數可以是任何型態的東西
     * 但不代表 Javascript 沒有型態；亂弄會出錯。
     * 大小寫敏感
 
-    ~~~
-      var a = "str";
-      a = {}; // 換型態
-    ~~~
+    ```
+      var a = "str", A; // a != A
+      a = 3; // 換型態
+    ```
 
   !SLIDE
     運算子
     ------
-    +: 左右為數字的時候 → 加起兩個數字，
-    否則當成字串接起來
+    * 負數 : `-` (如 `-35`)
+    * 算數 : `*` &nbsp; `/` &nbsp; `%` &nbsp; `+` &nbsp; `-` 
+    * 比大小 : `===`  &nbsp; `!==`  &nbsp; `<`  &nbsp; `>`  &nbsp; `<=` &nbsp;  `>=`
+    * 邏輯運算 : `&&` &nbsp;  `||` &nbsp;  `!`
+    * 三元運算子 : `? :`
+    * 指派 : `=` &nbsp; `+=` &nbsp; `-=` &nbsp; `*=` &nbsp; `/=` &nbsp; `%=`
 
-    +=, -=
+
+  !SLIDE
+    文字與數字
+    ------
+    數字和字串相加，自動會變成字串。
+    `+` 的左右兩邊都是數字時，才會行加法；否則都是字串串接
+    ![images/js/string-number.png](字串加數字等於字串)
+
+    ---
+
+    `parseInt(str, base)`, `parseFloat(str, base)` : 文字轉數字
+    ![images/js/parseInt.png](parseInt)
 
   !SLIDE
     輸出文字
     --------
-    `console.log`
+    `console.log(文字)` → Javascript Console。
+    `document.write(文字)` → 直接到 HTML 裡。
+
+    一般<strong>請不要</strong>使用 `document.write`。
+    `document.write` 只出現在教學裡。
 
   !SLIDE
     JavaSCRIPT
@@ -90,17 +112,16 @@
     指令一行一行寫，沒有道理寫不完。
 
     <div class="fragment">
-      <small>用 `<script type="text/javascript"></script>` 包住，放在 HTML 裡</small>
+      用 `<script type="text/javascript"></script>` 包住，放在 HTML 裡
 
+    {:.html}
       ~~~
         &lt;script type="text/javascript"&gt;
-          console.log("<script> 標籤裡好溫暖喔 (羞)");
+          document.write("<script> 標籤裡好溫暖喔 (羞)");
         &lt;/script&gt;
         <p>一片空白。</p>
       ~~~
     </div>
-
-    ----
 
   !SLIDE
     Javascript file
@@ -109,9 +130,10 @@
     * 另外寫成一個 *.js 檔
     *  `<script type="text/javascript" src="路徑與檔名"></script>`
 
+    {:.html}
     ~~~
         &lt;script type="text/javascript" src="sample/included.js"&gt;&lt;/script&gt;
-        <p>仍然一片空白。</p>
+        <p>一片空白。</p>
     ~~~
 
     {:.fragment}
@@ -133,26 +155,58 @@
   !SLIDE
     `if` 條件
     --
-    if-else if-else-endif
+
+    `if`-`else if`-`else`-`endif`
+
+    ~~~
+      var year = 2012;
+      if(year % 400){
+        document.write('閏年');
+      }
+      else if(year % 100){
+        document.write('不是閏年');
+      }else if(year % 4){
+        document.write('閏年');
+      }else{
+        document.write('不是閏年');
+      }
+    ~~~
 
   !SLIDE
     迴圈
     ---
-    for, while
+    `for`, `while`, `break`
+
+    迴圈前可以加上 label 如下：
+
+    ~~~
+      // TODO: 雙層迴圈！
+    ~~~
 
   !SLIDE
     switch case
     -----------
 
-  !SLIDE
-    comments
-    ---
+    ~~~
+      var name = "董允", comment;
+      switch("name"){
+        case '郭攸之':
+        case '費依':
+        case '董允':
+          comment = '此皆良實，志慮忠純';
+        case '向寵':
+          comment = '試用之於昔日，先帝稱之曰「能」';
+        default:
+          comment = '親賢臣，遠小人，此先漢所以興隆也';
+      }
+      document.write(comment);
+    ~~~
 
   !SLIDE
-    `try-catch`
+    註解
     ---
-    catch 只有一個
-    很少用
+    
+    `/* 多行 */` 與 `// 單行`
 
 !ENDSTACK
 
@@ -163,33 +217,117 @@
 
 !STACK
   !SLIDE
+
+    {:#reserved}
+    保留字
+    ---
+      不能當作變數名稱、屬性名稱的字。
+        abstract boolean `break` byte `case` `catch` char class const `continue`
+        debugger `default` `delete` `do` double `else` enum export extends
+        `false` final finally float `for` `function`
+        goto `if` implements import `in` `instanceof` int 
+        interface long native `new` `null` package private protected public `return`
+        short static super `switch` synchronized
+        `this` `throw` throws transient `true` `try` `typeof`
+        `var` volatile `void` `while` `with`
+
+  !SLIDE
+    Strings
+    ---
+      * 單引號 or 雙引號 均可
+      * `\'`  `\"` `\\`  `\n`  `\t`
+      * length 屬性：長度
+      * 無法修改字串 (immutable)。
+      * UCS-2 編碼 （UTF-16 的前身）
+      * [http://www.w3schools.com/jsref/jsref_obj_string.asp](屬性與方法)
+
+    {:.small[data-lang=javascript]}
+    ~~~
+      var str = "侍中尚書、長史、參軍，此悉貞良死節之臣也";
+
+      str[11] = "庛";
+      document.write( str[11] + '<br>' );
+      document.write( str.split("、") + '<br>');
+      document.write( str.slice(11) + '<br>' );
+    ~~~
+
+  !SLIDE
     Functions
     ---
-    'first-class'
-    anonymous
 
-    function argument: 沒有 default value 喔。
+    建一個函數：
+    `function 函式名 (引數們) { ... }`
+    `var 函數名 = function (引數們) { ... }`
 
-    function statement, function declairation
+    呼叫一個函數：
+    `函數名(要傳的引數)`
+
+    * 函數可以像變數一樣被丟來丟去。
+    * 無法像 C 那樣指定引數預設值。
+    * 呼叫時引數的個數，和函數定義的引數個數可以不一樣。
+
+  !SLIDE
+    Functions
+    ---
+    {:.small}
+    ~~~
+      // eachOf：
+      // 將 array 裡的每個東西都丟進 func 當引數
+      var eachOf = function(array, func){
+        for(var i = 0; i < array.length; i+=1){
+          func(array[i]);
+        }
+      }
+
+      eachOf(["棋盤", "稿紙", "綠豆糕"], function(item){
+        document.write('啊，好似' + item + '似的！');
+      });
+    ~~~
+
 
   !SLIDE
     Objects
     ---
-    `{}`
+    `{name1: value1, name2: value2, ……}`
 
-  !SLIDE
-    Augmenting Objects
-    ---
+    * value 可以是函數
+    * 函數裡 `this` 指自己這個物件
+    * 可以隨時幫 object 增加成員
 
+    {:.small}
+    ~~~
+      var person = {
+        name: "董允",
+        comment: "志慮忠純，是以先帝簡拔以遺陛下。",
+        reward: function(){
+          // this：
+          document.write("臣" + this.name + "謝皇上賜賞。")
+        }
+      };
+
+      // 增添「職位」
+      person.position = "侍中";
+      person.reward("田地");
+      console.log('person:', person);
+    ~~~
 
   !SLIDE
     Arrays
     ---
-    `[]`
-  !SLIDE
-    Array Methods
-    ---
-    lalala
+    `[元素1, ……, 元素 N]`
+    * 元素不一定要都同一種型態
+    * length 為陣列長度
+    * [http://www.w3schools.com/jsref/jsref_obj_array.asp](屬性與方法)
+
+    {:.small[data-lang=javascript]}
+    ~~~
+      var arr = [3.14, "任意文字", {text: "物件"}, ["另一個", "陣列"]];
+      console.log( '陣列長度：' , arr.length);
+      console.log( arr.pop());
+      console.log( 'pop 後陣列：', arr);
+
+      document.write('請打開 Javascript console');
+    ~~~
 
 !ENDSTACK
 
@@ -213,7 +351,7 @@ jQuery
 
     然後施魔法
 
-    {:.small}
+    {:.small.html}
     ~~~
       <p></p>
 
@@ -485,6 +623,7 @@ jQuery
     {:.jquery.small}
     ~~~
       // on
+      // this 通常會指定
     ~~~
 
     ---
@@ -518,6 +657,8 @@ jQuery
     * [http://jqueryui.com/demos/dialog/](對話視窗)之類的 Widgets
     * 更多[http://jqueryui.com/demos/show/](特效)
 
+  !ENDSLIDE
+!ENDSTACK
 
 {:.chapter}
 !SLIDE
@@ -531,19 +672,26 @@ jQuery
     * 有三角形
     * 物件可能會變
 
+    ~~~
+      var arr = ['棋盤', '稿紙', '綠豆糕'];
+      console.log('arr: ', arr);
+      arr.shift(); // 移除第 0 個
+      console.log('shift 之後：arr: ', arr);
+    ~~~
+
   !SLIDE
     中斷點
     ---
-
     * 開發人員工具的「Scripts」 面板
     * 選擇要 debug 的檔案
     * 中斷時可用 console
     * "Pause on uncaught exception" 按鈕
+    ![images/js/pausebutton.png](pause)
 
 !ENDSTACK
 
 !SLIDE
-  END
+  THE END
   ===
 
   {:.nav}

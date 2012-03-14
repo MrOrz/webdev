@@ -68,6 +68,9 @@ Object as Array's prototype
 for-in loop and && hasOwnProperty
 
 
+Regular Expressions
+----
+
 Function can have methods and members.
 'this' keyword: function itself, blahblahblah. Important: within setTimeout! this -> (global)= window
 Function.prototype.apply & call

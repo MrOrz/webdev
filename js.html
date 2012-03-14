@@ -67,34 +67,57 @@
 <p></p>
 <p>輸入一行 Javascript (黑色)，輸出一行回傳值 （藍色）</p>
 <p></p>
+<p>試試 <code>3+2</code>, <code>Math.sin(Math.PI)</code>, <code>0.1 + 0.2</code></p>
+<p></p>
 </section>
 <section>
 <h2>變數與型別</h2>
 <ul>
 <li>Javascript 為弱型別（weak typing）語言</li>
-<li>用 <code>var</code> 敘述定義變數，變數可以是任何型態的東西</li>
+<li>用 <code>var</code> 敘述定義變數</li>
+<li>變數可以是任何型態的東西</li>
 <li>但不代表 Javascript 沒有型態；亂弄會出錯。</li>
 <li>大小寫敏感</li>
 </ul>
 <p></p>
-<script type="text/x-sample">
-      var a = "str";
-      a = {}; // 換型態
-
-</script>
+<pre><code><!--
+-->var a = &quot;str&quot;, A; // a != A
+a = 3; // 換型態
+<!--
+--></code></pre>
 <p></p>
 </section>
 <section>
 <h2>運算子</h2>
-<p>+: 左右為數字的時候 → 加起兩個數字，</p>
-<p>否則當成字串接起來</p>
+<ul>
+<li>負數 : <code>-</code> (如 <code>-35</code>)</li>
+<li>算數 : <code>*</code> &nbsp; <code>/</code> &nbsp; <code>%</code> &nbsp; <code>+</code> &nbsp; <code>-</code></li>
+<li>比大小 : <code>===</code>  &nbsp; <code>!==</code>  &nbsp; <code>&lt;</code>  &nbsp; <code>&gt;</code>  &nbsp; <code>&lt;=</code> &nbsp;  <code>&gt;=</code></li>
+<li>邏輯運算 : <code>&amp;&amp;</code> &nbsp;  <code>||</code> &nbsp;  <code>!</code></li>
+<li>三元運算子 : <code>? :</code></li>
+<li>指派 : <code>=</code> &nbsp; <code>+=</code> &nbsp; <code>-=</code> &nbsp; <code>*=</code> &nbsp; <code>/=</code> &nbsp; <code>%=</code></li>
+</ul>
 <p></p>
-<p>+=, -=</p>
+<p></p>
+</section>
+<section>
+<h2>文字與數字</h2>
+<p>數字和字串相加，自動會變成字串。</p>
+<p><code>+</code> 的左右兩邊都是數字時，才會行加法；否則都是字串串接</p>
+<p><img src="images/js/string-number.png" alt="字串加數字等於字串"></p>
+<hr>
+<p></p>
+<p><code>parseInt(str, base)</code>, <code>parseFloat(str, base)</code> : 文字轉數字</p>
+<p><img src="images/js/parseInt.png" alt="parseInt"></p>
 <p></p>
 </section>
 <section>
 <h2>輸出文字</h2>
-<p><code>console.log</code></p>
+<p><code>console.log(文字)</code> → Javascript Console。</p>
+<p><code>document.write(文字)</code> → 直接到 HTML 裡。</p>
+<p></p>
+<p>一般<strong>請不要</strong>使用 <code>document.write</code>。</p>
+<p><code>document.write</code> 只出現在教學裡。</p>
 <p></p>
 </section>
 <section>
@@ -104,17 +127,16 @@
 <p class="fragment">指令一行一行寫，沒有道理寫不完。</p>
 <p></p>
 <p><div class="fragment"></p>
-<p><small>用 <code>&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code> 包住，放在 HTML 裡</small></p>
+<p>用 <code>&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code> 包住，放在 HTML 裡</p>
 <p></p>
-<script type="text/x-sample">
+<script type="text/x-sample" class="html">
         &lt;script type="text/javascript"&gt;
-          console.log("<script> 標籤裡好溫暖喔 (羞)");
+          document.write("<script> 標籤裡好溫暖喔 (羞)");
         &lt;/script&gt;
         <p>一片空白。</p>
 
 </script>
 <p></div></p>
-<hr>
 <p></p>
 </section>
 <section>
@@ -125,9 +147,9 @@
 <li><code>&lt;script type=&quot;text/javascript&quot; src=&quot;路徑與檔名&quot;&gt;&lt;/script&gt;</code></li>
 </ul>
 <p></p>
-<script type="text/x-sample">
+<script type="text/x-sample" class="html">
         &lt;script type="text/javascript" src="sample/included.js"&gt;&lt;/script&gt;
-        <p>仍然一片空白。</p>
+        <p>一片空白。</p>
 
 </script>
 <p></p>
@@ -148,26 +170,61 @@
 <section>
 <section>
 <h2><code>if</code> 條件</h2>
-<p>if-else if-else-endif</p>
+<p></p>
+<p><code>if</code>-<code>else if</code>-<code>else</code>-<code>endif</code></p>
+<p></p>
+<script type="text/x-sample">
+      var year = 2012;
+      if(year % 400){
+        document.write('閏年');
+      }
+      else if(year % 100){
+        document.write('不是閏年');
+      }else if(year % 4){
+        document.write('閏年');
+      }else{
+        document.write('不是閏年');
+      }
+
+</script>
 <p></p>
 </section>
 <section>
 <h2>迴圈</h2>
-<p>for, while</p>
+<p><code>for</code>, <code>while</code>, <code>break</code></p>
+<p></p>
+<p>迴圈前可以加上 label 如下：</p>
+<p></p>
+<script type="text/x-sample">
+      // TODO: 雙層迴圈！
+
+</script>
 <p></p>
 </section>
 <section>
 <h2>switch case</h2>
 <p></p>
-</section>
-<section>
-<h2>comments</h2>
+<script type="text/x-sample">
+      var name = "董允", comment;
+      switch("name"){
+        case '郭攸之':
+        case '費依':
+        case '董允':
+          comment = '此皆良實，志慮忠純';
+        case '向寵':
+          comment = '試用之於昔日，先帝稱之曰「能」';
+        default:
+          comment = '親賢臣，遠小人，此先漢所以興隆也';
+      }
+      document.write(comment);
+
+</script>
 <p></p>
 </section>
 <section>
-<h2><code>try-catch</code></h2>
-<p>catch 只有一個</p>
-<p>很少用</p>
+<h2>註解</h2>
+<p></p>
+<p><code>/* 多行 */</code> 與 <code>// 單行</code></p>
 <p></p>
 </section>
 </section>
@@ -178,32 +235,123 @@
 </section>
 <section>
 <section>
+<p></p>
+<h2 id="reserved">保留字</h2>
+<p>不能當作變數名稱、屬性名稱的字。</p>
+<p>abstract boolean <code>break</code> byte <code>case</code> <code>catch</code> char class const <code>continue</code></p>
+<p>debugger <code>default</code> <code>delete</code> <code>do</code> double <code>else</code> enum export extends</p>
+<p><code>false</code> final finally float <code>for</code> <code>function</code></p>
+<p>goto <code>if</code> implements import <code>in</code> <code>instanceof</code> int</p>
+<p>interface long native <code>new</code> <code>null</code> package private protected public <code>return</code></p>
+<p>short static super <code>switch</code> synchronized</p>
+<p><code>this</code> <code>throw</code> throws transient <code>true</code> <code>try</code> <code>typeof</code></p>
+<p><code>var</code> volatile <code>void</code> <code>while</code> <code>with</code></p>
+<p></p>
+</section>
+<section>
+<h2>Strings</h2>
+<ul>
+<li>單引號 or 雙引號 均可</li>
+<li><code>\&apos;</code>  <code>\&quot;</code> <code>\\</code>  <code>\n</code>  <code>\t</code></li>
+<li>length 屬性：長度</li>
+<li>無法修改字串 (immutable)。</li>
+<li>UCS-2 編碼 （UTF-16 的前身）</li>
+<li><a href="http://www.w3schools.com/jsref/jsref_obj_string.asp" target="_blank">屬性與方法</a></li>
+</ul>
+<p></p>
+<script type="text/x-sample" class="small" data-lang="javascript">
+      var str = "侍中尚書、長史、參軍，此悉貞良死節之臣也";
+
+      str[11] = "庛";
+      document.write( str[11] + '<br>' );
+      document.write( str.split("、") + '<br>');
+      document.write( str.slice(11) + '<br>' );
+
+</script>
+<p></p>
+</section>
+<section>
 <h2>Functions</h2>
-<p>'first-class'</p>
-<p>anonymous</p>
 <p></p>
-<p>function argument: 沒有 default value 喔。</p>
+<p>建一個函數：</p>
+<p><code>function 函式名 (引數們) { ... }</code></p>
+<p><code>var 函數名 = function (引數們) { ... }</code></p>
 <p></p>
-<p>function statement, function declairation</p>
+<p>呼叫一個函數：</p>
+<p><code>函數名(要傳的引數)</code></p>
+<p></p>
+<ul>
+<li>函數可以像變數一樣被丟來丟去。</li>
+<li>無法像 C 那樣指定引數預設值。</li>
+<li>呼叫時引數的個數，和函數定義的引數個數可以不一樣。</li>
+</ul>
+<p></p>
+</section>
+<section>
+<h2>Functions</h2>
+<script type="text/x-sample" class="small">
+      // eachOf：
+      // 將 array 裡的每個東西都丟進 func 當引數
+      var eachOf = function(array, func){
+        for(var i = 0; i < array.length; i+=1){
+          func(array[i]);
+        }
+      }
+
+      eachOf(["棋盤", "稿紙", "綠豆糕"], function(item){
+        document.write('啊，好似' + item + '似的！');
+      });
+
+</script>
+<p></p>
 <p></p>
 </section>
 <section>
 <h2>Objects</h2>
-<p><code>{}</code></p>
+<p><code>{name1: value1, name2: value2, ……}</code></p>
 <p></p>
-</section>
-<section>
-<h2>Augmenting Objects</h2>
+<ul>
+<li>value 可以是函數</li>
+<li>函數裡 <code>this</code> 指自己這個物件</li>
+<li>可以隨時幫 object 增加成員</li>
+</ul>
 <p></p>
+<script type="text/x-sample" class="small">
+      var person = {
+        name: "董允",
+        comment: "志慮忠純，是以先帝簡拔以遺陛下。",
+        reward: function(){
+          // this：
+          document.write("臣" + this.name + "謝皇上賜賞。")
+        }
+      };
+
+      // 增添「職位」
+      person.position = "侍中";
+      person.reward("田地");
+      console.log('person:', person);
+
+</script>
 <p></p>
 </section>
 <section>
 <h2>Arrays</h2>
-<p><code>[]</code></p>
-</section>
-<section>
-<h2>Array Methods</h2>
-<p>lalala</p>
+<p><code>[元素1, ……, 元素 N]</code></p>
+<ul>
+<li>元素不一定要都同一種型態</li>
+<li>length 為陣列長度</li>
+<li><a href="http://www.w3schools.com/jsref/jsref_obj_array.asp" target="_blank">屬性與方法</a></li>
+</ul>
+<p></p>
+<script type="text/x-sample" class="small" data-lang="javascript">
+      var arr = [3.14, "任意文字", {text: "物件"}, ["另一個", "陣列"]];
+      console.log( '陣列長度：' , arr.length);
+      console.log( arr.pop());
+      console.log( 'pop 後陣列：', arr);
+
+      document.write('請打開 Javascript console');
+
+</script>
 <p></p>
 </section>
 </section>
@@ -227,7 +375,7 @@
 <p></p>
 <p>然後施魔法</p>
 <p></p>
-<script type="text/x-sample" class="small">
+<script type="text/x-sample" class="small html">
       <p></p>
 
       &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
@@ -299,8 +447,8 @@
 </section>
 <section>
 <h2>匠：jQuery</h2>
-<h3>SPEC</h3>
 <p></p>
+<h3>SPEC</h3>
 <p></p>
 <ul>
 <li>表單送出時，檢查是否接受出師表</li>
@@ -316,8 +464,8 @@
 <ul>
 <li>按裡頭的「刪除」時，把整個 <code>&lt;p&gt;</code> 移除。</li>
 </ul>
-<h3>希望</h3>
 <p></p>
+<h3>希望</h3>
 <p>寫少一點，作到的事情更多。</p>
 <p></p>
 </section>
@@ -505,6 +653,7 @@
 <p></p>
 <script type="text/x-sample" class="jquery small">
       // on
+      // this 通常會指定
 
 </script>
 <hr>
@@ -538,12 +687,12 @@
 <li>更多<a href="http://jqueryui.com/demos/show/" target="_blank">特效</a></li>
 </ul>
 <p></p>
-<p></p>
 </section>
+</section>
+<p></p>
 <section class="chapter">
 <h2>console</h2>
 <p></p>
-</section>
 </section>
 <section>
 <section>
@@ -553,22 +702,30 @@
 <li>物件可能會變</li>
 </ul>
 <p></p>
+<script type="text/x-sample">
+      var arr = ['棋盤', '稿紙', '綠豆糕'];
+      console.log('arr: ', arr);
+      arr.shift(); // 移除第 0 個
+      console.log('shift 之後：arr: ', arr);
+
+</script>
+<p></p>
 </section>
 <section>
 <h2>中斷點</h2>
-<p></p>
 <ul>
 <li>開發人員工具的「Scripts」 面板</li>
 <li>選擇要 debug 的檔案</li>
 <li>中斷時可用 console</li>
 <li>"Pause on uncaught exception" 按鈕</li>
 </ul>
+<p><img src="images/js/pausebutton.png" alt="pause"></p>
 <p></p>
 </section>
 </section>
 <p></p>
 <section>
-<h1>END</h1>
+<h1>THE END</h1>
 <p></p>
 <ul class="nav">
 <li><a href="html.html">HTML</a></li>

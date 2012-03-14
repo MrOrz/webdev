@@ -1,10 +1,16 @@
 (function($){
   "use strict";
-  var demoWrapper = function(data){
+  var
+  
+  scriptWrapper = function(data){
+    return '<script type="text/javascript">' + data + '</script>';
+  },
+
+  demoWrapper = function(data){
     return '<body><form id="submitform" action="sample/back.html"><input id="tos" name="tos" type="checkbox">' +
            '<label for="tos">我已詳閱並接受<a href="http://zh.wikipedia.org/zh-tw/%E5%87%BA%E5%B8%AB%E8%A1%A8">前出師表</a>。</label>' +
            '<input type="submit" value="送出">' +
-           '</form><script type="text/javascript">' + data + '</script></body>';
+           '</form>' + scriptWrapper( data ) + '</body>';
   },
 
   domDemoWrapper = function(data){
@@ -26,9 +32,7 @@
   domjQueryWrapper = function(data){
     return domDemoWrapper([
       '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>',
-      '<script type="text/javascript">',
-      data,
-      '</script>'
+      scriptWrapper( data )
     ].join(''));
   },
 
@@ -40,9 +44,7 @@
     return [
       // TODO: determine the DOM
       '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>',
-      '<script ty[e="text/javascript">',
-      data,
-      '</script>'
+      scriptWrapper(data)
     ].join('');
   };
 
@@ -58,7 +60,12 @@
     }else if($this.hasClass('demo-dom-jquery')){
       option.wrapper = domjQueryWrapper;
     }else if($this.hasClass('jquery')){
-      option.wrapper = jQueryAPIWrapper;
+      option.wrapper = jQueryAPIWrapper;  
+    }else if($this.hasClass('html')){
+      // do nothing
+      $.noop();
+    }else{
+      option.wrapper = scriptWrapper;
     }
 
     $this.sample(option);

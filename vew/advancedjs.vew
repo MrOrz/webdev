@@ -78,6 +78,11 @@ Advanced JS
   說了一大堆，還是那句老話：「你自己決定吧！」 -- 劉墉
 
 !SLIDE
+  雞毛蒜皮：`==` 與 `===`
+  ------
+
+
+!SLIDE
   Javascript's key ideas.
   ----
   
@@ -87,8 +92,12 @@ Advanced JS
   var statements
   ----
 
-  沒寫 var 也可以。但會變成全域變數 (Implied global)。
-  
+  {:.fragment}
+  變數讀取前沒宣告 → Reference Error
+  {:.fragment}
+  變數寫入前沒宣告 → 變成全域變數 (Implied global)
+
+  {:.fragment}
     * 為了要 Load-and-go，沒有 linker。
     * Library 間用 global scope 來溝通。
     * 建立規範時的缺陷

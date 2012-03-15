@@ -174,11 +174,11 @@ a = 3; // 換型態
 <p></p>
 <script type="text/x-sample">
       var year = 2012;
-      if(year % 400){
+      if(year % 400 === 0){
         document.write('閏年');
-      }else if(year % 100){
+      }else if(year % 100 === 0){
         document.write('不是閏年');
-      }else if(year % 4){
+      }else if(year % 4 === 0){
         document.write('閏年');
       }else{
         document.write('不是閏年');
@@ -664,7 +664,7 @@ a = 3; // 換型態
 <p></p>
 <ul>
 <li><a href="http://api.jquery.com/category/css/" target="_blank">讀取 / 新增 class 或 CSS style</a></li>
-<li><a href="讀取 / 新增 / 移除屬性">http://api.jquery.com/category/attributes/</a></li>
+<li><a href="http://api.jquery.com/category/attributes/" target="_blank">讀取 / 新增 / 移除屬性</a></li>
 <li>在 <a href="http://api.jquery.com/category/manipulation/dom-insertion-inside/" target="_blank">裡面</a> <a href="http://api.jquery.com/category/manipulation/dom-insertion-outside/" target="_blank">旁邊</a> 插入/移除 DOM element</li>
 <li><a href="http://api.jquery.com/category/manipulation/dom-insertion-around/" target="_blank">包覆</a>目前 DOM element</li>
 </ul>
@@ -712,6 +712,8 @@ a = 3; // 換型態
 
 </script>
 <p></p>
+<p><a href="http://api.jquery.com/clone/" target="_blank"><code>.clone()</code></a> <a href="http://api.jquery.com/innerWidth/" target="_blank"><code>.innerWidth()</code></a> <a href="http://api.jquery.com/attr/" target="_blank"><code>.attr()</code></a> <a href="http://api.jquery.com/after/" target="_blank"><code>.after()</code></a></p>
+<p></p>
 </section>
 <section>
 <h2>Traversing</h2>
@@ -721,42 +723,94 @@ a = 3; // 換型態
 <li><a href="http://api.jquery.com/category/traversing/tree-traversal/" target="_blank">找親戚</a></li>
 <li><a href="http://api.jquery.com/category/traversing/filtering/" target="_blank">過濾</a>目前的 jQuery object</li>
 </ul>
-<p></p>
-<script type="text/x-sample" class="jquery small">
-      // TODO:
-      // .each()
-      // find()
-      // parentts()
-      //  all using conosole.log
-
-      // not()
-
-</script>
 <hr>
 <p></p>
 <p><a href="http://api.jquery.com/category/traversing/" target="_blank">Traversing - jQuery API</a></p>
 <p></p>
 </section>
 <section>
-<h2>Events</h2>
-<p>互動的主要要素</p>
+<h2>Traversing</h2>
 <p></p>
-<script type="text/x-sample" class="jquery small">
-      // on
-      // this 通常會指定
+<script type="text/x-sample" class="html small maxheight">
+      
+      &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
+      
+      <style type="text/css">
+        p{
+          padding: 1em; margin: 1em;
+        }
+        .border1 {
+          border: 1px solid blue;
+        }
+        .border2 {
+          border: 1px solid green;
+        }
+        .bg{
+          background: #cfc;
+        }
+      </style>
+
+      <section>
+        Section 裡頭。
+        <article>
+          article  裡頭。
+          <p>
+            p 裡頭。
+          </p>
+          <p></p>
+        </article>
+      </section>
+
+      &lt;script type="text/javascript"&gt;
+        $('p').parents('section').addClass('border1');
+        $('section').find('p').addClass('border2');
+        $('section').find('p').not(':empty').addClass('bg');
+      &lt;/script&gt;
+
 
 </script>
+<p><a href="http://api.jquery.com/parents/" target="_blank"><code>.parents()</code></a> <a href="http://api.jquery.com/find/" target="_blank"><code>.find()</code></a> <a href="http://api.jquery.com/not/" target="_blank"><code>.not()</code></a></p>
+<p></p>
+</section>
+<section>
+<h2>Events</h2>
+<p>互動的主要要素。</p>
+<p></p>
+<p><code>$物件.on(&apos;事件&apos;, handler)</code></p>
+<p><code>$物件.on(&apos;事件&apos;, selector, handler)</code></p>
 <hr>
 <p></p>
 <p><a href="http://api.jquery.com/category/events/" target="_blank">Events - jQuery API</a></p>
 <p></p>
 </section>
 <section>
-<h2>Effects</h2>
-<p>特效！</p>
-<hr>
+<h2>Events</h2>
 <p></p>
-<p><a href="http://api.jquery.com/category/effects/" target="_blank">Effects - jQuery API</a></p>
+<p><code>$物件.on(&apos;事件&apos;, handler)</code></p>
+<p><code>$物件.on(&apos;事件&apos;, selector, handler)</code></p>
+<p></p>
+<script type="text/x-sample" class="demo-dom-jquery small" data-lang="javascript">
+      $('#submitform').on('submit', function(e){
+        // 偵測是否同意出師表
+        if(!$('#tos').attr('checked')){
+          alert('請詳閱出師表。');
+          e.preventDefault();
+        }
+      }).on('click', '.del', function(){
+        // 刪除推薦人
+        // 把包著 <a class="del"> 之 <p> 整個移除。
+        $(this).parents('p').remove();
+      });
+
+      // 增加推薦人
+      $('.add-referral').on('click', function(){
+        // 把下面內容塞進 DOM
+        $('<p><input type="text" name="referral"><a class="del">刪除</a></p>').appendTo('#referrals');
+      });
+
+</script>
+<p></p>
+<p><a href="http://api.jquery.com/on/" target="_blank"><code>.on()</code></a>  <a href="http://api.jquery.com/off/" target="_blank"><code>.off()</code></a></p>
 <p></p>
 </section>
 </section>
@@ -781,15 +835,14 @@ a = 3; // 換型態
 </section>
 <p></p>
 <section class="chapter">
-<h2>console</h2>
+<h2>Debugging</h2>
 <p></p>
 </section>
 <section>
 <section>
 <h2>console.log</h2>
 <ul>
-<li>有三角形</li>
-<li>物件可能會變</li>
+<li>物件可能會被更動</li>
 </ul>
 <p></p>
 <script type="text/x-sample">

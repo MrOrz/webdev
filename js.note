@@ -1,50 +1,3 @@
-4rd week: super shallow JS + quick jQuery
-
-
-牛刀小試
-var statement - weak typing
-operators, including += -=, excluding ++, --
-console.log
-
-Javascript 檔
-<script></script>
-jsfiddle!
-(來 inspector 看一下)
-<script src="">
-
-
-Javascript is like C:
-statements: document.writeln().
-loops (for, while), if-else if-else-endif, switch, try-catch, comments ....
-
-Difference: function passing around like variables. anonymous functions.
-
-Objects
-Arrays
-Argumenting things (not to the DOM objects like DOMevents!)
-
-
-
-jQuery: Manipulating DOM elements
-jquery object looks like an array
-what can jQuery do: <del>find & destroy</del> 找到它、<del>面對它、</del>處理它<del>、放下它</del>。
-api.jquery.com：分類，一個一個介紹。
-The Key to write app: Event, event, event!
-  DOM event propagation
-  on(), off()
-jQuery UI
-
-Debugging
-  console.log
-  左邊有三角形
-  但物件可能已經改變柳。
-
-  break points
-    可以看 call stack
-
-  下面：pause on uncaught exception
--
-
 4nd week: more JS
 
 
@@ -70,6 +23,9 @@ for-in loop and && hasOwnProperty
 
 Regular Expressions
 ----
+
+jQuery Deferred objects
+
 
 Function can have methods and members.
 'this' keyword: function itself, blahblahblah. Important: within setTimeout! this -> (global)= window

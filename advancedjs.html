@@ -92,6 +92,11 @@
 <p></p>
 </section>
 <section>
+<h2>雞毛蒜皮：<code>==</code> 與 <code>===</code></h2>
+<p></p>
+<p></p>
+</section>
+<section>
 <h2>Javascript's key ideas.</h2>
 <p></p>
 <p>TBD</p>
@@ -100,9 +105,10 @@
 <section>
 <h2>var statements</h2>
 <p></p>
-<p>沒寫 var 也可以。但會變成全域變數 (Implied global)。</p>
+<p class="fragment">變數讀取前沒宣告 → Reference Error</p>
+<p class="fragment">變數寫入前沒宣告 → 變成全域變數 (Implied global)</p>
 <p></p>
-<ul>
+<ul class="fragment">
 <li>為了要 Load-and-go，沒有 linker。</li>
 <li>Library 間用 global scope 來溝通。</li>
 <li>建立規範時的缺陷</li>

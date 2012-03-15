@@ -159,11 +159,11 @@
 
     ~~~
       var year = 2012;
-      if(year % 400){
+      if(year % 400 === 0){
         document.write('閏年');
-      }else if(year % 100){
+      }else if(year % 100 === 0){
         document.write('不是閏年');
-      }else if(year % 4){
+      }else if(year % 4 === 0){
         document.write('閏年');
       }else{
         document.write('不是閏年');
@@ -634,7 +634,7 @@ jQuery
     操弄 DOM 結構與屬性
 
     * [http://api.jquery.com/category/css/](讀取 / 新增 class 或 CSS style)
-    * [讀取 / 新增 / 移除屬性](http://api.jquery.com/category/attributes/)
+    * [http://api.jquery.com/category/attributes/](讀取 / 新增 / 移除屬性)
     * 在 [http://api.jquery.com/category/manipulation/dom-insertion-inside/](裡面) [http://api.jquery.com/category/manipulation/dom-insertion-outside/](旁邊) 插入/移除 DOM element
     * [http://api.jquery.com/category/manipulation/dom-insertion-around/](包覆)目前 DOM element
 
@@ -682,6 +682,8 @@ jQuery
       &lt;/script&gt;
     ~~~
 
+    [http://api.jquery.com/clone/](`.clone\(\)`) [http://api.jquery.com/innerWidth/](`.innerWidth\(\)`) [http://api.jquery.com/attr/](`.attr\(\)`) [http://api.jquery.com/after/](`.after\(\)`)
+
   !SLIDE
     Traversing
     ---
@@ -690,44 +692,95 @@ jQuery
     * [http://api.jquery.com/category/traversing/tree-traversal/](找親戚)
     * [http://api.jquery.com/category/traversing/filtering/](過濾)目前的 jQuery object
 
-    {:.jquery.small}
-    ~~~
-      // TODO:
-      // .each()
-      // find()
-      // parentts()
-      //  all using conosole.log
-
-      // not()
-    ~~~
-
     ---
 
     [http://api.jquery.com/category/traversing/](Traversing - jQuery API)
 
   !SLIDE
+    Traversing
+    ---
+
+    {:.html.small.maxheight}
+    ~~~
+      
+      &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
+      
+      <style type="text/css">
+        p{
+          padding: 1em; margin: 1em;
+        }
+        .border1 {
+          border: 1px solid blue;
+        }
+        .border2 {
+          border: 1px solid green;
+        }
+        .bg{
+          background: #cfc;
+        }
+      </style>
+
+      <section>
+        Section 裡頭。
+        <article>
+          article  裡頭。
+          <p>
+            p 裡頭。
+          </p>
+          <p></p>
+        </article>
+      </section>
+
+      &lt;script type="text/javascript"&gt;
+        $('p').parents('section').addClass('border1');
+        $('section').find('p').addClass('border2');
+        $('section').find('p').not(':empty').addClass('bg');
+      &lt;/script&gt;
+
+    ~~~
+    [http://api.jquery.com/parents/](`.parents\(\)`) [http://api.jquery.com/find/](`.find\(\)`) [http://api.jquery.com/not/](`.not\(\)`)
+
+  !SLIDE
     Events
     ---
-    互動的主要要素
+    互動的主要要素。
 
-    {:.jquery.small}
-    ~~~
-      // on
-      // this 通常會指定
-    ~~~
+    `$物件.on('事件', handler)`
+    `$物件.on('事件', selector, handler)`
 
     ---
 
     [http://api.jquery.com/category/events/](Events - jQuery API)
 
   !SLIDE
-    Effects
-    ---
-    特效！
-
+    Events
     ---
 
-    [http://api.jquery.com/category/effects/](Effects - jQuery API)
+    `$物件.on('事件', handler)`
+    `$物件.on('事件', selector, handler)`
+
+    {:.demo-dom-jquery.small[data-lang=javascript]}
+    ~~~
+      $('#submitform').on('submit', function(e){
+        // 偵測是否同意出師表
+        if(!$('#tos').attr('checked')){
+          alert('請詳閱出師表。');
+          e.preventDefault();
+        }
+      }).on('click', '.del', function(){
+        // 刪除推薦人
+        // 把包著 <a class="del"> 之 <p> 整個移除。
+        $(this).parents('p').remove();
+      });
+
+      // 增加推薦人
+      $('.add-referral').on('click', function(){
+        // 把下面內容塞進 DOM
+        $('<p><input type="text" name="referral"><a class="del">刪除</a></p>').appendTo('#referrals');
+      });
+    ~~~
+
+    [http://api.jquery.com/on/](`.on\(\)`)  [http://api.jquery.com/off/](`.off\(\)`)
 
 !ENDSTACK
 
@@ -752,15 +805,14 @@ jQuery
 
 {:.chapter}
 !SLIDE
-  console
+  Debugging
   ---
 
 !STACK
   !SLIDE
     console.log
     ---
-    * 有三角形
-    * 物件可能會變
+    * 物件可能會被更動
 
     ~~~
       var arr = ['棋盤', '稿紙', '綠豆糕'];

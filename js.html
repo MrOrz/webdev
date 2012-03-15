@@ -131,9 +131,8 @@ a = 3; // 換型態
 <p></p>
 <script type="text/x-sample" class="html">
         &lt;script type="text/javascript"&gt;
-          document.write("<script> 標籤裡好溫暖喔 (羞)");
+          document.write("script 標籤裡好溫暖喔 (羞)");
         &lt;/script&gt;
-        <p>一片空白。</p>
 
 </script>
 <p></div></p>
@@ -177,8 +176,7 @@ a = 3; // 換型態
       var year = 2012;
       if(year % 400){
         document.write('閏年');
-      }
-      else if(year % 100){
+      }else if(year % 100){
         document.write('不是閏年');
       }else if(year % 4){
         document.write('閏年');
@@ -195,24 +193,34 @@ a = 3; // 換型態
 <p></p>
 <p>迴圈前可以加上 label 如下：</p>
 <p></p>
-<script type="text/x-sample">
-      // TODO: 雙層迴圈！
-
-</script>
+<pre data-lang="javascript"><code><!--
+-->outerLoop: for(;;){
+  ……
+    if(...){
+      break outerLoop;
+    }
+  ……
+}
+<!--
+--></code></pre>
+<p></p>
 <p></p>
 </section>
 <section>
 <h2>switch case</h2>
+<p>記得 <code>break;</code></p>
 <p></p>
 <script type="text/x-sample">
       var name = "董允", comment;
-      switch("name"){
+      switch(name){
         case '郭攸之':
         case '費依':
         case '董允':
           comment = '此皆良實，志慮忠純';
+          break;
         case '向寵':
           comment = '試用之於昔日，先帝稱之曰「能」';
+          break;
         default:
           comment = '親賢臣，遠小人，此先漢所以興隆也';
       }
@@ -249,6 +257,26 @@ a = 3; // 換型態
 <p></p>
 </section>
 <section>
+<h2>特殊值</h2>
+<p><code>NaN</code>: Not a number，不是數字。</p>
+<script type="text/x-sample">
+        document.write(
+          26 + parseInt('二十四個比利', 10) );
+
+</script>
+<p></p>
+<p><code>undefined</code>: 未定義。變數的預設值、function 預設的回傳值。</p>
+<script type="text/x-sample">
+        var hey, noop = function(){};
+        document.write(hey + '<br>');
+        document.write(noop());
+
+</script>
+<p></p>
+<p><code>null</code>: 什麼都不是。</p>
+<p></p>
+</section>
+<section>
 <h2>Strings</h2>
 <ul>
 <li>單引號 or 雙引號 均可</li>
@@ -280,7 +308,7 @@ a = 3; // 換型態
 <p>呼叫一個函數：</p>
 <p><code>函數名(要傳的引數)</code></p>
 <p></p>
-<ul>
+<ul class="fragment">
 <li>函數可以像變數一樣被丟來丟去。</li>
 <li>無法像 C 那樣指定引數預設值。</li>
 <li>呼叫時引數的個數，和函數定義的引數個數可以不一樣。</li>
@@ -289,6 +317,7 @@ a = 3; // 換型態
 </section>
 <section>
 <h2>Functions</h2>
+<p></p>
 <script type="text/x-sample" class="small">
       // eachOf：
       // 將 array 裡的每個東西都丟進 func 當引數
@@ -303,6 +332,8 @@ a = 3; // 換型態
       });
 
 </script>
+<p></p>
+<p>Event handler / callback 很常用</p>
 <p></p>
 <p></p>
 </section>
@@ -336,7 +367,7 @@ a = 3; // 換型態
 </section>
 <section>
 <h2>Arrays</h2>
-<p><code>[元素1, ……, 元素 N]</code></p>
+<p><code>[元素1, ……, 元素N]</code></p>
 <ul>
 <li>元素不一定要都同一種型態</li>
 <li>length 為陣列長度</li>
@@ -345,11 +376,44 @@ a = 3; // 換型態
 <p></p>
 <script type="text/x-sample" class="small" data-lang="javascript">
       var arr = [3.14, "任意文字", {text: "物件"}, ["另一個", "陣列"]];
+      for(var i=0; i<arr.length; i+=1){
+        document.write( arr[i] + '<br>');
+      }
+      document.write('<hr>請打開 Javascript console');
       console.log( '陣列長度：' , arr.length);
       console.log( arr.pop());
       console.log( 'pop 後陣列：', arr);
 
-      document.write('請打開 Javascript console');
+</script>
+<p></p>
+</section>
+<section>
+<h2>Just for reference</h2>
+<p></p>
+<p>Javascript 物件變數與陣列只存 reference。</p>
+<script type="text/x-sample" class="small" data-lang="javascript">
+      document.write("請看 Javascript console");
+      
+      var obj = {name: "value"},
+          obj2 = obj;
+ 
+      // obj, obj2 reference 相同
+      // obj 和新建的物件 reference 不同，即使值都一樣，
+      // === operator 還是把它認作不同。
+      console.log('obj === obj2 :',  obj === obj2);
+      console.log('obj === {...} :', obj === {name: "value"});
+
+      var num = 3.14,
+          arr = [ "任意文字" ];
+
+      // 蓋一個 function，把 arr、num 傳進去修改
+      var alter = function(a, n){
+        a[0] = "隨便文字"; n = 1.618;
+      };
+      alter(arr, num);
+
+      // 看 arr, num 有沒有被修改
+      console.log('arr:', arr, 'num:', num);
 
 </script>
 <p></p>
@@ -522,14 +586,14 @@ a = 3; // 換型態
 <section>
 <h2>AFTER</h2>
 <p></p>
-<p><!--<iframe width="150" height="40" style="position: absolute; right: 0; top: 0; opacity: 0.1;" src="http://www.youtube.com/embed/E9gfiTAhScM?rel=0" frameborder="0"></iframe>--></p>
+<p><iframe width="150" height="40" style="position: absolute; right: 0; top: 0; opacity: 0.1;" src="http://www.youtube.com/embed/E9gfiTAhScM?rel=0" frameborder="0"></iframe></p>
 <p></p>
 <p>なんということでしょう!</p>
 <p></p>
 <script type="text/x-sample" class="demo-dom-jquery small" data-lang="javascript">
       $('#submitform').on('submit', function(e){
         // 偵測是否同意出師表
-        if($('#tos').attr('checked')){
+        if(!$('#tos').attr('checked')){
           alert('請詳閱出師表。');
           e.preventDefault();
         }
@@ -604,24 +668,49 @@ a = 3; // 換型態
 <li>在 <a href="http://api.jquery.com/category/manipulation/dom-insertion-inside/" target="_blank">裡面</a> <a href="http://api.jquery.com/category/manipulation/dom-insertion-outside/" target="_blank">旁邊</a> 插入/移除 DOM element</li>
 <li><a href="http://api.jquery.com/category/manipulation/dom-insertion-around/" target="_blank">包覆</a>目前 DOM element</li>
 </ul>
-<p></p>
-<script type="text/x-sample" class="jquery small">
-      // TODO:
-      // innerWidth, width, outerWidth
-      // addClass
-
-      // attr, removeAttr
-
-      // clone
-      // append, appendTo
-      // remove
-
-      // wrap
-
-</script>
 <hr>
 <p></p>
 <p><a href="http://api.jquery.com/category/manipulation/" target="_blank">Manipulation - jQuery API</a></p>
+<p></p>
+</section>
+<section>
+<h2>Manipulation</h2>
+<p></p>
+<script type="text/x-sample" class="html small maxheight">
+      &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
+      
+      <style type="text/css">
+        p{
+          border: 20px solid yellow;
+          margin: 20px; padding: 20px;
+        }
+        .clearstyle{
+          border: 0; margin: 0; font: 20px monospace;
+        }
+      </style>
+
+      <p>我只是個 p。</p>
+
+      &lt;script type="text/javascript" &gt;
+        var old_p = $('p');
+
+        // 複製原本的 <p>，加上 class
+        var new_p = old_p.clone().addClass('clearstyle');
+
+        // 設定新的 <p> 的內容
+        new_p.html([
+          'innerWidth: ', old_p.innerWidth(), '<br>',
+          'outerWidth: ', old_p.outerWidth()
+        ].join(''));
+
+        // 設定 HTML element 屬性
+        new_p.attr('title', '請拿左上角的尺');
+        
+        // 把新的 <p> 插入 DOM element
+        old_p.after(new_p);
+      &lt;/script&gt;
+
+</script>
 <p></p>
 </section>
 <section>
@@ -635,6 +724,7 @@ a = 3; // 換型態
 <p></p>
 <script type="text/x-sample" class="jquery small">
       // TODO:
+      // .each()
       // find()
       // parentts()
       //  all using conosole.log
@@ -755,6 +845,7 @@ a = 3; // 換型態
 <script type="text/javascript" src="js/sample.js"></script>
 <script type="text/javascript" src="js/init-js.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/ruler.js"></script>
   </body>
 
 </html>

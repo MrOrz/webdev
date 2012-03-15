@@ -103,7 +103,7 @@
   }
 
   // styles for each individual slides
-  .sample-container.demo-dom-native pre, .sample-container.demo-dom-jquery pre{
+  .sample-container.demo-dom-native pre, .sample-container.demo-dom-jquery pre, .sample-container.maxheight pre{
     max-height: 350px;
     overflow: auto;
   }

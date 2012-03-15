@@ -122,7 +122,7 @@
 #reveal .two-column {
   width: 45%;
 }
-#reveal .sample-container.demo-dom-native pre, #reveal .sample-container.demo-dom-jquery pre {
+#reveal .sample-container.demo-dom-native pre, #reveal .sample-container.demo-dom-jquery pre, #reveal .sample-container.maxheight pre {
   max-height: 350px;
   overflow: auto;
 }

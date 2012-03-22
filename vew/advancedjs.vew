@@ -12,7 +12,7 @@
 :javascript_include_tag js/reveal.js, lib/highlight.js, js/sample.js, js/init-js.js, js/index.js
 
 !SLIDE
-Advanced JS
+JS++
 ===
 {:.nav}
 * [html.html](HTML)
@@ -21,96 +21,536 @@ Advanced JS
 
 <small>[http://yuiblog.com/assets/crockford/javascript.zip](The Javascript Programming Language - Douglas Crockford)</small>
 
+{:.chapter}
 !SLIDE
-  `&&` 和 `||`
-  ----------------
-
-  `&&` 和 `||` 其實不一定要傳回 true 或 false。
-
-  `&&` : Guard Operator (Logical AND)
-  ```
-    data && data.result
-  ```
-  {:.fragment}
-  * `data` truthy → 回傳 data.result
-  * 保護 data.result
-  * 要不然 data 是 undefined 時會有 `TypeError: Cannot read property 'result' of undefined`
-  
-  ----
-
-  || : Default Operator (Logical OR)
-
-
-
-!SLIDE
-  why "JAVA"script?
-  ----
-
-  Oak:窗外有一橡樹，引以為號焉
-  咖啡廳會議: Java。
-
-!SLIDE
-  Javascript v.s. DOM
-  ----
-
-  DOM：HTML 的 API，讓我們用程式控制網頁內容。 
-  window, document, DOMDivElement.....: DOM elements
-  document.writeln, document.getElementByID: DOM 提供的 method。
-  每個瀏覽器的 DOM 有些差異，jQuery 把他們整合成一種。
-
+  JAVAscript?
   ---
 
-  Javascript：語言本身，提供了 Object, Array, String 等型態的物件。
+!STACK
+  !SLIDE
+    「C++ 的後繼語言」
+    ----
+    
+    #### Gosling 命名法
 
-!SLIDE
-  雞毛蒜皮：分號
-  ------
-
-  [http://mislav.uniqpath.com/2010/05/semicolons/](Semicolons in JavaScript are optional)
-  分號擁護者的理由與辯駁
-
-  這份教材:
-
-  * 有加分號
-  * 暗示有 "semicolon insertion"
-  * 沒有理由強制你用分號
-
-  說了一大堆，還是那句老話：「你自己決定吧！」 -- 劉墉
-
-!SLIDE
-  雞毛蒜皮：`==` 與 `===`
-  ------
+    {:.fragment}
+    `Oak`<span class="fragment">：窗外有一橡樹，引以為號焉</span>
+    {:.fragment}
+    Sun 公司在咖啡廳開會<span class="fragment">： `Java`。</span>
 
 
-!SLIDE
-  Javascript's key ideas.
-  ----
+  !SLIDE
+    討厭微軟小圈圈
+    ----
+    #### 瀏覽器程式語言
+
+    Netscape：`LiveScript`
+    Sun: `Java Applet`
+
+    <div class="fragment">
+
+    ---
+    Netscape 2.0B3, feat. "Javascript"
+
+    骨子裡是 LiveScript。
+    </div>
+
+  !SLIDE
+    再見微軟
+    ----
+
+    {:.fragment}
+    Netscape 和 Sun 將 Javascript 拽在懷裡，心中暗自竊喜。
+
+    {:.fragment}
+    Free at last! Free at last!
   
-  TBD
+    <div class="fragment">
 
+    ---
+    隔年 (1996)
+
+    Internet Explorer 3.0, feat. JScript
+    </div>
+
+    {:.fragment}
+    微軟逆向工程神威。
+
+    {:.fragment}
+    ![images/advancedjs/fuuuuu.png](FUUUU)
+
+  !SLIDE
+    標準化
+    ----
+
+    不能讓微軟為所欲為
+
+    <div class="fragment">
+      ### `ECMA Script`
+
+      將語言標準化
+
+      最新版本： 5.1 （2011/6）
+
+    </div>
+
+!ENDSTACK
+
+{:.chapter}
 !SLIDE
-  var statements
-  ----
+  一些小事
+  --- 
 
-  {:.fragment}
-  變數讀取前沒宣告 → Reference Error
-  {:.fragment}
-  變數寫入前沒宣告 → 變成全域變數 (Implied global)
+  有些好像不怎麼小
 
-  {:.fragment}
+!STACK
+
+  !SLIDE
+    Truthy & Falsy
+    --------
+    {:.fragment}
+    #### 真的假的
+
+    <div class="fragment">
+      `if` 試金石
+
+      {:.small.jquery[data-lang=javascript]}
+      ~~~
+        var test = [
+          false, null, undefined,             // 0~2
+          "", 0, NaN,                         // 3~5
+          "0", "false", {}, [], $('nothing')  // 6~10
+          // , [].length
+
+          // 其他統統 truthy
+        ], i;
+        
+        for(i=0; i<test.length; i+=1){
+          document.write('i='+i+': ');
+          if(test[i]){
+            document.write('Truthy<br>');
+          }else{
+            document.write('Falsy<br>');
+          }
+        }
+      ~~~
+    </div>
+
+
+  !SLIDE
+    `&&` 和 `||`
+    ----------------
+
+     `&&`, `||` 是 short-circuited
+
+    {:.fragment}
+    其實 `&&` 和 `||` 不一定要傳回 `true` 或 `false`。
+
+  !SLIDE
+    `&&` : Guard Operator (Logical AND)
+    --
+
+    前者 truthy 則傳回後者，否則傳回前者。
+
+    {:.small}
+    ~~~
+      var process = function(data){
+        if(data.result){
+        //if( data && data.result ){
+          document.write('有結果。')
+        }else{
+          document.write('沒結果。')
+        }
+      };
+
+      try{
+        process();
+      }catch(e){
+        document.write(e.arguments + ' ' + e.type);
+      }
+
+    ~~~
+  
+    * `data` truthy → 回傳 `data.result`
+    * 保護 `data.result`
+
+  !SLIDE
+    `||` : Default Operator (Logical OR)
+    --
+    
+    前者 truthy 則傳回前者，否則傳回後者。
+
+    {:.small}
+    ~~~
+      var process = function(data){
+        data = data || {};
+
+        if(data.result){
+          document.write('有結果。')
+        }else{
+          document.write('沒結果。')
+        }
+      };
+      
+      process();
+    ~~~
+
+
+  !SLIDE
+    分號
+    ------
+
+    [http://mislav.uniqpath.com/2010/05/semicolons/](Semicolons in JavaScript are optional)
+    [http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding](An Open Letter to JavaScript Leaders Regarding Semicolons)
+
+    Automatic Semicolon Insertion：Parser 會在句尾加分號。
+
+    {:.fragment}
+    這種行為在每個 browser 都相當一致。
+    
+    <div class="fragment">
+
+    ---
+
+    以下狀況<b>不會</b>完結敘述（statement）
+
+    * 如果敘述斷在這裡不符合文法。如：`var a = {`。
+    * `for()`, `while()`, `do`, `if`, `else` 後沒 '{'。
+    * 下一行的開頭是 `[`, `(`, `+`, `*`, `/`, `-`, `,`, `.`。
+
+    否則，parser 在斷行前覆蓋一個 `;` 結束這個敘述。
+
+    </div>
+
+  !SLIDE
+    句尾分號不是神
+    ------
+    
+    ~~~
+      var meaningOfLife = function(){
+        return
+          42
+      };
+
+      document.write(
+        meaningOfLife() === undefined
+      );
+    ~~~
+
+    句末加上 `;` 不會讓 `explode` 不爆炸。
+
+    除非你知道 `return` 這個例子。
+
+
+  !SLIDE
+    立場
+    ----
+
+    這份教材:
+
+    * 都有加分號，單純是爽。
+    * 但其實沒加分號也很爽。
+    * 沒有理由強制你用分號。
+
+    {:.fragment}
+    教材 coding style 不代表講師立場。
+
+    {:.fragment}
+    說了一大堆，還是那句老話：「你自己決定吧！」 -- 劉墉
+
+  !SLIDE
+    `==` 與 `===`
+    ------
+
+    {:.small[data-lang=javascript]}
+    ~~~
+      var test = {
+        '0==""'     : 0=="",
+        '0=="0"'    : 0=="0",
+        'false==""' : false=="",
+        'false==0'  : false==0,
+        'false==null': false==null,
+        'false==undefined': false==undefined,
+
+        // 以下為經典範例
+        '[0]==true': [0]==true,
+        '[1]==true': [1]==true,
+        '"該不該特赦"==true': "該不該特赦"==true,
+        '"該不該特赦"==false': "該不該特赦"==false,
+      }, name;
+
+      document.write('<table>');
+      for(var name in test){
+        document.write(
+          '<tr><td>' + name + '</td><td>' + test[name] + '</td></tr>');
+      }
+      document.write('</table>');
+
+    ~~~
+
+    [http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/](`==` 型別轉換)
+
+    [http://jsperf.com/equality-operators-with-the-same-types](`==`, `===` 左右運算元是同型態時的效能比較)
+
+  !SLIDE
+    `<script>` 放哪裡？
+    ----
+    `<script>` 的執行，會把接下來的頁面 render block 住。
+    `<link>` 載完之前，頁面不會 render。
+
+    <div class="fragment">
+
+    ---
+    把 CSS 放越前面越好，把 JS 放越後面越好。
+
+    [http://developer.yahoo.com/blogs/ydn/posts/2007/07/high_performanc_5/](Yahoo 的 High performance web site rules)
+    </div>
+
+    {:.fragment}
+    * `<script>` 放在 `</body>` tag 前面
+    * 把 js 檔案接起來
+    * 使用 javascript loader 如 [http://headjs.com](head.js) 或 [http://requirejs.org](require.js)
+
+!ENDSTACK
+
+{:.chapter}
+!SLIDE
+  物件導向
+  --------
+
+!STACK
+  !SLIDE
+    Prototype
+    ----
+    物件繼承物件
+    沒有型別
+
+  !SLIDE
+    Object.prototype
+    ---
+    所有物件的 protptype
+
+  !SLIDE
+    for ... in
+    ------
+
+    `window children`
+
+!ENDSTACK
+
+{:.chapter}
+!SLIDE
+  Variable Scope
+  -----
+
+!STACK
+
+  !SLIDE
+    `{}` 沒有 Block Scope
+    ---
+
+    {:[data-lang=javascript]}
+    ~~~
+      var i = 10;
+      document.write(i + '<hr>'); // 分隔線
+
+      // 在 C 裡面，這樣做不會影響到外面的 i
+      for(var i=0; i<5; i+=1){
+        document.write(i + ' ')
+      }
+
+      // ……但 JS 裡會。
+      document.write('<hr>' + i)
+    ~~~
+
+  !SLIDE
+    只有 Function Scope
+    ---
+
+    {:[data-lang=javascript]}
+    ~~~
+      var i = 10, j = 20, oneToN;
+
+      oneToN = function(n){
+        document.write('(for外) i= ' + i + '<br>');
+        document.write('(for外) j= ' + j + '<br>');
+
+        for(var i=0; i<5; i+=1){
+          // 這裡 i 是 func 的區域變數
+          document.write(i + ' ');
+        }
+      };
+
+      document.write(i + '<hr>'); 
+
+      oneToN();
+
+      document.write('<hr>' + i);
+    ~~~
+
+  !SLIDE
+    Static variables?
+    ---
+      {:[data-lang=javascript]}
+      ~~~
+
+      var func = function(){
+        func.counter = func.counter || 0;
+        func.counter += 1;
+      };
+
+      // 執行 func 十次
+      for(var i=0; i<10; i+=1){
+        func();
+      }
+
+      document.write(func.counter)
+      ~~~
+
+      `counter` 是個可以被外面看到的 static variable……？
+
+      ---
+
+      沒那麼複雜。
+
+      * `func` 和物件一樣，可以增加成員。
+      * `func` 也可以有 method。內建的有 `apply`, `call`。
+      * 和物件不同的點：`func` 後面加上 `()` 可以執行自己的內容。
+
+  !SLIDE
+    減少摩擦、增進和諧
+    ---
+      既然只有 `function` 才會有 variable scope……
+
+      {:[data-lang=javascript]}
+      ~~~
+        var a, b;
+        (function(){
+          // 努力把自己寫的程式都放在這裡吧。
+          var a = 10, b = 3; // 在裡面可以使用
+        }());
+        // 但外面拿不到 a, b，乾淨俐落不著痕。
+        document.write('a, b =' + a + ', ' + b);
+      ~~~
+
+      {:.fragment}
+      * `function(){}` 蓋一個函式。
+      * `function(){}` 函式後面接 `()` 執行之。
+      * 後面的 `()` 可以傳入引數，減少 scope 查詢。
+      * 如：`function($){ /* 使用 $ */ }(jQuery)`
+      * 最外面包以 `()` 表示這整句是一個 statement。
+
+  !SLIDE
+    我們要努力培養雅量
+    ---
+
+    但如果真的想把某變數弄成全域的
+
+    <div class="fragment">
+    就掛成 `window` 的成員。
+    {:[data-lang=javascript]}
+    ~~~
+      var a;
+      (function(){
+        // 努力把自己寫的程式都放在這裡吧。
+        var a = 10;
+        window.b = 3;
+      }());
+      document.write('a, b =' + a + ', ' + b);
+    ~~~
+
+    瀏覽器中，`window` （`DOMWindow`）會包含所有全域成員。
+    </div>
+
+    {:.fragment[data-lang=javascript]}
+    ```
+    console.log(window)
+    ```
+
+  !SLIDE
+    `var` statements
+    ----
+
+    變數讀取前沒宣告 → Reference Error
+    變數寫入前沒宣告 → 變成全域變數 (Implied global)
+
+    ~~~
+      try{
+        document.write(a); // Reference Error
+      }catch(e){
+        document.write(e.arguments + ' ' + e.type);
+      }
+      document.write('<hr>');
+
+      var func = function(){
+        b = 10 // 外面也能拿得到
+      }; 
+      func();
+
+      document.write(b);
+    ~~~
+
+  !SLIDE
+    Implied Global
+    ---
     * 為了要 Load-and-go，沒有 linker。
     * Library 間用 global scope 來溝通。
     * 建立規範時的缺陷
     * 錯誤已經造成。CommonJS / [http://requirejs.org/](RequireJS) 嘗試修補。
 
-  function 開頭加上 "use strict". TODO: example!
-  使用 JSHint!
+    <div class="fragment">
+      function 開頭加上 `"use strict"`
+      ~~~
+        try{
+          (function(){
+            "use strict";
+            a=10;
+          }());
+        }catch(e){
+          document.write(e.arguments + ' ' + e.type);
+        }
+      ~~~
+    {:.fragment}
+    或使用 [http://www.jshint.com](JSHint)。
+
+  !SLIDE
+    Closures
+    ----
+    ~~~
+      var iFactory = function(){
+        var i = 10;
+        return {
+          getI: function(){return i;},
+          setI: function(new_i){i=new_i;}
+        };
+      };
+      var iPhone = iFactory(), iPod = iFactory();
+
+      document.write( "iPhone's i: " + iPhone.getI() + '<br>' );
+      iPhone.setI(20);
+
+      document.write( "iPhone's i: " + iPhone.getI() + '<br>' );
+      document.write( "iPod's i: " + iPod.getI() + '<br>' );
+    ~~~
+    `iFactory` 已經回傳了，但還是能存取 `i`！
+
+  !SLIDE
+    Closures
+    ----
+
+!ENDSTACK
+
 
 !SLIDE
-  `<script>` 放哪裡？
-  ----
-  TODO: waterfall chart of js loading
+遺珠之憾
+---
+  * `for ... in` 與 `hasOwnProperty`
+  * function 的 `call`、`apply`
+  * Prototype
+  * [http://ejohn.org/apps/learn/](Learning Advanced Javascript)
 
-  * 放在 body tag 後面
-  * 把 js 檔案接起來
-  * 使用 javascript loader 如 head.js 或 require.js
+
+!SLIDE
+The End
+===
+m(_ _)m

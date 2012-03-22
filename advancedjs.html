@@ -23,7 +23,7 @@
 <p></p>
 <p></p>
 <section>
-<h1>Advanced JS</h1>
+<h1>JS++</h1>
 <ul class="nav">
 <li><a href="html.html">HTML</a></li>
 <li><a href="css.html">CSS</a></li>
@@ -33,102 +33,537 @@
 <p><small><a href="http://yuiblog.com/assets/crockford/javascript.zip" target="_blank">The Javascript Programming Language - Douglas Crockford</a></small></p>
 <p></p>
 </section>
+<section class="chapter">
+<h2>JAVAscript?</h2>
+<p></p>
+</section>
+<section>
+<section>
+<h2>「C++ 的後繼語言」</h2>
+<p></p>
+<h4>Gosling 命名法</h4>
+<p></p>
+<p class="fragment"><code>Oak</code><span class="fragment">：窗外有一橡樹，引以為號焉</span></p>
+<p class="fragment">Sun 公司在咖啡廳開會<span class="fragment">： <code>Java</code>。</span></p>
+<p></p>
+<p></p>
+</section>
+<section>
+<h2>討厭微軟小圈圈</h2>
+<h4>瀏覽器程式語言</h4>
+<p></p>
+<p>Netscape：<code>LiveScript</code></p>
+<p>Sun: <code>Java Applet</code></p>
+<p></p>
+<p><div class="fragment"></p>
+<hr>
+<p>Netscape 2.0B3, feat. "Javascript"</p>
+<p></p>
+<p>骨子裡是 LiveScript。</p>
+<p></div></p>
+<p></p>
+</section>
+<section>
+<h2>再見微軟</h2>
+<p></p>
+<p class="fragment">Netscape 和 Sun 將 Javascript 拽在懷裡，心中暗自竊喜。</p>
+<p></p>
+<p class="fragment">Free at last! Free at last!</p>
+<p></p>
+<p><div class="fragment"></p>
+<hr>
+<p>隔年 (1996)</p>
+<p></p>
+<p>Internet Explorer 3.0, feat. JScript</p>
+<p></div></p>
+<p></p>
+<p class="fragment">微軟逆向工程神威。</p>
+<p></p>
+<p class="fragment"><img src="images/advancedjs/fuuuuu.png" alt="FUUUU"></p>
+<p></p>
+</section>
+<section>
+<h2>標準化</h2>
+<p></p>
+<p>不能讓微軟為所欲為</p>
+<p></p>
+<p><div class="fragment"></p>
+<h3><code>ECMA Script</code></h3>
+<p></p>
+<p>將語言標準化</p>
+<p></p>
+<p>最新版本： 5.1 （2011/6）</p>
+<p></p>
+<p></div></p>
+<p></p>
+</section>
+</section>
+<p></p>
+<section class="chapter">
+<p>一些小事</p>
+<p>---</p>
+<p></p>
+<p>有些好像不怎麼小</p>
+<p></p>
+</section>
+<section>
+<p></p>
+<section>
+<h2>Truthy & Falsy</h2>
+<h4 class="fragment">真的假的</h4>
+<p></p>
+<p><div class="fragment"></p>
+<p><code>if</code> 試金石</p>
+<p></p>
+<script type="text/x-sample" class="small jquery" data-lang="javascript">
+        var test = [
+          false, null, undefined,             // 0~2
+          "", 0, NaN,                         // 3~5
+          "0", "false", {}, [], $('nothing')  // 6~10
+          // , [].length
+
+          // 其他統統 truthy
+        ], i;
+        
+        for(i=0; i<test.length; i+=1){
+          document.write('i='+i+': ');
+          if(test[i]){
+            document.write('Truthy<br>');
+          }else{
+            document.write('Falsy<br>');
+          }
+        }
+
+</script>
+<p></div></p>
+<p></p>
+<p></p>
+</section>
 <section>
 <h2><code>&amp;&amp;</code> 和 <code>||</code></h2>
 <p></p>
-<p><code>&amp;&amp;</code> 和 <code>||</code> 其實不一定要傳回 true 或 false。</p>
+<p><code>&amp;&amp;</code>, <code>||</code> 是 short-circuited</p>
 <p></p>
-<p><code>&amp;&amp;</code> : Guard Operator (Logical AND)</p>
-<pre><code><!--
--->data &amp;&amp; data.result
-<!--
---></code></pre>
-<ul class="fragment">
-<li><code>data</code> truthy → 回傳 data.result</li>
-<li>保護 data.result</li>
-<li>要不然 data 是 undefined 時會有 <code>TypeError: Cannot read property &apos;result&apos; of undefined</code></li>
+<p class="fragment">其實 <code>&amp;&amp;</code> 和 <code>||</code> 不一定要傳回 <code>true</code> 或 <code>false</code>。</p>
+<p></p>
+</section>
+<section>
+<h2><code>&amp;&amp;</code> : Guard Operator (Logical AND)</h2>
+<p></p>
+<p>前者 truthy 則傳回後者，否則傳回前者。</p>
+<p></p>
+<script type="text/x-sample" class="small">
+      var process = function(data){
+        if(data.result){
+        //if( data && data.result ){
+          document.write('有結果。')
+        }else{
+          document.write('沒結果。')
+        }
+      };
+
+      try{
+        process();
+      }catch(e){
+        document.write(e.arguments + ' ' + e.type);
+      }
+
+
+</script>
+<p></p>
+<ul>
+<li><code>data</code> truthy → 回傳 <code>data.result</code></li>
+<li>保護 <code>data.result</code></li>
 </ul>
-<hr>
 <p></p>
-<p>|| : Default Operator (Logical OR)</p>
+</section>
+<section>
+<h2><code>||</code> : Default Operator (Logical OR)</h2>
 <p></p>
+<p>前者 truthy 則傳回前者，否則傳回後者。</p>
+<p></p>
+<script type="text/x-sample" class="small">
+      var process = function(data){
+        data = data || {};
+
+        if(data.result){
+          document.write('有結果。')
+        }else{
+          document.write('沒結果。')
+        }
+      };
+      
+      process();
+
+</script>
 <p></p>
 <p></p>
 </section>
 <section>
-<h2>why "JAVA"script?</h2>
-<p></p>
-<p>Oak:窗外有一橡樹，引以為號焉</p>
-<p>咖啡廳會議: Java。</p>
-<p></p>
-</section>
-<section>
-<h2>Javascript v.s. DOM</h2>
-<p></p>
-<p>DOM：HTML 的 API，讓我們用程式控制網頁內容。</p>
-<p>window, document, DOMDivElement.....: DOM elements</p>
-<p>document.writeln, document.getElementByID: DOM 提供的 method。</p>
-<p>每個瀏覽器的 DOM 有些差異，jQuery 把他們整合成一種。</p>
-<hr>
-<p></p>
-<p>Javascript：語言本身，提供了 Object, Array, String 等型態的物件。</p>
-<p></p>
-</section>
-<section>
-<h2>雞毛蒜皮：分號</h2>
+<h2>分號</h2>
 <p></p>
 <p><a href="http://mislav.uniqpath.com/2010/05/semicolons/" target="_blank">Semicolons in JavaScript are optional</a></p>
-<p>分號擁護者的理由與辯駁</p>
+<p><a href="http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding" target="_blank">An Open Letter to JavaScript Leaders Regarding Semicolons</a></p>
+<p></p>
+<p>Automatic Semicolon Insertion：Parser 會在句尾加分號。</p>
+<p></p>
+<p class="fragment">這種行為在每個 browser 都相當一致。</p>
+<p></p>
+<p><div class="fragment"></p>
+<hr>
+<p></p>
+<p>以下狀況<b>不會</b>完結敘述（statement）</p>
+<p></p>
+<ul>
+<li>如果敘述斷在這裡不符合文法。如：<code>var a = {</code>。</li>
+<li><code>for()</code>, <code>while()</code>, <code>do</code>, <code>if</code>, <code>else</code> 後沒 '{'。</li>
+<li>下一行的開頭是 <code>[</code>, <code>(</code>, <code>+</code>, <code>*</code>, <code>/</code>, <code>-</code>, <code>,</code>, <code>.</code>。</li>
+</ul>
+<p></p>
+<p>否則，parser 在斷行前覆蓋一個 <code>;</code> 結束這個敘述。</p>
+<p></p>
+<p></div></p>
+<p></p>
+</section>
+<section>
+<h2>句尾分號不是神</h2>
+<p></p>
+<script type="text/x-sample">
+      var meaningOfLife = function(){
+        return
+          42
+      };
+
+      document.write(
+        meaningOfLife() === undefined
+      );
+
+</script>
+<p></p>
+<p>句末加上 <code>;</code> 不會讓 <code>explode</code> 不爆炸。</p>
+<p></p>
+<p>除非你知道 <code>return</code> 這個例子。</p>
+<p></p>
+<p></p>
+</section>
+<section>
+<h2>立場</h2>
 <p></p>
 <p>這份教材:</p>
 <p></p>
 <ul>
-<li>有加分號</li>
-<li>暗示有 "semicolon insertion"</li>
-<li>沒有理由強制你用分號</li>
+<li>都有加分號，單純是爽。</li>
+<li>但其實沒加分號也很爽。</li>
+<li>沒有理由強制你用分號。</li>
 </ul>
 <p></p>
-<p>說了一大堆，還是那句老話：「你自己決定吧！」 -- 劉墉</p>
+<p class="fragment">教材 coding style 不代表講師立場。</p>
+<p></p>
+<p class="fragment">說了一大堆，還是那句老話：「你自己決定吧！」 -- 劉墉</p>
 <p></p>
 </section>
 <section>
-<h2>雞毛蒜皮：<code>==</code> 與 <code>===</code></h2>
+<h2><code>==</code> 與 <code>===</code></h2>
 <p></p>
+<script type="text/x-sample" class="small" data-lang="javascript">
+      var test = {
+        '0==""'     : 0=="",
+        '0=="0"'    : 0=="0",
+        'false==""' : false=="",
+        'false==0'  : false==0,
+        'false==null': false==null,
+        'false==undefined': false==undefined,
+
+        // 以下為經典範例
+        '[0]==true': [0]==true,
+        '[1]==true': [1]==true,
+        '"該不該特赦"==true': "該不該特赦"==true,
+        '"該不該特赦"==false': "該不該特赦"==false,
+      }, name;
+
+      document.write('<table>');
+      for(var name in test){
+        document.write(
+          '<tr><td>' + name + '</td><td>' + test[name] + '</td></tr>');
+      }
+      document.write('</table>');
+
+
+</script>
+<p></p>
+<p><a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/" target="_blank"><code>==</code> 型別轉換</a></p>
+<p></p>
+<p><a href="http://jsperf.com/equality-operators-with-the-same-types" target="_blank"><code>==</code>, <code>===</code> 左右運算元是同型態時的效能比較</a></p>
 <p></p>
 </section>
 <section>
-<h2>Javascript's key ideas.</h2>
+<h2><code>&lt;script&gt;</code> 放哪裡？</h2>
+<p><code>&lt;script&gt;</code> 的執行，會把接下來的頁面 render block 住。</p>
+<p><code>&lt;link&gt;</code> 載完之前，頁面不會 render。</p>
 <p></p>
-<p>TBD</p>
+<p><div class="fragment"></p>
+<hr>
+<p>把 CSS 放越前面越好，把 JS 放越後面越好。</p>
 <p></p>
-</section>
-<section>
-<h2>var statements</h2>
-<p></p>
-<p class="fragment">變數讀取前沒宣告 → Reference Error</p>
-<p class="fragment">變數寫入前沒宣告 → 變成全域變數 (Implied global)</p>
+<p><a href="http://developer.yahoo.com/blogs/ydn/posts/2007/07/high_performanc_5/" target="_blank">Yahoo 的 High performance web site rules</a></p>
+<p></div></p>
 <p></p>
 <ul class="fragment">
+<li><code>&lt;script&gt;</code> 放在 <code>&lt;/body&gt;</code> tag 前面</li>
+<li>把 js 檔案接起來</li>
+<li>使用 javascript loader 如 <a href="http://headjs.com" target="_blank">head.js</a> 或 <a href="http://requirejs.org" target="_blank">require.js</a></li>
+</ul>
+<p></p>
+</section>
+</section>
+<p></p>
+<section class="chapter">
+<h2>物件導向</h2>
+<p></p>
+</section>
+<section>
+<section>
+<h2>Prototype</h2>
+<p>物件繼承物件</p>
+<p>沒有型別</p>
+<p></p>
+</section>
+<section>
+<h2>Object.prototype</h2>
+<p>所有物件的 protptype</p>
+<p></p>
+</section>
+<section>
+<h2>for ... in</h2>
+<p></p>
+<p><code>window children</code></p>
+<p></p>
+</section>
+</section>
+<p></p>
+<section class="chapter">
+<h2>Variable Scope</h2>
+<p></p>
+</section>
+<section>
+<p></p>
+<section>
+<h2><code>{}</code> 沒有 Block Scope</h2>
+<p></p>
+<script type="text/x-sample" data-lang="javascript">
+      var i = 10;
+      document.write(i + '<hr>'); // 分隔線
+
+      // 在 C 裡面，這樣做不會影響到外面的 i
+      for(var i=0; i<5; i+=1){
+        document.write(i + ' ')
+      }
+
+      // ……但 JS 裡會。
+      document.write('<hr>' + i)
+
+</script>
+<p></p>
+</section>
+<section>
+<h2>只有 Function Scope</h2>
+<p></p>
+<script type="text/x-sample" data-lang="javascript">
+      var i = 10, j = 20, oneToN;
+
+      oneToN = function(n){
+        document.write('(for外) i= ' + i + '<br>');
+        document.write('(for外) j= ' + j + '<br>');
+
+        for(var i=0; i<5; i+=1){
+          // 這裡 i 是 func 的區域變數
+          document.write(i + ' ');
+        }
+      };
+
+      document.write(i + '<hr>'); 
+
+      oneToN();
+
+      document.write('<hr>' + i);
+
+</script>
+<p></p>
+</section>
+<section>
+<h2>Static variables?</h2>
+<script type="text/x-sample" data-lang="javascript">
+
+      var func = function(){
+        func.counter = func.counter || 0;
+        func.counter += 1;
+      };
+
+      // 執行 func 十次
+      for(var i=0; i<10; i+=1){
+        func();
+      }
+
+      document.write(func.counter)
+
+</script>
+<p></p>
+<p><code>counter</code> 是個可以被外面看到的 static variable……？</p>
+<hr>
+<p></p>
+<p>沒那麼複雜。</p>
+<p></p>
+<ul>
+<li><code>func</code> 和物件一樣，可以增加成員。</li>
+<li><code>func</code> 也可以有 method。內建的有 <code>apply</code>, <code>call</code>。</li>
+<li>和物件不同的點：<code>func</code> 後面加上 <code>()</code> 可以執行自己的內容。</li>
+</ul>
+<p></p>
+</section>
+<section>
+<h2>減少摩擦、增進和諧</h2>
+<p>既然只有 <code>function</code> 才會有 variable scope……</p>
+<p></p>
+<script type="text/x-sample" data-lang="javascript">
+        var a, b;
+        (function(){
+          // 努力把自己寫的程式都放在這裡吧。
+          var a = 10, b = 3; // 在裡面可以使用
+        }());
+        // 但外面拿不到 a, b，乾淨俐落不著痕。
+        document.write('a, b =' + a + ', ' + b);
+
+</script>
+<p></p>
+<ul class="fragment">
+<li><code>function(){}</code> 蓋一個函式。</li>
+<li><code>function(){}</code> 函式後面接 <code>()</code> 執行之。</li>
+<li>後面的 <code>()</code> 可以傳入引數，減少 scope 查詢。</li>
+<li>如：<code>function($){ /* 使用 $ */ }(jQuery)</code></li>
+<li>最外面包以 <code>()</code> 表示這整句是一個 statement。</li>
+</ul>
+<p></p>
+</section>
+<section>
+<h2>我們要努力培養雅量</h2>
+<p></p>
+<p>但如果真的想把某變數弄成全域的</p>
+<p></p>
+<p><div class="fragment"></p>
+<p>就掛成 <code>window</code> 的成員。</p>
+<script type="text/x-sample" data-lang="javascript">
+      var a;
+      (function(){
+        // 努力把自己寫的程式都放在這裡吧。
+        var a = 10;
+        window.b = 3;
+      }());
+      document.write('a, b =' + a + ', ' + b);
+
+</script>
+<p></p>
+<p>瀏覽器中，<code>window</code> （<code>DOMWindow</code>）會包含所有全域成員。</p>
+<p></div></p>
+<p></p>
+<pre class="fragment" data-lang="javascript"><code><!--
+-->console.log(window)
+<!--
+--></code></pre>
+<p></p>
+</section>
+<section>
+<h2><code>var</code> statements</h2>
+<p></p>
+<p>變數讀取前沒宣告 → Reference Error</p>
+<p>變數寫入前沒宣告 → 變成全域變數 (Implied global)</p>
+<p></p>
+<script type="text/x-sample">
+      try{
+        document.write(a); // Reference Error
+      }catch(e){
+        document.write(e.arguments + ' ' + e.type);
+      }
+      document.write('<hr>');
+
+      var func = function(){
+        b = 10 // 外面也能拿得到
+      }; 
+      func();
+
+      document.write(b);
+
+</script>
+<p></p>
+</section>
+<section>
+<h2>Implied Global</h2>
+<ul>
 <li>為了要 Load-and-go，沒有 linker。</li>
 <li>Library 間用 global scope 來溝通。</li>
 <li>建立規範時的缺陷</li>
 <li>錯誤已經造成。CommonJS / <a href="http://requirejs.org/" target="_blank">RequireJS</a> 嘗試修補。</li>
 </ul>
 <p></p>
-<p>function 開頭加上 "use strict". TODO: example!</p>
-<p>使用 JSHint!</p>
+<p><div class="fragment"></p>
+<p>function 開頭加上 <code>&quot;use strict&quot;</code></p>
+<script type="text/x-sample">
+        try{
+          (function(){
+            "use strict";
+            a=10;
+          }());
+        }catch(e){
+          document.write(e.arguments + ' ' + e.type);
+        }
+
+</script>
+<p class="fragment">或使用 <a href="http://www.jshint.com" target="_blank">JSHint</a>。</p>
 <p></p>
 </section>
 <section>
-<h2><code>&lt;script&gt;</code> 放哪裡？</h2>
-<p>TODO: waterfall chart of js loading</p>
+<h2>Closures</h2>
+<script type="text/x-sample">
+      var iFactory = function(){
+        var i = 10;
+        return {
+          getI: function(){return i;},
+          setI: function(new_i){i=new_i;}
+        };
+      };
+      var iPhone = iFactory(), iPod = iFactory();
+
+      document.write( "iPhone's i: " + iPhone.getI() + '<br>' );
+      iPhone.setI(20);
+
+      document.write( "iPhone's i: " + iPhone.getI() + '<br>' );
+      document.write( "iPod's i: " + iPod.getI() + '<br>' );
+
+</script>
+<p><code>iFactory</code> 已經回傳了，但還是能存取 <code>i</code>！</p>
 <p></p>
-<ul>
-<li>放在 body tag 後面</li>
-<li>把 js 檔案接起來</li>
-<li>使用 javascript loader 如 head.js 或 require.js</li>
 </section>
+<section>
+<h2>Closures</h2>
+<p></p>
+</section>
+</section>
+<p></p>
+<p></p>
+<section>
+<h2>遺珠之憾</h2>
+<ul>
+<li><code>for ... in</code> 與 <code>hasOwnProperty</code></li>
+<li>function 的 <code>call</code>、<code>apply</code></li>
+<li>Prototype</li>
+<li><a href="http://ejohn.org/apps/learn/" target="_blank">Learning Advanced Javascript</a></li>
 </ul>
+<p></p>
+<p></p>
+</section>
+<section>
+<h1>The End</h1>
+<p>m(_ _)m</p>
+</section>
       </div>
 
       <!-- The navigational controls UI -->

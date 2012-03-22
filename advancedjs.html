@@ -544,6 +544,26 @@
 </section>
 <section>
 <h2>Closures</h2>
+<script type="text/x-sample" class="html small">
+      <span>0</span><button>加加</button>
+      &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
+      &lt;script type="text/javascript"&gt;
+        (function(){
+          var num = parseInt($('span').text(), 10);
+
+          $('button').click(function(){
+            num += 1;
+            $('span').text(num);
+          });
+          
+        }());
+      &lt;/script&gt;
+      
+
+</script>
+<p></p>
+<p>Event handler 在 closure 中執行。</p>
+<p><code>i</code> 變數不會污染外面的世界</p>
 <p></p>
 </section>
 </section>

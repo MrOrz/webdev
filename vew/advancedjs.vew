@@ -537,6 +537,26 @@ JS++
   !SLIDE
     Closures
     ----
+    {:.html.small}
+    ~~~
+      <span>0</span><button>加加</button>
+      &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
+      &lt;script type="text/javascript"&gt;
+        (function(){
+          var num = parseInt($('span').text(), 10);
+
+          $('button').click(function(){
+            num += 1;
+            $('span').text(num);
+          });
+          
+        }());
+      &lt;/script&gt;
+      
+    ~~~
+
+    Event handler 在 closure 中執行。
+    `i` 變數不會污染外面的世界
 
 !ENDSTACK
 

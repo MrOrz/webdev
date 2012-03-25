@@ -30,7 +30,7 @@ JS++
   !SLIDE
     「C++ 的後繼語言」
     ----
-    
+
     #### Gosling 命名法
 
     {:.fragment}
@@ -64,7 +64,7 @@ JS++
 
     {:.fragment}
     Free at last! Free at last!
-  
+
     <div class="fragment">
 
     ---
@@ -99,7 +99,7 @@ JS++
 {:.chapter}
 !SLIDE
   一些小事
-  --- 
+  ---
 
   有些好像不怎麼小
 
@@ -124,7 +124,7 @@ JS++
 
           // 其他統統 truthy
         ], i;
-        
+
         for(i=0; i<test.length; i+=1){
           document.write('i='+i+': ');
           if(test[i]){
@@ -170,14 +170,14 @@ JS++
       }
 
     ~~~
-  
+
     * `data` truthy → 回傳 `data.result`
     * 保護 `data.result`
 
   !SLIDE
     `||` : Default Operator (Logical OR)
     --
-    
+
     前者 truthy 則傳回前者，否則傳回後者。
 
     {:.small}
@@ -191,7 +191,7 @@ JS++
           document.write('沒結果。')
         }
       };
-      
+
       process();
     ~~~
 
@@ -207,7 +207,7 @@ JS++
 
     {:.fragment}
     這種行為在每個 browser 都相當一致。
-    
+
     <div class="fragment">
 
     ---
@@ -225,7 +225,7 @@ JS++
   !SLIDE
     句尾分號不是神
     ------
-    
+
     ~~~
       var meaningOfLife = function(){
         return
@@ -315,31 +315,6 @@ JS++
 
 {:.chapter}
 !SLIDE
-  物件導向
-  --------
-
-!STACK
-  !SLIDE
-    Prototype
-    ----
-    物件繼承物件
-    沒有型別
-
-  !SLIDE
-    Object.prototype
-    ---
-    所有物件的 protptype
-
-  !SLIDE
-    for ... in
-    ------
-
-    `window children`
-
-!ENDSTACK
-
-{:.chapter}
-!SLIDE
   Variable Scope
   -----
 
@@ -381,7 +356,7 @@ JS++
         }
       };
 
-      document.write(i + '<hr>'); 
+      document.write(i + '<hr>');
 
       oneToN();
 
@@ -484,7 +459,7 @@ JS++
 
       var func = function(){
         b = 10 // 外面也能拿得到
-      }; 
+      };
       func();
 
       document.write(b);
@@ -549,14 +524,14 @@ JS++
             num += 1;
             $('span').text(num);
           });
-          
+
         }());
       &lt;/script&gt;
-      
+
     ~~~
 
     Event handler 在 closure 中執行。
-    `i` 變數不會污染外面的世界
+    `num` 變數不會污染外面的世界
 
 !ENDSTACK
 

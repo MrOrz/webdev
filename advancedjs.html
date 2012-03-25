@@ -100,8 +100,7 @@
 </section>
 <p></p>
 <section class="chapter">
-<p>一些小事</p>
-<p>---</p>
+<h2>一些小事</h2>
 <p></p>
 <p>有些好像不怎麼小</p>
 <p></p>
@@ -124,7 +123,7 @@
 
           // 其他統統 truthy
         ], i;
-        
+
         for(i=0; i<test.length; i+=1){
           document.write('i='+i+': ');
           if(test[i]){
@@ -192,7 +191,7 @@
           document.write('沒結果。')
         }
       };
-      
+
       process();
 
 </script>
@@ -318,30 +317,6 @@
 </section>
 <p></p>
 <section class="chapter">
-<h2>物件導向</h2>
-<p></p>
-</section>
-<section>
-<section>
-<h2>Prototype</h2>
-<p>物件繼承物件</p>
-<p>沒有型別</p>
-<p></p>
-</section>
-<section>
-<h2>Object.prototype</h2>
-<p>所有物件的 protptype</p>
-<p></p>
-</section>
-<section>
-<h2>for ... in</h2>
-<p></p>
-<p><code>window children</code></p>
-<p></p>
-</section>
-</section>
-<p></p>
-<section class="chapter">
 <h2>Variable Scope</h2>
 <p></p>
 </section>
@@ -381,7 +356,7 @@
         }
       };
 
-      document.write(i + '<hr>'); 
+      document.write(i + '<hr>');
 
       oneToN();
 
@@ -487,7 +462,7 @@
 
       var func = function(){
         b = 10 // 外面也能拿得到
-      }; 
+      };
       func();
 
       document.write(b);
@@ -555,15 +530,15 @@
             num += 1;
             $('span').text(num);
           });
-          
+
         }());
       &lt;/script&gt;
-      
+
 
 </script>
 <p></p>
 <p>Event handler 在 closure 中執行。</p>
-<p><code>i</code> 變數不會污染外面的世界</p>
+<p><code>num</code> 變數不會污染外面的世界</p>
 <p></p>
 </section>
 </section>

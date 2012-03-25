@@ -75,7 +75,7 @@
     運算子
     ------
     * 負數 : `-` (如 `-35`)
-    * 算數 : `*` &nbsp; `/` &nbsp; `%` &nbsp; `+` &nbsp; `-` 
+    * 算數 : `*` &nbsp; `/` &nbsp; `%` &nbsp; `+` &nbsp; `-`
     * 比大小 : `===`  &nbsp; `!==`  &nbsp; `<`  &nbsp; `>`  &nbsp; `<=` &nbsp;  `>=`
     * 邏輯運算 : `&&` &nbsp;  `||` &nbsp;  `!`
     * 三元運算子 : `? :`
@@ -214,7 +214,7 @@
   !SLIDE
     註解
     ---
-    
+
     `/* 多行 */` 與 `// 單行`
 
 !ENDSTACK
@@ -234,7 +234,7 @@
         abstract boolean `break` byte `case` `catch` char class const `continue`
         debugger `default` `delete` `do` double `else` enum export extends
         `false` final finally float `for` `function`
-        goto `if` implements import `in` `instanceof` int 
+        goto `if` implements import `in` `instanceof` int
         interface long native `new` `null` package private protected public `return`
         short static super `switch` synchronized
         `this` `throw` throws transient `true` `try` `typeof`
@@ -370,10 +370,10 @@
     {:.small[data-lang=javascript]}
     ~~~
       document.write("請看 Javascript console");
-      
+
       var obj = {name: "value"},
           obj2 = obj;
- 
+
       // obj, obj2 reference 相同
       // obj 和新建的物件 reference 不同，即使值都一樣，
       // === operator 還是把它認作不同。
@@ -649,7 +649,7 @@ jQuery
     {:.html.small.maxheight}
     ~~~
       &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
-      
+
       <style type="text/css">
         p{
           border: 20px solid yellow;
@@ -676,7 +676,7 @@ jQuery
 
         // 設定 HTML element 屬性
         new_p.attr('title', '請拿左上角的尺');
-        
+
         // 把新的 <p> 插入 DOM element
         old_p.after(new_p);
       &lt;/script&gt;
@@ -702,9 +702,9 @@ jQuery
 
     {:.html.small.maxheight}
     ~~~
-      
+
       &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
-      
+
       <style type="text/css">
         p{
           padding: 1em; margin: 1em;

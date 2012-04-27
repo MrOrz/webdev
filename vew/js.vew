@@ -188,7 +188,7 @@
   !SLIDE
     迴圈
     ---
-    `for`, `while`, `break`
+    `for`, `while`, `break`, `continue`
 
     迴圈前可以加上 label 如下：
 
@@ -198,6 +198,9 @@
         ……
           if(...){
             break outerLoop;
+          }
+          if(...){
+            continue outerLoop;
           }
         ……
       }
@@ -394,8 +397,6 @@
       }
       document.write('<hr>');
       document.write('陣列長度：' + arr.length + '<br>');
-      document.write(arr.pop() + '<br>');
-      document.write('pop 後陣列：' + arr);
     ~~~
 
 

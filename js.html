@@ -205,7 +205,7 @@ a = 3; // 換型態
 </section>
 <section>
 <h2>迴圈</h2>
-<p><code>for</code>, <code>while</code>, <code>break</code></p>
+<p><code>for</code>, <code>while</code>, <code>break</code>, <code>continue</code></p>
 <p></p>
 <p>迴圈前可以加上 label 如下：</p>
 <p></p>
@@ -214,6 +214,9 @@ a = 3; // 換型態
   ……
     if(...){
       break outerLoop;
+    }
+    if(...){
+      continue outerLoop;
     }
   ……
 }
@@ -419,8 +422,6 @@ a = 3; // 換型態
       }
       document.write('<hr>');
       document.write('陣列長度：' + arr.length + '<br>');
-      document.write(arr.pop() + '<br>');
-      document.write('pop 後陣列：' + arr);
 
 </script>
 <p></p>

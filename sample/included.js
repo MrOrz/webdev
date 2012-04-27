@@ -1,1 +1,1 @@
-console.log("js 檔裡好溫暖喔 (羞)");
+document.write("js 檔裡好溫暖喔 (羞)");

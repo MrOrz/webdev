@@ -32,6 +32,11 @@
 <p></p>
 </section>
 <section>
+<p><img src="images/js/what-js-look-like-1.jpg" alt="1"></p>
+<p class="fragment"><img src="images/js/what-js-look-like-2.jpg" alt="2"></p>
+<p></p>
+</section>
+<section>
 <h2>長這樣</h2>
 <script type="text/x-sample" class="demo small">
     var form = document.getElementById('submitform');
@@ -42,15 +47,13 @@
         e.preventDefault();
       }
     });
-    form.addEventListener('focus', function(){
-      console.log('focus');
-    })
 
 </script>
 <p></p>
-<ul>
+<ul class="fragment">
 <li>Javascript 操作 DOM (HTML 的 API) 的範例。</li>
-<li>變數需要事先定義，但不指定型別。</li>
+<li><code>document</code> 是 DOM 物件，<br><code>getElementById</code>, <code>addEventListener</code> 是 DOM 方法。</li>
+<li>變數需要<a href="?variable">事先定義</a>，但不指定型別。</li>
 </ul>
 <p></p>
 </section>
@@ -70,14 +73,13 @@
 <p>試試 <code>3+2</code>, <code>Math.sin(Math.PI)</code>, <code>0.1 + 0.2</code></p>
 <p></p>
 </section>
-<section>
+<section id="variable">
 <h2>變數與型別</h2>
 <ul>
 <li>Javascript 為弱型別（weak typing）語言</li>
 <li>用 <code>var</code> 敘述定義變數</li>
-<li>變數可以是任何型態的東西</li>
-<li>但不代表 Javascript 沒有型態；亂弄會出錯。</li>
-<li>大小寫敏感</li>
+<li>變數可以是任何型態的東西<br><code>var a = 3</code>：<code>a</code> 的型態會是 <code>number</code></li>
+<li>大小寫有差</li>
 </ul>
 <p></p>
 <pre><code><!--
@@ -102,8 +104,11 @@ a = 3; // 換型態
 </section>
 <section>
 <h2>文字與數字</h2>
-<p>數字和字串相加，自動會變成字串。</p>
-<p><code>+</code> 的左右兩邊都是數字時，才會行加法；否則都是字串串接</p>
+<ul>
+<li>數字 <code>+</code> 數字 是加法。</li>
+<li>數字 <code>+</code> 字串、字串 <code>+</code> 數字、字串 <code>+</code> 字串：字串串接</li>
+</ul>
+<p></p>
 <p><img src="images/js/string-number.png" alt="字串加數字等於字串"></p>
 <hr>
 <p></p>
@@ -113,18 +118,18 @@ a = 3; // 換型態
 </section>
 <section>
 <h2>輸出文字</h2>
-<p><code>console.log(文字)</code> → Javascript Console。</p>
-<p><code>document.write(文字)</code> → 直接到 HTML 裡。</p>
+<ul>
+<li><code>console.log(東西)</code> → <b>寫進 Console。</b><br> 若東西是陣列或物件，可以看到內容。</li>
+<li><code>document.write(東西)</code> → <b>把東西轉成字串，寫進 HTML。</b></li>
+</ul>
+<hr>
 <p></p>
-<p>一般<strong>請不要</strong>使用 <code>document.write</code>。</p>
-<p><code>document.write</code> 只出現在教學裡。</p>
+<p class="fragment">通常<strong>不會</strong>使用 <code>document.write</code>。<br> 這個教學網頁用 <code>document.write</code> 印出資料當作示例，但開發時一般用更方便的 <code>console.log</code>。</p>
 <p></p>
 </section>
 <section>
 <h2>JavaSCRIPT</h2>
 <p>寫在一個檔案裡面，才有「腳本」的 FU</p>
-<p></p>
-<p class="fragment">指令一行一行寫，沒有道理寫不完。</p>
 <p></p>
 <p><div class="fragment"></p>
 <p>用 <code>&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code> 包住，放在 HTML 裡</p>
@@ -148,22 +153,33 @@ a = 3; // 換型態
 <p></p>
 <script type="text/x-sample" class="html">
         &lt;script type="text/javascript" src="sample/included.js"&gt;&lt;/script&gt;
-        <p>一片空白。</p>
+        <p>我是內文</p>
 
 </script>
 <p></p>
-<p class="fragment"><code>&lt;script&gt;</code> 寫在 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code> 裡都可以。瀏覽器一讀到就會立即執行（Load-and-go）。</p>
+<p class="fragment"><code>&lt;script&gt;</code> 寫在 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code> 裡都可以。<br>瀏覽器一讀到就會立即執行（Load-and-go）。</p>
 <p></p>
 </section>
 <section>
-<h2>jsfiddle</h2>
-<p>用 inspector 來看一下 <a href="http://jsfiddle.net" target="_blank">jsfiddle.net</a>。</p>
+<h2>Javascript file (續)</h2>
+<p>JS 檔和 HTML 檔同目錄</p>
+<p><img src="images/js/js-hierachy.jpg" alt="JS 檔案結構"></p>
+<p></p>
+<p>執行結果：</p>
+<p><img src="images/js/js-test.jpg" alt="JS 檔案結構"></p>
+<p></p>
+</section>
+<section>
+<h2>Javascript file (續)</h2>
+<p>JS 檔和 HTML 檔不同目錄</p>
+<p><img src="images/js/js-hierachy2.jpg" alt="JS 檔案結構"></p>
 <p></p>
 </section>
 </section>
 <p></p>
 <section class="chapter">
 <h2>JS 和 C 很像</h2>
+<p>程式流程控制方面</p>
 <p></p>
 </section>
 <section>
@@ -239,12 +255,13 @@ a = 3; // 換型態
 <p></p>
 <section class="chapter">
 <h2>JS 又和 C 不一樣</h2>
+<p>型態與其他</p>
 <p></p>
 </section>
 <section>
-<section>
 <p></p>
-<h2 id="reserved">保留字</h2>
+<section id="reserved">
+<h2>保留字</h2>
 <p>不能當作變數名稱、屬性名稱的字。</p>
 <p>abstract boolean <code>break</code> byte <code>case</code> <code>catch</code> char class const <code>continue</code></p>
 <p>debugger <code>default</code> <code>delete</code> <code>do</code> double <code>else</code> enum export extends</p>
@@ -277,11 +294,11 @@ a = 3; // 換型態
 <p></p>
 </section>
 <section>
-<h2>Strings</h2>
+<h2>String 字串</h2>
 <ul>
-<li>單引號 or 雙引號 均可</li>
-<li><code>\&apos;</code>  <code>\&quot;</code> <code>\\</code>  <code>\n</code>  <code>\t</code></li>
-<li>length 屬性：長度</li>
+<li>單引號(")、雙引號(')效果相同</li>
+<li><code>\&apos;</code>,  <code>\&quot;</code>, <code>\\</code>,  <code>\n</code></li>
+<li><code>length</code> 屬性：長度</li>
 <li>無法修改字串 (immutable)。</li>
 <li>UCS-2 編碼 （UTF-16 的前身）</li>
 <li><a href="http://www.w3schools.com/jsref/jsref_obj_string.asp" target="_blank">屬性與方法</a></li>
@@ -299,7 +316,7 @@ a = 3; // 換型態
 <p></p>
 </section>
 <section>
-<h2>Functions</h2>
+<h2>Function 函數</h2>
 <p></p>
 <p>建一個函數：</p>
 <p><code>function 函式名 (引數們) { ... }</code></p>
@@ -316,7 +333,7 @@ a = 3; // 換型態
 <p></p>
 </section>
 <section>
-<h2>Functions</h2>
+<h2>Function 函數</h2>
 <p></p>
 <script type="text/x-sample" class="small">
       // eachOf：
@@ -333,12 +350,11 @@ a = 3; // 換型態
 
 </script>
 <p></p>
-<p>Event handler / callback 很常用</p>
-<p></p>
+<p>把 function 當成引數傳給另一個 function，<br>在綁定 event handler （或稱 callback function ) 時很常用</p>
 <p></p>
 </section>
 <section>
-<h2>Objects</h2>
+<h2>Object 物件</h2>
 <p><code>{name1: value1, name2: value2, ……}</code></p>
 <p></p>
 <ul>
@@ -359,19 +375,41 @@ a = 3; // 換型態
 
       // 增添「職位」
       person.position = "侍中";
-      person.reward("田地");
+      person.reward("田地"); // 引數長度和定義可以不一樣
       console.log('person:', person);
 
 </script>
 <p></p>
 </section>
 <section>
-<h2>Arrays</h2>
+<h2>Object 物件</h2>
+<p>用 key 存取物件內的 value：<code>object.key</code> 或 <code>object[&quot;key&quot;]</code></p>
+<p></p>
+<script type="text/x-sample">
+      var person = {
+        name: "董允",
+        comment: "志慮忠純，是以先帝簡拔以遺陛下。",
+        reward: function(){
+          document.write("臣" + this.name + "謝皇上賜賞。")
+        }
+      };
+
+      document.write(person.name + '<br>');
+      document.write(person['name'] + '<br>');
+      person['reward']();
+
+</script>
+<p></p>
+<p>key 為<a href="?reserved">保留字</a>時請用 <code>object[&quot;key&quot;]</code></p>
+<p></p>
+</section>
+<section>
+<h2>Array 陣列</h2>
 <p><code>[元素1, ……, 元素N]</code></p>
 <ul>
 <li>元素不一定要都同一種型態</li>
 <li>length 為陣列長度</li>
-<li><a href="http://www.w3schools.com/jsref/jsref_obj_array.asp" target="_blank">屬性與方法</a></li>
+<li>陣列是一種物件（陣列繼承自物件）。</li>
 </ul>
 <p></p>
 <script type="text/x-sample" class="small" data-lang="javascript">
@@ -379,10 +417,28 @@ a = 3; // 換型態
       for(var i=0; i<arr.length; i+=1){
         document.write( arr[i] + '<br>');
       }
-      document.write('<hr>請打開 Javascript console');
-      console.log( '陣列長度：' , arr.length);
-      console.log( arr.pop());
-      console.log( 'pop 後陣列：', arr);
+      document.write('<hr>');
+      document.write('陣列長度：' + arr.length + '<br>');
+      document.write(arr.pop() + '<br>');
+      document.write('pop 後陣列：' + arr);
+
+</script>
+<p></p>
+<p></p>
+</section>
+<section>
+<h2>Array method</h2>
+<ul>
+<li><code>join(sep)</code> 把每個元素轉成字串，用分隔字元 <code>sep</code> 接起來。</li>
+<li><code>push(item...)</code> 將 <code>item</code> 附加到末端，回傳新長度。</li>
+<li><code>pop()</code> 移除並回傳最後一個元素。</li>
+<li>詳見 <a href="http://www.w3schools.com/jsref/jsref_obj_array.asp" target="_blank">W3Schools</a></li>
+</ul>
+<p></p>
+<script type="text/x-sample" data-lang="javascript">
+      var names = ['郭攸之', '費依'];
+      names.push('董允');
+      document.write(names.join('、') + '，此皆良實，志慮忠純。');
 
 </script>
 <p></p>
@@ -390,30 +446,114 @@ a = 3; // 換型態
 <section>
 <h2>Just for reference</h2>
 <p></p>
-<p>Javascript 物件變數與陣列只存 reference。</p>
+<p>Javascript 物件變數（含陣列）只存 reference。</p>
+<p>於是 <code>物件 === 物件</code> 結果很微妙。</p>
+<p></p>
 <script type="text/x-sample" class="small" data-lang="javascript">
-      document.write("請看 Javascript console");
-
       var obj = {name: "value"},
           obj2 = obj;
 
       // obj, obj2 reference 相同
       // obj 和新建的物件 reference 不同，即使值都一樣，
       // === operator 還是把它認作不同。
-      console.log('obj === obj2 :',  obj === obj2);
-      console.log('obj === {...} :', obj === {name: "value"});
+      
+      document.write([
+        'obj === obj2 :',   obj === obj2,           '<br>',
+        'obj === {...} :' , obj === {name: "value"}
+      ].join(''));
 
-      var num = 3.14,
-          arr = [ "任意文字" ];
+</script>
+<p></p>
+<p>Javascript 沒有原生的 Object <code>equals</code> 方法。</p>
+<p>比較兩個 Javascript Object 是否每個 name、value 相同，<a href="http://stackoverflow.com/questions/201183/how-do-you-determine-equality-for-two-javascript-objects" target="_blank">其實很麻煩</a>。</p>
+<p></p>
+</section>
+<section>
+<h2>Pass-by-reference</h2>
+<p></p>
+<p>Javascript 物件變數當引數時，為 pass-by-reference。</p>
+<p>其他型態，如 Number，則是 pass-by-value。</p>
+<script type="text/x-sample" class="small" data-lang="javascript">
+      var num = 3.14,             // Number
+          arr = [ "任意文字" ];   // Array
 
       // 蓋一個 function，把 arr、num 傳進去修改
       var alter = function(a, n){
         a[0] = "隨便文字"; n = 1.618;
       };
+
+      // 呼叫這個 function
       alter(arr, num);
 
       // 看 arr, num 有沒有被修改
-      console.log('arr:', arr, 'num:', num);
+      document.write([
+        'arr:', arr, '<br>',
+        'num:', num
+      ].join(''));
+
+</script>
+<p></p>
+</section>
+</section>
+<p></p>
+<section class="chapter">
+<h2>DOM Window</h2>
+<p></p>
+</section>
+<section>
+<section>
+<h2>window object</h2>
+<p>Javascript 裡有個變數是一切的根源。</p>
+<p><code>window</code> 就是根源。</p>
+<p> <img src="images/js/window.png" alt="Javascript console 印出 window object" height="400"></p>
+<p></p>
+</section>
+<section>
+<h2>時間到</h2>
+<p><code>setTimeout(callback, t)</code> 會在 <code>t</code> ms 後執行 <code>callback</code>。<br>回傳一個 handle。</p>
+<p><code>clearTimeout(handle)</code> 取消此倒數。</p>
+<p></p>
+<script type="text/x-sample" data-lang="javascript">
+      document.write('多想兩分鐘');
+      setTimeout(
+        function(){
+          document.write(
+            '你可以不用浪費兩分鐘。'
+          );
+        },
+        60*2*1000
+      );
+
+</script>
+<p></p>
+</section>
+<section>
+<h2>網址相關</h2>
+<p><code>location.href</code>, <code>location.hash</code></p>
+<p></p>
+<script type="text/x-sample" data-lang="javascript">
+      document.write([
+        'href: ', location.href, '<br>',
+        'hash: ', location.hash
+      ].join(''));
+
+</script>
+<p></p>
+<p>傳值進去會重新整理瀏覽器頁面。</p>
+<p></p>
+</section>
+<section>
+<h2>彈出式視窗</h2>
+<p><code>alert</code>, <code>confirm</code>, <code>prompt</code></p>
+<p></p>
+<script type="text/x-sample" data-lang="javascript">
+      var answer;
+      // answer = confirm('綠豆糕像不像稿紙？');
+      if(answer){
+        // alert('很像。');
+      }else{
+        // alert('不像。');
+      }
 
 </script>
 <p></p>

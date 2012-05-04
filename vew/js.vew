@@ -1058,7 +1058,7 @@ jQuery
     handler 的回傳值
     ---
 
-    `return false` = `event.stopImmediatePropagation()` + `event.preventDefault()` + `return`
+    `return false` = `event.stopPropagation()` + `event.preventDefault()` + `return`
 
     {:.demo[data-lang=javascript]}
     ~~~

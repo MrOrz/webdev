@@ -1088,7 +1088,7 @@ a = 3; // 換型態
 <section>
 <h2>handler 的回傳值</h2>
 <p></p>
-<p><code>return false</code> = <code>event.stopImmediatePropagation()</code> + <code>event.preventDefault()</code> + <code>return</code></p>
+<p><code>return false</code> = <code>event.stopPropagation()</code> + <code>event.preventDefault()</code> + <code>return</code></p>
 <p></p>
 <script type="text/x-sample" class="demo" data-lang="javascript">
       $('#submitform').on('submit', function(e){

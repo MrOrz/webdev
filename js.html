@@ -961,7 +961,7 @@ a = 3; // 換型態
 <p></p>
 <ul class="fragment">
 <li>第一個引數是 <a href="http://api.jquery.com/category/events/event-object/" target="_blank">Event object</a></li>
-<li>特殊變數 <code>this</code> 會被設為 <a href="http://api.jquery.com/event.target/" target="_blank"><code>event.target</code></a></li>
+<li><code>event.target</code>：被觸發了該事件的 HTML Element。</li>
 </ul>
 <p></p>
 <script type="text/x-sample" class="jquery-dom small maxheight">
@@ -983,8 +983,6 @@ a = 3; // 換型態
 <h2>Event Propagation</h2>
 <p></p>
 <p>子元素的事件觸發時，父元素的該事件也會跟著被觸發 (bubbling)。</p>
-<p></p>
-<p>父元素 event handler 中，<code>this !== event.target</code></p>
 <p></p>
 <script type="text/x-sample" class="jquery-dom small maxheight">
     <table>
@@ -1008,16 +1006,16 @@ a = 3; // 換型態
       };
       $('td').on('click', function(e){
         var td = $(this);
-        log('拜訪' + td.text() + ', ' + (e.target === this));
+        log('拜訪' + td.text());
         td.css('borderColor', 'red');
       });
       $('tr').on('click', function(e){
-        log('拜訪某層, ' + (e.target === this));
+        log('拜訪某層');
         $(this).css('background', '#ff0');
         // e.stopPropagation();
       });
       $('table').on('click', function(e){
-        log('拜訪此樓，' + (e.target === this));
+        log('拜訪此樓');
         $(this).css('borderColor', '#990');
       });
     &lt;/script&gt;
@@ -1025,40 +1023,6 @@ a = 3; // 換型態
 </script>
 <p class="fragment"><a href="http://api.jquery.com/event.stopPropagation/" target="_blank"><code>event.stopPropagation()</code></a> 終止事件散播。</p>
 <p></p>
-</section>
-<section>
-<h2>多個 Event handler</h2>
-<p>若綁在同一個物件，則依照綁定的順序執行。</p>
-<p></p>
-<script type="text/x-sample" class="jquery-dom small maxheight">
-    <table>
-      <tr> <td>31 號 2 樓</td> <td>33 號 2 樓</td> </tr>
-      <tr> <td>31 號 1 樓</td> <td>33 號 1 樓</td> </tr>
-    </table> 
-
-    <style type="text/css">
-      td {border: 1px solid #000;}
-    </style>
-
-    &lt;script type="text/javascript"&gt;
-      $('td').click(function(e){
-        alert('叮咚～');
-        // e.stopImmediatePropagation();
-      });
-
-      $('table').click(function(){
-        alert('沒人在家。');
-      });
-
-      // 程式碼的遙遠的彼方，不小心又綁了一個 click handler
-      $('td').click(function(){
-        alert('叮咚叮咚～');
-      });
-    &lt;/script&gt;
-
-</script>
-<p></p>
-<p><a href="http://api.jquery.com/event.stopImmediatePropagation/" target="_blank"><code>event.stopImmediatePropagation()</code></a> 後，不會有另外的 handler 被執行。</p>
 <p></p>
 </section>
 <section>
@@ -1082,7 +1046,7 @@ a = 3; // 換型態
 
 </script>
 <p></p>
-<p>和 <code>event.stop(Immediate)Propagation()</code> 不同。</p>
+<p>和 <code>event.stopPropagation()</code> 不同。</p>
 <p></p>
 </section>
 <section>
@@ -1124,6 +1088,8 @@ a = 3; // 換型態
       }).on('click', '.del', function(){
         // 刪除推薦人：
         // 把包著 <a class="del"> 之 <p> 整個移除。
+
+        // 這裡的 this 是 .del
         $(this).parents('p').remove();
       });
 
@@ -1348,7 +1314,7 @@ a = 3; // 換型態
 
     </div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/reveal.js"></script>
 <script type="text/javascript" src="lib/highlight.js"></script>
 <script type="text/javascript" src="js/sample.js"></script>

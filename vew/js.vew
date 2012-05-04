@@ -1163,6 +1163,11 @@ jQuery
     * `ready`：DOM 載入完成時
     * `error`：圖片載入錯誤時
 
+  !SLIDE
+    Exercise
+    ---
+    [sample/jquery-exercise.html](能新增項目的清單)。
+
 !ENDSTACK
 
 

@@ -592,7 +592,7 @@ a = 3; // 換型態
 <p></p>
 </section>
 <section>
-<h2>大改造!! 劇的 Before After</h2>
+<h2>全能 DOM 改造王</h2>
 <p>物件 5927：不方便的 API</p>
 <script type="text/x-sample" class="demo-dom-native small" data-lang="javascript">
       // 偵測是否同意出師表
@@ -651,7 +651,7 @@ a = 3; // 換型態
 <p></p>
 </section>
 <section>
-<h2>匠：jQuery</h2>
+<h2>一級 DOM 改造士: jQuery</h2>
 <p></p>
 <h3>SPEC</h3>
 <p></p>
@@ -763,8 +763,8 @@ a = 3; // 換型態
 <section>
 <h2>神奇的 <code>$</code></h2>
 <p></p>
-<pre data-lang="javascript" style="width: 220px; margin: 0 auto 1em;"><code><!--
--->$(SELECTOR)
+<pre data-lang="javascript" style="width: 420px; margin: 0 auto 1em;"><code><!--
+-->$(SELECTOR) or $(HTML)
 <!--
 --></code></pre>
 <p></p>
@@ -792,6 +792,32 @@ a = 3; // 換型態
 </ul>
 <p></p>
 </section>
+<section>
+<h2><code>$()</code></h2>
+<p></p>
+<p>從「拿到 jQuery Object」開始</p>
+<p></p>
+<pre data-lang="javascript" style="width: 420px; margin: 0 auto 1em;"><code><!--
+-->$(SELECTOR) or $(HTML)
+<!--
+--></code></pre>
+<p></p>
+<p>通常會回傳 jQuery Object，本身，故支持 chaining。</p>
+<p></p>
+<script type="text/x-sample" class="jquery-dom small">
+    <p></p>
+    <p></p>
+    &lt;script type="text/javascript"&gt;
+      // 選取現有的 p element 來改造
+      $('p').css('color', '#00f').text('我是內容');
+
+      // 蓋一個新的 HTML element，插入現有的 p
+      $('<span>。</span>').appendTo('p');
+    &lt;/script&gt;
+
+</script>
+<p></p>
+</section>
 </section>
 <p></p>
 <section class="chapter">
@@ -806,7 +832,7 @@ a = 3; // 換型態
 <ul>
 <li><a href="http://api.jquery.com/category/css/" target="_blank">讀取 / 新增 class 或 CSS style</a></li>
 <li><a href="http://api.jquery.com/category/attributes/" target="_blank">讀取 / 新增 / 移除屬性</a></li>
-<li>在 <a href="http://api.jquery.com/category/manipulation/dom-insertion-inside/" target="_blank">裡面</a> <a href="http://api.jquery.com/category/manipulation/dom-insertion-outside/" target="_blank">旁邊</a> 插入/移除 DOM element</li>
+<li>在 <a href="http://api.jquery.com/category/manipulation/dom-insertion-inside/" target="_blank">裡面</a> / <a href="http://api.jquery.com/category/manipulation/dom-insertion-outside/" target="_blank">旁邊</a> 插入/移除 DOM element</li>
 <li><a href="http://api.jquery.com/category/manipulation/dom-insertion-around/" target="_blank">包覆</a>目前 DOM element</li>
 </ul>
 <hr>
@@ -817,9 +843,7 @@ a = 3; // 換型態
 <section>
 <h2>Manipulation</h2>
 <p></p>
-<script type="text/x-sample" class="html small maxheight">
-      &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
-
+<script type="text/x-sample" class="jquery-dom small maxheight">
       <style type="text/css">
         p{
           border: 20px solid yellow;
@@ -853,7 +877,7 @@ a = 3; // 換型態
 
 </script>
 <p></p>
-<p><a href="http://api.jquery.com/clone/" target="_blank"><code>.clone()</code></a> <a href="http://api.jquery.com/innerWidth/" target="_blank"><code>.innerWidth()</code></a> <a href="http://api.jquery.com/attr/" target="_blank"><code>.attr()</code></a> <a href="http://api.jquery.com/after/" target="_blank"><code>.after()</code></a></p>
+<p><a href="http://api.jquery.com/addClass/" target="_blank"><code>.addClass()</code></a> <a href="http://api.jquery.com/clone/" target="_blank"><code>.clone()</code></a> <a href="http://api.jquery.com/innerWidth/" target="_blank"><code>.innerWidth()</code></a> <a href="http://api.jquery.com/attr/" target="_blank"><code>.attr()</code></a> <a href="http://api.jquery.com/after/" target="_blank"><code>.after()</code></a></p>
 <p></p>
 </section>
 <section>
@@ -872,10 +896,7 @@ a = 3; // 換型態
 <section>
 <h2>Traversing</h2>
 <p></p>
-<script type="text/x-sample" class="html small maxheight">
-
-      &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
-
+<script type="text/x-sample" class="jquery-dom small maxheight">
       <style type="text/css">
         p{
           padding: 1em; margin: 1em;
@@ -913,6 +934,13 @@ a = 3; // 換型態
 <p><a href="http://api.jquery.com/parents/" target="_blank"><code>.parents()</code></a> <a href="http://api.jquery.com/find/" target="_blank"><code>.find()</code></a> <a href="http://api.jquery.com/not/" target="_blank"><code>.not()</code></a></p>
 <p></p>
 </section>
+</section>
+<p></p>
+<section class="chapter">
+<h2>jQuery Event</h2>
+<p></p>
+</section>
+<section>
 <section>
 <h2>Events</h2>
 <p>互動的主要要素。</p>
@@ -922,15 +950,171 @@ a = 3; // 換型態
 <hr>
 <p></p>
 <p><a href="http://api.jquery.com/category/events/" target="_blank">Events - jQuery API</a></p>
+<p><a href="http://api.jquery.com/on/" target="_blank"><code>.on()</code></a>  <a href="http://api.jquery.com/off/" target="_blank"><code>.off()</code></a></p>
 <p></p>
 </section>
 <section>
-<h2>Events</h2>
+<h2>Event handler</h2>
+<p>事件被觸發時，會被執行的 function，用來處理此事件。又稱作 <code>callback</code>。</p>
+<p></p>
+<p class="fragment">「callback」：先給定一個 function，但不立即執行。</p>
+<p></p>
+<ul class="fragment">
+<li>第一個引數是 <a href="http://api.jquery.com/category/events/event-object/" target="_blank">Event object</a></li>
+<li>特殊變數 <code>this</code> 會被設為 <a href="http://api.jquery.com/event.target/" target="_blank"><code>event.target</code></a></li>
+</ul>
+<p></p>
+<script type="text/x-sample" class="jquery-dom small maxheight">
+    <p>按我按我</p>
+    &lt;script type="text/javascript"&gt;
+      var $body = $('body');
+      $body.on('click', function(e){
+        console.log('Event Object', e);
+      });
+    &lt;/script&gt;
+
+</script>
+<p></p>
+<p class="fragment">以下用 <code>event</code> 指稱 handler 裡的 event object。</p>
+<p></p>
+<p></p>
+</section>
+<section>
+<h2>Event Propagation</h2>
+<p></p>
+<p>子元素的事件觸發時，父元素的該事件也會跟著被觸發 (bubbling)。</p>
+<p></p>
+<p>父元素 event handler 中，<code>this !== event.target</code></p>
+<p></p>
+<script type="text/x-sample" class="jquery-dom small maxheight">
+    <table>
+      <tr> <td>31 號 2 樓</td> <td>33 號 2 樓</td> </tr>
+      <tr> <td>31 號 1 樓</td> <td>33 號 1 樓</td> </tr>
+    </table>
+
+    <style type="text/css">
+      table{
+        border-collapse: separate;
+        border: 3px solid black;
+      }
+      table td{
+        border: 3px solid black;
+      }
+    </style>
+
+    &lt;script type="text/javascript"&gt;
+      var log = function(msg){
+        $('body').append(msg + '<br>');
+      };
+      $('td').on('click', function(e){
+        var td = $(this);
+        log('拜訪' + td.text() + ', ' + (e.target === this));
+        td.css('borderColor', 'red');
+      });
+      $('tr').on('click', function(e){
+        log('拜訪某層, ' + (e.target === this));
+        $(this).css('background', '#ff0');
+        // e.stopPropagation();
+      });
+      $('table').on('click', function(e){
+        log('拜訪此樓，' + (e.target === this));
+        $(this).css('borderColor', '#990');
+      });
+    &lt;/script&gt;
+
+</script>
+<p class="fragment"><a href="http://api.jquery.com/event.stopPropagation/" target="_blank"><code>event.stopPropagation()</code></a> 終止事件散播。</p>
+<p></p>
+</section>
+<section>
+<h2>多個 Event handler</h2>
+<p>若綁在同一個物件，則依照綁定的順序執行。</p>
+<p></p>
+<script type="text/x-sample" class="jquery-dom small maxheight">
+    <table>
+      <tr> <td>31 號 2 樓</td> <td>33 號 2 樓</td> </tr>
+      <tr> <td>31 號 1 樓</td> <td>33 號 1 樓</td> </tr>
+    </table> 
+
+    <style type="text/css">
+      td {border: 1px solid #000;}
+    </style>
+
+    &lt;script type="text/javascript"&gt;
+      $('td').click(function(e){
+        alert('叮咚～');
+        // e.stopImmediatePropagation();
+      });
+
+      $('table').click(function(){
+        alert('沒人在家。');
+      });
+
+      // 程式碼的遙遠的彼方，不小心又綁了一個 click handler
+      $('td').click(function(){
+        alert('叮咚叮咚～');
+      });
+    &lt;/script&gt;
+
+</script>
+<p></p>
+<p><a href="http://api.jquery.com/event.stopImmediatePropagation/" target="_blank"><code>event.stopImmediatePropagation()</code></a> 後，不會有另外的 handler 被執行。</p>
+<p></p>
+</section>
+<section>
+<h2>抑制原本的動作</h2>
+<p></p>
+<p><a href="http://api.jquery.com/event.preventDefault/" target="_blank"><code>event.preventDefault()</code></a></p>
+<p></p>
+<script type="text/x-sample" class="demo small maxheight" data-lang="javascript">
+      $('#submitform').on('submit', function(e){
+        // 偵測是否同意出師表
+        if(!$('#tos').attr('checked')){
+          alert('請詳閱出師表。');
+          e.preventDefault();
+        }
+      });
+      $('a').on('click', function(e){
+        if(!confirm('您即將離開此頁，要繼續嗎？')){
+          e.preventDefault();
+        }
+      });
+
+</script>
+<p></p>
+<p>和 <code>event.stop(Immediate)Propagation()</code> 不同。</p>
+<p></p>
+</section>
+<section>
+<h2>handler 的回傳值</h2>
+<p></p>
+<p><code>return false</code> = <code>event.stopImmediatePropagation()</code> + <code>event.preventDefault()</code> + <code>return</code></p>
+<p></p>
+<script type="text/x-sample" class="demo" data-lang="javascript">
+      $('#submitform').on('submit', function(e){
+        // 偵測是否同意出師表
+        if(!$('#tos').attr('checked')){
+          alert('請詳閱出師表。');
+          return false;
+          // 下面不會被執行。
+        }
+        alert('即將送出表單...');
+      });
+
+</script>
+<p></p>
+</section>
+<section>
+<h2><code>.on()</code></h2>
 <p></p>
 <p><code>$物件.on(&apos;事件&apos;, handler)</code></p>
 <p><code>$物件.on(&apos;事件&apos;, selector, handler)</code></p>
 <p></p>
-<script type="text/x-sample" class="demo-dom-jquery small" data-lang="javascript">
+<p>後者把 event handler 綁在 <code>$物件</code> 上，觸發時檢查 <code>event.target</code> 是否符合 <code>selector</code>，符合才執行 <code>handler</code>。</p>
+<p></p>
+<script type="text/x-sample" class="demo-dom-jquery small maxheight" data-lang="javascript">
+      // 此行執行時，<a class="del"></a> 還不存在！
+      //
       $('#submitform').on('submit', function(e){
         // 偵測是否同意出師表
         if(!$('#tos').attr('checked')){
@@ -938,7 +1122,7 @@ a = 3; // 換型態
           e.preventDefault();
         }
       }).on('click', '.del', function(){
-        // 刪除推薦人
+        // 刪除推薦人：
         // 把包著 <a class="del"> 之 <p> 整個移除。
         $(this).parents('p').remove();
       });
@@ -951,10 +1135,128 @@ a = 3; // 換型態
 
 </script>
 <p></p>
-<p><a href="http://api.jquery.com/on/" target="_blank"><code>.on()</code></a>  <a href="http://api.jquery.com/off/" target="_blank"><code>.off()</code></a></p>
+<p></p>
+</section>
+<section>
+<h2>捷徑</h2>
+<p></p>
+<p><code>.on(&apos;click&apos;, handler)</code> → <code>.click(handler)</code></p>
+<p><code>.on(&apos;submit&apos;, handler)</code> → <code>.submit(handler)</code></p>
+<p></p>
+<script type="text/x-sample" class="demo-dom-jquery small" data-lang="javascript">
+      $('#submitform').submit(function(e){
+        // 偵測是否同意出師表
+        if(!$('#tos').attr('checked')){
+          alert('請詳閱出師表。');
+          e.preventDefault();
+        }
+      }).on('click', '.del', function(){ // 這行沒改。
+        // 刪除推薦人：
+        // 把包著 <a class="del"> 之 <p> 整個移除。
+        $(this).parents('p').remove();
+      });
+
+      // 增加推薦人
+      $('.add-referral').click(function(){
+        // 把下面內容塞進 DOM
+        $('<p><input type="text" name="referral"><a class="del">刪除</a></p>').appendTo('#referrals');
+      });
+
+</script>
+<p></p>
+<p>不加 <code>handler</code> 則可觸發相對應事件（執行該事件的 callback）；</p>
+<p><code>.submit()</code> 還可以送出表單。</p>
+<p></p>
+</section>
+<section>
+<h2>常用的 events</h2>
+<p></p>
+<h3>表單相關</h3>
+<ul>
+<li><code>focus</code>, <code>blur</code>：得到 focus / 失去 focus 時</li>
+<li><code>focusin</code>, <code>focusout</code>：自己或裡面的元素得到 / 失去 focus 時</li>
+<li><code>change</code>：表單元素的值（<code>value</code>）改變時</li>
+<li><code>submit</code>: 表單送出前</li>
+</ul>
+<p></p>
+<h3>滑鼠相關</h3>
+<ul>
+<li><code>click</code>：被點擊（按下滑鼠＋在元素內放開滑鼠）時</li>
+<li><code>mousedown</code>, <code>mouseup</code>, <code>mousemove</code>: 按下 / 放開 / 移動滑鼠時</li>
+<li><code>mouseenter</code>，<code>mouseleave</code>：滑鼠進入 / 離開某元素</li>
+</ul>
+<p></p>
+</section>
+<section>
+<h2>常用的 events (續）</h2>
+<p></p>
+<h3>鍵盤相關</h3>
+<ul>
+<li><code>keydown</code>, <code>keyup</code>：按下 / 放開鍵盤按鍵時</li>
+</ul>
+<p></p>
+<h3>載入相關</h3>
+<ul>
+<li><code>ready</code>：DOM 載入完成時</li>
+<li><code>error</code>：圖片載入錯誤時</li>
+</ul>
 <p></p>
 </section>
 </section>
+<p></p>
+<p></p>
+<section class="chapter">
+<h2>jQuery Ajax</h2>
+<p></p>
+<p><a href="http://jqueryui.com/demos/" target="_blank">jQuery UI</a></p>
+<p></p>
+</section>
+<section>
+<section>
+<h2>XMLHttpRequest</h2>
+<ul>
+<li>DOM 提供之 API 之一</li>
+<li>用 javascript 送 GET/POST 等到 server</li>
+<li>不用重新整理頁面</li>
+<li>處理 server 回傳之資料</li>
+<li>可處理 JSON / XML / HTML / 純文字</li>
+</ul>
+<p></p>
+<p><div class="fragment"></p>
+<h3>ajax</h3>
+<p></p>
+<pre style="text-align:center"><code><!--
+-->Asynchronous JavaScript and XML
+<!--
+--></code></pre>
+<ul>
+<li>用 XMLHttpRequest 和 server 溝通</li>
+<li>用 (當時最尖端的) XML 格式交換資料</li>
+<li>用 Javascript 操作 DOM，執行動態效果</li>
+</ul>
+<p></div></p>
+<p></p>
+</section>
+<section>
+<h2>jQuery Ajax</h2>
+<p></p>
+<p>jQuery 包裝了 Ajax 相關功能</p>
+<p></p>
+<ul>
+<li><code>$.get</code> 送 ajax get 給 server</li>
+<li><code>$.post</code> 送 ajax post 給 server</li>
+<li><code>$.ajax</code> 為 <code>$.get</code>、<code>$.post</code> 等 ajax 相關的核心 function</li>
+</ul>
+<p></p>
+<p><a href="http://api.jquery.com/category/ajax/" target="_blank">jQuery Ajax 分類</a></p>
+<p></p>
+</section>
+<section>
+<h2><code>$.get</code> 範例</h2>
+<p></p>
+</section>
+</section>
+<p></p>
 <p></p>
 <section class="chapter">
 <h2>jQuery UI</h2>
@@ -965,11 +1267,19 @@ a = 3; // 換型態
 <section>
 <section>
 <h2>jQuery UI</h2>
-<p></p>
 <ul>
 <li><a href="http://jqueryui.com/demos/sortable/" target="_blank">拖曳等等</a>的互動</li>
 <li><a href="http://jqueryui.com/demos/dialog/" target="_blank">對話視窗</a>之類的 Widgets</li>
 <li>更多<a href="http://jqueryui.com/demos/show/" target="_blank">特效</a></li>
+</ul>
+<p></p>
+</section>
+<section>
+<h2>使用 jQuery UI</h2>
+<ul>
+<li>選擇 Theme</li>
+<li>選擇要用的 plugin</li>
+<li>引入需要的 css 和 javascripts</li>
 </ul>
 <p></p>
 </section>

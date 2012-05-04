@@ -10,7 +10,8 @@
     return '<body><form id="submitform" action="sample/back.html"><input id="tos" name="tos" type="checkbox">' +
            '<label for="tos">我已詳閱並接受<a href="http://zh.wikipedia.org/zh-tw/%E5%87%BA%E5%B8%AB%E8%A1%A8">前出師表</a>。</label>' +
            '<input type="submit" value="送出">' +
-           '</form>' + scriptWrapper( data ) + '</body>';
+           '</form><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>' +
+           scriptWrapper( data ) + '</body>';
   },
 
   domDemoWrapper = function(data){
@@ -45,6 +46,13 @@
       '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>',
       scriptWrapper(data)
     ].join('');
+  },
+
+  jQueryWrapper = function(data){
+    return [
+      '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>',
+      data
+    ].join('');
   };
 
   $('script[type="text/x-sample"]').each(function(){
@@ -60,6 +68,8 @@
       option.wrapper = domjQueryWrapper;
     }else if($this.hasClass('jquery')){
       option.wrapper = jQueryAPIWrapper;  
+    }else if($this.hasClass('jquery-dom')){
+      option.wrapper = jQueryWrapper;
     }else if($this.hasClass('html')){
       // do nothing
       $.noop();

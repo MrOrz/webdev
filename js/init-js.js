@@ -10,7 +10,7 @@
     return '<body><form id="submitform" action="sample/back.html"><input id="tos" name="tos" type="checkbox">' +
            '<label for="tos">我已詳閱並接受<a href="http://zh.wikipedia.org/zh-tw/%E5%87%BA%E5%B8%AB%E8%A1%A8">前出師表</a>。</label>' +
            '<input type="submit" value="送出">' +
-           '</form><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>' +
+           '</form><script type="text/javascript" src="js/jquery.min.js"></script>' +
            scriptWrapper( data ) + '</body>';
   },
 
@@ -32,7 +32,7 @@
 
   domjQueryWrapper = function(data){
     return domDemoWrapper([
-      '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>',
+      '<script type="text/javascript" src="js/jquery.min.js"></script>',
       scriptWrapper( data )
     ].join(''));
   },
@@ -43,14 +43,14 @@
   
   jQueryAPIWrapper = function(data){
     return [
-      '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>',
+      '<script type="text/javascript" src="js/jquery.min.js"></script>',
       scriptWrapper(data)
     ].join('');
   },
 
   jQueryWrapper = function(data){
     return [
-      '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>',
+      '<script type="text/javascript" src="js/jquery.min.js"></script>',
       data
     ].join('');
   };

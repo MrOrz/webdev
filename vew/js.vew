@@ -1141,8 +1141,7 @@ jQuery
 !STACK
   jQuery Ajax
   ---
-
-[http://jqueryui.com/demos/](jQuery UI)
+  [http://jqueryui.com/demos/](jQuery UI)
 
 !STACK
   !SLIDE
@@ -1164,6 +1163,8 @@ jQuery
       * 用 XMLHttpRequest 和 server 溝通
       * 用 (當時最尖端的) XML 格式交換資料
       * 用 Javascript 操作 DOM，執行動態效果
+      * 不等遠端回應，繼續執行（asynchronous）
+      * 用 callback 處理遠端回傳的資料
     </div>
 
   !SLIDE
@@ -1172,8 +1173,8 @@ jQuery
 
     jQuery 包裝了 Ajax 相關功能
 
-    * `$.get` 送 ajax get 給 server
-    * `$.post` 送 ajax post 給 server
+    * `$.get` 送 get request 給 server
+    * `$.post` 送 post request 給 server
     * `$.ajax` 為 `$.get`、`$.post` 等 ajax 相關的核心 function
 
     [http://api.jquery.com/category/ajax/](jQuery Ajax 分類)
@@ -1181,6 +1182,111 @@ jQuery
   !SLIDE
     `$.get` 範例
     ---
+
+    ```
+      $.get(URL, DATA, CALLBACK, TYPE)
+    ```
+
+    * `DATA`: 要送到遠端的資料，object 或字串。
+    * `TYPE`: 如何解讀遠端的回應，可以是 `'json'`, `'text'`, `'html'` 等。
+
+    {:.jquery-dom.small.maxheight}
+    ~~~
+      <button>送出 GET request</button>
+      &lt;script type="text/javascript"&gt;
+        $('button').click(function(){
+          $.get(
+            'http://graph.facebook.com/109258422427289',
+            {},
+            function(data, status){
+              console.log('data', data);
+              console.log('status', status);
+              $('<img>').attr('src', data.picture)
+                        .appendTo('body');
+            },
+            'json'
+          );
+          console.log('這是 $.get 的後面。');
+        });
+      &lt;/script&gt;
+    ~~~
+
+  !SLIDE
+    `$.getJSON`
+    ---
+
+    ```
+      $.getJSON(URL, DATA, CALLBACK)
+    ```
+
+    `$.get(URL, DATA, CALLBACK, 'json')` 的簡寫。
+
+    {:.jquery-dom.small.maxheight}
+    ~~~
+      <button>用 getJSON 送出 GET request</button>
+      &lt;script type="text/javascript"&gt;
+        $('button').click(function(){
+          $.getJSON(
+            'http://graph.facebook.com/109258422427289',
+            {},
+            function(data, status){
+              console.log('data', data);
+              console.log('status', status);
+              $('<img>').attr('src', data.picture)
+                        .appendTo('body');
+            }
+          );
+        });
+      &lt;/script&gt;
+    ~~~
+
+  !SLIDE
+    Google Geocoding API
+    ---
+
+    {:.jquery-dom.small.maxheight}
+    ~~~
+      地址：
+      <textarea>台北市羅斯福路四段一號</textarea>
+      <button>用 getJSON 送出 GET request</button>
+      &lt;script type="text/javascript"&gt;
+        $('button').click(function(){
+          $.getJSON(
+            'http://maps.googleapis.com/maps/api/geocode/json',
+            {
+              address: $('textarea').val(),
+              sensor: false
+            },
+            function(data, status){
+              console.log('data', data);
+              console.log('status', status);
+            }
+          );
+        });
+      &lt;/script&gt;
+    ~~~
+
+    {:.fragment}
+    （′,_ゝ`) 
+
+
+  !SLIDE
+    淡定。
+    ---
+
+    ```
+    Origin http://localhost:3000 is not allowed by Access-Control-Allow-Origin.
+    ```
+    
+    <hr>
+
+    {:.fragment}
+    瀏覽器不會信任來自別的 Domain 的 ajax response。
+    {:.fragment}
+    除非 response 裡有 `Access-Control-Allow-Origin` 這個 header。
+    {:.fragment}
+    javascript 向當前頁面的 domain 送 ajax，則沒有這個問題。
+
 
 !ENDSTACK
 

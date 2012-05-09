@@ -1178,7 +1178,6 @@ a = 3; // 換型態
 <p></p>
 <section class="chapter">
 <h2>jQuery Ajax</h2>
-<p></p>
 <p><a href="http://jqueryui.com/demos/" target="_blank">jQuery UI</a></p>
 <p></p>
 </section>
@@ -1204,6 +1203,8 @@ a = 3; // 換型態
 <li>用 XMLHttpRequest 和 server 溝通</li>
 <li>用 (當時最尖端的) XML 格式交換資料</li>
 <li>用 Javascript 操作 DOM，執行動態效果</li>
+<li>不等遠端回應，繼續執行（asynchronous）</li>
+<li>用 callback 處理遠端回傳的資料</li>
 </ul>
 <p></div></p>
 <p></p>
@@ -1214,8 +1215,8 @@ a = 3; // 換型態
 <p>jQuery 包裝了 Ajax 相關功能</p>
 <p></p>
 <ul>
-<li><code>$.get</code> 送 ajax get 給 server</li>
-<li><code>$.post</code> 送 ajax post 給 server</li>
+<li><code>$.get</code> 送 get request 給 server</li>
+<li><code>$.post</code> 送 post request 給 server</li>
 <li><code>$.ajax</code> 為 <code>$.get</code>、<code>$.post</code> 等 ajax 相關的核心 function</li>
 </ul>
 <p></p>
@@ -1224,6 +1225,112 @@ a = 3; // 換型態
 </section>
 <section>
 <h2><code>$.get</code> 範例</h2>
+<p></p>
+<pre><code><!--
+-->$.get(URL, DATA, CALLBACK, TYPE)
+<!--
+--></code></pre>
+<p></p>
+<ul>
+<li><code>DATA</code>: 要送到遠端的資料，object 或字串。</li>
+<li><code>TYPE</code>: 如何解讀遠端的回應，可以是 <code>&apos;json&apos;</code>, <code>&apos;text&apos;</code>, <code>&apos;html&apos;</code> 等。</li>
+</ul>
+<p></p>
+<script type="text/x-sample" class="jquery-dom small maxheight">
+      <button>送出 GET request</button>
+      &lt;script type="text/javascript"&gt;
+        $('button').click(function(){
+          $.get(
+            'http://graph.facebook.com/109258422427289',
+            {},
+            function(data, status){
+              console.log('data', data);
+              console.log('status', status);
+              $('<img>').attr('src', data.picture)
+                        .appendTo('body');
+            },
+            'json'
+          );
+          console.log('這是 $.get 的後面。');
+        });
+      &lt;/script&gt;
+
+</script>
+<p></p>
+</section>
+<section>
+<h2><code>$.getJSON</code></h2>
+<p></p>
+<pre><code><!--
+-->$.getJSON(URL, DATA, CALLBACK)
+<!--
+--></code></pre>
+<p></p>
+<p><code>$.get(URL, DATA, CALLBACK, &apos;json&apos;)</code> 的簡寫。</p>
+<p></p>
+<script type="text/x-sample" class="jquery-dom small maxheight">
+      <button>用 getJSON 送出 GET request</button>
+      &lt;script type="text/javascript"&gt;
+        $('button').click(function(){
+          $.getJSON(
+            'http://graph.facebook.com/109258422427289',
+            {},
+            function(data, status){
+              console.log('data', data);
+              console.log('status', status);
+              $('<img>').attr('src', data.picture)
+                        .appendTo('body');
+            }
+          );
+        });
+      &lt;/script&gt;
+
+</script>
+<p></p>
+</section>
+<section>
+<h2>Google Geocoding API</h2>
+<p></p>
+<script type="text/x-sample" class="jquery-dom small maxheight">
+      地址：
+      <textarea>台北市羅斯福路四段一號</textarea>
+      <button>用 getJSON 送出 GET request</button>
+      &lt;script type="text/javascript"&gt;
+        $('button').click(function(){
+          $.getJSON(
+            'http://maps.googleapis.com/maps/api/geocode/json',
+            {
+              address: $('textarea').val(),
+              sensor: false
+            },
+            function(data, status){
+              console.log('data', data);
+              console.log('status', status);
+            }
+          );
+        });
+      &lt;/script&gt;
+
+</script>
+<p></p>
+<p class="fragment">（′,_ゝ`)</p>
+<p></p>
+<p></p>
+</section>
+<section>
+<h2>淡定。</h2>
+<p></p>
+<pre><code><!--
+-->Origin http://localhost:3000 is not allowed by Access-Control-Allow-Origin.
+<!--
+--></code></pre>
+<p></p>
+<p><hr></p>
+<p></p>
+<p class="fragment">瀏覽器不會信任來自別的 Domain 的 ajax response。</p>
+<p class="fragment">除非 response 裡有 <code>Access-Control-Allow-Origin</code> 這個 header。</p>
+<p class="fragment">javascript 向當前頁面的 domain 送 ajax，則沒有這個問題。</p>
+<p></p>
 <p></p>
 </section>
 </section>

@@ -1,7 +1,9 @@
 (function(){
   "use strict";
 
-  var $list = $('ul'),
+  var
+  $list = $('ul'),
+
   // make an <li> element
   makeItem = function(text){
     var $li = $('<li><input type="text"><span></span></li>');
@@ -11,6 +13,8 @@
     }
     return $li;
   },
+
+  // save all li span
   saveItems = function(){
     var data = [];
     $list.find('li').each(function(){
@@ -71,4 +75,4 @@
     }
   });
 
-}(jQuery));
+}());

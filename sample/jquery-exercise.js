@@ -46,4 +46,4 @@
       localStorage.list = JSON.stringify(data);
     }
   });
-}(jQuery));
+}());

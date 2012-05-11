@@ -16,7 +16,7 @@
     // vertical slide
     if($targetSlideParent.is('section')){
       location.hash = '#/' + $.inArray($targetSlideParent.get(0),
-                                       $targetSlideParent.parent().children()) + '/' + slideId;
+                                       $targetSlideParent.parent().children('section')) + '/' + slideId;
     }else{ // normal horizontal slide
       location.hash = '#/' + slideId;
     }

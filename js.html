@@ -358,7 +358,7 @@ a = 3; // 換型態
 </section>
 <section>
 <h2>Object 物件</h2>
-<p><code>{name1: value1, name2: value2, ……}</code></p>
+<p><code>{key: value1, key2: value2, ……}</code></p>
 <p></p>
 <ul>
 <li>value 可以是函數</li>
@@ -451,7 +451,7 @@ a = 3; // 換型態
 <p>於是 <code>物件 === 物件</code> 結果很微妙。</p>
 <p></p>
 <script type="text/x-sample" class="small" data-lang="javascript">
-      var obj = {name: "value"},
+      var obj = {key: "value"},
           obj2 = obj;
 
       // obj, obj2 reference 相同
@@ -460,13 +460,13 @@ a = 3; // 換型態
       
       document.write([
         'obj === obj2 :',   obj === obj2,           '<br>',
-        'obj === {...} :' , obj === {name: "value"}
+        'obj === {...} :' , obj === {key: "value"}
       ].join(''));
 
 </script>
 <p></p>
 <p>Javascript 沒有原生的 Object <code>equals</code> 方法。</p>
-<p>比較兩個 Javascript Object 是否每個 name、value 相同，<a href="http://stackoverflow.com/questions/201183/how-do-you-determine-equality-for-two-javascript-objects" target="_blank">其實很麻煩</a>。</p>
+<p>比較兩個 Javascript Object 是否每個 key、value 相同，<a href="http://stackoverflow.com/questions/201183/how-do-you-determine-equality-for-two-javascript-objects" target="_blank">其實很麻煩</a>。</p>
 <p></p>
 </section>
 <section>
@@ -557,6 +557,66 @@ a = 3; // 換型態
       }
 
 </script>
+<p></p>
+</section>
+<section>
+<h2>資料儲存</h2>
+<p><code>localStorage</code>, <code>sessionStorage</code></p>
+<p></p>
+<ul>
+<li>用法像 javascript object</li>
+<li><code>localStorage.KEY = VALUE</code>，<code>VALUE</code> 只能是字串</li>
+<li><code>localStorage</code> 會一直存在，<code>sessionStorage</code> 僅存在瀏覽器分頁中</li>
+</ul>
+<p></p>
+<script type="text/x-sample" class="jquery small" data-lang="javascript">
+      localStorage.created = localStorage.created || Date();
+      sessionStorage.updated = localStorage.updated || Date();
+
+</script>
+<p></p>
+<p><img src="images/js/localStorage.png" alt="Resources tab"></p>
+<p></p>
+<p></p>
+</section>
+<section>
+<h2>用字串表示物件</h2>
+<p><code>localStorage</code> 的值只能存字串，無法儲存 javascript 物件</p>
+<p class="fragment">把物件用一個字串來表示。</p>
+<p></p>
+<p><div class="fragment"></p>
+<h3>JSON</h3>
+<p><code>Javascript String Object Notation</code></p>
+<p></p>
+<ul>
+<li>類似 javascript 物件的初始化方法（array literal）</li>
+<li>不會把 function (method) 變成字串</li>
+</ul>
+<p></p>
+<p><code>物件 = JSON.parse(字串)</code>、<code>字串 = JSON.stringify(物件)</code></p>
+<p></p>
+<script type="text/x-sample" class="jquery small" data-lang="javascript">
+        var man = {like: ['紅茶', '總匯三明治'], mood: '淡定',
+                   say: function(){return '不要哭了'}},
+            manstr = JSON.stringify(man);
+        document.write(manstr + '<hr>' + JSON.parse(manstr));
+        //sessionStorage.man = manstr;
+
+</script>
+<p></p>
+<p></div></p>
+<p></p>
+</section>
+<section>
+<h2><code>document.cookie</code></h2>
+<ul>
+<li>另一種資料存儲</li>
+<li>同樣是 key-value pair, value 限字串</li>
+<li>4kB 大小限制（<code>localStorage</code> 有 5MB）</li>
+<li>server 可以設定給 browser 存什麼 cookie</li>
+<li>browser 和 server 要檔案時，會附上 cookie</li>
+</ul>
+<p></p>
 <p></p>
 </section>
 </section>
@@ -1172,6 +1232,16 @@ a = 3; // 換型態
 <h2>Exercise</h2>
 <p><a href="sample/jquery-exercise.html">能新增項目的清單</a>。</p>
 <p></p>
+<h3>SPEC</h3>
+<p></p>
+<ul>
+<li>按「新增項目」按鈕可以在 <code>&lt;ul&gt;</code> 的開頭新增一個 <code>&lt;li&gt;</code></li>
+<li><code>&lt;li&gt;</code> 裡頭有 <code>&lt;input&gt;</code> 且進入打字狀態。</li>
+<li>打完字後按 enter 鍵，可以結束編輯。</li>
+<li>結束編輯時，將目前的所有項目存進 <code>localStorage</code>。順序要保留。</li>
+<li>頁面剛被打開時，從 <code>localStorage</code> 裡撈之前存的資料。</li>
+</ul>
+<p></p>
 </section>
 </section>
 <p></p>
@@ -1353,12 +1423,29 @@ a = 3; // 換型態
 <p></p>
 </section>
 <section>
-<h2>使用 jQuery UI</h2>
+<h2>安裝 jQuery UI</h2>
 <ul>
-<li>選擇 Theme</li>
+<li>選擇 Theme，下載 jQuery UI</li>
 <li>選擇要用的 plugin</li>
 <li>引入需要的 css 和 javascripts</li>
 </ul>
+<p></p>
+</section>
+<section>
+<h2>Demo</h2>
+<p>用 jQuery UI sortable，把<a href="sample/jquery-exercise.html">能新增項目的清單</a>改成能拖曳的。</p>
+<p></p>
+<h3>SPEC</h3>
+<p></p>
+<ul>
+<li>要能上下拖曳清單項目</li>
+<li>拖曳結束時，將目前順序存進 <code>localStorage</code></li>
+<li>新增刪除按鈕，按下去會有 jQuery UI dialog 確認是否繼續</li>
+<li>別忘了刪除後也要更新 <code>localStorage</code></li>
+</ul>
+<p></p>
+<p><hr></p>
+<p><a href="sample/jqueryui-exercise.html">修改後</a></p>
 <p></p>
 </section>
 </section>

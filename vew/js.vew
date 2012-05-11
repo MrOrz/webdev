@@ -337,7 +337,7 @@
   !SLIDE
     Object 物件
     ---
-    `{name1: value1, name2: value2, ……}`
+    `{key: value1, key2: value2, ……}`
 
     * value 可以是函數
     * 函數裡 `this` 指自己這個物件
@@ -424,7 +424,7 @@
 
     {:.small[data-lang=javascript]}
     ~~~
-      var obj = {name: "value"},
+      var obj = {key: "value"},
           obj2 = obj;
 
       // obj, obj2 reference 相同
@@ -433,12 +433,12 @@
       
       document.write([
         'obj === obj2 :',   obj === obj2,           '<br>',
-        'obj === {...} :' , obj === {name: "value"}
+        'obj === {...} :' , obj === {key: "value"}
       ].join(''));
     ~~~
 
     Javascript 沒有原生的 Object `equals` 方法。
-    比較兩個 Javascript Object 是否每個 name、value 相同，[http://stackoverflow.com/questions/201183/how-do-you-determine-equality-for-two-javascript-objects](其實很麻煩)。
+    比較兩個 Javascript Object 是否每個 key、value 相同，[http://stackoverflow.com/questions/201183/how-do-you-determine-equality-for-two-javascript-objects](其實很麻煩)。
 
   !SLIDE
     Pass-by-reference
@@ -530,6 +530,61 @@ DOM Window
         // alert('不像。');
       }
     ~~~
+
+  !SLIDE
+    資料儲存
+    ----------
+    `localStorage`, `sessionStorage`
+    
+    * 用法像 javascript object
+    * `localStorage.KEY = VALUE`，`VALUE` 只能是字串
+    * `localStorage` 會一直存在，`sessionStorage` 僅存在瀏覽器分頁中
+
+    {:.jquery.small[data-lang=javascript]}
+    ~~~
+      localStorage.created = localStorage.created || Date();
+      sessionStorage.updated = localStorage.updated || Date();
+    ~~~
+
+    ![images/js/localStorage.png](Resources tab)
+
+
+  !SLIDE
+    用字串表示物件
+    ----------
+    `localStorage` 的值只能存字串，無法儲存 javascript 物件
+    {:.fragment}
+    把物件用一個字串來表示。
+
+    <div class="fragment">
+      ### JSON
+      `Javascript String Object Notation`
+
+      * 類似 javascript 物件的初始化方法（array literal）
+      * 不會把 function (method) 變成字串
+
+      `物件 = JSON.parse(字串)`、`字串 = JSON.stringify(物件)`
+
+      {:.jquery.small[data-lang=javascript]}
+      ~~~
+        var man = {like: ['紅茶', '總匯三明治'], mood: '淡定',
+                   say: function(){return '不要哭了'}},
+            manstr = JSON.stringify(man);
+        document.write(manstr + '<hr>' + JSON.parse(manstr));
+        //sessionStorage.man = manstr;
+      ~~~
+
+    </div>
+
+  !SLIDE
+    `document.cookie`
+    ----------
+    * 另一種資料存儲
+    * 同樣是 key-value pair, value 限字串
+    * 4kB 大小限制（`localStorage` 有 5MB）
+    * server 可以設定給 browser 存什麼 cookie
+    * browser 和 server 要檔案時，會附上 cookie
+
 
 !ENDSTACK
 
@@ -1134,6 +1189,14 @@ jQuery
     ---
     [sample/jquery-exercise.html](能新增項目的清單)。
 
+    ### SPEC
+
+    * 按「新增項目」按鈕可以在 `<ul>` 的開頭新增一個 `<li>`
+    * `<li>` 裡頭有 `<input>` 且進入打字狀態。
+    * 打完字後按 enter 鍵，可以結束編輯。
+    * 結束編輯時，將目前的所有項目存進 `localStorage`。順序要保留。
+    * 頁面剛被打開時，從 `localStorage` 裡撈之前存的資料。
+
 !ENDSTACK
 
 
@@ -1307,12 +1370,27 @@ jQuery
     * 更多[http://jqueryui.com/demos/show/](特效)
 
   !SLIDE
-    使用 jQuery UI
+    安裝 jQuery UI
     ---
-    * 選擇 Theme
+    * 選擇 Theme，下載 jQuery UI
     * 選擇要用的 plugin
     * 引入需要的 css 和 javascripts
      
+  !SLIDE
+    Demo
+    ---
+    用 jQuery UI sortable，把[sample/jquery-exercise.html](能新增項目的清單)改成能拖曳的。
+
+    ### SPEC
+
+    * 要能上下拖曳清單項目
+    * 拖曳結束時，將目前順序存進 `localStorage`
+    * 新增刪除按鈕，按下去會有 jQuery UI dialog 確認是否繼續
+    * 別忘了刪除後也要更新 `localStorage`
+
+    <hr>
+    [sample/jqueryui-exercise.html](修改後)
+
 !ENDSTACK
 
 {:.chapter}

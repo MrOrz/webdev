@@ -1373,6 +1373,7 @@ jQuery
     * jQuery UI 元件有統一的 API
     * jQuery UI 是複雜程度適中的一種 jQuery plugin
 
+  {:#jQueryUI-install}
   !SLIDE
     安裝 jQuery UI
     ---

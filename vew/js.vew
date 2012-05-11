@@ -1377,6 +1377,25 @@ jQuery
     * 引入需要的 css 和 javascripts
      
   !SLIDE
+    jQuery UI API 形式
+    ---
+    jQuery UI 各種元件的的操作方式都很類似。
+    
+    <div class="fragment">
+
+      ---
+
+      以 jquery UI `dialog` 為例
+
+      * `$(元素).dialog({autoOpen: false, resizable: false})`：初始化 `dialog`。
+      * `$(元素).dialog('open')`：呼叫 dialog 的 method。
+      * `$(元素).on('dialogopen', handler)`：指定 event handler。
+
+      詳細的初始化 `option`、`event`、`method`，都在文件下方。
+
+    </div>
+
+  !SLIDE
     Demo
     ---
     用 jQuery UI sortable，把[sample/jquery-exercise.html](能新增項目的清單)改成能拖曳的。

@@ -27,8 +27,10 @@
           <h1>CSS</h1>
           <ul class="nav">
             <li><a href="html.html">HTML</a></li>
-            <li>Javascript</li>
+            <li><a href="js.html">Javascript</a></li>
+            <li><a href="advancedjs.html">Advanced JS</a></li>
           </ul>
+          <p class="leader">按 <kbd>Space</kbd> 概覽</p>
         </section>
         <section>
           <section>
@@ -52,7 +54,7 @@
             </script>
           </section>
           <section>
-            <h2>CSS Syntax</h2>
+            <h2 class="trailer">CSS Syntax</h2>
             <p>
               <img src="images/css/selector.gif" alt="Selection and declaration">
             </p>
@@ -65,7 +67,9 @@
             <script type="text/x-sample" class="nopreview">
               <link rel="stylesheet" type="text/css" href="path/to/style.css">
             </script>
-            <p>或直接把 CSS 寫在 <code>&lt;style&gt;</code> 裡；</p>
+            <hr />
+            
+            <p>或直接把 CSS 寫在 HTML 檔的 <code>&lt;style&gt;</code> 裡；</p>
               <script type="text/x-sample">
                 <style type="text/css">
                   div {
@@ -79,6 +83,45 @@
           </section>
 
           <section>
+            <h2>Cascading Style Sheet</h2>
+            <!-- https://developer.mozilla.org/en/CSS/Getting_Started/Cascading_and_inheritance -->
+
+            <div class="two-column leader">
+              <h3>Cascading</h3>
+              <p>元素的最後外觀，來自於多個樣式定義</p>
+              <ol>
+                <li>瀏覽器預設樣式</li>
+                <li>瀏覽器使用者樣式</li>
+                <li>網頁作者（你）所指定的樣式</li>
+              </ol>
+              <hr />
+              
+              <p>後者蓋過前者。</p>
+            </div>
+
+            <div class="two-column leader">
+              <h3>Inheritance</h3>
+              <p>某些屬性（如 color）預設會繼承自父元素。</p>
+              
+              <script type="text/x-sample" class="small">
+                <style type="text/css">
+                  div {
+                    color: blue;
+                  }
+                </style>
+                <div>
+                  <p>
+                    <span>
+                      <span>隱居</span>
+                    </span>
+                  </p>
+                </div>
+              </script>
+
+            </div>
+
+          </section>
+          <section>
             <h2>CSS Reset</h2>
             <script type="text/x-sample" class="small">
               <html>
@@ -86,32 +129,62 @@
                 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.4.1/build/cssreset/cssreset-min.css">
               </head>
               <body>
-                <h1>民意調查</h1>
-                <form action="http://postecho.heroku.com/" method="post">
-                  <p>你覺得這衣料看起來像？</p>
-                  <ul>
-                    <li>
-                      <input type="checkbox" name="like[]"
-                       id="board" value="盤">
-                      <label for="board">棋盤</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="like[]"
-                       id="paper" value="紙">
-                      <label for="paper">稿紙</label>
-                    </li>
-                    <li>
-                      <input type="checkbox" name="like[]"
-                       id="cake" value="糕">
-                      <label for="cake">綠豆糕</label>
-                    </li>
-                  </ul>
-                  <input type="submit" value="送出">
-                </form>
+                <article>
+                  <header>
+                    <h1>雅量</h1>
+                    <div>
+                      <span class="author">宋晶宜</span>
+                       - <span class="time">數十年前</span>
+                    </div>
+                  </header>
+
+                  <p>朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：</p>
+                  <blockquote>「啊，好像棋盤似的。」</blockquote>
+
+                  <footer>
+                    <a href="more">閱讀全文</a>
+                    <div class="social-buttons">
+                      <a href="like">讚</a> | <a href="plusone">+1</a>
+                    </div>
+                  </footer>
+                </article>
               </body>
               </html>
             </script>
-            <p>覆蓋掉瀏覽器預設的 style。</p>
+            <p>拿掉瀏覽器預設的 style。</p>
+          </section>
+
+          <section>
+            <h2>CSS Normalization</h2>
+            <script type="text/x-sample" class="small">
+              <html>
+              <head>
+                <link rel="stylesheet" type="text/css" href="https://raw.github.com/necolas/normalize.css/master/normalize.css">
+              </head>
+              <body>
+                <article>
+                  <header>
+                    <h1>雅量</h1>
+                    <div>
+                      <span class="author">宋晶宜</span>
+                       - <span class="time">數十年前</span>
+                    </div>
+                  </header>
+
+                  <p>朋友買了一件衣料，綠色的底子帶白色方格，當她拿給我們看時，一位對圍棋十分感與趣的同學說：</p>
+                  <blockquote>「啊，好像棋盤似的。」</blockquote>
+
+                  <footer>
+                    <a href="more">閱讀全文</a>
+                    <div class="social-buttons">
+                      <a href="like">讚</a> | <a href="plusone">+1</a>
+                    </div>
+                  </footer>
+                </article>
+              </body>
+              </html>
+            </script>
+            <p>統一各瀏覽器的 style。<a href="https://github.com/necolas/normalize.css/wiki" target="_blank">規則說明</a></p>
           </section>
         </section> <!-- Introduction -->
 
@@ -121,15 +194,18 @@
         <section>
           <section>
             <h2>Tag, .Class, #Id</h2>
+            <p>
+              <img src="images/css/selector.gif" alt="Selection and declaration" height="80">
+            </p>
             <script type="text/x-sample" class="small">
               <style type="text/css">
-                div {
+                div { /* div 元素 */
                   color: blue;
                 }
-                .b{
+                .b { /* 有 b 這個 class 的元素 */
                   font-weight: bold;
                 }
-                #u{
+                #u { /* ID 為 u 的元素 */
                   text-decoration: underline;
                 }
                 div.b{ /* 具有 b 這個 class 的 div */
@@ -162,16 +238,14 @@
           <section>
             <h2>Descendant &amp; Child Selector</h2>
             <ul>
-              <li><code>.root div</code>: .root 的子孫中為 div 者。</li>
-              <li><code>.root>div</code>: .root 的孩子裡為 div 者。</li>
+              <li><code>.root div</code>: .root 的<strong>子孫</strong>中為 div 者。</li>
+              <li><code>.root>div</code>: .root 的<strong>孩子</strong>裡為 div 者。</li>
             </ul>
             <script type="text/x-sample" class="small">
               <style type="text/css">
                 div{ padding: 3px; }
-                .root div{ /* descendants of .root */
-                  background: rgba(0,100,0,0.2);
-                }
-                .root>div{ /* children of .root */
+                .root>div{
+                /* .root div{ */
                   border: 1px solid green;
                 }
               </style>
@@ -188,7 +262,7 @@
           </section>
           <section>
             <h2>Attribute Selector</h2>
-            <script type="text/x-sample">
+            <script type="text/x-sample" class="small">
               <style type="text/css">
                 input[type=text]{
                   border: 1px solid blue;
@@ -272,8 +346,9 @@
               <!-- -->
               <blockquote>先帝創業未半</blockquote>
             </script>
-            <p><code>::before</code> 像是一個 <code>&lt;span&gt;</code> 加在 start tag 之後</p>
-            <p><code>::after</code> 像是一個 <code>&lt;span&gt;</code> 加在 end tag 之前</p>
+            <p>需有 <code>content</code> 屬性</p>
+            <p><code>::before</code> 像是一個 <code>span</code> 元素加在 start tag 之後</p>
+            <p><code>::after</code> 像是一個 <code>span</code> 元素加在 end tag 之前</p>
           </section>
           <section>
             <h2>Sibling Selector</h2>
@@ -337,6 +412,8 @@
         </section>
 
         <section>
+
+
           <section>
             <h2>兩個定義打架</h2>
             <script type="text/x-sample">
@@ -356,7 +433,7 @@
             <p>Specificity：Selector 精準與否</p>
             <p><img src="images/css/specificity-calculationbase.png" alt="Specificity calculation"></p>
             <p>Source: <a href="http://css-tricks.com/specifics-on-css-specificity/" target="_blank">CSS Tricks</a></p>
-            <p>用字典順序比較</p>
+            <p>用字典順序比較 Specificity</p>
           </section>
           <section>
             <h2>打架調解委員會</h2>
@@ -698,7 +775,7 @@
           </section>
           <section>
             <h2>切換 box model</h2>
-            <p><code>box-sizing: border-box;</code></p>
+            <p><code>box-sizing: border-box;</code> <a href="http://html5please.com/#box-sizing" target="_blank">(瀏覽器支援)</a></p>
             <p>width = <em>border + padding</em> + content</p>
             <script type="text/x-sample" class="reset">
               <style type="text/css">
@@ -720,7 +797,7 @@
         </section>
 
         <section class="chapter">
-          <h2>Box &amp; Layout</h2>
+          <h2>Positioning</h2>
           <p><a href="http://www.w3.org/TR/CSS2/visuren.html#block-formatting" href="_blank">CSS spec</a></p>
         </section>
 
@@ -738,7 +815,8 @@
             </script>
           </section>
           <section>
-            <h2>Normal Flow</h2>
+          <h2>Normal Flow</h2>
+          <p class="bigfont">由上而下、由左而右。</p>
             <script type="text/x-sample" class="small">
               臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急之秋也。然侍衛之臣，不懈於內﹔忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。
               宮中府中，俱為一體，陟(音：至)罰臧否，不宜異同。若有作奸犯科，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。
@@ -799,13 +877,13 @@
           </section>
           <section>
             <h2>從 normal flow 起飛</h2>
-            <script type="text/x-sample">
+            <script type="text/x-sample" class="small">
               <style>
                 .outer{
                   background: pink;
               /* top, width, height 對 inline 沒作用 */
                   top: 200px;
-                  width: 100px; height: 100px;
+                  width: 110px; height: 100px;
                   /* position: absolute; */
                   /* float: left; */
                 }
@@ -817,7 +895,7 @@
               <span class="outer">遇到了一個 outer span，
               <span class="inner">還有裡面的 span，</span>
               只好離開 outer span，</span>
-              和文件內容說再見。
+            和文件內容說再見。這些文字看起來好像有點沒梗，實際上就真的是沒梗了，但為了展現 float 和 absolute 的差別，所以還是需要一些文字來衝版面。例如說一十大女支三金一十大女支三金一十大女支三一十大女支三金一十大女支三金一十大女支三一十大女支三金一十大女支三金一十大女支三。
             </script>
             <p>把 <code>.outer</code> 用 float or absolute positioning 拉出去展<small>(現)</small>了</p>
           </section>
@@ -837,7 +915,8 @@
             </ul>
           </section>
           <section>
-            <h2>三角關係</h2>
+          <h2>三角關係</h2>
+            <!-- TODO: Make this easier!!! -->
             <p><code>position</code> 覆蓋 <code>float</code> 覆蓋 <code>display</code></p>
             <ul class="fragment">
               <li><code>display</code> 為 <code>none</code>  →  無視 <code>position</code>, <code>float</code></li>
@@ -986,6 +1065,9 @@
           <h2>Z-index</h2>
         </section>
 
+        <!-- TODO: http://www.thenakedscientists.com/HTML/content/kitchenscience/exp/separating-books/ -->
+        <!-- Think about books and pages (活頁簿). Stacking Context = a book with several pages. -->
+        <!-- http://blog.ipapershop.com.tw/?p=287 -->
         <section>
           <section>
             <h2>Render 網頁 == 蓋房子</h2>
@@ -1259,12 +1341,18 @@
 
           <section>
             <h2>能不能用？</h2>
+
+            <figure class="trailer">
+              <img src="images/css/html5please.png" alt="html5please" width="500" />
+              <figcaption><a href="http://html5please.com/" target="_blank">html5please.com</a></figcaption>
+            </figure>
+
             <figure class="two-column">
-              <img src="images/css/caniuse.jpg" height="250" alt="caniuse">
+              <img src="images/css/caniuse.jpg" height="200" alt="caniuse">
               <figcaption><a href="http://caniuse.com/" target="_blank">caniuse.com</a></figcaption>
             </figure>
             <figure class="two-column">
-              <img src="images/css/quirksmode.jpg" height="250" alt="quirksmode">
+              <img src="images/css/quirksmode.jpg" height="200" alt="quirksmode">
               <figcaption><a href="http://quirksmode.org/compatibility.html" target="_blank">quirksmode.org</a></figcaption>
             </figure>
           </section>

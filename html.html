@@ -24,8 +24,10 @@
           <h1>HTML</h1>
           <ul class="nav">
             <li><a href="css.html">CSS</a></li>
-            <li>Javascript</li>
+            <li><a href="js.html">Javascript</a></li>
+            <li><a href="advancedjs.html">JS++</a></li>
           </ul>
+          <p class="leader">按 <kbd>Space</kbd> 概覽</p>
         </section>
 
         <section id="introduction">
@@ -51,28 +53,47 @@
           </section>
           <section>
             <h2>用啥寫</h2>
-            <div class="img-board" style="height: 450px;">
-              <img width="200" src="images/html/notepad.png" alt="NotePad" class="fragment" style="left: 246px; top: 0;">
-              <img width="200" src="images/html/np++.png" alt="NotePad++" class="fragment" style="left: 450px; top: 0;">
-              <img width="200" src="images/html/vim.png" alt="Vim" class="fragment" style="left: 246px; top: 204px;">
-              <img width="200" src="images/html/st2.png" alt="SublimeText" class="fragment"  style="left: 450px; top: 204px;">
+            <div class="img-board" style="height: 300px; width: 300px;">
+              <img width="150" src="images/html/notepad.png" alt="NotePad" class="fragment" style="left: 0; top: 0;">
+              <img width="150" src="images/html/npp.png" alt="NotePad++" class="fragment" style="left: 150px; top: 0;">
+              <img width="150" src="images/html/vim.png" alt="Vim" class="fragment" style="left: 0; top: 150px;">
+              <img width="150" src="images/html/st2.png" alt="SublimeText" class="fragment"  style="left: 150px; top: 150px;">
             </div>
-            <p class="fragment">任何文字編輯器</p>
+            <p class="fragment leader">任何文字編輯器</p>
           </section>
           <section>
             <h2>怎麼開</h2>
-            <div class="img-board" style="height: 200px;">
-              <img width="500" style="margin-left: -250px;" class="fragment" src="images/html/browse01.png" alt="html file in file browser">
-              <img width="500" style="margin-left: -250px;" class="fragment" src="images/html/browse02.png" alt="browser opens">
+            <div class="img-board" style="width: 500px; height: 200px;">
+              <figure class="img fragment">
+                <img width="500" src="images/html/browse01.png" alt="html file in file browser">
+                <figcaption>點兩下。</figcaption>
+              </figure>
+              <figure class="img fragment">
+                <img width="500" src="images/html/browse02.png" alt="browser opens">
+              </figure>
             </div>
           </section>
           <section>
-            <h2>給別人看</h2>
-            <ul>
-              <li><code>file://......</code>URL 只有自己這台電腦能看得到</li>
-              <li class="fragment"><a href="http://oper.cc.ntu.edu.tw/docs/student_homepage.html" target="_blank">臺大師生個人網頁空間</a></li>
-              <li class="fragment"><a href="http://db.tt/yYMBZpN" target="_blank">Dropbox</a> Public Folder</li>
-            </ul>
+            <h2>網址列</h2>
+
+            <img class="leader trailer" width="700" src="images/html/url.png" alt="browser URL" />
+            <br />
+            
+            <div class="two-column">
+              <code class="bigfont">file://...</code> <br>
+              <ul class="leader">
+                <li>瀏覽器直接開檔案</li>
+                <li>只有自己這台電腦能看得到</li>
+              </ul>
+            </div>
+            <div class="two-column">
+              <code class="bigfont">http://...</code> <br>
+              <ul class="leader">
+                <li><a href="http://oper.cc.ntu.edu.tw/docs/student_homepage.html" target="_blank">臺大師生個人網頁空間</a></li>
+                <li><a href="http://db.tt/yYMBZpN" target="_blank">Dropbox</a> Public Folder</li>
+                <li><a href="http://pages.github.com/" target="_blank">Github Pages</a></li>
+              </ul>
+            </div>
           </section>
         </section> <!-- Introduction -->
 
@@ -83,7 +104,7 @@
         <section>
 
           <section>
-            <h2>HT<em>ML</em></h2>
+            <h2 class="trailer">HT<em class="bigfont">ML</em></h2>
             <p><strong>"Markup Language"</strong> : 標記語言</p>
             <p><strong>"Markup"</strong> : 標籤</p>
             <!-- TODO: L-folder -->
@@ -91,18 +112,21 @@
 
           <section>
             <h2>替文字標上「語意」</h2>
-            <blockquote>
+            <blockquote class="leader trailer">
               每個人都應該努力培養雅量。
             </blockquote>
             <script type="text/x-sample">
               <p>每個人都應該努力培養<strong>雅量</strong>。</p>
             </script>
-            <p><code>&lt;p&gt;</code> 標出「段落」</a></p>
-            <p><code>&lt;strong&gt;</code> 標出「重點」</p>
+            <p class="leader"><code>&lt;p&gt;</code> 標出「段落」</a></p>
+          <p><code>&lt;strong&gt;</code> 標出「重點」</p>
+          <hr />
+          <p>HTML：勾勒<strong>內容</strong>與<strong>結構</strong>的 "Formatting Language"</p>
+          <!-- Reference: http://code.google.com/intl/zh-TW/edu/submissions/html-css-javascript/ -->
           </section>
 
           <section>
-            <h2>有些標籤有特異功能</h2>
+            <h2 class="trailer">有些標籤有特異功能</h2>
             <script type="text/x-sample">
               <img src="http://www.google.com.tw/logos/2012/rossini12-hp.jpg" alt="羅西尼220歲誕辰">
 
@@ -114,15 +138,17 @@
           </section>
 
           <section>
-            <h2>標籤 (Tag) 與 Element</h2>
-            <script type="text/x-sample">
+            <h2>Tag, Element, Attribute</h2>
+            <p class="trailer">標籤、元素、屬性</p>
+            <script type="text/x-sample" class="small">
               <input type="checkbox" name="tos" id="chk-tos">
+
               <label for="chk-tos">我已詳閱並同意使用者條款</label>
             </script>
             <ul>
-              <li class="fragment"><code>&lt;label for="chk-tos"&gt;</code> 為有一個 "for" <strong>屬性</strong>的 start <strong>tag</strong>。</li>
-              <li class="fragment"><code>&lt;/label&gt;</code> 為 end <strong>tag</strong>。</li>
-              <li class="fragment"><code>&lt;label for="chk-tos"&gt;我已……條款&lt;/label&gt;</code> 是一個 label <strong>element</strong>。</li>
+              <li class="fragment"><code>&lt;label for="chk-tos"&gt;</code>：<br>　有著 <code>for</code> <strong>attribute</strong> 的 start <strong>tag</strong>。</li>
+              <li class="fragment"><code>&lt;/label&gt;</code>：<br>　end <strong>tag</strong>。</li>
+              <li class="fragment"><code>&lt;label for="chk-tos"&gt;我已……條款&lt;/label&gt;</code>：<br>　label <strong>element</strong>。</li>
               <li class="fragment">有些 element 僅由單一 tag 構成，如 <code>&lt;input&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code>等。</li>
               <li class="fragment">XHTML → <code>&lt;hr /&gt;</code> </li>
               <!-- http://www.w3schools.com/html/html_elements.asp -->
@@ -150,13 +176,14 @@
 
         <section id="tag-reference" class="chapter">
           <h2>標籤大觀</h2>
-          <p><a href="http://www.w3schools.com/tags/default.asp" target="_blank">w3schools Tag List</a></p>
+          <p><a href="http://webremix.org/labs/lab2/utilities/tags-meaning.html" target="_blank" title="Google: HTML, CSS, and Javascript from the Ground Up / Utilities">Some Tags & Their Meanings from Google</a></p>
+          <p><a href="https://developer.mozilla.org/en/HTML/Element" target="_blank">MDN HTML Elements</a></p>
         </section>
 
         <section>
 
           <section>
-            <h2>標籤和語意</h2>
+            <h2>語意標籤</h2>
             <script type="text/x-sample">
               <h1>雅量</h1>
 
@@ -175,7 +202,7 @@
           </section>
 
           <section>
-            <h2>標籤和語意</h2>
+            <h2>語意標籤</h2>
             <script type="text/x-sample" class="small">
               <p>你覺得這衣料看起來像？</p>
               <ol>
@@ -225,8 +252,15 @@
                   <td>各坐牢 3 個月</td>
                 </tr>
               </table>
+              <!-- 請無視下面 --> <style> tr:hover {background: pink;} td:hover, th:hover {background: red;} </style>
             </script>
-            <p>加上 <code style="border-radius: 3px; border: 1px solid #666;"> style="background: pink;"</code> 著色</p>
+            <p>
+              <code>&lt;table&gt;</code> 表格（table）；
+              <code>&lt;tr&gt;</code> 表格列（table row）；<br>
+              <code>&lt;td&gt;</code> 資料格子（table data cell）；
+              <code>&lt;th&gt;</code> 表頭格子（table header）。
+            </p>
+            <p><code>tr</code> 裡只能裝 <code>td</code> 或 <code>th</code>；<code>td</code>裡啥都能裝。</p>
           </section>
 
           <section>
@@ -236,7 +270,13 @@
 
               <a href="http://www.google.com" target="_blank">Google 首頁</a> | <a href="css.html">CSS Tutorial</a>
             </script>
-            <p><code>&lt;img&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;iframe&gt;</code></p>
+            <p class="leader"><code>&lt;img&gt;</code> 圖, <code>&lt;a&gt;</code> 超連結, <code>&lt;iframe&gt;</code> 嵌入框</p>
+            <hr />
+            <script type="text/x-sample" class="nopreview">
+              <img src="網址" alt="圖壞掉時顯示的字" (width="寬" height="高")>
+              <a href="網址" (target="_blank")>顯示的文字</a>
+              <iframe src="網址"></iframe>
+            </script>
           </section>
 
           <section>
@@ -272,20 +312,13 @@
           </section>
           <section>
             <h2>表單</h2>
-            <script type="text/x-sample" class="small">
+            <script type="text/x-sample" class="small leader trailer">
               <form action="http://postecho.heroku.com/"
                enctype="multipart/form-data" method="post">
 
                 <input type="text" name="a"
                  placeholder="請輸入文字">
                 <input type="password" name="b">
-                <br>
-
-                <input type="checkbox" name="c[]" value="c0">
-                <input type="checkbox" name="c[]" value="c1">
-                <input type="radio" name="d" value="d0">
-                <input type="radio" name="d" value="d1" id="radio-1">
-                <label for="radio-1">LABEL</label>
                 <br>
 
                 <textarea name="e" cols="30"
@@ -295,14 +328,36 @@
 
               </form>
             </script>
-            <p>使用 <code>&lt;input type="file"&gt;</code> 請在 <code>&lt;form&gt;</code> 加入 <code>enctype="multipart/form-data"</code></p>
+            <script type="text/x-sample" class="nopreview">
+              <form action="目標網址" method="get|post">...</form>
+              <input type="text|file|submit|..." name="送上 server 時的參數名" value="送上 server 時的參數值">
+            </script>
+            <hr />
+            <p>表單內若含有 <code>&lt;input type="file"&gt;</code>，<br>請在 <code>&lt;form&gt;</code> 加入 <code>enctype="multipart/form-data"</code></p>
+          </section>
+          <section>
+            <h2>勾勾和點點</h2>
+            <script type="text/x-sample" class="small leader trailer">
+              <form action="http://postecho.heroku.com/"
+               method="post">
+
+                <input type="checkbox" name="c[]" value="c0">
+                <input type="checkbox" name="c[]" value="c1">
+                <input type="radio" name="d" value="d0">
+                <input type="radio" name="d" value="d1" id="radio-1">
+                <label for="radio-1">LABEL</label>
+                <br>
+              </form>
+            </script>
+            <p><code>name</code> 屬性一樣 → 同一組</p>
+            <p><code>&lt;label&gt;</code> 的 <code>for</code> 屬性和 <code>&lt;input&gt;</code> 的 <code>id</code> 屬性配對</p>
           </section>
           <section>
             <h2>無語意標籤</h2>
-            <ul>
-              <li>不知道要用什麼包但還是想包在一起</li>
+            <ul class="trailer">
+              <li>不知道要用什麼包，但還是想包在一起</li>
               <li><code>&lt;div&gt;, &lt;span&gt;</code></li>
-              <li>常常搭配 CSS 套樣式、當做 javascript 操作對象。</li>
+              <li>常常搭配 CSS 套樣式、或當做 javascript 的操作對象。</li>
             </ul>
 
             <script type="text/x-sample">
@@ -337,19 +392,8 @@
           </section>
 
           <section>
-            <h2>欲知詳情</h2>
-            <p><a href="http://www.w3schools.com/tags/default.asp" target="_blank">W3School Tag List</a></p>
-          </section>
-        </section> <!-- Tag Reference -->
-
-        <section id="attribute" class="chapter">
-          <h2>屬性</h2>
-        </section>
-
-        <section>
-          <section>
             <h2>通用屬性</h2>
-            <p>HTML element 可以有屬性，用空白隔開。<br>大部分 HTML element 都有下面屬性：</p>
+            <p>大部分 element 都有下面屬性：</p>
             <script type="text/x-sample" class="small">
               <style> /* style TAG */
                 div { margin-top: -20px;
@@ -370,24 +414,11 @@
 
           </section>
           <section>
-            <h2>屬性</h2>
-            <script type="text/x-sample">
-              <img src="https://www.google.com/images/srpr/logo3w.png" alt="Google Logo">
-            </script>
-            <ul>
-              <li><code>src</code>：圖片的相對路徑或絕對路徑</li>
-              <li><code>width</code>, <code>height</code>：指定其一→等比例縮放</li>
-              <li><code>alt</code>：替代文字</li>
-            </ul>
-            <script type="text/x-sample">
-              <a href="http://google.com" target="_blank">Google 首頁</a>
-            </script>
-            <ul>
-              <li><code>href</code>：目標的相對路徑或絕對路徑</li>
-              <li><code>target</code>：值為 "_blank" 時，會開新視窗</li>
-            </ul>
+            <h2>欲知詳情</h2>
+            <p><a href="http://webremix.org/labs/lab2/utilities/tags-meaning.html" target="_blank">Google: HTML, CSS, and Javascript from the Ground Up / Utilities / Some Tags & Their Meanings</a></p>
+            <p><a href="https://developer.mozilla.org/en/HTML/Element" target="_blank">MDN HTML Elements</a></p>
           </section>
-        </section> <!-- HTML attributes -->
+        </section> <!-- Tag Reference -->
 
         <section id="block" class="chapter">
           <h2>斷行與空白</h2>
@@ -406,8 +437,8 @@
               系              色望<br>
               系 色望
             </script>
-            <p>用 <code>&lt;br&gt;</code> 換行</p>
-            <p><code>&amp;nbsp;</code> 代表「空白」<a href="http://www.w3schools.com/tags/ref_entities.asp" target="_blank">character entity</a></p>
+            <p>用 <code>&lt;br&gt;</code> 換行，空白鍵預設會重疊</p>
+            <p><code>&amp;nbsp;</code> 代表「空白 <a href="http://www.w3.org/TR/html5/named-character-references.html#named-character-references" target="_blank">character entity</a>」，可疊加</p>
             <p><code>&lt;!-- --&gt;</code> 是多行註解</p>
           </section>
           <section>
@@ -423,19 +454,19 @@
             </ul>
           </section>
           <section>
-            <h2>Inline &amp; Block elements</h2>
-            <ul>
-              <li>不會換行的叫 inline element</li>
-              <li>會換行的是 block element</li>
-            </ul>
+            <h2>元素有兩種</h2>
+            <p>不會換行的叫 inline element</p>
             <script type="text/x-sample">
               1<em>2</em>3<strong>4</strong>5<span>6</span>7
               <input type="radio" name="" id="">8
             </script>
+            <p>會換行的是 block element</p>
             <script type="text/x-sample">
               <h1>1</h1>2<p>3</p>4<div>5</div>6<article>7</article>8
 
             </script>
+            <hr>
+            <p class="leader">註：此乃概略分法，實際上不盡然如此；預設之 block / inline 屬性亦可用 CSS 複寫。</p>
           </section>
         </section> <!-- Block & Inline & Whitespace -->
 
@@ -450,7 +481,7 @@
               <li>HTML 標籤可以互相嵌套 (nesting)</li>
               <li>但不能隨便包</li>
             </ul>
-            <script type="text/x-sample">
+            <script type="text/x-sample" class="leader">
               <h1>
                 哈利波特
                 <h2>
@@ -463,7 +494,7 @@
 
           <section>
             <h2>蝦密代誌</h2>
-            <script type="text/x-sample">
+            <script type="text/x-sample" class="leader trailer">
               <h1>
                 哈利波特
                 <h2>
@@ -473,25 +504,25 @@
               </h1>
             </script>
 
-            <p>請按 <kbd>ctrl+shift+i</kbd></p>
+            <p>請在右邊按 <kbd>右鍵</kbd> → 「檢查元素」 </p>
           </section>
 
           <section>
             <h2>Nesting Rule</h2>
+            <p class="bigfont">原則上 inline element 不能包 block element</p>
             <ul>
-              <li>原則上 inline element 不能包 block element</li>
               <li><code>&lt;p&gt;</code>、<code>&lt;h1&gt;</code>~<code>&lt;h6&gt;</code> 裡頭只能包 inline element</li>
               <li><code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code> 裡面只能包 <code>&lt;li&gt;</code></li>
               <li><code>&lt;tr&gt;</code> 裡面只能包 <code>&lt;td&gt;</code> 或 <code>&lt;th&gt;</code>，外頭必須要有 <code>&lt;table&gt;</code></li>
-              <li>但是……</li>
             </ul>
 
+            <p class="bigfont leader fragment">但是……</p>
             <!-- http://www.cs.tut.fi/~jkorpela/html/nesting.html -->
           </section>
 
           <section>
             <h2>主耶穌寬恕你的罪</h2>
-            <h4>瀏覽器寬恕你的 html 錯誤</h4>
+            <p class="bigfont">瀏覽器寬恕你的 html 錯誤</p>
             <ul>
               <li>標籤錯誤的網頁太多了</li>
               <li>瀏覽器作者：吞下去。</li>
@@ -558,6 +589,17 @@
           </section>
           <section>
             <h2>HTML 文件架構</h2>
+            <script type="text/x-sample" class="small">
+              <html>
+              <head>
+                <meta charset="UTF-8">
+                <title></title>
+              </head>
+              <body>
+                <p>剛剛教的 HTML 標籤統統放這裡</p>
+              </body>
+              </html>
+            </script>
             <ul>
               <li class="fragment"><code>&lt;head&gt;</code> 存放「不是網頁內文」的其他資訊。</li>
               <li class="fragment"><code>&lt;title&gt;</code> 會顯示在瀏覽器分頁標題的主題。</li>
@@ -610,7 +652,7 @@
         <section>
           <section>
             <h2>IE 與 HTML5</h2>
-            <p>在 <code>&lt;head&gt;</code> 與 &lt;/head&gt; 中間加上</p>
+            <p class="leader">在 <code>&lt;head&gt;</code> 與 &lt;/head&gt; 中間加上</p>
             <script type="text/x-sample" class="nopreview">
               <!--[if lt IE 9]>
                 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -623,7 +665,8 @@
           <h1>The End</h1>
           <ul class="nav">
             <li><a href="css.html">CSS</a></li>
-            <li>Javascript</li>
+            <li><a href="js.html">Javascript</a></li>
+            <li><a href="advancedjs.html">JS++</a></li>
           </ul>
         </section>
       </div>

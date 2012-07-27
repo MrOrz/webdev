@@ -1,6 +1,9 @@
 @import 'common';
 
 #reveal {
+  h3{
+    color: #e3ceab;
+  }
   .nav li{
     @include inline-block;
     padding: 0 1em;
@@ -65,7 +68,9 @@
   }
   .img-board{ /* div that puts images freely */
     position: relative;
-    img{
+    margin-left: auto;
+    margin-right: auto;
+    &>img, .img{
       position: absolute;
     }
     .box{ /* in HTML slides */
@@ -102,9 +107,30 @@
     width: 45%;
   }
 
+  .leader{
+    @include leader;
+  }
+
+  .trailer{
+    @include trailer;
+  }
+
+  .bigfont{
+    @include adjust-font-size-to(40px);
+  }
+
   // styles for each individual slides
   .sample-container.demo-dom-native pre, .sample-container.demo-dom-jquery pre, .sample-container.maxheight pre{
     max-height: 350px;
     overflow: auto;
   }
+}
+
+kbd {
+  font-size: 0.7em;
+  padding: 0.1em 0.5em;
+  border: 1px solid #ccc;
+  @include border-radius(5px);
+  vertical-align: 0.1em;
+  background: #555;
 }

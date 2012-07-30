@@ -30,7 +30,7 @@
 !SLIDE
   長這樣
   -----
-  {:.demo.small}
+  {:.demo.small.leader}
   ~~~
     var form = document.getElementById('submitform');
     form.addEventListener('submit', function(e){
@@ -56,9 +56,9 @@
   !SLIDE
     怎麼寫
     ------
-    `ctrl + shift + j` 打開 Javascript Console。
+    <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>j</kbd> 打開 Javascript Console。
 
-    ![images/js/console.png](Javascript console)。
+    ![images/js/console.png](Javascript console)
 
     輸入一行 Javascript (黑色)，輸出一行回傳值 （藍色）
 
@@ -68,6 +68,7 @@
   !SLIDE
     變數與型別
     ----------
+    {:.leader}
     * Javascript 為弱型別（weak typing）語言
     * 用 `var` 敘述定義變數
     * 變數可以是任何型態的東西<br>`var a = 3`：`a` 的型態會是 `number`
@@ -81,6 +82,7 @@
   !SLIDE
     運算子
     ------
+    {:.leader}
     * 負數 : `-` (如 `-35`)
     * 算數 : `*` &nbsp; `/` &nbsp; `%` &nbsp; `+` &nbsp; `-`
     * 比大小 : `===`  &nbsp; `!==`  &nbsp; `<`  &nbsp; `>`  &nbsp; `<=` &nbsp;  `>=`
@@ -233,6 +235,7 @@
     ~~~
 
   !SLIDE
+    {:.trailer}
     註解
     ---
 
@@ -304,6 +307,7 @@
     Function 函數
     ---
 
+    {:.leader}
     建一個函數：
     `function 函式名 (引數們) { ... }`
     `var 函數名 = function (引數們) { ... }`
@@ -320,7 +324,7 @@
     Function 函數
     ---
 
-    {:.small}
+    {:.small.leader}
     ~~~
       // eachOf：
       // 將 array 裡的每個東西都丟進 func 當引數
@@ -346,7 +350,7 @@
     * 函數裡 `this` 指自己這個物件
     * 可以隨時幫 object 增加成員
 
-    {:.small}
+    {:.small[data-lang=javascript]}
     ~~~
       var person = {
         name: "董允",

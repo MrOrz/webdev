@@ -40,7 +40,7 @@
 </section>
 <section>
 <h2>長這樣</h2>
-<script type="text/x-sample" class="demo small">
+<script type="text/x-sample" class="demo small leader">
     var form = document.getElementById('submitform');
     form.addEventListener('submit', function(e){
       var checkbox = document.getElementById('tos');
@@ -66,9 +66,9 @@
 <section>
 <section>
 <h2>怎麼寫</h2>
-<p><code>ctrl + shift + j</code> 打開 Javascript Console。</p>
+<p><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>j</kbd> 打開 Javascript Console。</p>
 <p></p>
-<p><img src="images/js/console.png" alt="Javascript console">。</p>
+<p><img src="images/js/console.png" alt="Javascript console"></p>
 <p></p>
 <p>輸入一行 Javascript (黑色)，輸出一行回傳值 （藍色）</p>
 <p></p>
@@ -77,7 +77,7 @@
 </section>
 <section id="variable">
 <h2>變數與型別</h2>
-<ul>
+<ul class="leader">
 <li>Javascript 為弱型別（weak typing）語言</li>
 <li>用 <code>var</code> 敘述定義變數</li>
 <li>變數可以是任何型態的東西<br><code>var a = 3</code>：<code>a</code> 的型態會是 <code>number</code></li>
@@ -93,7 +93,7 @@ a = 3; // 換型態
 </section>
 <section>
 <h2>運算子</h2>
-<ul>
+<ul class="leader">
 <li>負數 : <code>-</code> (如 <code>-35</code>)</li>
 <li>算數 : <code>*</code> &nbsp; <code>/</code> &nbsp; <code>%</code> &nbsp; <code>+</code> &nbsp; <code>-</code></li>
 <li>比大小 : <code>===</code>  &nbsp; <code>!==</code>  &nbsp; <code>&lt;</code>  &nbsp; <code>&gt;</code>  &nbsp; <code>&lt;=</code> &nbsp;  <code>&gt;=</code></li>
@@ -251,7 +251,7 @@ a = 3; // 換型態
 <p></p>
 </section>
 <section>
-<h2>註解</h2>
+<h2 class="trailer">註解</h2>
 <p></p>
 <p><code>/* 多行 */</code> 與 <code>// 單行</code></p>
 <p></p>
@@ -323,7 +323,7 @@ a = 3; // 換型態
 <section>
 <h2>Function 函數</h2>
 <p></p>
-<p>建一個函數：</p>
+<p class="leader">建一個函數：</p>
 <p><code>function 函式名 (引數們) { ... }</code></p>
 <p><code>var 函數名 = function (引數們) { ... }</code></p>
 <p></p>
@@ -340,7 +340,7 @@ a = 3; // 換型態
 <section>
 <h2>Function 函數</h2>
 <p></p>
-<script type="text/x-sample" class="small">
+<script type="text/x-sample" class="small leader">
       // eachOf：
       // 將 array 裡的每個東西都丟進 func 當引數
       var eachOf = function(array, func){
@@ -368,7 +368,7 @@ a = 3; // 換型態
 <li>可以隨時幫 object 增加成員</li>
 </ul>
 <p></p>
-<script type="text/x-sample" class="small">
+<script type="text/x-sample" class="small" data-lang="javascript">
       var person = {
         name: "董允",
         comment: "志慮忠純，是以先帝簡拔以遺陛下。",

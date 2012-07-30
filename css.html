@@ -40,7 +40,7 @@
                 position: relative;
                 padding: 0; margin: 0;
                 overflow: hidden;
-                font-family: '文泉驛微米黑', 'LiHei Pro', '微軟正黑體';
+                font-family: '文泉驛微米黑', 'LiHei Pro', '微軟正黑體', sans-serif;
                 font-weight: 200;
                 letter-spacing: -0.02em;
                 color: #eee; width: 100%; height: 100%;
@@ -64,9 +64,7 @@
           <section>
             <h2>怎麼加進 HTML</h2>
             <p>在 <code>&lt;head&gt;</code> 中加入</p>
-            <script type="text/x-sample" class="nopreview">
-              <link rel="stylesheet" type="text/css" href="path/to/style.css">
-            </script>
+            <pre style="font-size: 22px; line-height: 25px;"><code>&lt;link rel="stylesheet" type="text/css" href="path/to/file.css"&gt;</code></pre>
             <hr />
             
             <p>或直接把 CSS 寫在 HTML 檔的 <code>&lt;style&gt;</code> 裡；</p>
@@ -416,16 +414,21 @@
 
           <section>
             <h2>兩個定義打架</h2>
+
+            <p>值不同的兩個定義，被套用在同一個元素上時……</p>
+
             <script type="text/x-sample">
               <style>
-                .red{
+                .loud{
                   color: red;
                 }
-                .blue{ /* change .blue to div */
+                .special{
                   color: blue;
                 }
               </style>
-              <div class="red blue">What color is this?</div>
+              <div class="loud special">
+                What color is this?
+              </div>
             </script>
           </section>
           <section>
@@ -439,21 +442,25 @@
             <h2>打架調解委員會</h2>
             <script type="text/x-sample">
               <style>
-                .red{
+                .loud{
                   color: red;
                 }
                 div{
                   color: blue;
                 }
               </style>
-              <div class="red blue">What color is this?</div>
+              <div class="loud special">
+                What color is this?
+              </div>
             </script>
             <ul>
-              <li class="fragment"><code>color</code> 同時被 <code>.red</code> 和 <code>div</code> 這兩個 selector 定義了</li>
-              <li class="fragment">Specificity of <code>.red</code> : 0,0,1,0</li>
+              <li class="fragment">此 <code>div</code> 會被 selector <code>.loud</code> 和 <code>div</code> 選中</li>
+              <li class="fragment">兩 CSS 定義內均設有 <code>color</code></li>
+              <li class="fragment">Specificity of <code>.loud</code> : 0,0,1,0</li>
               <li class="fragment">Specificity of <code>div</code> : 0,0,0,1</li>
-              <li class="fragment">0,0,1,0 > 0,0,0,1 故套用 <code>.red</code> 對 color 的定義</li>
+              <li class="fragment"><em>0,0,1,0 &lt; 0,0,0,1</em> 故套用 <code>.loud</code> 對 <code>color</code> 的定義</li>
             </ul>
+            <img src="images/css/override.png" alt="" class="fragment" style="vertical-align: top;" />
           </section>
           <section>
             <h2>練習</h2>
@@ -471,10 +478,10 @@
 
         <section>
           <section>
-            <h2>CSS 看起來怪怪的嗎？</h2>
+            <h2 class="trailer">CSS 看起來怪怪的嗎？</h2>
 
             <ol>
-              <li class="fragment"><kbd>ctrl+shift+i</kbd> 永遠是好朋友</li>
+              <li class="fragment"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>i</kbd> 永遠是好朋友</li>
               <li class="fragment">在 <a href="http://jsfiddle.net" target="_blank">jsfiddle</a> 上面做測試，或拿去問人</li>
             </ol>
           </section>
@@ -488,7 +495,7 @@
             <h2>單位</h2>
             <ul>
               <li><code>px</code>: 1px = 螢幕上的像素高</li>
-              <li><code>em</code>: 1em = 當前自行大小</li>
+              <li><code>em</code>: 1em = 當前字型大小</li>
               <li><code>%</code>: 父元素值的百分比</li>
             </ul>
             <script type="text/x-sample" class="small">
@@ -521,26 +528,32 @@
               Color set by using color name
               </p>
             </script>
-            <p><a href="http://www.w3schools.com/cssref/css_colors.asp" target="_blank">W3Schools CSS Colors</a></p>
+            <p><a href="https://developer.mozilla.org/en/CSS/color_value" target="_blank">MDN CSS Colors</a></p>
 
           </section>
           <section>
-            <h2>inherit</h2>
-            <p>某些 CSS 屬性有「<code>inherit</code>」這種值</p>
-            <p>如：<code>font-size</code>, <code>color</code>，預設為 <code>inherit</code></p>
+            <h2><code>inherit</code></h2>
+            <p>所有 CSS 屬性，均可設為「<code>inherit</code>」。</p>
+            <p><a href="https://developer.mozilla.org/en/CSS/inheritance">部份 CSS 屬性</a>預設不會會繼承自父元素，可用 <code>inherit</code> 明確定義之。</p>
             <script type="text/x-sample">
               <style type="text/css">
                 p{
+                  /* color, font-size 預設會繼承 */
                   color: red;
                   font-size: 32px;
+                  /* border 預設不會繼承 */
+                  border: 1px solid blue;
                 }
-                /* span 之 color, font-size 預設為 inherit */
+
+                span{
+                  /* border: inherit; */
+                }
               </style>
               <p>陟罰臧否，<span>不宜異同</span></p>
             </script>
           </section>
           <section>
-            <h2>inherit (續)</h2>
+            <h2><code>inherit</code> (續)</h2>
             <p> <code>input</code>, <code>textarea</code>, <code>select</code>, <code>button</code> 等元素，樣式不會自動 inherit 自父元素。</p>
             <script type="text/x-sample">
               <style type="text/css">
@@ -567,6 +580,7 @@
             <h2>Generic font family</h2>
             <!-- http://www.certifiedchinesetranslation.com/openaccess/CSS/fonts.html
             http://jsfiddle.net/YYu8w/ -->
+            <p><code>serif</code>, <code>sans-serif</code>, <code>cursive</code>, <code>fantacy</code>,  <code>monospace</code></p>
             <script type="text/x-sample" class="small">
               <dl>
                 <dt>Serif</dt>
@@ -584,7 +598,7 @@
             <p>瀏覽器對各種 Generic font family 有預設字體</p>
           </section>
           <section>
-            <h2>襯線、無襯線、等寬</h2>
+            <h2 class="trailer">襯線、無襯線、等寬</h2>
             <figure class="three-column">
               <img src="images/css/serif.png" alt="Serif">
               <figcaption>Serif (有襯線；明體)</figcaption>
@@ -598,25 +612,31 @@
               <figcaption>「襯線」</figcaption>
             </figure>
 
-            <p><code>monospace</code> 字型的每個字元都一樣寬，適合程式碼排版。</p>
+            <p class="leader"><code>monospace</code> 字型的每個字元都一樣寬，適合程式碼排版。</p>
           </section>
           <section>
-            <h2>font-family</h2>
+          <h2 class="trailer"><code>font-family</code></h2>
+          
+            <script type="text/x-sample" class="nopreview" data-lang="css">
+              font-family: '文泉驛微米黑', 'LiHei Pro', '微軟正黑體', sans-serif;
+            </script>
             <p class="fragment">字體在使用者電腦裡沒有 → 用下一個</p>
-            <p class="fragment">最後一個通常放 Generic font family 當捕手。</p>
+            <p class="fragment">最後一個通常放 Generic font family。</p>
             <p class="fragment"><a href="http://w3schools.com/cssref/css_websafe_fonts.asp" target="_blank">常用之 font-family</a></p>
           </section>
           <section>
             <h2>Web font</h2>
-            <p class="fragment">Server 提供字體給 Browser 來抓</p>
-            <p class="fragment">通常抓下來不能直接裝在電腦上，只能顯示</p>
-            <p class="fragment"><a href="http://www.google.com/webfonts" target="_blank">Google Web Font</a> 英文的 Webfont</p>
-            <p class="fragment"><a href="http://fontsquirrel.com/fontface/generator" target="_blank">@font-face generator</a> 上傳字型檔後，會轉檔為 web font 並提供範例</p>
+            <ul>
+              <li class="fragment">Server 提供字體給 Browser 來抓</li>
+              <li class="fragment">通常抓下來不能直接裝在電腦上，只能顯示</li>
+              <li class="fragment"><a href="http://www.google.com/webfonts" target="_blank">Google Web Font</a> 英文的 Webfont</li>
+              <li class="fragment"><a href="http://fontsquirrel.com/fontface/generator" target="_blank">@font-face generator</a> 上傳字型檔後，會轉檔為 web font 並提供範例</li>
+            </ul>
           </section>
           <section>
             <h2>大小與行高</h2>
-            <p><code>font-size: 12px</code> + <br /><code>line-height:16px</code> + <br /><code>font-family: sans-serif</code> =</p>
-            <pre><code>font: 12px/16px sans-serif;</code></pre><br />
+            <p><code>font-size: 12px</code> + <br /><code>line-height:16px</code> + <br /><code>font-family: Arial, sans-serif</code> =</p>
+            <pre class="css" ><code >font: 12px/16px Arial, sans-serif;</code></pre><br />
             <p><code>line-height</code> ：純數字（幾倍於字體大小） or <code>N px</code>。
             <a href="http://www.maxdesign.com.au/articles/css-line-height/" target="_blank">(更多)</a></p>
           </section>
@@ -801,6 +821,7 @@
           <p><a href="http://www.w3.org/TR/CSS2/visuren.html#block-formatting" href="_blank">CSS spec</a></p>
         </section>
 
+
         <section>
           <section>
             <h2>文字的方向</h2>
@@ -915,30 +936,19 @@
             </ul>
           </section>
           <section>
-          <h2>三角關係</h2>
-            <!-- TODO: Make this easier!!! -->
-            <p><code>position</code> 覆蓋 <code>float</code> 覆蓋 <code>display</code></p>
-            <ul class="fragment">
-              <li><code>display</code> 為 <code>none</code>  →  無視 <code>position</code>, <code>float</code></li>
-              <li>
-                否則，<code>position</code> 為 <code>absolute</code> 或 <code>fixed</code> → 無視 <code>float</code> (<a href="http://jsfiddle.net/49aV7/" target="_blank">例</a>)。
-                此時大部分的 inline element 的 <code>display</code> 變成 <code>block</code>（能指定 <code>width</code>, <code>height</code> 等）。</li>
-              <li>否則，<code>float</code> 不是 <code>none</code>  →  <code>display</code> 也會變成 <code>block</code>。</li>
-              <li>否則，使用 CSS 內設定的 <code>display</code> 。</li>
-            </ul>
-            <div class="fragment">
-              <hr>
-              <p>換句話說：</p>
-              <ul>
-                <li>如果用 <code>display: none</code> 把元素藏起來，那連 box 都沒有， <code>position</code> 和 <code>float</code> 都不用設。</li>
-                <li>如果設了 <code>position:absolute</code> | <code>fixed</code> 就不用設 <code>float</code> 了。</li>
-                <li>如果設了 <code>float</code> 就不用設 <code>display</code> 了。</li>
-                <li>從 normal flow 中起飛的 element 可使用 <code>width</code>, <code>height</code> 等 CSS 規則</li>
-              </ul>
-            </div>
+            <h2>力氣排行榜</h2>
+            
+            <code class="bigfont">display: none</code>
+            <p class="trailer">元素整個藏起來，連 box 都沒有。</p>
+            <code class="bigfont">position: absolute | fixed</code>
+            <p class="trailer">元素可指定寬高，離開 normal flow。</p>
+            <code class="bigfont">float: left | right</code>
+            <p>元素可指定寬高，離開 normal flow，文繞圖效果。</p>
+            <code class="bigfont">display: 非 none 者</code>
+
           </section>
           <section>
-            <h2>細說 <code>display</code></h2>
+            <h2 class="trailer">細說 <code>display</code></h2>
             <ul>
               <li><code>none</code>: 啥都沒有（因為沒有 box），一丁點都不剩。</li>
               <li><code>inline</code>: 一秒變 inline element</li>
@@ -950,7 +960,7 @@
           </section>
           <section>
             <h2>細說 <code>position</code></h2>
-            <p>
+            <p class="leader">
               element 套用後，起飛變成 absolute positioning:
             </p>
             <ul>
@@ -1030,17 +1040,15 @@
           <section>
             <h2>細說 float</h2>
             <script type="text/x-sample" class="small reset">
-              <style type="text/css">
-                /* 人浮於事 */
+              <style type="text/css"> /* 人浮於事 */
                 span{
                   float: left;
                   font-size: 30px;
                 }
               </style>
-              事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事是<span>人</span>是事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事
+              事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事是<span>人</span>是事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事
             </script>
-            <p>套用後自 normal flow 中起飛。</p>
-            <p>特色：其他 normal flow 圍著它（文繞圖）</p>
+            <p>文繞圖：normal flow 中的元素（文字、inline-block 之物件）圍繞</p>
             <hr>
             <p>不會撐開 parent，要 clear</p>
             <script type="text/x-sample" class="small">
@@ -1147,7 +1155,10 @@
             </script>
           </section>
           <section>
-            <h2>一般的 vertical align</h2>
+            <h2 class="trailer">一般的 vertical align</h2>
+
+            <p>Normal flow 中，此元素和其他<em>同一行</em>之元素的垂直對齊</p>
+
             <script type="text/x-sample" class="reset">
               <style type="text/css">
                 strong{
@@ -1169,10 +1180,10 @@
             <p>CSS3 看似光鮮亮麗，但……</p>
             <p>標準還沒有正式完成</p>
             <p>瀏覽器各自為政，加上了如 -webkit, -moz 前綴</p>
-            <p class="fragment">用 <a href="http://css3generator.com/" target="blank;">Generator</a> 寫 CSS3。</p>
+            <p class="fragment">用 <a href="http://css3generator.com/" target="blank;">Generator</a> 或 <a href="?preprocessor">CSS preprocessor</a>寫 CSS3。</p>
           </section>
           <section>
-            <h2>box-shadow 與 text-shadow</h2>
+            <h2><code>box-shadow</code><br><code>text-shadow</code></h2>
 
             <script type="text/x-sample" class="small">
               <style type="text/css">
@@ -1188,7 +1199,7 @@
             </script>
           </section>
           <section>
-            <h2>transform 形變</h2>
+            <h2 class="trailer">transform 形變</h2>
             <script type="text/x-sample" class="small">
               <style type="text/css">
                 div{
@@ -1203,7 +1214,7 @@
             </script>
           </section>
           <section>
-            <h2>transition 漸變</h2>
+            <h2 class="trailer">transition 漸變</h2>
             <p>設定 duration 和 property</p>
             <script type="text/x-sample" class="small">
               <style type="text/css">
@@ -1241,7 +1252,7 @@
             </script>
           </section>
           <section>
-            <h2>Media Query</h2>
+            <h2 class="trailer">Media Query</h2>
             <p>"Responsive Web Design"</p>
             <p><a href="http://webdesignerwall.com/tutorials/css3-media-queries" target="_blank">Web Designer Wall - CSS3 Media Queries</a></p>
             <!--max-width: xxx == width < xxx
@@ -1329,7 +1340,7 @@
           </section>
 
           <section>
-            <h2>條件註解</h2>
+            <h2 class="trailer">條件註解</h2>
             <script type="text/x-sample" class="nopreview">
               <!--[if lt IE 9]>
               According to the conditional comment this is IE lower than 9<br />
@@ -1362,7 +1373,7 @@
           <h2>更好用的 CSS</h2>
         </section>
         <section>
-          <section>
+          <section id="preprocessor">
             <h2>SCSS &amp; LESS</h2>
             <figure class="two-column">
               <img src="images/css/sass.jpg" height="250" alt="">
@@ -1405,8 +1416,10 @@
           <h1>The End</h1>
           <ul class="nav">
             <li><a href="html.html">HTML</a></li>
-            <li>Javascript</li>
+            <li><a href="js.html">Javascript</a></li>
+            <li><a href="advancedjs.html">Advanced JS</a></li>
           </ul>
+          <p class="leader">按 <kbd>Space</kbd> 概覽</p>
         </section>
       </div>
 

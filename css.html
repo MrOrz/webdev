@@ -188,6 +188,9 @@
 
         <section id="attribute" class="chapter">
           <h2>CSS Selectors</h2>
+          <p>
+          	<a href="https://developer.mozilla.org/en/CSS/CSS_Reference#Selectors">MDN Reference</a>
+          </p>
         </section>
         <section>
           <section>
@@ -379,7 +382,7 @@
 
         <section>
           <section>
-            <h2>background</h2>
+            <h2 class="trailer"><code>background</code></h2>
             <script type="text/x-sample">
               <style type="text/css">
                 div{
@@ -389,9 +392,13 @@
               </style>
               <div></div>
             </script>
+
+            <p>
+            	<a href="https://developer.mozilla.org/en/CSS/background">MDN Reference</a>
+            </p>
           </section>
           <section>
-            <h2>fonts</h2>
+            <h2 class="trailer"><code>font</code></h2>
             <script type="text/x-sample">
               <style>
                 div{
@@ -401,6 +408,9 @@
               </style>
               <div>Monospaced Fonts</div> and normal fonts
             </script>
+            <p>
+            	<a href="https://developer.mozilla.org/en/CSS/font">MDN Reference</a>
+            </p>
           </section>
         </section>
 
@@ -415,7 +425,7 @@
           <section>
             <h2>兩個定義打架</h2>
 
-            <p>值不同的兩個定義，被套用在同一個元素上時……</p>
+            <p>Value 不同的兩個定義，被套用在同一個元素上時……</p>
 
             <script type="text/x-sample">
               <style>
@@ -1077,24 +1087,28 @@
         <!-- Think about books and pages (活頁簿). Stacking Context = a book with several pages. -->
         <!-- http://blog.ipapershop.com.tw/?p=287 -->
         <section>
+
           <section>
-            <h2>Render 網頁 == 蓋房子</h2>
-            <p>瀏覽器這樣蓋房子 (下項蓋過上項)</p>
-            <ol>
-              <li>normal flow 中的 block elements</li>
-              <li>float elements</li>
-              <li>文字等 inline elements</li>
-              <li><code>position</code> != <code>static</code> 的 element</li>
-            </ol>
-            <br>
-            <img src="images/css/ground-stacking.png" alt="疊疊">
-            <p>若兩元素同一層，則先蓋的會被壓在下面。</p>
+            <h2>圖層疊疊樂</h2>
+            <code class="bigfont">z:index: 整數</code>
+            <p>把元素變成「一層」</p>
+            <hr>
+            <div class="fragment">
+              <ul style="vertical-align: middle;">
+              	<li>類似 Photoshop 的群組（資料夾）</li>
+                <li><a href="http://www.w3.org/TR/CSS2/visuren.html#layers">Spec</a>: 「Stacking Context」</li>
+                <li>群組內可另外設 <code>z-index</code></li>
+              </ul>
+              <img src="images/css/ps_zindex.gif" alt="Photoshop 群組類比圖層" style="vertical-align: middle; margin-left: 1em;" />
+            </div>
           </section>
+
           <section>
-            <h2>Z-Index</h2>
+            <h2>萬丈高樓平地起</h2>
+            <p>瀏覽器繪製頁面，就像在蓋房子，z-index 是樓層號碼。</p>
             <p>「stacking context」堆起 element，是地基。</p>
-            <p>z-index 越大，在 stacking context 中越上層。</p>
-            <p>每個 stacking context 上的房子都這樣蓋：</p>
+            <hr>
+            <p>蓋房子順序：</p>
             <ol style="vertical-align: middle;">
               <li>stacking context 之背景與邊界</li>
               <li>負 <code>z-index</code> 的 element</li>
@@ -1102,21 +1116,24 @@
               <li>正 z-index 的 element</li>
             </ol>
             <img src="images/css/stacking.png" alt="疊疊疊" style="vertical-align: middle; margin-top: 0;">
-              <!--
-                http://jsfiddle.net/49aV7/
-                http://jsfiddle.net/49aV7/1
-              -->
-
+            <p class="leader">
+            	<a href="http://jsfiddle.net/49aV7/">示例1</a>
+            	<a href="http://jsfiddle.net/49aV7/2">示例2</a>
+            </p>
           </section>
           <section>
-            <h2>stacking context</h2>
-            <img src="images/css/stacking-contexts.png" alt="疊中有疊"><br>
-            <ul>
-              <li class="fragment">stacking context 裡面也可以有子 stacking context。</li>
-              <li class="fragment">position != static 且 z-index != auto 的 element</li>
-              <li class="fragment">opacity < 1 的 eleent 也會被視為一個 stacking context。<br>原因請參考<a href="http://www.w3.org/TR/css3-color/#transparency" target="_blank">W3C 標準</a>。</li>
-              <li class="fragment">stacking context 為不可分割的「一層」，<br>其他 stacking context 沒辦法插進來。</li>
-            </ul>
+            <h2>同一層裡面</h2>
+            <p>z-index 相同的元素，用下面規則分高下。</p>
+            <p>（由低至高）</p>
+            <ol>
+              <li>normal flow 中的 block elements</li>
+              <li>float elements</li>
+              <li>文字等 inline elements</li>
+              <li><code>position</code> != <code>static</code> 的 element</li>
+            </ol>
+            <hr>
+            <img src="images/css/ground-stacking.png" alt="疊疊">
+            <p>若兩元素同一層，則先蓋的會被壓在下面。</p>
           </section>
         </section>
         <section class="chapter">
@@ -1322,9 +1339,9 @@
           <section>
             <h2>IE 們</h2>
             <ul>
-              <li>IE6: 不支援 PNG 透明</li>
-              <li>IE7: 不支援 <code>inline-block</code></li>
-              <li>IE8: 不支援 <code>:checked</code> pseudo class.</li>
+              <li>IE6 及以下: 不支援 PNG 透明</li>
+              <li>IE7 及以下: 不支援 <code>inline-block</code></li>
+              <li>IE8 及以下: 不支援 <code>:checked</code> pseudo class.</li>
               <li>……族繁不及備載。</li>
             </ul>
             <hr>

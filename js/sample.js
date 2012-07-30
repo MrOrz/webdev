@@ -53,13 +53,16 @@
 
       // highligt the code
       var $code = $pre.find('code'), ret // get $code to get unhighlighted text
+
+      // Make .text()'s line break correct in Google Chrome
+      $code.html( $code.html().replace(/<div>/gi, '\n<div>') );
       if(lang){
         ret = hljs.highlight(lang, $code.text());
       }else{
         ret = hljs.highlightAuto($code.text());
       }
       $code.html(ret.value);
-      $code.addClass(ret.language)
+      $code.addClass(ret.language);
 
       return iframe; // return the (possibly new) iframe
     };

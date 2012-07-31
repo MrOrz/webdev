@@ -95,7 +95,8 @@
     文字與數字
     ------
     * 數字 `+` 數字 是加法。
-    * 數字 `+` 字串、字串 `+` 數字、字串 `+` 字串：字串串接
+    * 任何東西 `+` 字串、字串 `+` 任何東西：字串串接
+    * 轉字串時會嘗試呼叫其 toString 方法
     
     ![images/js/string-number.png](字串加數字等於字串)
 
@@ -291,7 +292,7 @@
       * `length` 屬性：長度
       * 無法修改字串 (immutable)。
       * UCS-2 編碼 （UTF-16 的前身）
-      * [http://www.w3schools.com/jsref/jsref_obj_string.asp](屬性與方法)
+      * [https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String#String_instances](屬性與方法)
 
     {:.small[data-lang=javascript]}
     ~~~
@@ -413,7 +414,7 @@
     * `join(sep)` 把每個元素轉成字串，用分隔字元 `sep` 接起來。
     * `push(item...)` 將 `item` 附加到末端，回傳新長度。
     * `pop()` 移除並回傳最後一個元素。
-    * 詳見 [http://www.w3schools.com/jsref/jsref_obj_array.asp](W3Schools)
+    * 詳見 [https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array#Array_instances](MDN Docs)
 
     {:[data-lang=javascript]}
     ~~~
@@ -987,13 +988,6 @@ jQuery
     ---
     事件被觸發時，會被執行的 function，用來處理此事件。又稱作 `callback`。
 
-    {:.fragment}
-    「callback」：先給定一個 function，但不立即執行。
-
-    {:.fragment}
-    * 第一個引數是 [http://api.jquery.com/category/events/event-object/](Event object)
-    * `event.target`：被觸發了該事件的 HTML Element。
-
     {:.jquery-dom.small.maxheight}
     ~~~
     <p>按我按我</p>
@@ -1004,6 +998,13 @@ jQuery
       });
     &lt;/script&gt;
     ~~~
+
+    {:.fragment}
+    「callback」：未來某條件符合時，會被執行的 function。
+
+    {:.fragment}
+    * 第一個引數是 [http://api.jquery.com/category/events/event-object/](Event object)
+    * `event.target`：被觸發了該事件的 HTML Element。
 
     {:.fragment}
     以下用 `event` 指稱 handler 裡的 event object。
@@ -1047,7 +1048,7 @@ jQuery
         // e.stopPropagation();
       });
       $('table').on('click', function(e){
-        log('拜訪此樓');
+        log('拜訪此建築');
         $(this).css('borderColor', '#990');
       });
     &lt;/script&gt;
@@ -1103,10 +1104,9 @@ jQuery
     `.on()`
     ---
 
-    `$物件.on('事件', handler)`
-    `$物件.on('事件', selector, handler)`
+    `$物件.on('事件', [selector,] handler)`
 
-    後者把 event handler 綁在 `$物件` 上，觸發時檢查 `event.target` 是否符合 `selector`，符合才執行 `handler`。
+    若觸發者為 `$物件` 子孫中符合 `selector` 者，則執行 handler。
 
     {:.demo-dom-jquery.small.maxheight[data-lang=javascript]}
     ~~~
@@ -1231,7 +1231,7 @@ jQuery
       Asynchronous JavaScript and XML
       ```
       * 用 XMLHttpRequest 和 server 溝通
-      * 用 (當時最尖端的) XML 格式交換資料
+      * 曾使用當時最尖端的 XML 格式交換資料
       * 用 Javascript 操作 DOM，執行動態效果
       * 不等遠端回應，繼續執行（asynchronous）
       * 用 callback 處理遠端回傳的資料

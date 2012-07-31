@@ -108,7 +108,8 @@ a = 3; // 換型態
 <h2>文字與數字</h2>
 <ul>
 <li>數字 <code>+</code> 數字 是加法。</li>
-<li>數字 <code>+</code> 字串、字串 <code>+</code> 數字、字串 <code>+</code> 字串：字串串接</li>
+<li>任何東西 <code>+</code> 字串、字串 <code>+</code> 任何東西：字串串接</li>
+<li>轉字串時會嘗試呼叫其 toString 方法</li>
 </ul>
 <p></p>
 <p><img src="images/js/string-number.png" alt="字串加數字等於字串"></p>
@@ -306,7 +307,7 @@ a = 3; // 換型態
 <li><code>length</code> 屬性：長度</li>
 <li>無法修改字串 (immutable)。</li>
 <li>UCS-2 編碼 （UTF-16 的前身）</li>
-<li><a href="http://www.w3schools.com/jsref/jsref_obj_string.asp" target="_blank">屬性與方法</a></li>
+<li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String#String_instances" target="_blank">屬性與方法</a></li>
 </ul>
 <p></p>
 <script type="text/x-sample" class="small" data-lang="javascript">
@@ -435,7 +436,7 @@ a = 3; // 換型態
 <li><code>join(sep)</code> 把每個元素轉成字串，用分隔字元 <code>sep</code> 接起來。</li>
 <li><code>push(item...)</code> 將 <code>item</code> 附加到末端，回傳新長度。</li>
 <li><code>pop()</code> 移除並回傳最後一個元素。</li>
-<li>詳見 <a href="http://www.w3schools.com/jsref/jsref_obj_array.asp" target="_blank">W3Schools</a></li>
+<li>詳見 <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array#Array_instances" target="_blank">MDN Docs</a></li>
 </ul>
 <p></p>
 <script type="text/x-sample" data-lang="javascript">
@@ -1019,13 +1020,6 @@ a = 3; // 換型態
 <h2>Event handler</h2>
 <p>事件被觸發時，會被執行的 function，用來處理此事件。又稱作 <code>callback</code>。</p>
 <p></p>
-<p class="fragment">「callback」：先給定一個 function，但不立即執行。</p>
-<p></p>
-<ul class="fragment">
-<li>第一個引數是 <a href="http://api.jquery.com/category/events/event-object/" target="_blank">Event object</a></li>
-<li><code>event.target</code>：被觸發了該事件的 HTML Element。</li>
-</ul>
-<p></p>
 <script type="text/x-sample" class="jquery-dom small maxheight">
     <p>按我按我</p>
     &lt;script type="text/javascript"&gt;
@@ -1036,6 +1030,13 @@ a = 3; // 換型態
     &lt;/script&gt;
 
 </script>
+<p></p>
+<p class="fragment">「callback」：未來某條件符合時，會被執行的 function。</p>
+<p></p>
+<ul class="fragment">
+<li>第一個引數是 <a href="http://api.jquery.com/category/events/event-object/" target="_blank">Event object</a></li>
+<li><code>event.target</code>：被觸發了該事件的 HTML Element。</li>
+</ul>
 <p></p>
 <p class="fragment">以下用 <code>event</code> 指稱 handler 裡的 event object。</p>
 <p></p>
@@ -1077,7 +1078,7 @@ a = 3; // 換型態
         // e.stopPropagation();
       });
       $('table').on('click', function(e){
-        log('拜訪此樓');
+        log('拜訪此建築');
         $(this).css('borderColor', '#990');
       });
     &lt;/script&gt;
@@ -1133,10 +1134,9 @@ a = 3; // 換型態
 <section>
 <h2><code>.on()</code></h2>
 <p></p>
-<p><code>$物件.on(&apos;事件&apos;, handler)</code></p>
-<p><code>$物件.on(&apos;事件&apos;, selector, handler)</code></p>
+<p><code>$物件.on(&apos;事件&apos;, [selector,] handler)</code></p>
 <p></p>
-<p>後者把 event handler 綁在 <code>$物件</code> 上，觸發時檢查 <code>event.target</code> 是否符合 <code>selector</code>，符合才執行 <code>handler</code>。</p>
+<p>若觸發者為 <code>$物件</code> 子孫中符合 <code>selector</code> 者，則執行 handler。</p>
 <p></p>
 <script type="text/x-sample" class="demo-dom-jquery small maxheight" data-lang="javascript">
       // 此行執行時，<a class="del"></a> 還不存在！
@@ -1273,7 +1273,7 @@ a = 3; // 換型態
 --></code></pre>
 <ul>
 <li>用 XMLHttpRequest 和 server 溝通</li>
-<li>用 (當時最尖端的) XML 格式交換資料</li>
+<li>曾使用當時最尖端的 XML 格式交換資料</li>
 <li>用 Javascript 操作 DOM，執行動態效果</li>
 <li>不等遠端回應，繼續執行（asynchronous）</li>
 <li>用 callback 處理遠端回傳的資料</li>

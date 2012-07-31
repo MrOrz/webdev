@@ -126,7 +126,7 @@ JS++
         ], i;
 
         for(i=0; i<test.length; i+=1){
-          document.write('i='+i+': ');
+          document.write('i='+i+' ('+ test[i] +') : ');
           if(test[i]){
             document.write('Truthy<br>');
           }else{

@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="zh_TW">
 
   <head>
@@ -662,13 +662,12 @@
                 </style>
               </head>
 
-               <body>
+              <body>
                 <p>Grumpy wizards make toxic brew for the evil Queen and Jack</p>
                 <p style="font-style: italic;"> Grumpy wizards make toxic brew for the evil Queen and Jack</p>
                 <p style="font-weight: 600;">600: Grumpy wizards make toxic brew for the evil Queen and Jack</p>
                 <p style="font-weight: 700;">700: Grumpy wizards make toxic brew for the evil Queen and Jack</p>
-               </body>
-              ​
+              </body>
             </script>
 
           </section>
@@ -744,19 +743,15 @@
               <style type="text/css">
                 li{
                   margin: 20px;
-                  border: 1px solid grey;
+                  border: 10px solid grey;
                 }
                 span{
                   margin: 20px;
                 }
                 ul{
-                  margin-top: 10px;
                   width: 200px;
                   margin-left: auto; margin-right: auto;
                 }
-                /* body{
-                  background: grey;
-                }*/
               </style>
               <span>你覺得這塊衣料像？</span>
               <ul>
@@ -768,9 +763,37 @@
             <ul>
               <li class="fragment">從 <code>border</code> 向外算，和其他元件的距離</li>
               <li class="fragment">inline 元素的 <code>margin-top</code>、<code>margin-bottom</code> 會被忽略</li>
-              <li class="fragment">block 元素的 <code>margin-top</code>, <code>margin-bottom</code> 密接時，有時只會表現較大的那一個 （collapsing margin）</li>
-              <li class="fragment"><code>margin-top</code> 可能會超出父元素。</li>
               <li class="fragment"><code>margin-left</code> 和 <code>margin-right</code> 同為 <code>auto</code> 時，元素會置中。 </li>
+            </ul>
+          </section>
+          <section>
+            <h2>margin 二三事</h2>
+            <script type="text/x-sample" class="reset small">
+              <style type="text/css">
+                li{
+                  /* li 間距 20px，第一個 li 的上邊界會頂出 ul */
+                  margin-top: 20px;
+                  margin-bottom: 10px;
+                  border: 1px solid white;
+                }
+                ul{
+                  width: 200px;
+                  /* margin: 上下 左右 */
+                  margin: 10px auto;
+                }
+                body{
+                  background: grey;
+                }
+              </style>
+              <ul>
+                <li>棋盤</li>
+                <li>稿紙</li>
+                <li>綠豆糕</li>
+              </ul>
+            </script>
+            <ul>
+              <li class="fragment">block 元素的 <code>margin-top</code>, <code>margin-bottom</code> 密接時，有時只會表現較大的那一個 （<em>Collapsing margin</em>）</li>
+              <li class="fragment"><code>margin-top</code> 可能會超出父元素。</li>
             </ul>
           </section>
           <section>
@@ -1096,8 +1119,9 @@
             <div class="fragment">
               <ul style="vertical-align: middle;">
               	<li>類似 Photoshop 的群組（資料夾）</li>
+              	<li>也像大廈裡的其中一層樓</li>
                 <li><a href="http://www.w3.org/TR/CSS2/visuren.html#layers">Spec</a>: 「Stacking Context」</li>
-                <li>群組內可另外設 <code>z-index</code></li>
+                <li>群組內可另外設 <code>z-index</code>（樓中樓）</li>
               </ul>
               <img src="images/css/ps_zindex.gif" alt="Photoshop 群組類比圖層" style="vertical-align: middle; margin-left: 1em;" />
             </div>
@@ -1107,33 +1131,34 @@
             <h2>萬丈高樓平地起</h2>
             <p>瀏覽器繪製頁面，就像在蓋房子，z-index 是樓層號碼。</p>
             <p>「stacking context」堆起 element，是地基。</p>
+            <p><code>z-index != 0</code> 或 <code>opacity &lt; 1</code> 的元素，即是 stacking context。</p>
             <hr>
-            <p>蓋房子順序：</p>
+            <p>蓋房子順序：（由低至高）</p>
             <ol style="vertical-align: middle;">
               <li>stacking context 之背景與邊界</li>
               <li>負 <code>z-index</code> 的 element</li>
-              <li>地表：上一頁的東西 + <br><code>z-index:0</code> 的 element。</li>
-              <li>正 z-index 的 element</li>
+              <li>地表：<code>z-index:0 | auto</code> 的 element</li>
+              <li>正 <code>z-index</code> 的 element</li>
             </ol>
             <img src="images/css/stacking.png" alt="疊疊疊" style="vertical-align: middle; margin-top: 0;">
-            <p class="leader">
-            	<a href="http://jsfiddle.net/49aV7/">示例1</a>
-            	<a href="http://jsfiddle.net/49aV7/2">示例2</a>
-            </p>
           </section>
           <section>
             <h2>同一層裡面</h2>
             <p>z-index 相同的元素，用下面規則分高下。</p>
             <p>（由低至高）</p>
-            <ol>
+            <ol style="vertical-align: middle; margin-right: 1em;">
               <li>normal flow 中的 block elements</li>
               <li>float elements</li>
               <li>文字等 inline elements</li>
               <li><code>position</code> != <code>static</code> 的 element</li>
             </ol>
+            <img src="images/css/ground-stacking.png" alt="疊疊" style="vertical-align: middle;">
             <hr>
-            <img src="images/css/ground-stacking.png" alt="疊疊">
-            <p>若兩元素同一層，則先蓋的會被壓在下面。</p>
+            <p>若兩元素同一層，則先寫在 HTML 檔裡的，會被壓在下面。</p>
+            <p class="leader">
+            	<a href="http://jsfiddle.net/49aV7/">示例1</a>
+            	<a href="http://jsfiddle.net/49aV7/2">示例2</a>
+            </p>
           </section>
         </section>
         <section class="chapter">
@@ -1185,6 +1210,26 @@
               </style>
               <p>每個人都應該努力培養<strong>雅量</strong>。</p>
             </script>
+
+            <p>
+              <a href="http://css-tricks.com/what-is-vertical-align/">其他值與 <code>vertical-align</code> 的介紹</a>
+            </p>
+          </section>
+          <section>
+            <h2 class="trailer">教練我想垂直置中</h2>
+
+            <p class="fragment"><code>&lt;td&gt;</code> 外面，CSS 裡沒有 property 可以辦到任意元素垂直置中。</p>
+            <ul class="fragment leader">
+            	<li>
+                <a href="http://css-tricks.com/vertically-center-multi-lined-text/">用 <code>display: table-cell</code> 垂直置中</a>
+            	</li>
+            	<li>
+            		<a href="http://css-tricks.com/centering-in-the-unknown/">使用 ghost element 垂直置中</a>
+            	</li>
+            	<li>
+            		<a href="http://blog.yam.com/hanasan/article/35806444">中文總整理</a>
+            	</li>
+            </ul>
           </section>
         </section>
 

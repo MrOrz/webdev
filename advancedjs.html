@@ -139,6 +139,41 @@
 <p></p>
 </section>
 <section>
+<h2><code>==</code> 與 <code>===</code></h2>
+<p></p>
+<script type="text/x-sample" class="small" data-lang="javascript">
+      var test = {
+        '0==""'     : 0=="",
+        '0=="0"'    : 0=="0",
+        'false==""' : false=="",
+        'false==0'  : false==0,
+        'false==null': false==null,
+        'false==undefined': false==undefined,
+
+        // 以下為經典範例
+        '[0]==true': [0]==true,
+        '[1]==true': [1]==true,
+        '"旺中是邪惡的"==true': "旺中是邪惡的"==true,
+        '"旺中是邪惡的"==false': "旺中是邪惡的"==false,
+      }, name;
+
+      document.write('<table>');
+      for(var name in test){
+        document.write(
+          '<tr><td>' + name + '</td><td>' + test[name] + '</td></tr>');
+      }
+      document.write('</table>');
+
+
+</script>
+<p></p>
+<p><a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/" target="_blank"><code>==</code> 型別轉換</a></p>
+<p></p>
+<p><a href="http://jsperf.com/equality-operators-with-the-same-types" target="_blank"><code>==</code>, <code>===</code> 左右運算元是同型態時的效能比較</a></p>
+<p></p>
+<p></p>
+</section>
+<section>
 <h2><code>&amp;&amp;</code> 和 <code>||</code></h2>
 <p></p>
 <p><code>&amp;&amp;</code>, <code>||</code> 是 short-circuited</p>
@@ -215,7 +250,7 @@
 <p></p>
 <ul>
 <li>如果敘述斷在這裡不符合文法。如：<code>var a = {</code>。</li>
-<li><code>for()</code>, <code>while()</code>, <code>do</code>, <code>if</code>, <code>else</code> 後沒 '{'。</li>
+<li><code>for()</code>, <code>while()</code>, <code>do</code>, <code>if</code>, <code>else</code> 後沒 <code>{</code>。</li>
 <li>下一行的開頭是 <code>[</code>, <code>(</code>, <code>+</code>, <code>*</code>, <code>/</code>, <code>-</code>, <code>,</code>, <code>.</code>。</li>
 </ul>
 <p></p>
@@ -239,7 +274,7 @@
 
 </script>
 <p></p>
-<p>句末加上 <code>;</code> 不會讓 <code>explode</code> 不爆炸。</p>
+<p><code>42</code> 後面加上 <code>;</code> 不會讓 <code>meaningOfLife</code> 不爆炸。</p>
 <p></p>
 <p>除非你知道 <code>return</code> 這個例子。</p>
 <p></p>
@@ -260,39 +295,6 @@
 <p></p>
 <p class="fragment">說了一大堆，還是那句老話：「你自己決定吧！」 -- 劉墉</p>
 <p></p>
-</section>
-<section>
-<h2><code>==</code> 與 <code>===</code></h2>
-<p></p>
-<script type="text/x-sample" class="small" data-lang="javascript">
-      var test = {
-        '0==""'     : 0=="",
-        '0=="0"'    : 0=="0",
-        'false==""' : false=="",
-        'false==0'  : false==0,
-        'false==null': false==null,
-        'false==undefined': false==undefined,
-
-        // 以下為經典範例
-        '[0]==true': [0]==true,
-        '[1]==true': [1]==true,
-        '"該不該特赦"==true': "該不該特赦"==true,
-        '"該不該特赦"==false': "該不該特赦"==false,
-      }, name;
-
-      document.write('<table>');
-      for(var name in test){
-        document.write(
-          '<tr><td>' + name + '</td><td>' + test[name] + '</td></tr>');
-      }
-      document.write('</table>');
-
-
-</script>
-<p></p>
-<p><a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/" target="_blank"><code>==</code> 型別轉換</a></p>
-<p></p>
-<p><a href="http://jsperf.com/equality-operators-with-the-same-types" target="_blank"><code>==</code>, <code>===</code> 左右運算元是同型態時的效能比較</a></p>
 <p></p>
 </section>
 <section>
@@ -552,6 +554,14 @@
 <li>Prototype</li>
 <li><a href="http://ejohn.org/apps/learn/" target="_blank">Learning Advanced Javascript</a></li>
 </ul>
+<p></p>
+<h3 class="leader">延伸資料</h3>
+<p></p>
+<ul>
+<li>Javascript MVC framework: <a href="http://documentcloud.github.com/backbone/" target="_blank">Backbone.js</a></li>
+<li>Javascript preprocessor: <a href="http://coffeescript.org/" target="_blank">CoffeeScript</a></li>
+</ul>
+<p></p>
 <p></p>
 <p></p>
 </section>

@@ -447,6 +447,7 @@
 
     Javascript 沒有原生的 Object `equals` 方法。
     比較兩個 Javascript Object 是否每個 key、value 相同，[http://stackoverflow.com/questions/201183/how-do-you-determine-equality-for-two-javascript-objects](其實很麻煩)。
+    [http://underscorejs.org](Underscore.js) : utility function library.
 
   !SLIDE
     Pass-by-reference
@@ -568,7 +569,7 @@ DOM Window
       ### JSON
       `Javascript String Object Notation`
 
-      * 類似 javascript 物件的初始化方法（array literal）
+      * 類似 javascript 物件的初始化方法（object literal）
       * 不會把 function (method) 變成字串
 
       `物件 = JSON.parse(字串)`、`字串 = JSON.stringify(物件)`
@@ -589,10 +590,14 @@ DOM Window
     ----------
     * 另一種資料存儲
     * 同樣是 key-value pair, value 限字串
+    * 用分號作分隔，以字串儲存
     * 4kB 大小限制（`localStorage` 有 5MB）
     * server 可以設定給 browser 存什麼 cookie
     * browser 和 server 要檔案時，會附上 cookie
 
+    -----
+
+    [https://developer.mozilla.org/en-US/docs/DOM/document.cookie](MDN Doc)
 
 !ENDSTACK
 
@@ -832,7 +837,7 @@ jQuery
       $(SELECTOR) or $(HTML)
     ```
     
-    通常會回傳 jQuery Object，本身，故支持 chaining。
+    其方法通常會回傳 jQuery Object 本身，故支持 chaining。
 
     {:.jquery-dom.small}
     ~~~

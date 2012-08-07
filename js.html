@@ -470,6 +470,7 @@ a = 3; // 換型態
 <p></p>
 <p>Javascript 沒有原生的 Object <code>equals</code> 方法。</p>
 <p>比較兩個 Javascript Object 是否每個 key、value 相同，<a href="http://stackoverflow.com/questions/201183/how-do-you-determine-equality-for-two-javascript-objects" target="_blank">其實很麻煩</a>。</p>
+<p><a href="http://underscorejs.org" target="_blank">Underscore.js</a> : utility function library.</p>
 <p></p>
 </section>
 <section>
@@ -592,7 +593,7 @@ a = 3; // 換型態
 <p><code>Javascript String Object Notation</code></p>
 <p></p>
 <ul>
-<li>類似 javascript 物件的初始化方法（array literal）</li>
+<li>類似 javascript 物件的初始化方法（object literal）</li>
 <li>不會把 function (method) 變成字串</li>
 </ul>
 <p></p>
@@ -615,11 +616,14 @@ a = 3; // 換型態
 <ul>
 <li>另一種資料存儲</li>
 <li>同樣是 key-value pair, value 限字串</li>
+<li>用分號作分隔，以字串儲存</li>
 <li>4kB 大小限制（<code>localStorage</code> 有 5MB）</li>
 <li>server 可以設定給 browser 存什麼 cookie</li>
 <li>browser 和 server 要檔案時，會附上 cookie</li>
 </ul>
+<hr>
 <p></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/DOM/document.cookie" target="_blank">MDN Doc</a></p>
 <p></p>
 </section>
 </section>
@@ -865,7 +869,7 @@ a = 3; // 換型態
 <!--
 --></code></pre>
 <p></p>
-<p>通常會回傳 jQuery Object，本身，故支持 chaining。</p>
+<p>其方法通常會回傳 jQuery Object 本身，故支持 chaining。</p>
 <p></p>
 <script type="text/x-sample" class="jquery-dom small">
     <p></p>

@@ -138,6 +138,41 @@ JS++
 
 
   !SLIDE
+    `==` 與 `===`
+    ------
+
+    {:.small[data-lang=javascript]}
+    ~~~
+      var test = {
+        '0==""'     : 0=="",
+        '0=="0"'    : 0=="0",
+        'false==""' : false=="",
+        'false==0'  : false==0,
+        'false==null': false==null,
+        'false==undefined': false==undefined,
+
+        // 以下為經典範例
+        '[0]==true': [0]==true,
+        '[1]==true': [1]==true,
+        '"旺中是邪惡的"==true': "旺中是邪惡的"==true,
+        '"旺中是邪惡的"==false': "旺中是邪惡的"==false,
+      }, name;
+
+      document.write('<table>');
+      for(var name in test){
+        document.write(
+          '<tr><td>' + name + '</td><td>' + test[name] + '</td></tr>');
+      }
+      document.write('</table>');
+
+    ~~~
+
+    [http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/](`==` 型別轉換)
+
+    [http://jsperf.com/equality-operators-with-the-same-types](`==`, `===` 左右運算元是同型態時的效能比較)
+
+
+  !SLIDE
     `&&` 和 `||`
     ----------------
 
@@ -215,7 +250,7 @@ JS++
     以下狀況<b>不會</b>完結敘述（statement）
 
     * 如果敘述斷在這裡不符合文法。如：`var a = {`。
-    * `for()`, `while()`, `do`, `if`, `else` 後沒 '{'。
+    * `for()`, `while()`, `do`, `if`, `else` 後沒 `{`。
     * 下一行的開頭是 `[`, `(`, `+`, `*`, `/`, `-`, `,`, `.`。
 
     否則，parser 在斷行前覆蓋一個 `;` 結束這個敘述。
@@ -237,7 +272,7 @@ JS++
       );
     ~~~
 
-    句末加上 `;` 不會讓 `explode` 不爆炸。
+    `42` 後面加上 `;` 不會讓 `meaningOfLife` 不爆炸。
 
     除非你知道 `return` 這個例子。
 
@@ -258,39 +293,6 @@ JS++
     {:.fragment}
     說了一大堆，還是那句老話：「你自己決定吧！」 -- 劉墉
 
-  !SLIDE
-    `==` 與 `===`
-    ------
-
-    {:.small[data-lang=javascript]}
-    ~~~
-      var test = {
-        '0==""'     : 0=="",
-        '0=="0"'    : 0=="0",
-        'false==""' : false=="",
-        'false==0'  : false==0,
-        'false==null': false==null,
-        'false==undefined': false==undefined,
-
-        // 以下為經典範例
-        '[0]==true': [0]==true,
-        '[1]==true': [1]==true,
-        '"該不該特赦"==true': "該不該特赦"==true,
-        '"該不該特赦"==false': "該不該特赦"==false,
-      }, name;
-
-      document.write('<table>');
-      for(var name in test){
-        document.write(
-          '<tr><td>' + name + '</td><td>' + test[name] + '</td></tr>');
-      }
-      document.write('</table>');
-
-    ~~~
-
-    [http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/](`==` 型別轉換)
-
-    [http://jsperf.com/equality-operators-with-the-same-types](`==`, `===` 左右運算元是同型態時的效能比較)
 
   !SLIDE
     `<script>` 放哪裡？
@@ -543,6 +545,13 @@ JS++
   * function 的 `call`、`apply`
   * Prototype
   * [http://ejohn.org/apps/learn/](Learning Advanced Javascript)
+
+  {:.leader}
+  ### 延伸資料
+
+  * Javascript MVC framework: [http://documentcloud.github.com/backbone/](Backbone.js)
+  * Javascript preprocessor: [http://coffeescript.org/](CoffeeScript)
+
 
 
 !SLIDE

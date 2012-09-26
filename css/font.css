@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* Adopted from:
+ * http://blog.yorkxin.org/2012/06/17/assign-fonts-for-specific-characters
+ */
+/* CJK Unified Ideographs U+4E00-U+9FFF */
+@font-face {
+  font-family: multi-lang-sans-serif;
+  /* 1. Hiragino looks better than JhengHei and Mac often have both fonts, thus
+   *    put Hiragino prior to JengHei.
+   * 2. Linux shows JhengHei pretty ugly, thus put Micro Hei prior to JhengHei.
+   * 3. Windows users show WenQuanYi Micro Hei pretty ugly, thus use a different stylesheet.
+   */
+  src: local("ヒラギノ角ゴ Pro"), local(Hiragino Kaku Gothic Pro), local("文泉驛微米黑"), local("WenQuanYi Micro Hei Light"), local("微軟正黑體"), local("Microsoft JhengHei");
+  unicode-range: U+4E00-9FFF;
+}
+
+/* Japanese Kana U+3040-U+30FF */
+@font-face {
+  font-family: multi-lang-sans-serif;
+  src: local(Hiragino Kaku Gothic Pro), local(Meiryo);
+  unicode-range: U+3040-30FF;
+}
+
+/* Bopomofo U+3105-U+312C */
+@font-face {
+  font-family: multi-lang-sans-serif;
+  src: local(LiHei Pro), local("微軟正黑體"), local(Microsoft JhengHei);
+  unicode-range: U+3105-312C;
+}
+
+/* Latin, Latin1, Latin Ext-A, Latin Ext-B */
+@font-face {
+  font-family: multi-lang-sans-serif;
+  src: local(Helvetica), local(Arial);
+  unicode-range: U+00-024F;
+}
+
+body, input, textarea, button, select {
+  font-family: multi-lang-sans-serif, "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "文泉驛微米黑", WenQuanYi Micro Hei Light, "微軟正黑體", Microsoft JhengHei, Helvetica, Arial, "黑體-繁", Heiti TC, sans-serif;
+  /* text-shadow technique: http://blog.justfont.com/2012/07/justfont-%E5%AF%86%E6%8A%80%EF%BC%9A%E5%A6%82%E4%BD%95%E8%AE%93%E6%82%A8%E7%9A%84%E7%B6%B2%E9%A0%81content%E6%9B%B4%E6%98%93%E8%AE%80%EF%BC%9F/ */
+  text-shadow: 0 0 1px transparent;
+}

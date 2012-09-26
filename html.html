@@ -172,6 +172,22 @@
             <!-- 平靜如水的情感翻起滔天巨浪來 -->
           </section>
 
+          <section>
+            <h2><code>&lt;br&gt; 與 &amp;nbsp;</code></h2>
+            <script type="text/x-sample">
+              本板嚴禁一行文<br>
+              第二行<br>
+              第三行
+              和這行是同行的。<br>
+              <br>
+              <!-- 自以為是分隔線的註解 -->
+              系              色望<br>
+              系 色望
+            </script>
+            <p>用 <code>&lt;br&gt;</code> 換行，空白鍵預設會重疊</p>
+            <p><code>&amp;nbsp;</code> 代表「空白 <a href="http://www.w3.org/TR/html5/named-character-references.html#named-character-references" target="_blank">character entity</a>」，可疊加</p>
+            <p><code>&lt;!-- --&gt;</code> 是多行註解</p>
+          </section>
         </section> <!-- Tag Concept -->
 
         <section id="tag-reference" class="chapter">
@@ -408,6 +424,8 @@
               <li class="fragment"><code>class</code>,<code>id</code>：替該 element 加上一個 classname / unique ID，使 CSS 的 selector 能選取 / 讓 javascript 方便操作。</li>
               <li class="fragment"><code>title</code>：工具提示（tooltip）</li>
               <li class="fragment"><code>style</code>：加上 CSS Declaration。勿和 <code>&lt;style&gt;</code> 標籤混淆。</li>
+              <li class="fragment"><code>tabindex</code>：決定可 focus 元素的 tab 順序。</li>
+              <li class="fragment"><code>contenteditable</code>：可任意編輯元素內容。</li>
             </ul>
 
           </section>
@@ -417,56 +435,6 @@
             <p><a href="https://developer.mozilla.org/en/HTML/Element" target="_blank">MDN HTML Elements</a></p>
           </section>
         </section> <!-- Tag Reference -->
-
-        <section id="block" class="chapter">
-          <h2>斷行與空白</h2>
-        </section>
-
-        <section>
-          <section>
-            <h2><code>&lt;br&gt; 與 &amp;nbsp;</code></h2>
-            <script type="text/x-sample">
-              本板嚴禁一行文<br>
-              第二行<br>
-              第三行
-              和這行是同行的。<br>
-              <br>
-              <!-- 自以為是分隔線的註解 -->
-              系              色望<br>
-              系 色望
-            </script>
-            <p>用 <code>&lt;br&gt;</code> 換行，空白鍵預設會重疊</p>
-            <p><code>&amp;nbsp;</code> 代表「空白 <a href="http://www.w3.org/TR/html5/named-character-references.html#named-character-references" target="_blank">character entity</a>」，可疊加</p>
-            <p><code>&lt;!-- --&gt;</code> 是多行註解</p>
-          </section>
-          <section>
-            <h2>To 換 or not to 換</h2>
-            <script type="text/x-sample">
-              <h1>前出師表</h1>
-              <div>諸葛亮</div>
-              臣亮言：<blockquote>先帝創業未半，而<em>中道崩殂</em>。今天下三分，益州疲弊，此誠<strong>危急存亡之秋</strong>也。</blockquote>
-            </script>
-            <ul>
-              <li><code>&lt;em&gt;</code>、<code>&lt;strong&gt;</code> 可以和其他 element 在同一列</li>
-              <li><code>&lt;h1&gt;</code><code>&lt;div&gt;</code><code>&lt;blockquote&gt;</code> 會換行，自成一列</li>
-            </ul>
-          </section>
-          <section>
-            <h2>元素有兩種</h2>
-            <p>不會換行的叫 inline element</p>
-            <script type="text/x-sample">
-              1<em>2</em>3<strong>4</strong>5<span>6</span>7
-              <input type="radio" name="" id="">8
-            </script>
-            <p>會換行的是 block element</p>
-            <script type="text/x-sample">
-              <h1>1</h1>2<p>3</p>4<div>5</div>6<article>7</article>8
-
-            </script>
-            <hr>
-            <p class="leader">註：此乃概略分法，實際上不盡然如此；預設之 block / inline 屬性亦可用 CSS 複寫。</p>
-          </section>
-        </section> <!-- Block & Inline & Whitespace -->
 
         <section id="nesting" class="chapter">
           <h2>巢狀標籤</h2>
@@ -506,10 +474,11 @@
           </section>
 
           <section>
-            <h2>Nesting Rule</h2>
-            <p class="bigfont">原則上 inline element 不能包 block element</p>
+            <!-- Permitted content in http://www.w3.org/TR/html-markup/Overview.html#toc -->
+            <h2>Permitted contents</h2>
+            <p><a href="http://www.w3.org/TR/html-markup/elements.html#elements">請查表。</a></p>
             <ul>
-              <li><code>&lt;p&gt;</code>、<code>&lt;h1&gt;</code>~<code>&lt;h6&gt;</code> 裡頭只能包 inline element</li>
+              <li><code>&lt;p&gt;</code>、<code>&lt;h1&gt;</code>~<code>&lt;h6&gt;</code> 裡頭只能包 <a href="http://www.w3.org/TR/html-markup/terminology.html#phrasing-content">phrasing content</a></li>
               <li><code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code> 裡面只能包 <code>&lt;li&gt;</code></li>
               <li><code>&lt;tr&gt;</code> 裡面只能包 <code>&lt;td&gt;</code> 或 <code>&lt;th&gt;</code>，外頭必須要有 <code>&lt;table&gt;</code></li>
             </ul>

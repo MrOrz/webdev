@@ -67,7 +67,7 @@
             <p>在 <code>&lt;head&gt;</code> 中加入</p>
             <pre style="font-size: 22px; line-height: 25px;"><code>&lt;link rel="stylesheet" type="text/css" href="path/to/file.css"&gt;</code></pre>
             <hr />
-            
+
             <p>或直接把 CSS 寫在 HTML 檔的 <code>&lt;style&gt;</code> 裡；</p>
               <script type="text/x-sample">
                 <style type="text/css">
@@ -94,14 +94,14 @@
                 <li>網頁作者（你）所指定的樣式</li>
               </ol>
               <hr />
-              
+
               <p>後者蓋過前者。</p>
             </div>
 
             <div class="two-column leader">
               <h3>Inheritance</h3>
               <p>某些屬性（如 color）預設會繼承自父元素。</p>
-              
+
               <script type="text/x-sample" class="small">
                 <style type="text/css">
                   div {
@@ -627,7 +627,7 @@
           </section>
           <section>
           <h2 class="trailer"><code>font-family</code></h2>
-          
+
             <script type="text/x-sample" class="nopreview" data-lang="css">
               font-family: '文泉驛微米黑', 'LiHei Pro', '微軟正黑體', sans-serif;
             </script>
@@ -699,19 +699,52 @@
             </script>
           </section>
         </section>
+
         <section class="chapter">
           <h2>Box Model</h2>
-          <p><a href="http://www.w3.org/TR/CSS2/box.html" target="_blank">CSS Spec</a></p>
+          <p><a href="http://www.w3.org/TR/css3-box/" target="_blank">CSS basic box model</a></p>
         </section>
 
         <section>
+
+          <section>
+            <h2>Box & <code>display</code> 屬性</h2>
+            <figure class="two-column"  style="vertical-align: middle;">
+              <img src="images/css/box-intro.png" alt="4 displayed boxes." style="width: 90%;">
+            </figure>
+            <ul class="two-column"  style="vertical-align: middle;">
+              <li>文字與元素排版</li>
+              <li>蓋成長方形 box</li>
+              <li>box 有兩種</li>
+              <li>CSS 決定大小和位置</li>
+            </ul>
+            <hr>
+            <div class="two-column">
+              <h4>Block-level boxes</h4>
+              <p><small><code>display: block | list-item | table | table-*</code></small></p>
+            </div>
+            <div class="two-column">
+              <h4>Inline-level Boxes</h4>
+              <p><small><code>display: inline | inline-block</code></small></p>
+            </div>
+          </section>
+          <section>
+            <h2 class="trailer">細說 <code>display</code></h2>
+            <ul>
+              <li><code>none</code>: 連 box 都沒有。</li>
+              <li><code>inline</code>: 一秒變 inline element</li>
+              <li><code>block</code>: 一秒變 block element</li>
+              <li><code>inline-block</code>: 當成 inline element 來排版（左到右）<br>但又能設 <code>width</code>, <code>height</code> 等 inline element 不能用的屬性。</li>
+              <li>table 系列：當成 table 來排版，見<a href="http://www.w3.org/TR/CSS2/tables.html#table-display" target="_blank">標準</a>。
+              </li>
+            </ul>
+          </section>
           <section>
             <h2>margin, border, padding</h2>
-            <img src="images/css/boxdim.png" alt="Box model from CSS2 spec">
+            <img src="images/css/boxdim.png" alt="Box model from CSS3 spec">
           </section>
           <section>
             <h2>心室肥大</h2>
-
 
             <script type="text/x-sample" class="reset">
               <style type="text/css">
@@ -855,7 +888,6 @@
           <p><a href="http://www.w3.org/TR/CSS2/visuren.html#block-formatting" href="_blank">CSS spec</a></p>
         </section>
 
-
         <section>
           <section>
             <h2>文字的方向</h2>
@@ -868,21 +900,7 @@
               </strong>
               侍中、侍郎郭攸之、費禕(音：衣)、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰能，是以眾議舉寵為督。愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。
             </script>
-          </section>
-          <section>
-          <h2>Normal Flow</h2>
-          <p class="bigfont">由上而下、由左而右。</p>
-            <script type="text/x-sample" class="small">
-              臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急之秋也。然侍衛之臣，不懈於內﹔忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。
-              宮中府中，俱為一體，陟(音：至)罰臧否，不宜異同。若有作奸犯科，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治；不宜偏私，使內外異法也。
-              <div style="font-weight: bold;">
-                  程咬金
-              </div>
-              侍中、侍郎郭攸之、費禕(音：衣)、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰能，是以眾議舉寵為督。愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。
-            </script>
-            <p>
-              文字可視為 inline elements。<br>
-              Inline elements 水平排列，而 block elements 垂直排列。</p>
+            <p>由上而下、由左而右 → <strong class="bigfont">Flow (normal flow)</strong></p>
           </section>
           <section>
             <h2>float</h2>
@@ -950,16 +968,16 @@
               <span class="outer">遇到了一個 outer span，
               <span class="inner">還有裡面的 span，</span>
               只好離開 outer span，</span>
-            和文件內容說再見。這些文字看起來好像有點沒梗，實際上就真的是沒梗了，但為了展現 float 和 absolute 的差別，所以還是需要一些文字來衝版面。例如說一十大女支三金一十大女支三金一十大女支三一十大女支三金一十大女支三金一十大女支三一十大女支三金一十大女支三金一十大女支三。
+            和文件內容說再見。這些文字看起來好像有點沒梗，實際上就真的是沒梗了，但為了展現 float 和 absolute 的差別，所以還是需要一些文字來充版面。例如說一十大女支三金一十大女支三金一十大女支三一十大女支三金一十大女支三金一十大女支三一十大女支三金一十大女支三金一十大女支三。
             </script>
             <p>把 <code>.outer</code> 用 float or absolute positioning 拉出去展<small>(現)</small>了</p>
           </section>
           <section id="positioning-schemes">
             <h2>3 Positioning Schemes</h2>
             <ul>
-              <h3>Normal Flow</h3>
-                <p><code>display</code>: 預設值, <code>position</code>: <code>static</code>; <code>float</code>: <code>none</code>;</p>
-              <h3>floats</h3>
+              <h3>Flow</h3>
+                <p><code>display</code>: block | inline | inline-block | table, <code>position</code>: <code>static | relative</code>; <code>float</code>: <code>none</code>;</p>
+              <h3>Floats</h3>
                 <p>
                   <code>float</code>: <code>left</code> | <code>right</code>
                 </p>
@@ -971,27 +989,40 @@
           </section>
           <section>
             <h2>力氣排行榜</h2>
-            
-            <code class="bigfont">display: none</code>
-            <p class="trailer">元素整個藏起來，連 box 都沒有。</p>
-            <code class="bigfont">position: absolute | fixed</code>
-            <p class="trailer">元素可指定寬高，離開 normal flow。</p>
-            <code class="bigfont">float: left | right</code>
-            <p>元素可指定寬高，離開 normal flow，文繞圖效果。</p>
-            <code class="bigfont">display: 非 none 者</code>
+            <div class="two-column" style="vertical-align: middle;">
+              <script type="text/x-sample" class="small">
+              <style>
+                .outer{
+                  background: pink;
+                  top: 200px;
+                  width: 110px;
+                  height: 100px;
+                  /* position: absolute; */
+                  /* float: left; */
+                }
+                p{
+                  border: 1px solid red;
+                }
+              </style>
+              <p>文件內容的前面，<span class="outer">遇到了一個 outer span，只好離開 outer span，</span>
+              和文件內容說再見。</p><p>這些文字看起來好像有點沒梗，實際上就真的是沒梗了。</p>
+              </script>
+            </div>
+            <div class="two-column" style="vertical-align: middle;">
+              <p>上面的屬性會蓋過下面的。</p>
+              <dl>
+                <dt><code>display: none</code></dt>
+                <dd>元素整個藏起來，連 box 都沒有。</dd>
+                <dt><code>position: absolute | fixed</code></dt>
+                <dd>元素可指定寬高，離開 flow。</dd>
+                <dt><code>float: left | right</code></dt>
+                <dd>元素可指定寬高，離開 flow，文繞圖效果。</dd>
+                <dt><code>display: block | inline | inline-block | ...</code></dt>
+                <dd></dd>
+              </dl>
+            </div>
+          </section>
 
-          </section>
-          <section>
-            <h2 class="trailer">細說 <code>display</code></h2>
-            <ul>
-              <li><code>none</code>: 啥都沒有（因為沒有 box），一丁點都不剩。</li>
-              <li><code>inline</code>: 一秒變 inline element</li>
-              <li><code>block</code>: 一秒變 block element</li>
-              <li><code>inline-block</code>: 當成 inline element 來排版（左到右）<br>但又有 <code>width</code>, <code>height</code>等</li>
-              <li>table 系列：當成 table 來排版，見<a href="http://www.w3.org/TR/CSS2/tables.html#table-display" target="_blank">對照</a>。
-              </li>
-            </ul>
-          </section>
           <section>
             <h2>細說 <code>position</code></h2>
             <p class="leader">
@@ -999,7 +1030,7 @@
             </p>
             <ul>
               <li>
-                <code>absolute</code>: 相對於第一個非 <code>static</code> 的 parent
+                <code>absolute</code>: 相對於第一個非 <code>static</code> 的祖先 (offset parent)
               </li>
               <li>
                 <code>fixed</code>: 相對於瀏覽器網頁視窗（viewport）
@@ -1024,13 +1055,13 @@
               </div>
 
               <style type="text/css">
-                .world{
+                .world{ /* offset parent of .child */
                   margin: 50px; padding: 50px;
                   border: 5px solid green;
                   background: #696;
-                  position: relative;
+                  position: relative; /* 就是這行 */
                 }
-                .parents{
+                .parents{ /* static, not offset parent */
                   border: 1px solid brown;
                 }
                 .child{
@@ -1073,17 +1104,38 @@
           </section>
           <section>
             <h2>細說 float</h2>
-            <script type="text/x-sample" class="small reset">
-              <style type="text/css"> /* 人浮於事 */
-                span{
+            <div class="two-column">
+              <script type="text/x-sample" class="small">
+              <style>
+                .floated{
+                  background: pink;
+                  border: 1px solid purple;
+                  top: 200px;
+                  width: 50px;
                   float: left;
-                  font-size: 30px;
+                }
+                p{
+                  border: 1px solid red;
+                }
+                .clear{
+                  /*clear: left;*/
                 }
               </style>
-              事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事是<span>人</span>是事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事事
-            </script>
-            <p>文繞圖：normal flow 中的元素（文字、inline-block 之物件）圍繞</p>
-            <hr>
+              <p>文件內容的前面，<span class="floated">遇到了一個 span，只好離開 span，</span>
+              和文件內容說再見。</p><p class="clear"><span class="floated">又是個 span。</span>這些文字看起來好像有點沒梗，實際上就真的是沒梗了。</p>
+              </script>
+            </div>
+            <div class="two-column" style="margin-left: 1em;">
+              <h3>文繞圖</h3>
+              <ul>
+                <li>Flow 中的 box 圍繞 floated elements。</li>
+                <li>複數個 float 會比鄰而居。</li>
+                <li>設置 <code>clear</code> 屬性可終止圍繞。</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <h2>細說 <code>float</code> (2)</h2>
             <p>不會撐開 parent，要 clear</p>
             <script type="text/x-sample" class="small">
               <style type="text/css">
@@ -1110,6 +1162,9 @@
         <!-- TODO: http://www.thenakedscientists.com/HTML/content/kitchenscience/exp/separating-books/ -->
         <!-- Think about books and pages (活頁簿). Stacking Context = a book with several pages. -->
         <!-- http://blog.ipapershop.com.tw/?p=287 -->
+
+        <!-- 一步一步說明：http://www.vanseodesign.com/css/css-stack-z-index/ -->
+        <!-- https://developer.mozilla.org/en-US/docs/CSS/Understanding_z-index -->
         <section>
 
           <section>
@@ -1498,9 +1553,8 @@
       <div class="progress"><span></span></div>
 
     </div>
-    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
     <script src="js/reveal.js"></script>
     <script src="lib/highlight.js"></script>
     <script type="text/javascript" src="js/ruler.js"></script>

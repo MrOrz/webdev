@@ -107,6 +107,16 @@
     width: 45%;
   }
 
+  dl{
+    text-align: left;
+  }
+  dd{
+    font-size: 0.7em;
+  }
+  dd+dt{
+    margin-top: 0.25 * $base-line-height;
+  }
+
   .leader{
     @include leader;
   }

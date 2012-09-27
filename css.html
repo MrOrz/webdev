@@ -900,7 +900,7 @@
               </strong>
               侍中、侍郎郭攸之、費禕(音：衣)、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰能，是以眾議舉寵為督。愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。
             </script>
-            <p>由上而下、由左而右 → <strong class="bigfont">Flow (normal flow)</strong></p>
+            <p>由上而下、由左而右 → <strong class="bigfont">Normal Flow</strong></p>
           </section>
           <section>
             <h2>float</h2>
@@ -975,7 +975,7 @@
           <section id="positioning-schemes">
             <h2>3 Positioning Schemes</h2>
             <ul>
-              <h3>Flow</h3>
+              <h3>Normal Flow</h3>
                 <p><code>display</code>: block | inline | inline-block | table, <code>position</code>: <code>static | relative</code>; <code>float</code>: <code>none</code>;</p>
               <h3>Floats</h3>
                 <p>
@@ -1014,9 +1014,9 @@
                 <dt><code>display: none</code></dt>
                 <dd>元素整個藏起來，連 box 都沒有。</dd>
                 <dt><code>position: absolute | fixed</code></dt>
-                <dd>元素可指定寬高，離開 flow。</dd>
+                <dd>元素可指定寬高，離開 normal flow。</dd>
                 <dt><code>float: left | right</code></dt>
-                <dd>元素可指定寬高，離開 flow，文繞圖效果。</dd>
+                <dd>元素可指定寬高，離開 normal flow，文繞圖效果。</dd>
                 <dt><code>display: block | inline | inline-block | ...</code></dt>
                 <dd></dd>
               </dl>
@@ -1128,7 +1128,7 @@
             <div class="two-column" style="margin-left: 1em;">
               <h3>文繞圖</h3>
               <ul>
-                <li>Flow 中的 box 圍繞 floated elements。</li>
+                <li>Normal flow 中的 box 圍繞 floated elements。</li>
                 <li>複數個 float 會比鄰而居。</li>
                 <li>設置 <code>clear</code> 屬性可終止圍繞。</li>
               </ul>
@@ -1153,6 +1153,60 @@
               </nav>
             </script>
           </section>
+        </section>
+
+
+        <section class="chapter">
+          <h2>CSS3 實務</h2>
+          <p>可實用。</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>側欄</h2>
+            <p>想要做的<a href="http://www.csszengarden.com/" target="_blank">目標網頁</a></p>
+            <p class="fragment">右欄 <code>#linkList</code> 固定 → 將它自 normal flow 中拿出來。</p>
+            <div class="fragment">
+              <p><a href="#position-schemes">之前的投影片</a>提到兩種從 normal flow 拿出的方法：</p>
+              <ul>
+                <li>Absolute positioning: 設置 <code>position: absolute</code></li>
+                <li>float: 設置 <code>float: right</code></li>
+              </ul>
+              <p><code>position: fixed</code> 與 <code>float: left</code> 不適用於這裡。</p>
+            </div>
+          </section>
+          <section>
+            <h2>側欄（續）</h2>
+            <p>左欄（<code>#intro</code>, <code>#supportingText</code>）隨視窗大小而動</p>
+            <ul class="fragment">
+              <li>若 <code>#linkList</code> 使用 <code>float: right</code><br>
+                 → 左欄什麼都不用設（留在 normal flow 中）<br>
+                 注意若左欄較 #linkList 長，那麼會變這樣 →
+                 <img src="images/css/column.jpg" alt="float: right" style="vertical-align: -130px;">
+              </li>
+              <li>若使用 <code>position: absolute</code><br>
+                → 左欄須設 padding-right (不然左欄會和 #linkList 疊在一起)<br>
+                <a href="sample/zengarden.html" target="_blank">範例結果</a>(<a href="sample/zengarden.css" target="_blank">範例 CSS 檔</a>)
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>下拉式選單</h2>
+            <ul>
+              <li class="fragment">橫向排列的 <code>li</code> 元素<br>
+                <ul>
+                  <li>可以用 <code>float</code></li>
+                  <li>可以用 <code>display: inline-block</code></li>
+                </ul>
+              </li>
+              <li class="fragment">巢狀 list: <code>&lt;li&gt;</code> 裡可以有 <code>&lt;ul&gt;</code></li>
+              <li class="fragment"><code>:hover</code> magic</li>
+            </ul>
+            <p class="fragment">
+              <a href="sample/menu.html" target="_blank">範例結果</a>(<a href="sample/menu.css" target="_blank">範例 CSS 檔</a>)
+            </p>
+          </section>
+
         </section>
 
         <section class="chapter">
@@ -1376,59 +1430,6 @@
             <!--max-width: xxx == width < xxx
             min-width: xxx == width > xxx-->
           </section>
-        </section>
-
-        <section class="chapter">
-          <h2>CSS3 實務</h2>
-          <p>可實用。</p>
-        </section>
-
-        <section>
-          <section>
-            <h2>側欄</h2>
-            <p>想要做的<a href="http://www.csszengarden.com/" target="_blank">目標網頁</a></p>
-            <p class="fragment">右欄 <code>#linkList</code> 固定 → 將它自 normal flow 中拿出來。</p>
-            <div class="fragment">
-              <p><a href="#position-schemes">之前的投影片</a>提到兩種從 normal flow 拿出的方法：</p>
-              <ul>
-                <li>Absolute positioning: 設置 <code>position: absolute</code></li>
-                <li>float: 設置 <code>float: right</code></li>
-              </ul>
-              <p><code>position: fixed</code> 與 <code>float: left</code> 不適用於這裡。</p>
-            </div>
-          </section>
-          <section>
-            <h2>側欄（續）</h2>
-            <p>左欄（<code>#intro</code>, <code>#supportingText</code>）隨視窗大小而動</p>
-            <ul class="fragment">
-              <li>若 <code>#linkList</code> 使用 <code>float: right</code><br>
-                 → 左欄什麼都不用設（留在 normal flow 中）<br>
-                 注意若左欄較 #linkList 長，那麼會變這樣 →
-                 <img src="images/css/column.jpg" alt="float: right" style="vertical-align: -130px;">
-              </li>
-              <li>若使用 <code>position: absolute</code><br>
-                → 左欄須設 padding-right (不然左欄會和 #linkList 疊在一起)<br>
-                <a href="sample/zengarden.html" target="_blank">範例結果</a>(<a href="sample/zengarden.css" target="_blank">範例 CSS 檔</a>)
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h2>下拉式選單</h2>
-            <ul>
-              <li class="fragment">橫向排列的 <code>li</code> 元素<br>
-                <ul>
-                  <li>可以用 <code>float</code></li>
-                  <li>可以用 <code>display: inline-block</code></li>
-                </ul>
-              </li>
-              <li class="fragment">巢狀 list: <code>&lt;li&gt;</code> 裡可以有 <code>&lt;ul&gt;</code></li>
-              <li class="fragment"><code>:hover</code> magic</li>
-            </ul>
-            <p class="fragment">
-              <a href="sample/menu.html" target="_blank">範例結果</a>(<a href="sample/menu.css" target="_blank">範例 CSS 檔</a>)
-            </p>
-          </section>
-
         </section>
 
         <section class="chapter">

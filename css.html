@@ -901,6 +901,7 @@
               侍中、侍郎郭攸之、費禕(音：衣)、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰能，是以眾議舉寵為督。愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。
             </script>
             <p>由上而下、由左而右 → <strong class="bigfont">Normal Flow</strong></p>
+            <p>Block-level box 垂直排列，inline-level box 水平排列。</p>
           </section>
           <section>
             <h2>float</h2>
@@ -1155,6 +1156,105 @@
           </section>
         </section>
 
+        <section class="chapter">
+          <h2>Vertical-align</h2>
+        </section>
+        <section>
+          <section>
+            <h2>表格裡的 Vertial align</h2>
+            <script type="text/x-sample" class="small reset">
+              <!-- CSS Resetted -->
+              <style>
+                table {margin: 1em;}
+                tr{height: 50px;}
+                th, td{vertical-align: center; }
+                th{font-weight: bold; }
+              </style>
+              <table border="1">
+                <tr>
+                  <th rowspan="2" colspan="2">囚犯兩難</th>
+                  <th colspan="2">B 的選擇</th>
+                </tr>
+                <tr>
+                  <th>沉默</th> <th>坦承</th>
+                </tr>
+                <tr>
+                  <th rowspan="2">A 的選擇</th>
+                  <th>沉默</th>
+                  <td>各坐牢 1 個月</td>
+                  <td>A 坐牢 1 年<br>B 釋放</td>
+                </tr>
+                <tr>
+                  <th>坦承</th>
+                  <td>A 釋放<br>B 坐牢 1 年</td>
+                  <td>各坐牢 3 個月</td>
+                </tr>
+              </table>
+            </script>
+          </section>
+          <section>
+            <h2 class="trailer">一般的 vertical align</h2>
+
+            <p>Normal flow 中，此元素和其他<em>同一行</em>之元素的垂直對齊</p>
+
+            <script type="text/x-sample" class="reset">
+              <style type="text/css">
+                strong{
+                  font-size: 40px;
+                  /*vertical-align: baseline;*/
+                }
+              </style>
+              <p>每個人都應該努力培養<strong>雅量</strong>。</p>
+            </script>
+
+            <p><code>vertical-align: top | middle | bottom...</code></p>
+            <p>
+              <a href="http://css-tricks.com/what-is-vertical-align/">其他值與 <code>vertical-align</code> 的介紹</a>
+            </p>
+          </section>
+          <section>
+            <h2>一般的 vertical align (2)</h2>
+
+            <script type="text/x-sample" class="reset">
+              <style type="text/css">
+                li{
+                  display: inline-block;
+                  line-height: 35px; padding: 0 0.5em;
+                  background: #ccc;
+                }
+                .home{
+                  line-height: 60px;
+                }
+                .about-you{
+                  font-size: 24px;
+                  vertical-align: bottom;
+                }
+              </style>
+              <ul>
+                <li class="home">首頁</li>
+                <li class="about-us">關於我們</li>
+                <li class="about-you">關於你們</li>
+                <li class="login">登入</li>
+              </ul>
+            </script>
+          </section>
+          <section>
+            <h2>教練我想垂直置中</h2>
+            <img class="trailer" src="images/css/vertical-centering.png" alt="垂直置中示意圖" height="200">
+            <p class="fragment"><code>&lt;td&gt;</code> 外面，CSS 裡沒有 property 可以辦到任意元素垂直置中。</p>
+            <ul class="fragment leader">
+              <li>
+                <a href="http://css-tricks.com/vertically-center-multi-lined-text/">用 <code>display: table-cell</code> 垂直置中</a>
+              </li>
+              <li>
+                <a href="http://css-tricks.com/centering-in-the-unknown/">使用 ghost element 垂直置中</a>
+              </li>
+              <li>
+                <a href="http://blog.yam.com/hanasan/article/35806444">中文總整理</a>
+              </li>
+            </ul>
+          </section>
+        </section>
 
         <section class="chapter">
           <h2>CSS3 實務</h2>
@@ -1351,77 +1451,6 @@
             </script>
             <p><a href="http://www.vanseodesign.com/css/css-stack-z-index/">Z-Index And The CSS Stack: Which Element Displays First?
 </a></p>
-          </section>
-        </section>
-        <section class="chapter">
-          <h2>Vertical-align</h2>
-        </section>
-        <section>
-          <section>
-            <h2>表格裡的 Vertial align</h2>
-            <script type="text/x-sample" class="small reset">
-              <!-- CSS Resetted -->
-              <style>
-                table {margin: 1em;}
-                th, tr{vertical-align: center; }
-                th{font-weight: bold; }
-              </style>
-              <table border="1">
-                <tr>
-                  <th rowspan="2" colspan="2">囚犯兩難</th>
-                  <th colspan="2">B 的選擇</th>
-                </tr>
-                <tr>
-                  <th>沉默</th> <th>坦承</th>
-                </tr>
-                <tr>
-                  <th rowspan="2">A 的選擇</th>
-                  <th>沉默</th>
-                  <td>各坐牢 1 個月</td>
-                  <td>A 坐牢 1 年<br>B 釋放</td>
-                </tr>
-                <tr>
-                  <th>坦承</th>
-                  <td>A 釋放<br>B 坐牢 1 年</td>
-                  <td>各坐牢 3 個月</td>
-                </tr>
-              </table>
-            </script>
-          </section>
-          <section>
-            <h2 class="trailer">一般的 vertical align</h2>
-
-            <p>Normal flow 中，此元素和其他<em>同一行</em>之元素的垂直對齊</p>
-
-            <script type="text/x-sample" class="reset">
-              <style type="text/css">
-                strong{
-                  font-size: 40px;
-                  /*vertical-align: baseline;*/
-                }
-              </style>
-              <p>每個人都應該努力培養<strong>雅量</strong>。</p>
-            </script>
-
-            <p>
-              <a href="http://css-tricks.com/what-is-vertical-align/">其他值與 <code>vertical-align</code> 的介紹</a>
-            </p>
-          </section>
-          <section>
-            <h2 class="trailer">教練我想垂直置中</h2>
-
-            <p class="fragment"><code>&lt;td&gt;</code> 外面，CSS 裡沒有 property 可以辦到任意元素垂直置中。</p>
-            <ul class="fragment leader">
-            	<li>
-                <a href="http://css-tricks.com/vertically-center-multi-lined-text/">用 <code>display: table-cell</code> 垂直置中</a>
-            	</li>
-            	<li>
-            		<a href="http://css-tricks.com/centering-in-the-unknown/">使用 ghost element 垂直置中</a>
-            	</li>
-            	<li>
-            		<a href="http://blog.yam.com/hanasan/article/35806444">中文總整理</a>
-            	</li>
-            </ul>
           </section>
         </section>
 

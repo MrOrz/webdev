@@ -1217,8 +1217,6 @@
         <!-- Think about books and pages (活頁簿). Stacking Context = a book with several pages. -->
         <!-- http://blog.ipapershop.com.tw/?p=287 -->
 
-        <!-- 一步一步說明：http://www.vanseodesign.com/css/css-stack-z-index/ -->
-        <!-- https://developer.mozilla.org/en-US/docs/CSS/Understanding_z-index -->
         <section>
 
           <section>
@@ -1228,8 +1226,8 @@
             <hr>
             <div class="fragment">
               <ul style="vertical-align: middle;">
-              	<li>類似 Photoshop 的群組（資料夾）</li>
-              	<li>也像大廈裡的其中一層樓</li>
+                <li>類似 Photoshop 的群組（資料夾）</li>
+                <li>也像大廈裡的其中一層樓</li>
                 <li><a href="http://www.w3.org/TR/CSS2/visuren.html#layers">Spec</a>: 「Stacking Context」</li>
                 <li>群組內可另外設 <code>z-index</code>（樓中樓）</li>
               </ul>
@@ -1239,36 +1237,120 @@
 
           <section>
             <h2>萬丈高樓平地起</h2>
-            <p>瀏覽器繪製頁面，就像在蓋房子，z-index 是樓層號碼。</p>
-            <p>「stacking context」堆起 element，是地基。</p>
-            <p><code>z-index != 0</code> 或 <code>opacity &lt; 1</code> 的元素，即是 stacking context。</p>
-            <hr>
-            <p>蓋房子順序：（由低至高）</p>
-            <ol style="vertical-align: middle;">
-              <li>stacking context 之背景與邊界</li>
-              <li>負 <code>z-index</code> 的 element</li>
-              <li>地表：<code>z-index:0 | auto</code> 的 element</li>
-              <li>正 <code>z-index</code> 的 element</li>
-            </ol>
-            <img src="images/css/stacking.png" alt="疊疊疊" style="vertical-align: middle; margin-top: 0;">
+            <div class="two-column">
+              <p>蓋大樓：</p>
+              <ul>
+                <li><code>z-index</code>： 樓層號碼。</li>
+                <li>stacking context：地基。</li>
+              </ul>
+            </div>
+            <div class="two-column">
+              <p>形成 stacking context：</p>
+              <ul>
+                <li><code>position: 非 static</code></li>
+                <li><code>z-index != 0</code> 或 <code>opacity &lt; 1</code></li>
+              </ul>
+            </div>
+            <div class="fragment">
+              <hr>
+              <p>蓋房子順序：</p>
+              <p>地基 → 地下室 → 低樓層 → 高樓層</p>
+              <ol style="vertical-align: middle;">
+                <li>stacking context 之背景與邊界</li>
+                <li>負 <code>z-index</code> 的 element</li>
+                <li>地表：<code>z-index:0 | auto</code> 的 element</li>
+                <li>正 <code>z-index</code> 的 element</li>
+              </ol>
+              <a href="http://www.w3.org/TR/css3-box/#stacking" title="Source: CSS basic box model">
+                <img src="images/css/stack.png" alt="疊疊疊" style="vertical-align: middle; margin-left: 1em;">
+              </a>
+            </div>
           </section>
           <section>
             <h2>同一層裡面</h2>
             <p>z-index 相同的元素，用下面規則分高下。</p>
             <p>（由低至高）</p>
             <ol style="vertical-align: middle; margin-right: 1em;">
-              <li>normal flow 中的 block elements</li>
+              <li>Normal flow 中的 block elements</li>
               <li>float elements</li>
               <li>文字等 inline elements</li>
-              <li><code>position</code> != <code>static</code> 的 element</li>
+              <li><code>position</code> != <code>static</code> 的 element <em>(Positioned elements)</em></li>
             </ol>
             <img src="images/css/ground-stacking.png" alt="疊疊" style="vertical-align: middle;">
             <hr>
             <p>若兩元素同一層，則先寫在 HTML 檔裡的，會被壓在下面。</p>
-            <p class="leader">
-            	<a href="http://jsfiddle.net/49aV7/">示例1</a>
-            	<a href="http://jsfiddle.net/49aV7/2">示例2</a>
-            </p>
+            <!--<p class="leader">
+              <a href="http://jsfiddle.net/49aV7/">示例1</a>
+              <a href="http://jsfiddle.net/49aV7/2">示例2</a>
+            </p>-->
+          </section>
+          <section>
+            <h2>Stacking Order</h2>
+            <!-- 一步一步說明：http://www.vanseodesign.com/css/css-stack-z-index/ -->
+            <!-- https://developer.mozilla.org/en-US/docs/CSS/Understanding_z-index -->
+            <p>Positioned 元素 &gt; Inline 元素 &gt; float 元素 &gt; block in Normal Flow </p>
+            <script type="text/x-sample" class="small">
+              <style type="text/css">
+                .stacking {
+                  position: relative; z-index: 0; width: 300px;
+                  background: url(../images/css/stacking/bg.gif);
+                  line-height: 20px;
+                }
+                div{
+                  height: 100px; margin-top: -40px; color: #eee;
+                  box-shadow: 0 0 20px #000;
+                }
+                .block {
+                  background: url(../images/css/stacking/block.gif);
+                }
+                .positioned {
+                  position: relative;
+                  background: url(../images/css/stacking/pos.gif);
+                }
+                .floated{
+                  float: left; margin: -5px -5px 0 0;
+                  background: url(../images/css/stacking/float.gif) center;
+                }
+              </style>
+              <section class="stacking">
+                Stacking Context <br>
+                裡頭有一些 <em>inline elements</em> 文字啊什麼的最討厭了。
+                <!--<div class="positioned">Positioned</div>-->
+                <!--<div class="floated">Floated</div>-->
+                <div class="block">Block-level box</div>
+              </section>
+            </script>
+          </section>
+          <section>
+            <h2>Stacking Order</h2>
+            <!-- 一步一步說明：http://www.vanseodesign.com/css/css-stack-z-index/ -->
+            <!-- https://developer.mozilla.org/en-US/docs/CSS/Understanding_z-index -->
+            <p>加上 z-index</p>
+            <script type="text/x-sample" class="small">
+              <head>
+                <link rel="stylesheet" href="css/stacking.css">
+              </head>
+              <body>
+                <style>
+                  .zindex{
+                    /* Notice .zindex is also a "positioned element" */
+                    position: absolute; z-index: auto;
+                    width: 300px; height: 200px;
+                    background: url(images/css/stacking/z.gif);
+                  }
+                </style>
+                <section class="stacking">
+                  Stacking Context <br>
+                  裡頭有一些 <em>inline elements</em> 文字啊什麼的最討厭了。
+                  <div class="zindex">Z-indexed</div>
+                  <div class="positioned">Positioned</div>
+                  <div class="floated">Floated</div>
+                  <div class="block">Block-level box</div>
+                </section>
+              </body>
+            </script>
+            <p><a href="http://www.vanseodesign.com/css/css-stack-z-index/">Z-Index And The CSS Stack: Which Element Displays First?
+</a></p>
           </section>
         </section>
         <section class="chapter">
@@ -1554,11 +1636,11 @@
       <div class="progress"><span></span></div>
 
     </div>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>-->
     <script src="js/reveal.js"></script>
     <script src="lib/highlight.js"></script>
-    <script type="text/javascript" src="js/ruler.js"></script>
+    <!--<script type="text/javascript" src="js/ruler.js"></script>-->
     <script type="text/javascript" src="js/sample.js"></script>
     <script type="text/javascript">
       $('script[type="text/x-sample"]').not('.reset').sample();

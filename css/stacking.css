@@ -1,0 +1,26 @@
+.stacking {
+  /* Establishing stakcing contacts */
+  position: relative;
+  z-index: 0;
+
+  width: 300px; height: 300px;
+  background: url(../images/css/stacking/bg.gif);
+  line-height: 20px;
+}
+div{
+  height: 100px;
+  margin-top: -40px;
+  color: #eee;
+  box-shadow: 0 0 20px #000;
+}
+.block {
+  background: url(../images/css/stacking/block.gif);
+}
+.positioned {
+  position: relative;
+  background: url(../images/css/stacking/pos.gif);
+}
+.floated{
+  float: left; margin: -5px -5px 0 0;
+  background: url(../images/css/stacking/float.gif) center;
+}

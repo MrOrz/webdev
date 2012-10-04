@@ -246,7 +246,7 @@
 
 {:.chapter}
 !SLIDE
-  JS 又和 C 不一樣
+  JS 又和 C 不同
   ---
   型態與其他
 
@@ -254,7 +254,7 @@
 
   {:#reserved}
   !SLIDE
-    保留字
+    保留字 & `關鍵字`
     ---
       不能當作變數名稱、屬性名稱的字。
         abstract boolean `break` byte `case` `catch` char class const `continue`
@@ -427,7 +427,7 @@
     Just for reference
     ---
 
-    Javascript 物件變數（含陣列）只存 reference。
+    Javascript 物件變數只存 reference（物件的位置）。
     於是 `物件 === 物件` 結果很微妙。
 
     {:.small[data-lang=javascript]}

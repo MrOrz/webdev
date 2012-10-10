@@ -551,8 +551,9 @@ DOM Window
 
     {:.jquery.small[data-lang=javascript]}
     ~~~
-      localStorage.created = localStorage.created || Date();
-      sessionStorage.updated = localStorage.updated || Date();
+      if(!localStorage.created){
+        localStorage.created = Date();
+      }
     ~~~
 
     ![images/js/localStorage.png](Resources tab)

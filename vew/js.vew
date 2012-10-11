@@ -1277,8 +1277,8 @@ jQuery
             function(data, status){
               console.log('data', data);
               console.log('status', status);
-              $('<img>').attr('src', data.picture)
-                        .appendTo('body');
+              $('<span></span>').text(data.name)
+                                .appendTo('body');
             },
             'json'
           );
@@ -1308,8 +1308,8 @@ jQuery
             function(data, status){
               console.log('data', data);
               console.log('status', status);
-              $('<img>').attr('src', data.picture)
-                        .appendTo('body');
+              $('<span></span>').text(data.name)
+                                .appendTo('body');
             }
           );
         });

@@ -1386,6 +1386,9 @@ jQuery
     * jQuery UI 元件有統一的 API
     * jQuery UI 是複雜程度適中的一種 jQuery plugin
 
+    {:.fragment}
+    而且作業會用到。
+
   {:#jQueryUI-install}
   !SLIDE
     安裝 jQuery UI
@@ -1448,7 +1451,7 @@ jQuery
       詳細的初始化 `option`、`event`、`method`，都在文件下方。
 
     </div>
-
+<!--
   !SLIDE
     Demo
     ---
@@ -1463,7 +1466,7 @@ jQuery
 
     <hr>
     [sample/jqueryui-exercise.html](修改後)
-
+-->
 !ENDSTACK
 
 {:.chapter}

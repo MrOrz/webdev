@@ -802,14 +802,14 @@ jQuery
     神奇的 `$`
     ---
 
-    {:[data-lang=javascript][style=width: 420px; margin: 0 auto 1em;]}
+    {:[data-lang=javascript][style=width: 520px; margin: 0 auto 1em;]}
     ```
-      $(SELECTOR) or $(HTML)
+      $(SELECTOR) or $("HTML放字串裡")
     ```
 
     * `$` 是一個 function。
     * 傳入 [http://api.jquery.com/category/selectors/](css selector) → 回傳找到的 element
-    * 傳入 HTML tag → 回傳新蓋的 element
+    * 傳入 HTML tag 字串 → 回傳新蓋的 element
 
     ---
 

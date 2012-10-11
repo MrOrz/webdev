@@ -5,7 +5,7 @@ var getPlatesFrom = function(stack){
   return $(stack).find('.plate').not('.ui-sortable-helper')
 }
 
-var update = function(){
+var updateClass = function(){
   $stack.removeClass(CLASS_LIST).each(function(){
     var count = getPlatesFrom(this).size();
     $(this).addClass('contain-' + count + '-items');
@@ -22,9 +22,9 @@ $('.plate').mousedown(function(e){
 var isValidSort = false;
 $stack.sortable({
   connectWith: '.stack',
-  sort: update,
+  sort: updateClass,
   stop: function(e, ui){
-    update();
+    updateClass();
     if(!isValidSort){
       $(this).sortable('cancel');
       return;
@@ -40,7 +40,6 @@ $stack.sortable({
         $platesOnNewStack.eq(1).data('size') < size ){
       ui.sender.sortable('cancel');
     }
-    update();
   },
   placeholder: 'no-space'
 });

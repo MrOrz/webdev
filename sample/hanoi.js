@@ -19,18 +19,26 @@ $('.plate').mousedown(function(e){
   }
 })
 
+var isValidSort = false;
 $stack.sortable({
   connectWith: '.stack',
   sort: update,
-  stop: update,
+  stop: function(e, ui){
+    update();
+    if(!isValidSort){
+      $(this).sortable('cancel');
+      return;
+    }
+    isValidSort = false;
+  },
   receive: function(e, ui){
     ui.item.prependTo($(this));
-
+    isValidSort = true;
     var size = ui.item.data('size'),
         $platesOnNewStack = getPlatesFrom(this);
     if( $platesOnNewStack.size() > 1 &&
         $platesOnNewStack.eq(1).data('size') < size ){
-      $(ui.sender).sortable('cancel');
+      ui.sender.sortable('cancel');
     }
     update();
   },

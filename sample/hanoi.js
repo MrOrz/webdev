@@ -12,10 +12,12 @@ var updateClass = function(){
   });
 }
 
+$stack.disableSelection();
+
 $('.plate').mousedown(function(e){
   var $stack = $(this).parent();
   if(! $(this).is($stack.children('.plate:first')) ){
-    e.stopImmediatePropagation();
+    e.stopPropagation();
   }
 })
 
@@ -43,5 +45,3 @@ $stack.sortable({
   },
   placeholder: 'no-space'
 });
-
-$stack.disableSelection();

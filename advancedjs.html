@@ -61,15 +61,6 @@
 <p></p>
 <p>骨子裡是 LiveScript。</p>
 <p></div></p>
-<p></p>
-</section>
-<section>
-<h2>再見微軟</h2>
-<p></p>
-<p class="fragment">Netscape 和 Sun 將 Javascript 拽在懷裡，心中暗自竊喜。</p>
-<p></p>
-<p class="fragment">Free at last! Free at last!</p>
-<p></p>
 <p><div class="fragment"></p>
 <hr>
 <p>隔年 (1996)</p>
@@ -78,8 +69,6 @@
 <p></div></p>
 <p></p>
 <p class="fragment">微軟逆向工程神威。</p>
-<p></p>
-<p class="fragment"><img src="images/advancedjs/fuuuuu.png" alt="FUUUU"></p>
 <p></p>
 </section>
 <section>
@@ -368,7 +357,7 @@
 <p></p>
 </section>
 <section>
-<h2>Static variables?</h2>
+<h2>Function 形如 Object</h2>
 <script type="text/x-sample" data-lang="javascript">
 
       var func = function(){
@@ -384,11 +373,6 @@
       document.write(func.counter)
 
 </script>
-<p></p>
-<p><code>counter</code> 是個可以被外面看到的 static variable……？</p>
-<hr>
-<p></p>
-<p>沒那麼複雜。</p>
 <p></p>
 <ul>
 <li><code>func</code> 和物件一樣，可以增加成員。</li>
@@ -442,11 +426,6 @@
 <p>瀏覽器中，<code>window</code> （<code>DOMWindow</code>）會包含所有全域成員。</p>
 <p></div></p>
 <p></p>
-<pre class="fragment" data-lang="javascript"><code><!--
--->console.log(window)
-<!--
---></code></pre>
-<p></p>
 </section>
 <section>
 <h2><code>var</code> statements</h2>
@@ -499,7 +478,7 @@
 </section>
 <section>
 <h2>Closures</h2>
-<script type="text/x-sample">
+<script type="text/x-sample" class="small">
       var iFactory = function(){
         var i = 10;
         return {
@@ -541,6 +520,36 @@
 <p></p>
 <p>Event handler 在 closure 中執行。</p>
 <p><code>num</code> 變數不會污染外面的世界</p>
+<p></p>
+</section>
+<section>
+<h2>Lexical Scope</h2>
+<script type="text/x-sample" class="small">
+      var
+        i = "sqrt(-1)",
+        iFactory = function(){
+          var i = 10;
+          return {
+            getI: function(){return i;},
+            setI: function(new_i){i=new_i;},
+            execute: function(f){f();}
+          };
+        },
+        iPhone = iFactory();
+
+      iPhone.execute(function(){
+        // 會印出 10 還是 "sqrt(-1)" 呢？
+        document.write('i=' + i);
+      });
+
+
+</script>
+<p></p>
+<p class="fragment">function <code>寫在哪裡</code>，就看得到哪裡的變數。和<code>「執行」</code>的環境無關！</p>
+<p></p>
+<p class="fragment">傳進 jQuery <code>on</code> 的 function，無法存取 <code>on</code> 裡面的變數。</p>
+<p></p>
+<p class="fragment"><a href="http://dmitrysoshnikov.com/ecmascript/es5-chapter-3-1-lexical-environments-common-theory/" target="_blank">詳細解說</a></p>
 <p></p>
 </section>
 </section>

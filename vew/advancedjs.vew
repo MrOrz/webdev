@@ -54,17 +54,6 @@ JS++
 
     骨子裡是 LiveScript。
     </div>
-
-  !SLIDE
-    再見微軟
-    ----
-
-    {:.fragment}
-    Netscape 和 Sun 將 Javascript 拽在懷裡，心中暗自竊喜。
-
-    {:.fragment}
-    Free at last! Free at last!
-
     <div class="fragment">
 
     ---
@@ -75,9 +64,6 @@ JS++
 
     {:.fragment}
     微軟逆向工程神威。
-
-    {:.fragment}
-    ![images/advancedjs/fuuuuu.png](FUUUU)
 
   !SLIDE
     標準化
@@ -366,7 +352,7 @@ JS++
     ~~~
 
   !SLIDE
-    Static variables?
+    Function 形如 Object
     ---
       {:[data-lang=javascript]}
       ~~~
@@ -383,12 +369,6 @@ JS++
 
       document.write(func.counter)
       ~~~
-
-      `counter` 是個可以被外面看到的 static variable……？
-
-      ---
-
-      沒那麼複雜。
 
       * `func` 和物件一樣，可以增加成員。
       * `func` 也可以有 method。內建的有 `apply`, `call`。
@@ -439,11 +419,6 @@ JS++
     瀏覽器中，`window` （`DOMWindow`）會包含所有全域成員。
     </div>
 
-    {:.fragment[data-lang=javascript]}
-    ```
-    console.log(window)
-    ```
-
   !SLIDE
     `var` statements
     ----
@@ -493,6 +468,7 @@ JS++
   !SLIDE
     Closures
     ----
+    {:.small}
     ~~~
       var iFactory = function(){
         var i = 10;
@@ -534,6 +510,39 @@ JS++
 
     Event handler 在 closure 中執行。
     `num` 變數不會污染外面的世界
+
+  !SLIDE
+    Lexical Scope
+    ----
+    {:.small}
+    ~~~
+      var
+        i = "sqrt(-1)",
+        iFactory = function(){
+          var i = 10;
+          return {
+            getI: function(){return i;},
+            setI: function(new_i){i=new_i;},
+            execute: function(f){f();}
+          };
+        },
+        iPhone = iFactory();
+
+      iPhone.execute(function(){
+        // 會印出 10 還是 "sqrt(-1)" 呢？
+        document.write('i=' + i);
+      });
+
+    ~~~
+
+    {:.fragment}
+    function <code>寫在哪裡</code>，就看得到哪裡的變數。和<code>「執行」</code>的環境無關！
+
+    {:.fragment}
+    傳進 jQuery `on` 的 function，無法存取 `on` 裡面的變數。
+
+    {:.fragment}
+    [http://dmitrysoshnikov.com/ecmascript/es5-chapter-3-1-lexical-environments-common-theory/](詳細解說)
 
 !ENDSTACK
 

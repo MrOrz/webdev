@@ -16,8 +16,36 @@
 	font-style: normal;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@font-face {
+  font-family: MyTitleChinese;
+  /* 1. Hiragino looks better than JhengHei and Mac often have both fonts, thus
+   *    put Hiragino prior to JengHei.
+   * 2. Linux shows JhengHei pretty ugly, thus put Micro Hei prior to JhengHei.
+   * 3. Windows users show WenQuanYi Micro Hei pretty ugly, thus use a different stylesheet.
+   */
+  src: local("LiHei Pro"), local("儷黑Pro")
+       local("微軟正黑體"), local("Microsoft JhengHei");
+  unicode-range: U+4E00-9FFF;
+  font-weight: bold;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: MyMainChinese;
+  /* 1. Hiragino looks better than JhengHei and Mac often have both fonts, thus
+   *    put Hiragino prior to JengHei.
+   * 2. Linux shows JhengHei pretty ugly, thus put Micro Hei prior to JhengHei.
+   * 3. Windows users show WenQuanYi Micro Hei pretty ugly, thus use a different stylesheet.
+   */
+  src: local("ヒラギノ角ゴ Pro"), local(Hiragino Kaku Gothic Pro),
+       local("微軟正黑體"), local("Microsoft JhengHei");
+  unicode-range: U+4E00-9FFF;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700);
+
+$headingFont: MyTitleChinese, 'League Gothic', Impact, sans-serif;
+$mainFont: MyMainChinese, "Open Sans", sans-serif;
 
 // Override theme settings (see ../template/settings.scss)
 $mainColor: #333;
@@ -28,6 +56,7 @@ $linkColor: #8b743d;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: rgba(79, 64, 28, 0.99);
 $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+
 
 // Background generator
 @mixin bodyBackground() {

@@ -1,10 +1,33 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700);
 @font-face {
   font-family: 'League Gothic';
   src: url("../../lib/font/league_gothic-webfont.eot");
   src: url("../../lib/font/league_gothic-webfont.eot?#iefix") format("embedded-opentype"), url("../../lib/font/league_gothic-webfont.woff") format("woff"), url("../../lib/font/league_gothic-webfont.ttf") format("truetype"), url("../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular") format("svg");
   font-weight: normal;
   font-style: normal; }
+
+@font-face {
+  font-family: MyTitleChinese;
+  /* 1. Hiragino looks better than JhengHei and Mac often have both fonts, thus
+   *    put Hiragino prior to JengHei.
+   * 2. Linux shows JhengHei pretty ugly, thus put Micro Hei prior to JhengHei.
+   * 3. Windows users show WenQuanYi Micro Hei pretty ugly, thus use a different stylesheet.
+   */
+  src: local("LiHei Pro"), local("儷黑Pro") local("微軟正黑體"), local("Microsoft JhengHei");
+  unicode-range: U+4E00-9FFF;
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: MyMainChinese;
+  /* 1. Hiragino looks better than JhengHei and Mac often have both fonts, thus
+   *    put Hiragino prior to JengHei.
+   * 2. Linux shows JhengHei pretty ugly, thus put Micro Hei prior to JhengHei.
+   * 3. Windows users show WenQuanYi Micro Hei pretty ugly, thus use a different stylesheet.
+   */
+  src: local("ヒラギノ角ゴ Pro"), local(Hiragino Kaku Gothic Pro), local("微軟正黑體"), local("Microsoft JhengHei");
+  unicode-range: U+4E00-9FFF; }
 
 /*********************************************
  * GLOBAL STYLES
@@ -20,7 +43,7 @@ body {
   background-color: #f7f3de; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: MyMainChinese, "Open Sans", sans-serif;
   font-size: 36px;
   font-weight: 200;
   letter-spacing: -0.02em;
@@ -42,7 +65,7 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #333333;
-  font-family: "League Gothic", Impact, sans-serif;
+  font-family: MyTitleChinese, "League Gothic", Impact, sans-serif;
   line-height: 0.9em;
   letter-spacing: 0.02em;
   text-transform: uppercase;

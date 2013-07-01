@@ -104,12 +104,19 @@ module.exports = function(grunt) {
 			theme: {
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
 				tasks: 'themes'
+			},
+			reload: {
+				files: ['*.html', 'markdown/**', 'css/**/*.css'],
+				tasks: [],
+				options: {
+					livereload: true
+				}
 			}
 		}
 
 	});
 
-	// Dependencies
+	// Dependencies	
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );

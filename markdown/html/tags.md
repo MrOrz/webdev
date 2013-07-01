@@ -196,20 +196,12 @@ HTML5 語意標籤
 通用屬性
 -------
 
-```
-<style> /* style TAG */
-  div { margin-top: -20px;
-        text-align: right;
-        border-top: 1px solid grey;}
-  .time { color: grey; }
-</style>
-<h1>雅量</h1>
-<div>
-  <span style="font-size: 18px;" title="天津市人，民國三十七年出生。">宋晶宜</span> - <span class="time">數十年前</span>
-</div>
-```
+大部分 element 都有下面屬性：
 
+[[mrorz-html-general?live,html]]
 
----
-
-[[mrorz-html-1?live,html]]
+<ul>
+  <li class="fragment"><code>class</code>, <code>id</code>：替該 element 加上一個 classname / unique ID，使 CSS 的 selector 能選取、Javascript 方便操作。</li>
+  <li class="fragment"><code>title</code>：工具提示（tooltip）</li>
+  <li class="fragment"><code>style</code>：加上 CSS Declaration。</li>
+</ul>

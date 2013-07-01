@@ -5,6 +5,7 @@ Reveal.initialize({
   progress: true,
   history: true,
   center: true,
+  loop: true,
 
   // Optional libraries used to extend on reveal.js
   dependencies: [

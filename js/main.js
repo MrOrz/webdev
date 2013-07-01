@@ -13,7 +13,7 @@ Reveal.initialize({
     { src: 'plugin/markdown/marked.js' },
     { src: 'plugin/markdown/markdown.js' },
     { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-    // { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
     { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
     // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
   ]

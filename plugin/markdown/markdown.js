@@ -67,6 +67,9 @@
             sectionStack = [],
             markdownSections = '';
 
+        // Apply JSBin
+        markdown = createJSBinLinks(markdown);
+
         // iterate until all blocks between separators are stacked up
         while( matches = reSeparator.exec(markdown) ) {
 
@@ -112,6 +115,11 @@
         }
 
         return markdownSections;
+    };
+
+    var createJSBinLinks = function(markdown) {
+        var reMatcher = /\[\[(.+?)(?:\?(.+))?\]\]/g;
+        return markdown.replace(reMatcher, '<a class="jsbin-embed" href="http://jsbin.com/$1/latest/embed/?$2">JS Bin</a>');
     };
 
     var querySlidingMarkdown = function() {
@@ -175,6 +183,7 @@
 
         var markdown = stripLeadingWhitespace(section);
 
+        // section.innerHTML = markdown;
         section.innerHTML = marked(markdown);
 
         if( notes ) {

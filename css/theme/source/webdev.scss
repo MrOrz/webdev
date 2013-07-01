@@ -120,8 +120,19 @@ $heading1TextShadow: 0 3px 2px #fff, 0 5px 10px rgba(#fff, 0.5), 0 -1px #666, 0 
     h1{
       font-size: 600%;
     }
-
   }
+
+  section.title{
+    &:after{
+      font-size: 300%;
+      margin-top: 1em;
+      color: rgba(#000, .3);
+      text-shadow: 0 2px 3px #fff;
+      content: '⇣';
+      display: block;
+    }
+  }
+
 }
 
 #searchinput{
@@ -129,4 +140,41 @@ $heading1TextShadow: 0 3px 2px #fff, 0 5px 10px rgba(#fff, 0.5), 0 -1px #666, 0 
   display: none;
   font-size: 16px;
   width: 100%;
+}
+
+// Reveal grid
+$gutter: 10px;
+$columns: 6;
+
+.row, .reveal .row{
+  $span-width: 100%/$columns;
+  overflow: auto; // clear fix.
+  // box-sizing: border-box;
+  margin: $gutter*2 (-$gutter);
+
+  %span-base{
+    box-sizing: border-box;
+    padding: 0 $gutter;
+    float: left;
+
+    img{
+      width: 100%;
+      margin: 0;
+      vertical-align: bottom;
+    }
+  }
+
+  @for $i from 1 through $columns{
+    .span#{$i} {
+      @extend %span-base;
+      width: $span-width * $i;
+    }
+    .offset#{$i} {
+      margin-left: $span-width * $i;
+    }
+  }
+  .centered{
+    float: none;
+    margin: 0 auto;
+  }
 }

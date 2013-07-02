@@ -1,46 +1,20 @@
 語意標籤 - 內文系列
 ----------------
 
-```html
-<h1>雅量</h1>
-
-<blockquote>
-  「啊，好像棋盤似的。」
-</blockquote>
-<p>人總會去尋求自己喜歡的事物，每個人的看法或觀點不同，
-並沒有什麼關係，重要的是──人與人之間，
-應該有<em>彼此容忍</em>和<em>尊重對方</em>的看法與觀點的<strong>雅量</strong>。</p>
-```
+[[mrorz-html-look]]
 
 `<h1>`~`<h6>`：標題。
 
 `<p>`：段落； `<blockquote>`：引文。
 
-`<strong>`：重點；`<code>`：強調。
+`<strong>`：重點；`<em>`：強調。
 
 ---
 
 語意標籤 - 列表、定義
 ------------------
 
-```
-<p>你覺得這衣料看起來像？</p>
-<ol>
-   <li>棋盤</li>
-   <li>稿紙</li>
-   <li>綠豆糕</li>
-</ol>
-
-<hr>
-
-<dl>
-   <dt>先帝</dt>
-   <dd>指蜀昭烈帝劉備。</dd>
-   <dt>崩殂</dt>
-   <dd>天子之死曰「崩」；「殂」，也是死的意思。</dd>
-</dl>
-
-```
+[[mrorz-html-lists]]
 
 `<hr>`：分隔線。
 
@@ -53,30 +27,7 @@
 表格
 ----
 
-```
-<table border="1">
-  <tr>
-    <th rowspan="2" colspan="2">囚犯兩難</th>
-    <th colspan="2">B 的選擇</th>
-  </tr>
-  <tr>
-    <th>沉默</th> <th>坦承</th>
-  </tr>
-  <tr>
-    <th rowspan="2">A 的選擇</th>
-    <th>沉默</th>
-    <td>各坐牢 1 個月</td>
-    <td>A 坐牢 1 年<br>B 釋放</td>
-  </tr>
-  <tr>
-    <th>坦承</th>
-    <td>A 釋放<br>B 坐牢 1 年</td>
-    <td>各坐牢 3 個月</td>
-  </tr>
-</table>
-<!-- 請無視下面 -->
-<style> tr:hover {background: pink;} td:hover, th:hover {background: red;} </style>
-```
+[[mrorz-html-table]]
 
 `<table>` 表格（table）；`<tr>` 表格列（table row）；
 
@@ -89,11 +40,7 @@
 標籤神祕力量
 ----------
 
-```
-<img src="http://www.google.com.tw/logos/2012/rossini12-hp.jpg" alt="羅西尼220歲誕辰">
-
-<a href="http://www.google.com" target="_blank">Google 首頁</a> | <a href="css.html">CSS Tutorial</a>
-```
+[[mrorz-html-special]]
 
 `<img>` 圖，`<a>` 超連結，`<iframe>` 嵌入框
 
@@ -102,17 +49,6 @@
 <a href="網址" (target="_blank")>顯示的文字</a>
 <iframe src="網址"></iframe>
 ```
-
----
-
-網址
-----
-
-http:// 開頭
-
-/ 開頭
-
-相對路徑
 
 ---
 
@@ -187,9 +123,7 @@ HTML5 語意標籤
 
 `<header>`、`<footer>`：文章段落或頁面的開頭、結尾
 
-- - -
 
-[後面的範例](#/layout)會用到。
 
 ---
 

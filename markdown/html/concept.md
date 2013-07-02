@@ -36,6 +36,10 @@ HTML：勾勒**內容**與**結構**的「Formatting Language」
 <label for="chk-tos">我已詳閱並同意使用者條款</label>
 ```
 
+<aside class="notes">
+  不只是有語意，還有功能
+</aside>
+
 ---
 
 Tag, Element, Attribute
@@ -43,10 +47,17 @@ Tag, Element, Attribute
 
 標籤、元素、屬性
 
+```html
+  <標籤名 屬性1="值1" 屬性2="值2">內容</標籤名>
 ```
-<input type="checkbox" name="tos" id="chk-tos">
-<label for="chk-tos">我已詳閱並同意使用者條款</label>
-```
+
+---
+
+Tag, Element, Attribute
+-----------------------
+標籤、元素、屬性
+
+[[http://jsbin.com/mrorz-html-tagelem/1/edit]]
 
 <ul>
   <li class="fragment">
@@ -74,16 +85,7 @@ Tag, Element, Attribute
 
 `<br>` 與 `&nbsp;`
 -----------------
-```html
-本板嚴禁一行文<br>
-第二行<br>
-第三行
-和這行是同行的。<br>
-<br>
-<!-- 自以為是分隔線的註解 -->
-系              色望<br>
-系 色望
-```
+[[mrorz-html-space]]
 
 用 `<br>` 換行，空白鍵預設會重疊
 

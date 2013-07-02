@@ -196,6 +196,17 @@ body {
   text-shadow: 0 2px 3px #fff;
   content: '⇣';
   display: block; }
+.reveal img[src$=borderless] {
+  border: 0;
+  box-shadow: none;
+  background: transparent; }
+.reveal a:hover img[src$=borderless] {
+  border: 0;
+  box-shadow: none;
+  background: transparent; }
+
+#searchinputdiv {
+  z-index: 10; }
 
 #searchinput {
   display: none;

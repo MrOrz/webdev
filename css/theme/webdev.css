@@ -204,6 +204,8 @@ body {
   border: 0;
   box-shadow: none;
   background: transparent; }
+.reveal span.fragment.grow {
+  display: inline-block; }
 
 #searchinputdiv {
   z-index: 10; }

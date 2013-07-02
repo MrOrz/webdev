@@ -146,6 +146,11 @@ $heading1TextShadow: 0 3px 2px #fff, 0 5px 10px rgba(#fff, 0.5), 0 -1px #666, 0 
     box-shadow: none;
     background: transparent;
   }
+
+  // Make span.fragment.grow work.
+  span.fragment.grow{
+    display: inline-block;
+  }
 }
 #searchinputdiv{
   z-index: 10;

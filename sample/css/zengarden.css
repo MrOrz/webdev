@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/* 側欄 */
+#linkList{
+  position: absolute;
+
+  /* 固定在距頁面上緣 100px、右緣 5px 處 */
+  right: 5px; top: 100px;
+
+  /* 寬度 210px */
+  width: 210px;
+}
+
+/* 左欄 */
+#intro, #supportingText{
+  /* 右側空出 220px 給側欄 */
+  padding-right: 220px;
+}

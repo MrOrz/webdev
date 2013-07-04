@@ -1,0 +1,44 @@
+<form id="submitform" action="back.html">
+  <p>推薦其他人給後主： <a href="javascript:;" class="add-referral">增加推薦人</a></p>
+  <div id="referrals">
+
+  </div>
+  <input id="tos" name="tos" type="checkbox">
+  <label for="tos">
+    我已詳閱並接受<a href="http://zh.wikipedia.org/zh-tw/%E5%87%BA%E5%B8%AB%E8%A1%A8">前出師表</a>。
+  </label>
+  <input type="submit" value="上書">
+</form>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  var form = $('#submitform');
+
+  // 偵測是否同意出師表
+  form.on('submit', function(e){
+    if(! $('#tos').attr('checked')){
+      alert('請詳閱出師表。');
+      e.preventDefault();
+    }
+  });
+
+  // 增加推薦人
+  $('.add-referral').on('click', function(){
+    // 把下面內容塞進 DOM
+    /*
+      <p>
+        <input type="text" name="referral">
+        <a class="del" href="javscript:;">刪除</a>
+      </p>
+    */
+    $('<p><input type="text" name="referral"><a class="del" href="javascript:;">刪除</a></p>').appendTo('#referrals');
+  });
+
+  // 刪除推薦人
+  form.on('click', '.del', function(){
+    // 把包著 <a class="del"> 之 <p> 整個移除。
+    $(this).parents('p').remove();
+  });
+
+</script>

@@ -1,0 +1,43 @@
+body{
+  padding: 1em;
+  font-size: 16px;
+  line-height: 25px;
+}
+input{
+  font-size: 16px;
+}
+
+ul{
+  list-style: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+ul:empty{
+  display: none;
+}
+
+li{
+  border-bottom: 1px solid #ccc;
+}
+
+li:last-child{
+  border-bottom: 0;
+}
+
+/* === javascript styles === */
+
+li input{
+  border: 0;
+  outline: 0;
+  display: none;
+  color: #999;
+}
+
+li.editing input{
+  display: block;
+}
+
+li.editing span{
+  display: hidden;
+}

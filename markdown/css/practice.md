@@ -32,7 +32,7 @@
   </li>
   <li>若使用 `position: absolute`<br>
     → 左欄須設 `padding-right` (不然左欄會和 #linkList 疊在一起)<br>
-    [範例結果](sample/zengarden.html)（[範例 CSS 檔](sample/zengarden.css)）
+    [範例結果](sample/css/zengarden.html)（[範例 CSS 檔](sample/css/zengarden.css)）
   </li>
 </ul>
 
@@ -50,5 +50,5 @@
   <li class="fragment">`:hover` magic</li>
 </ul>
 <p class="fragment">
-  [範例結果](sample/menu.html)（[範例 CSS 檔](sample/menu.css)）
+  [範例結果](sample/css/menu.html)（[範例 CSS 檔](sample/css/menu.css)）
 </p>

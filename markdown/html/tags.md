@@ -52,59 +52,29 @@
 
 ---
 
-<!--
-表單
+表單元素
 ----
+
+[[mrorz-html-form]]
+
 ```
-<h1>民意調查</h1>
-<form action="http://postecho.heroku.com/" method="post">
-  <p>
-    <label for="what">你想要努力培養什麼呢？</label>
-    <input type="text" name="w" id="what">
-  </p>
-  <p>你覺得這衣料看起來像？</p>
-  <ul>
-    <li>
-      <input type="checkbox" name="like[]"
-       id="board" value="盤">
-      <label for="board">棋盤</label>
-    </li>
-    <li>
-      <input type="checkbox" name="like[]"
-       id="paper" value="紙">
-      <label for="paper">稿紙</label>
-    </li>
-    <li>
-      <input type="checkbox" name="like[]"
-       id="cake" value="糕">
-      <label for="cake">綠豆糕</label>
-    </li>
-  </ul>
-  <input type="submit" value="送出">
-</form>
+<input type="text|file|submit|..." name="變數名字" value="值">
 ```
--->
-<!--
+
+`<label>` 之 `for` 屬性和 `<input>` 之 `id` 屬性配對。
+
+另外也可以用 `<label>` 包住 `<input>` 來配對。
+
+---
 
 表單 - 勾勾和點點
 ---------------
 
-```
-<form action="http://postecho.heroku.com/" method="post">
+[[mrorz-html-form2]]
 
-  <input type="checkbox" name="c[]" value="c0">
-  <input type="checkbox" name="c[]" value="c1">
-  <input type="radio" name="d" value="d0">
-  <input type="radio" name="d" value="d1" id="radio-1">
-  <label for="radio-1">LABEL</label>
-  <br>
-</form>
-```
+`name` 屬性一樣 → 同一組。
 
-`name` 屬性一樣 → 同一組
-
-`<label>` 的 `for` 屬性和 `<input>` 的 `id` 屬性配對
--->
+---
 
 HTML5 語意標籤
 -------------
@@ -122,8 +92,6 @@ HTML5 語意標籤
 `<nav>`：導覽選單
 
 `<header>`、`<footer>`：文章段落或頁面的開頭、結尾
-
-
 
 ---
 

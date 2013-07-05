@@ -39,16 +39,6 @@ Attribute Selector
 
 ---
 
-Sibling Selector
-----------------
-
-* `input + label`: input 的弟弟。
-* `input ~ input[type="submit"]`: input 的兄弟姊妹中，是 submit 按鈕者。
-
-[[mrorz-css-sibselector]]
-
----
-
 Pseudo-Class
 ------------
 
@@ -75,3 +65,13 @@ Pseudo-Element
   加在 start tag 之後、內容之前。
 * `::after` 像是一個 `span` 元素
   加在 end tag 之前、內容之後。
+
+---
+
+Sibling Selector
+----------------
+* `:checked`: 「被勾選」則符合此 pseudo-class。
+* `input + label` 選出 `input` 的弟弟。
+* `input ~ input[type="submit"]` 選出 `input` 的兄弟姊妹中，是 `submit` 按鈕者。
+
+[[mrorz-css-sibselector]]

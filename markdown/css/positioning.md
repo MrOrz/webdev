@@ -133,6 +133,6 @@ Absolute positioning 的元素不會撐開 parent block。
 
 細說 `float` (2)
 ----------------------
-不會撐開 parent，要 clear
+不會撐開 parent，要 clear <br>或用 `overflow: auto|hidden`。
 
 [[mrorz-css-floatnoheight]]

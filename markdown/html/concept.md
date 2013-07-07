@@ -57,7 +57,7 @@ Tag, Element, Attribute
 -----------------------
 標籤、元素、屬性
 
-[[http://jsbin.com/mrorz-html-tagelem/1/edit]]
+[[mrorz-html-tagelem]]
 
 <ul>
   <li class="fragment">

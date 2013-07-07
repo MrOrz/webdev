@@ -38,15 +38,20 @@ CSS Box Model
 內容區域 != 背景區域
 --------------------
 
-[加上寬度的說明圖](images/css/boxmodel-mdn.png)
+<div class="row">
+  <div class="span3 centered">
+  
+![加上寬度的說明圖](images/css/boxmodel-mdn.png?borderless)
 
-<small>圖片來源：[W3C Box Model](http://www.w3.org/TR/CSS21/box.html#box-dimensions)</small>
+  </div>
+</div>
+
 
 背景顏色寬(高)度 = 內容寬(高) + padding 寬(高)
 
 和 Word / PowerPoint 不同。
 
-[Word 快取圖案 padding]()
+![Word 快取圖案 padding](images/css/word.png)
 
 ---
 
@@ -76,7 +81,7 @@ CSS Box Model
 
 ---
 
-`display` Properties
+`display` 的值
 --------------------
 
 <!--
@@ -126,12 +131,12 @@ CSS Box Model
 
 ---
 
-`margin`、`padding`、`border` 的 shorthand
+`margin`、`padding`、<br>`border` 的 shorthand
 --------------
 
 [[mrorz-css-margincaveat]]
 
-
+1：全部；2：上下、左右；3：上側下；4：上右下左。
 
 ---
 

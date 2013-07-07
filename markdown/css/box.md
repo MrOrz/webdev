@@ -51,7 +51,13 @@ CSS Box Model
 
 和 Word / PowerPoint 不同。
 
+<div class="row">
+	<div class="span3 centered">
+	
 ![Word 快取圖案 padding](images/css/word.jpg)
+	
+	</div>
+</div>
 
 ---
 

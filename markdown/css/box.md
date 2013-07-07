@@ -51,7 +51,7 @@ CSS Box Model
 
 和 Word / PowerPoint 不同。
 
-![Word 快取圖案 padding](images/css/word.png)
+![Word 快取圖案 padding](images/css/word.jpg)
 
 ---
 

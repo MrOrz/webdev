@@ -162,6 +162,21 @@ $heading1TextShadow: 0 3px 2px #fff, 0 5px 10px rgba(#fff, 0.5), 0 -1px #666, 0 
   width: 100%;
 }
 
+// Table
+
+.reveal{
+  table{
+    font-size: 75%;
+    width: 100%;
+    border-collapse: collapse;
+
+    td, th{
+      border: 1px solid #333;
+      text-align: center;
+    }
+  }
+}
+
 // Reveal grid
 $gutter: 10px;
 $columns: 6;

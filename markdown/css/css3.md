@@ -46,15 +46,3 @@ transition 漸變
 <p class="fragment">[Ultimate Gradient Editor](http://www.colorzilla.com/gradient-editor/) to the rescue!</p>
 
 [[mrorz-css-gradient]]
-
----
-
-Media Query
-------------
-
-"Responsive Web Design"
-
-[Web Designer Wall - CSS3 Media Queries](http://webdesignerwall.com/tutorials/css3-media-queries)
-
-<!--max-width: xxx == width < xxx
-min-width: xxx == width > xxx-->

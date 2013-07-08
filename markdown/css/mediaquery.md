@@ -5,7 +5,7 @@ Media Query
 
 [[mrorz-css-mediaquery-print]]
 
-實例：[履歷](http://mrorz.github.io/)
+實例：[履歷](http://mrorz.github.io/)、[Web Designer Wall 精選](http://webdesignerwall.com/tutorials/css3-media-queries)
 
 ---
 

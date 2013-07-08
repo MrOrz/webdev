@@ -38,7 +38,11 @@
 
 ---
 
-<h2>下拉式選單</h2>
+下拉式選單
+--------
+
+[範例結果](sample/css/menu.html)（[範例 CSS 檔](sample/css/menu.css)）
+
 <ul>
   <li class="fragment">橫向排列的 `li` 元素<br>
     <ul>
@@ -49,6 +53,3 @@
   <li class="fragment">巢狀 list: `<li>` 裡可以有 `<ul>`</li>
   <li class="fragment">`:hover` magic</li>
 </ul>
-<p class="fragment">
-  [範例結果](sample/css/menu.html)（[範例 CSS 檔](sample/css/menu.css)）
-</p>

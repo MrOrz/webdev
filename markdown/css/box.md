@@ -107,7 +107,7 @@ CSS Box Model
   <tr>
     <th><small>排版方向</small></th>
     <td>上到下</td>
-    <td colspan="2">左到右</td>
+    <td colspan="2">左到右，隨文字斷行</td>
   </tr>
   <tr>
     <th>寬</th>
@@ -117,7 +117,7 @@ CSS Box Model
   </tr>
   <tr>
     <th>高</th>
-    <td colspan="2">預設和內容同高</td>
+    <td colspan="2"><small>預設和內容同高，margin、padding 撐開上下鄰居</small></td>
     <td><small>`height` 無用，以 `line-height` 為準。垂直的 padding, margin 不影響行高。<small?</td>
   </tr>
 </table>

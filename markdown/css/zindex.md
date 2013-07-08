@@ -1,7 +1,7 @@
 圖層疊疊樂
 ---------
 
-<code class="leader trailer">z:index: 整數`
+<p class="leader trailer"> `z:index: 整數` </p>
 <p>把元素變成「一層」</p>
 <hr>
 <div class="fragment">
@@ -13,6 +13,8 @@
   </ul>
   <img src="images/css/ps_zindex.gif" alt="Photoshop 群組類比圖層" style="vertical-align: middle; margin-left: 1em;" />
 </div>
+
+
 
 ---
 
@@ -31,12 +33,20 @@
     <p>形成 stacking context：</p>
     <ul>
       <li>`position: 非 static`</li>
-      <li>`z-index != 0` 或 `opacity &lt; 1`</li>
+      <li>`z-index != 0` 或 `opacity < 1`</li>
     </ul>
   </div>
 </div>
-<div class="fragment row">
-  <hr>
+
+[[mrorz-css-zindex]]
+
+---
+
+萬丈高樓平地起
+------------
+
+
+<div class="leader row">
   <div class="span4">
     <p>蓋房子順序：</p>
     <p>地基 → 地下室 → 低樓層 → 高樓層</p>
@@ -53,6 +63,8 @@
     </a>
   </div>
 </div>
+
+[[mrorz-css-zindex]]
 
 ---
 

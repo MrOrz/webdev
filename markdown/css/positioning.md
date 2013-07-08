@@ -1,4 +1,4 @@
-文字的方向
+Normal Flow
 --------
 
 文字由左邊往右邊，超過邊界就折到下一行
@@ -7,7 +7,7 @@
 
 由上而下、由左而右 → **Normal Flow**
 
-Block-level box 垂直排列，inline-level box 水平排列。
+`display: block` 之元素垂直排列，<br>`display: inline / inline-block` 之元素水平排列。
 
 ---
 
@@ -43,22 +43,25 @@ float
 
 [[mrorz-css-flyingcode]]
 
-把 `.outer 用 float or absolute positioning 拉出去展<small>(現)</small>了</p>
+把 `.outer` 用 float or absolute positioning 拉出去展<small>(現)</small>了
 
 ---
 
 3 Positioning Schemes
 ---------------------
 
-
 ### Normal Flow
-  `display`: `block | inline | inline-block | table`, `position`: `static | relative`; `float`: `none`;
+
+  `position: static` | `relative;`<br>
+  `float: none`;
+
 ### Floats
-  `float`: `left` | `right`
+
+  `float: left` | `right`
 
 ### Absolute Positioning
-  `position`: `absolute` | `fixed`
 
+  `position: absolute` | `fixed`
 
 ---
 
@@ -82,17 +85,16 @@ float
 
 ---
 
-細說 `position`
---------------
+<h2 class="trailer">細說 `position`</h2>
 
-element 套用後，起飛變成 absolute positioning:
+### 使元素變成 absolute positioning
 
-* `absolute`: 相對於第一個非 `static` 的祖先 (offset parent)
+* `absolute`: 相對於第一個非 `static` 的祖先 (containing block)
 *  `fixed`: 相對於瀏覽器網頁視窗（viewport）
 
 - - -
 
-element 套用後，仍身處 normal flow 與世推移：
+### 使元素仍在 normal flow
 
 * `relative`: 不安份亂動
 * `static`: 預設值

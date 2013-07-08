@@ -171,8 +171,12 @@ $heading1TextShadow: 0 3px 2px #fff, 0 5px 10px rgba(#fff, 0.5), 0 -1px #666, 0 
     border-collapse: collapse;
 
     td, th{
+      vertical-align: middle;
       border: 1px solid #333;
       text-align: center;
+      small{
+        vertical-align: middle;
+      }
     }
   }
 }

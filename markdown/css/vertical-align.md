@@ -31,7 +31,7 @@ Normal flow 中，此元素和其他*同一行*之元素的垂直對齊
 
 <img class="borderless" src="images/css/vertical-centering.png" alt="垂直置中示意圖" height="200">
 
-<p class="fragment">`<td>` 以外，沒有 CSS property 可以讓任意元素垂直置中。</p>
+<p class="fragment">`<td>` 以外，<br>沒有 CSS property 能讓任意高度元素垂直置中。</p>
 <ul class="fragment leader">
   <li>
     <a href="http://css-tricks.com/vertically-center-multi-lined-text/">用 `display: table-cell` 垂直置中</a>

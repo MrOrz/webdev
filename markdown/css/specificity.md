@@ -35,7 +35,7 @@ Specificity 相同的話，後定義者蓋過之前定義者。
         <li class="fragment">兩 CSS 定義內均設有 <code>color</code></li>
         <li class="fragment">Specificity of <code>.loud</code> : 0,0,1,0</li>
         <li class="fragment">Specificity of <code>div</code> : 0,0,0,1</li>
-        <li class="fragment"><em>0,0,1,0 &lt; 0,0,0,1</em><br>故套用 <code>.loud</code> 對 <code>color</code> 的定義</li>
+        <li class="fragment"><em>0,0,1,0 > 0,0,0,1</em><br>故套用 <code>.loud</code> 對 <code>color</code> 的定義</li>
       </ul>
     </small>
   </div>

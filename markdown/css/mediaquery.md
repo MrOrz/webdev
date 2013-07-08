@@ -14,6 +14,9 @@ Media Query
 
 [[mrorz-css-mediaquery-width]]
 
+「`max-width: Npx`」 就是 「`width <= Npx`」<br>
+「`min-width: Npx`」 就是 「`Npx <= width`」
+
 ---
 
 手機上

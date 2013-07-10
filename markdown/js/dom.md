@@ -3,17 +3,7 @@
 `setTimeout(callback, t)` 會在 `t` ms 後執行 `callback`。<br>回傳一個 handle。
 `clearTimeout(handle)` 取消此倒數。
 
-~~~javascript
-document.write('多想兩分鐘');
-setTimeout(
-  function(){
-    document.write(
-      '你可以不用浪費兩分鐘。'
-    );
-  },
-  60*2*1000
-);
-~~~
+[[mrorz-js-timeout?javascript,console]]
 
 ---
 
@@ -21,11 +11,11 @@ setTimeout(
 --------
 `location.href`, `location.hash`
 
+複製以下兩行進 javascript console。
+
 ~~~javascript
-document.write([
-  'href: ', location.href, '<br>',
-  'hash: ', location.hash
-].join(''));
+console.log('href', location.href);
+console.log('hash', location.hash);
 ~~~
 
 傳值進去會重新整理瀏覽器頁面。
@@ -36,15 +26,7 @@ document.write([
 ----------
 `alert`, `confirm`, `prompt`
 
-~~~javascript
-var answer;
-// answer = confirm('綠豆糕像不像稿紙？');
-if(answer){
-  // alert('很像。');
-}else{
-  // alert('不像。');
-}
-~~~
+[[mrorz-js-alert?javascript,live]]
 
 ---
 
@@ -56,48 +38,46 @@ if(answer){
 * `localStorage.KEY = VALUE`，`VALUE` 只能是字串
 * `localStorage` 會一直存在，`sessionStorage` 僅存在瀏覽器分頁中
 
-~~~javascript
-if(!localStorage.created){
-  localStorage.created = Date();
-}
-~~~
+<div class="row">
+  <div class="span3">
+    [[mrorz-js-localstorage?javascript]]
+  </div>
+  <div class="span3">
+    ![Resources tab](images/js/localStorage.png)
+  </div>
+</div>
 
-![Resources tab](images/js/localStorage.png)
 
 
 ---
 
 用字串表示物件
 ----------
-`localStorage` 的值只能存字串，無法儲存 javascript 物件
+`localStorage` 的值只能存字串，不能存物件
 
 <p class="fragment">
   把物件用一個字串來表示。
 </p>
 
-<div class="fragment">
+---
 
-  <h3>JSON</h3>
+JSON
+----
 
-  `Javascript String Object Notation`
+`Javascript String Object Notation`
 
-  <p>
-  `物件 = JSON.parse(字串)`、<br>`字串 = JSON.stringify(物件)`
-  </p>
+<p>
+`物件 = JSON.parse(字串)`、<br>`字串 = JSON.stringify(物件)`
+</p>
 
-  <ul>
-    <li>類似 javascript 物件的初始化方法（object literal）</li>
-    <li>不會把 function (method) 變成字串</li>
-  </ul>
+<ul>
+  <li>類似 javascript 物件的初始化方法（object literal）</li>
+  <li>不會把 function (method) 變成字串</li>
+</ul>
 
-<pre><code>var man = {like: ['紅茶', '總匯三明治'], mood: '淡定',
-           say: function(){return '不要哭了'}},
-    manstr = JSON.stringify(man);
-document.write(manstr + '<hr>' + JSON.parse(manstr));
-//sessionStorage.man = manstr;
-</code></pre>
+[[mrorz-js-json?javascript,console]]
 
-</div>
+
 
 <!---
 

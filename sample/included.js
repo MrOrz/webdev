@@ -1,1 +1,1 @@
-document.write("js 檔裡好溫暖喔 (羞)");
+document.write("included.js 已經被執行囉！");

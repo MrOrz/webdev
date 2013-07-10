@@ -85,11 +85,7 @@ JavaSCRIPT
 <div class="fragment">
   用 <code>&lt;script type="text/javascript"&gt;&lt;/script&gt;</code> 包住，放在 HTML 裡
 
-<pre><code> &lt;script type="text/javascript"&gt;
-  document.write("script 標籤裡好溫暖喔 (羞)");
-&lt;/script&gt;
-</code></pre>
-
+[[mrorz-js-scripttag?html,console]]
 
 </div>
 
@@ -102,9 +98,7 @@ Javascript file
 * 另外寫成一個 *.js 檔
 *  <code>&lt;script type="text/javascript" src="路徑與檔名"&gt;&lt;/script&gt;</code>
 
-<pre><code>&lt;script type="text/javascript" src="sample/included.js"&gt;&lt;/script&gt;
-<p>我是內文</p>
-</code></pre>
+[[mrorz-js-include]]
 
 <div class="fragment">
 `<script>` 寫在 `<head>` 或 `<body>` 裡都可以。<br>瀏覽器一讀到就會立即執行（Load-and-go）。

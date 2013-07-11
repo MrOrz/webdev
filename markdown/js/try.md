@@ -12,7 +12,7 @@
 
 變數與型別
 ----------
-* Javascript 為弱型別（weak typing）語言
+* Javascript 為動態型別（dynamically typed）語言
 * 用 `var` 敘述定義變數
 * 變數可以是任何型態的東西<br>`var a = 3`：`a` 的型態會是 `number`
 * 大小寫有差
@@ -56,7 +56,7 @@ a = 3; // 換型態
 文字與數字
 ------
 
-`parseInt(str, base)`, `parseFloat(str, base)` : 文字轉數字
+`parseInt(str, base)`, `parseFloat(str)` : 文字轉數字
 
 <div class="row">
     <div class="span3 centered">

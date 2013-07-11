@@ -19,5 +19,6 @@ console.log
 * 選擇要 debug 的檔案
 * 中斷時可用 console
 * "Pause on uncaught exception" 按鈕
+* 可用程式呼叫 `debugger` 
 
 ![pause](images/js/pausebutton.png)

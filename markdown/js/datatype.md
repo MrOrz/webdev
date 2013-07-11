@@ -1,6 +1,7 @@
 保留字 & `關鍵字`
 -----------
 不能當作變數名稱、屬性名稱的字。
+
 abstract boolean `break` byte `case` `catch` char class const `continue`
 debugger `default` `delete` `do` double `else` enum export extends
 `false` final finally float `for` `function`
@@ -25,6 +26,36 @@ String 字串
 
 [[mrorz-js-string?javascript,console]]
 
+---
+
+Function 函數
+-----------
+
+<div class="fragment">
+
+`sin(π/6)` 回傳 `0.5` <br>
+
+`log(e)` 回傳 `1`
+
+</div>
+
+<p class="fragment">
+`parseInt("ff", 16)` 回傳 `255`
+</p>
+
+<p class="fragment">
+`console.log("字串")` 回傳 `undefined` ，但是會印東西
+</p>
+
+
+---
+
+課堂練習：判斷質數的函式
+--------------------
+
+請把剛剛「找到 2 ~ N 的所有質數」之中，<br>判斷質數的部分包成 function。
+
+[[mrorz-js-primefunc?javascript,console]]
 
 ---
 

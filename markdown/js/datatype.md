@@ -129,6 +129,7 @@ Array method
 * `join(sep)` 把每個元素轉成字串，用分隔字元 `sep` 接起來。
 * `push(item...)` 將 `item` 附加到末端，回傳新長度。
 * `pop()` 移除並回傳最後一個元素。
+* `forEach(func)` 一次把一個元素傳進 `func`。
 * 詳見 [MDN Docs](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array#Array_instances)
 
 [[mrorz-js-arrmethod?javascript,console]]

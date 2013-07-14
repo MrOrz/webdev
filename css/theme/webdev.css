@@ -264,3 +264,7 @@ body {
   .row .centered, .reveal .row .centered {
     float: none;
     margin: 0 auto; }
+
+@media print {
+  a:after {
+    content: "[" attr(href) "]"; } }

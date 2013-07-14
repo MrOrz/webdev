@@ -217,3 +217,9 @@ $columns: 6;
     margin: 0 auto;
   }
 }
+
+@media print{
+  a:after{
+    content: '[' attr(href) ']';
+  }
+}

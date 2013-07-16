@@ -18,15 +18,7 @@ Event handler
 ------
 事件被觸發時，會被執行的 function，用來處理此事件。又稱作 `callback`。
 
-~~~
-<p>按我按我</p>
-&lt;script type="text/javascript"&gt;
-  var $body = $('body');
-  $body.on('click', function(e){
-    console.log('Event Object', e);
-  });
-&lt;/script&gt;
-~~~
+[[mrorz-js-jquery-event?javascript,console,live]]
 
 「callback」：未來某條件符合時，會被執行的 function。
 
@@ -36,7 +28,6 @@ Event handler
 以下用 `event` 指稱 handler 裡的 event object。
 
 
-
 ---
 
 Event Propagation
@@ -44,44 +35,9 @@ Event Propagation
 
 子元素的事件觸發時，父元素的該事件也會跟著被觸發 (bubbling)。
 
-~~~
-<table>
-  <tr> <td>31 號 2 樓</td> <td>33 號 2 樓</td> </tr>
-  <tr> <td>31 號 1 樓</td> <td>33 號 1 樓</td> </tr>
-</table>
+[[mrorz-js-jquery-evtprop]]
 
-<style type="text/css">
-  table{
-    border-collapse: separate;
-    border: 3px solid black;
-  }
-  table td{
-    border: 3px solid black;
-  }
-</style>
-
-&lt;script type="text/javascript"&gt;
-  var log = function(msg){
-    $('body').append(msg + '<br>');
-  };
-  $('td').on('click', function(e){
-    var td = $(this);
-    log('拜訪' + td.text());
-    td.css('borderColor', 'red');
-  });
-  $('tr').on('click', function(e){
-    log('拜訪某層');
-    $(this).css('background', '#ff0');
-    // e.stopPropagation();
-  });
-  $('table').on('click', function(e){
-    log('拜訪此建築');
-    $(this).css('borderColor', '#990');
-  });
-&lt;/script&gt;
-~~~
 [`event.stopPropagation()`](http://api.jquery.com/event.stopPropagation/) 終止事件散播。
-
 
 
 ---
@@ -91,20 +47,7 @@ Event Propagation
 
 [`event.preventDefault()`](http://api.jquery.com/event.preventDefault/)
 
-~~~
-  $('#submitform').on('submit', function(e){
-    // 偵測是否同意出師表
-    if(!$('#tos').attr('checked')){
-      alert('請詳閱出師表。');
-      e.preventDefault();
-    }
-  });
-  $('a').on('click', function(e){
-    if(!confirm('您即將離開此頁，要繼續嗎？')){
-      e.preventDefault();
-    }
-  });
-~~~
+[[mrorz-js-jquery-preventdefault]]
 
 和 `event.stopPropagation()` 不同。
 
@@ -116,18 +59,7 @@ handler 的回傳值
 
 `return false` = `event.stopPropagation()` + `event.preventDefault()` + `return`
 
-~~~
-  $('#submitform').on('submit', function(e){
-    // 偵測是否同意出師表
-    if(!$('#tos').attr('checked')){
-      alert('請詳閱出師表。');
-      return false;
-      // 下面不會被執行。
-    }
-    alert('即將送出表單...');
-  });
-~~~
-
+[[mrorz-js-jquery-evtreturn]]
 
 ---
 
@@ -138,31 +70,7 @@ handler 的回傳值
 
 若觸發者為 `$物件` 子孫中符合 `selector` 者，則執行 handler。
 
-~~~
-  // 此行執行時，<a class="del"></a> 還不存在！
-  //
-  $('#submitform').on('submit', function(e){
-    // 偵測是否同意出師表
-    if(!$('#tos').attr('checked')){
-      alert('請詳閱出師表。');
-      e.preventDefault();
-    }
-  }).on('click', '.del', function(){
-    // 刪除推薦人：
-    // 把包著 <a class="del"> 之 <p> 整個移除。
-
-    // 這裡的 this 是 .del
-    $(this).parents('p').remove();
-  });
-
-  // 增加推薦人
-  $('.add-referral').on('click', function(){
-    // 把下面內容塞進 DOM
-    $('<p><input type="text" name="referral"><a class="del">刪除</a></p>').appendTo('#referrals');
-  });
-~~~
-
-
+[[mrorz-js-jquery-form2]]
 
 ---
 
@@ -170,30 +78,10 @@ handler 的回傳值
 -------
 
 `.on('click', handler)` → `.click(handler)`
-`.on('submit', handler)` → `.submit(handler)`
 
-~~~
-  $('#submitform').submit(function(e){
-    // 偵測是否同意出師表
-    if(!$('#tos').attr('checked')){
-      alert('請詳閱出師表。');
-      e.preventDefault();
-    }
-  }).on('click', '.del', function(){ // 這行沒改。
-    // 刪除推薦人：
-    // 把包著 <a class="del"> 之 <p> 整個移除。
-    $(this).parents('p').remove();
-  });
+[[mrorz-js-jquery-form2]]
 
-  // 增加推薦人
-  $('.add-referral').click(function(){
-    // 把下面內容塞進 DOM
-    $('<p><input type="text" name="referral"><a class="del">刪除</a></p>').appendTo('#referrals');
-  });
-~~~
-
-不加 `handler` 則可觸發相對應事件（執行該事件的 callback）；
-`.submit()` 還可以送出表單。
+不加 `handler` 則可觸發相對應事件（執行該事件的 callback）
 
 
 ---

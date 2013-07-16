@@ -37,14 +37,4 @@ jQuery Object
 
 其方法通常會回傳 jQuery Object 本身，故支持 chaining。
 
-~~~
-<p></p>
-<p></p>
-&lt;script type="text/javascript"&gt;
-  // 選取現有的 p element 來改造
-  $('p').css('color', '#00f').text('我是內容');
-
-  // 蓋一個新的 HTML element，插入現有的 p
-  $('<span>。</span>').appendTo('p');
-&lt;/script&gt;
-~~~
+[[mrorz-js-jquery-dollar]]

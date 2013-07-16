@@ -1,7 +1,18 @@
+程式執行
+--------
+
+從上往下，一行一行跑
+
+控制只有「部分」會執行：`if` 條件式
+
+控制「某部分重複執行」：`for` 迴圈
+
+---
+
 `if` 條件
 --------
 
-`if`-`else if`-`else`-`endif`
+`if` - `else if` - `else`
 
 [[mrorz-js-if?javascript,console]]
 
@@ -15,6 +26,8 @@ for(初始敘述; 繼續執行條件; 重新進入敘述){
   ...
 }
 ```
+
+找小於 `LIMIT` 的最大費波那西數
 
 [[mrorz-js-loop?javascript,console]]
 
@@ -42,6 +55,7 @@ for(i=0; i<4; i+=1){ ... }
 ----
 
 判斷 `NUM` 是否為質數
+
 （不被任何小於根號 `NUM`、大於 1 的整數整除）
 
 ```
@@ -110,11 +124,3 @@ Labeled Break
 記得 `break;`
 
 [[mrorz-js-switch?javascript,console]]
-
----
-
-
-註解
----
-
-`/* 多行 */` 與 `// 單行`

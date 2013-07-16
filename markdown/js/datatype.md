@@ -47,23 +47,15 @@ Function 函數
 `console.log("字串")` 回傳 `undefined` ，但是會印東西
 </p>
 
-
----
-
-課堂練習：判斷質數的函式
---------------------
-
-請把剛剛「找到 2 ~ N 的所有質數」之中，<br>判斷質數的部分包成 function。
-
-[[mrorz-js-primefunc?javascript,console]]
-
 ---
 
 Function 函數
 -----------
 
 建一個函數：
+
 `function 函式名 (引數們) { ... }`
+
 `var 函數名 = function (引數們) { ... }`
 
 呼叫一個函數：
@@ -75,8 +67,18 @@ Function 函數
   <li>呼叫時引數的個數，和函數定義的引數個數可以不一樣。</li>
 </ul>
 
+---
+
+課堂練習：判斷質數的函式
+--------------------
+
+請把剛剛「找到 2 ~ N 的所有質數」之中，<br>判斷質數的部分包成 function。
+
+[[mrorz-js-primefunc?javascript,console]]
+
 
 ---
+
 
 Function 函數
 -----------

@@ -283,6 +283,11 @@ JS++
   !SLIDE
     `<script>` 放哪裡？
     ----
+
+    // TODO: 放前面然後爛掉的例子
+
+    // 網上常用的 document.ready()
+
     `<script>` 的執行，會把接下來的頁面 render block 住。
     `<link>` 載完之前，頁面不會 render。
 

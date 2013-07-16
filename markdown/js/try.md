@@ -10,23 +10,37 @@
 
 ---
 
+敘述
+--------
+
+Javascript 程式由一系列的敘述（statement）組成。
+
+原則上先寫的先執行。
+
+`console.log(東西)` → <b>在 Console 印出東西的敘述。</b>
+
+[[mrorz-js-console?javascript,console]]
+
+---
+
 變數與型別
 ----------
+
+* 「變數」（Variable）是保存「值」（Value）的容器。
+* 用 `var` 敘述宣告變數：「我有一個變數叫......」。
+* 變數名稱大小寫有差
+
+[[mrorz-js-var?javascript,console]]
+
+* 變數可以是任何型態的東西<br>`var a = 3` 裡頭， `a` 的型態會是 `number`
 * Javascript 為動態型別（dynamically typed）語言
-* 用 `var` 敘述定義變數
-* 變數可以是任何型態的東西<br>`var a = 3`：`a` 的型態會是 `number`
-* 大小寫有差
-
-```javascript
-var a = "str", A; // a != A
-a = 3; // 換型態
-```
-
 
 ---
 
 運算子
 ------
+
+對變數做運算。
 
 * 負數 : `-` (如 `-35`)
 * 算數 : `*` &nbsp; `/` &nbsp; `%` &nbsp; `+` &nbsp; `-`
@@ -35,7 +49,14 @@ a = 3; // 換型態
 * 三元運算子 : `? :`
 * 指派 : `=` &nbsp; `+=` &nbsp; `-=` &nbsp; `*=` &nbsp; `/=` &nbsp; `%=`
 
+[[mrorz-js-operator?javascript,console]]
 
+---
+
+註解
+---
+
+`/* 多行 */` 與 `// 單行`
 
 ---
 
@@ -53,28 +74,18 @@ a = 3; // 換型態
 
 ---
 
-文字與數字
+文字轉數字
 ------
 
-`parseInt(str, base)`, `parseFloat(str)` : 文字轉數字
+`parseInt(str, base)`
+
+`parseFloat(str)`
 
 <div class="row">
     <div class="span3 centered">
 ![parseInt](images/js/parseInt.png)
     </div>
 </div>
-
----
-
-輸出文字
---------
-* `console.log(東西)` → <b>寫進 Console。</b><br> 若東西是陣列或物件，可以看到內容。
-* `document.write(東西)` → <b>把東西轉成字串，寫進 HTML。</b>
-
-<div class="fragment">
-通常<strong>不會</strong>使用 `document.write`。<br> 這個教學網頁用 `document.write` 印出資料當作示例，但開發時一般用更方便的 `console.log`。
-</div>
-
 
 ---
 
@@ -100,10 +111,12 @@ Javascript file
 
 [[mrorz-js-include]]
 
+
 <div class="fragment">
 `<script>` 寫在 `<head>` 或 `<body>` 裡都可以。<br>瀏覽器一讀到就會立即執行（Load-and-go）。
 </div>
 
+<div class="fragment">建議寫在 `</body>` 之前。</div>
 
 ---
 

@@ -1,7 +1,7 @@
 console.log
 -----
 
-* 物件可能會被更動
+大家的好朋友。
 
 ~~~
   var arr = ['棋盤', '稿紙', '綠豆糕'];
@@ -19,6 +19,14 @@ console.log
 * 選擇要 debug 的檔案
 * 中斷時可用 console
 * "Pause on uncaught exception" 按鈕
-* 可用程式呼叫 `debugger` 
 
 ![pause](images/js/pausebutton.png)
+
+---
+
+`debugger` 敘述
+--------------
+
+程式執行到的時候會中斷。
+
+[debugger 示例](sample/js-debugger.html) （請開啟 Developer Tool）

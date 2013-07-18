@@ -72,7 +72,9 @@ jQuery UI
 
 UI css 與 image
 -------------------
+
 ![要修改的東西](images/js/changecss.png)
+
 若分開放置把 image 目錄和 css 檔，請把 css 檔中所有 `url(...)` 的路徑，換成此 css 檔到圖檔的相對路徑。
 
 
@@ -82,27 +84,26 @@ jQuery UI API 形式
 -------------------
 jQuery UI 各種元件的的操作方式都很類似。
 
-<div class="fragment">
+- - -
 
-  <hr>
+以下用 jquery UI `dialog` 為例。
 
-  以 jquery UI `dialog` 為例
+---
 
-  <ul>
-    <li>`$(元素).dialog({autoOpen: false, resizable: false})`：初始化 `dialog`。</li>
-    <li>`$(元素).dialog('open')`：呼叫 dialog 的 method。</li>
-    <li>`$(元素).on('dialogopen', handler)`：指定 event handler。</li>
-  </ul>
 
-  詳細的初始化 `option`、`event`、`method`，都在文件下方。
+* `$(元素).dialog({autoOpen: false, resizable: false})`：初始化 `dialog`。
+* `$(元素).dialog('open')`：呼叫 dialog 的 method。
+* `$(元素).on('dialogopen', handler)`：綁定 event handler。 
 
-</div>
+詳細的初始化 `option`、`event`、`method`，都在[文件](http://api.jqueryui.com/dialog/)裡。
+
+[[mrorz-js-jqueryui]]
 
 ---
 
 Demo
 -----
-用 jQuery UI sortable，把[能新增項目的清單](sample/jquery-exercise.html)改成能拖曳的。
+用 jQuery UI sortable，把[能新增項目的清單](sample/jquery-exercise.html)改成可拖曳
 
 ### SPEC
 

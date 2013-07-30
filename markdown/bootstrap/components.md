@@ -17,5 +17,6 @@ Hero Unit
 Media Object
 ------------
 
+[[mrorz-bs-media]]
 
 [Components - Media Object](http://getbootstrap.com/2.3.2/components.html#media)

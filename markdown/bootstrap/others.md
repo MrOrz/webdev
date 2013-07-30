@@ -40,3 +40,14 @@ Made in Taiwan，jQuery UI 整合
 ![Kule](images/bootstrap/kule.png)
 
 [Kule CSS Lazy 2](http://www.kule.tw/)
+
+---
+
+Flat UI Kit
+------------
+
+不太算是 framework。最近很有名
+
+![Flat UI](images/bootstrap/flat.png)
+
+[Flat UI Kit](http://designmodo.github.io/Flat-UI/)

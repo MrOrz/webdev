@@ -25,6 +25,13 @@ Form
 Horizontal Form
 ---------------
 
+[[mrorz-bs-hrform]]
+
+* `form-horizontal` 包住全部
+* `.control-label` 加在 `<label>`
+* `.controls` 包住要放在 `label` 右邊的元素
+* `.control-group` 包住 `.control-label` 和 `.controls`
+
 ---
 
 Images

@@ -47,6 +47,9 @@ button 外觀
 
 加上 `class="btn"`
 
+
+[Base CSS - Buttons](http://getbootstrap.com/2.3.2/base-css.html#buttons)
+
 ---
 
 
@@ -85,4 +88,5 @@ Bootstrap
 
 `data-toggle="tab"`
 
+[Javascript - Tab](http://getbootstrap.com/2.3.2/javascript.html#tabs)
 

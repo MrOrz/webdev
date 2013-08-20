@@ -24,24 +24,6 @@ HTML：勾勒**內容**與**結構**的「Formatting Language」
 
 ---
 
-有些標籤有特異功能
----------------
-
-```
-<img src="http://www.google.com.tw/logos/2012/rossini12-hp.jpg" alt="羅西尼220歲誕辰">
-
-<a href="http://www.google.com" target="_blank">Google 首頁</a>
-
-<input type="checkbox" name="tos" id="chk-tos">
-<label for="chk-tos">我已詳閱並同意使用者條款</label>
-```
-
-<aside class="notes">
-  不只是有語意，還有功能
-</aside>
-
----
-
 Tag, Element, Attribute
 -----------------------
 
@@ -75,9 +57,6 @@ Tag, Element, Attribute
   </li>
   <li class="fragment">
     有些 element 僅由單一 tag 構成，如 `<input>`、`<hr>`、`<img>` 等。
-  </li>
-  <li class="fragment">
-    xHTML → `<hr />`
   </li>
 </ul>
 

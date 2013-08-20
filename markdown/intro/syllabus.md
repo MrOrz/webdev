@@ -7,6 +7,9 @@ Syllabus
 
 一週兩次（週二、週五）
 
+- - -
+[課表](http://goo.gl/pP9C5x)
+
 ---
 
 ### HTML & CSS
@@ -29,8 +32,7 @@ Syllabus
 
 - Javascript 語法、基礎元素
 - 基本 DOM API，jQuery 操作、選取、事件
-- jQuery UI 與一些 jQuery plugin
-- 進階內容、檢討作業
+- jQuery UI
 
 <aside class="notes">
   worksheet2: 熟悉 JS 程式語言 <br>
@@ -43,8 +45,8 @@ Syllabus
 
 〈第八、九次上課〉
 
-- CSS Preprocessors ＆ Frameworks
 - Compass 與 bootstrap-sass
+- CSS Preprocessors -- Sass
 
 <aside class="notes">
   worksheet 3: 把之前的 hw 用 sass-convert 轉換成 sass<br>
@@ -55,24 +57,14 @@ Syllabus
 
 ### Mashups & Social Network
 
-〈<small>預計</small>第十、十一次上課〉
+〈第十、十一、十二次上課〉
 
 - HTTP，jQuery Ajax
 - Facebook Graph API & JS SDK
+- 作業檢討
+- 總結
 
 <aside class="notes">
   worksheet 4: 朋友列表<br>
   HW4：facebook 垃圾社團 checker？
-</aside>
-
----
-
-### Github Page
-
-〈<small>預計</small>第十二次上課〉
-
-- Git, Github & Bitbucket, Github Page.
-
-<aside class="notes">
-  worksheet 4: 把 HW4 放到 github page 上
 </aside>

@@ -23,3 +23,14 @@
 ![SeeSS](images/intro/paper.png)
 
 [台大行動電話與人機介面實驗室](http://ntumobile.org)
+
+---
+
+<div class="row">
+  <div class="span5 centered">
+    ![NTU Cloud Expo](images/intro/cloudexpo.png)
+    
+  </div>
+</div>
+
+網路及平台服務程式設計助教 / [期末成果展 - NTU Cloud Expo](http://cloudexpo.ntumobile.org/)

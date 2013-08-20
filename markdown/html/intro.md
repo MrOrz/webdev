@@ -50,6 +50,8 @@
 
 ![The browser opens.](images/html/browse02.png)
 
+用瀏覽器「瀏覽」
+
 ---
 
 網址列
@@ -78,6 +80,7 @@
     <hr>
 
     <ul>
+      <li>伺服器經由 [HTTP](http.html) 通訊協定所傳送的頁面</li> 
       <li>[臺大師生個人網頁空間](http://oper.cc.ntu.edu.tw/docs/student_homepage.html)</li>
       <li>[Dropbox 公開資料夾](http://db.tt/yYMBZpN)</li>
       <li>[Github Pages](http://pages.github.com)</li>

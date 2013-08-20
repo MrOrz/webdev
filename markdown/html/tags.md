@@ -37,7 +37,7 @@
 
 ---
 
-標籤神祕力量
+有功能的標籤
 ----------
 
 [[mrorz-html-special]]
@@ -92,6 +92,19 @@ HTML5 語意標籤
 `<nav>`：導覽選單
 
 `<header>`、`<footer>`：文章段落或頁面的開頭、結尾
+
+---
+
+
+無語意標籤
+-------------
+
+`div` 與 `span`
+
+* 單純將元素群組起來
+* CSS 或 Javascript 的操作對象
+
+[[mrorz-html-general?live,html]]
 
 ---
 

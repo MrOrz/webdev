@@ -1,6 +1,6 @@
 ### Facebook Social Plugin
 
-只要使用者有登入 Facebook 就能讚按鈕、分享按鈕。
+只要使用者有登入 Facebook 就能有   讚按鈕、分享按鈕。
 
 - - -
 
@@ -22,11 +22,6 @@ Facebook App
 Facebook 使用者把權限交付給某 Facebook App，此 App 以使用者的身分做事情。
 
 ![Facebook App attribution](images/http/app-attribution.png)
-
-- - -
-
-[Your website as an app on Facebook](https://developers.facebook.com/docs/web/gettingstarted/#app)
-
 
 ---
 
@@ -134,6 +129,8 @@ Javascript SDK
 -------------
 
 [Javascript SDK Reference](https://developers.facebook.com/docs/reference/javascript/)
+
+`FB.init(...)` 放在特殊 function `fbAsyncInit` 中進行設定
 
 `FB.login(...)` 處理登入與授權。
 

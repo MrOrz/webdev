@@ -10,7 +10,7 @@ Round-trip Websites
 XMLHttpRequest
 -------------
 * DOM 提供之 API 之一
-* 用 javascript 送 GET/POST 等到 server
+* 用 javascript 送 HTTP request 到 server
 * 用 javascript 處理 server 回傳之資料
 * 不用刷新整個頁面
 
@@ -39,6 +39,8 @@ jQuery 包裝了 Ajax 相關功能
 * `$.get` 送 get request 給 server
 * `$.post` 送 post request 給 server
 * `$.ajax` 為 `$.get`、`$.post` 等 ajax 相關的核心 function
+
+- - -
 
 [jQuery Ajax 分類](http://api.jquery.com/category/ajax/)
 

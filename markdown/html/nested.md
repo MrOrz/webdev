@@ -26,22 +26,14 @@ Permitted Contents
 * `<ul>`、`<ol>` 裡面只能包 `<li>`。
 * `<tr>` 裡面只能包 `<td>` 與 `<th>`。
 
-
-<p class="fragment">不過......</p>
+但瀏覽器會[容忍部分錯誤](http://taligarsiel.com/Projects/howbrowserswork1.htm#Browsers_error_tolerance)。
 
 ---
 
-瀏覽器是寬大慈悲的
-------
 
-* 標籤錯誤的網頁太多了
-* 「網頁寫錯」被使用者認為是「瀏覽器壞掉」
-* 瀏覽器只好[容忍錯誤](http://taligarsiel.com/Projects/howbrowserswork1.htm#Browsers_error_tolerance)
+常見嵌套錯誤
+----------
 
-<div class="fragment">
-  <hr>
-  <h4>但容忍還是有極限的。</h4>
+`<div>` inside `<p>`
 
-  [[mrorz-html-div-p]]
-
-</div>
+[[mrorz-html-div-p]]

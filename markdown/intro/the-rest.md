@@ -1,9 +1,9 @@
 評分方式
 -------
 
-<p class="fragment leader">作業與學習單 >= *100%*</p>
+<p class="fragment leader">作業與學習單 = 125%</p>
 
-<p class="fragment leader">3~5 份學習單、3~4 次作業</p>
+<p class="fragment leader">三份學習單、四次作業</p>
 
 ---
 

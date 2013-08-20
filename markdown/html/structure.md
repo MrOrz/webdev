@@ -32,7 +32,7 @@ HTML 文件架構
 
 [[mrorz-html-combined]]
 
-`<!doctype>` 告訴瀏覽器用 HTML5 解析此網頁
+`<!DOCTYPE html>` 告訴瀏覽器用 HTML5 解析此網頁
 
 ---
 

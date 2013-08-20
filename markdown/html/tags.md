@@ -104,7 +104,7 @@ HTML5 語意標籤
 * 單純將元素群組起來
 * CSS 或 Javascript 的操作對象
 
-[[mrorz-html-general?live,html]]
+[[mrorz-html-div]]
 
 ---
 

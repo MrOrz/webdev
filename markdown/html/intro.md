@@ -18,12 +18,12 @@
         <img class="fragment" src="images/html/notepad.png" alt="記事本" title="記事本">
       </div>
       <div class="span3">
-        <a href="http://notepad-plus-plus.org/‎" target="_blank"><img class="fragment" src="images/html/npp.png" alt="NotePad++"></a>
+        <a href="http://notepad-plus-plus.org/" target="_blank"><img class="fragment" src="images/html/npp.png" alt="NotePad++"></a>
       </div>
     </div>
     <div class="row">
       <div class="span3">
-        <a href="http://www.sublimetext.com/2‎/" target="_blank"><img class="fragment" src="images/html/st2.png" alt="Sublime Text 2" title="Sublime Text 2"></a>
+        <a href="http://www.sublimetext.com/" target="_blank"><img class="fragment" src="images/html/st2.png" alt="Sublime Text 3" title="Sublime Text 3"></a>
       </div>
       <div class="span3">
         <a href="http://www.vim.org/" target="_blank"><img class="fragment" src="images/html/vim.png" alt="Vim" title="Vim"></a>

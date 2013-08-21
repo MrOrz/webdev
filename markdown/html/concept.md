@@ -68,6 +68,6 @@ Tag, Element, Attribute
 
 用 `<br>` 換行，空白鍵預設會重疊
 
-`&nbsp;` 代表「空白 [character entity](http://www.w3.org/TR/html5/named-character-references.html#named-character-references)」，可疊加
+`&nbsp;` 代表「空白 [character entity](http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references)」，可疊加
 
 `<!-- -->` 是多行註解

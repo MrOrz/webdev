@@ -24,7 +24,7 @@ table {
 CSS Syntax
 ----------
 
-![CSS syntax](images/css/selector.gif)
+![CSS syntax](images/css/selector.gif?borderless)
 
 <small>Source: [W3Schools](http://w3schools.com/css/css_syntax.asp)</small>
 

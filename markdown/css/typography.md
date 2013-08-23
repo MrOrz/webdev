@@ -12,20 +12,26 @@ Generic Font Family
 襯線、無襯線、等寬
 ---------------
 
-<div class="row">
+- - -
+
+<div class="row leader">
   <div class="span2">
-    ![Serif](images/css/serif.png)
-    Serif (有襯線；明體)
+    <h3>Serif</h3>
+    ![Serif](images/css/serif.png?borderless)
+    <p class="leader">有襯線；明體</p>
   </div>
   <div class="span2">
-    ![Sans Serif](images/css/sans-serif.png)
-    Sans Serif (無襯線；黑體) 
+    <h3>Sans Serif</h3>
+    ![Sans Serif](images/css/sans-serif.png?borderless)
+    <p class="leader">無襯線；黑體</p>
   </div>
   <div class="span2">
-    ![紅的明顯](images/css/red-serif.png)
-    「襯線」
+    <h3>「襯線」</h3>
+    ![紅的明顯](images/css/red-serif.png?borderless)
   </div>
 </div>
+
+- - -
 
 `monospace` 字型的每個字元都一樣寬，適合排版程式碼。
 
@@ -61,9 +67,14 @@ Web Font
 大小與行高
 --------
 
-`font-size: 12px` + `line-height: 1.4` + `font-family: Arial, sans-serif` =
+`font-size: 12px`
 
-```css
+`line-height: 1.4` 
+
+`font-family: Arial, sans-serif`
+
+```CSS
+/* All-in-one shorthand */
 font: 12px/1.4 Arial, sans-serif;
 ```
 

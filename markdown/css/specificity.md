@@ -57,3 +57,22 @@ Specificity 相同的話，後定義者蓋過之前定義者。
 ----
 ![](images/css/cssspecificity-calc-4.png)
 
+---
+
+Takeaway
+--------
+
+Specificty 越小越好
+
+* 盡量用可重複使用的 class
+```CSS
+  .btn, .panel, .media-box
+```
+* ID 用於分開不重複區塊
+```CSS
+  #header .title
+```
+* Decendent / Child selector 別太深
+```CSS
+  #header .banner nav ul li .title /* Avoid! */
+```

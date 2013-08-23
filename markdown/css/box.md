@@ -146,13 +146,25 @@ CSS Box Model
 
 ---
 
+block 元素水平置中
+--------------
+
+[[mrorz-css-margincaveat2]]
+
+`margin-left` 和 `margin-right` 同為 `auto` 時，
+
+元素會水平置中。
+
+（但 `width` 要小於螢幕寬度）
+
+---
+
 垂直 `margin` 
 --------------
 
 [[mrorz-css-margincaveat2]]
 
 <ul>
-  <li class="fragment">`margin-left` 和 `margin-right` 同為 `auto` 時，元素會置中。</li>
   <li class="fragment">block 元素的 `margin-top`, `margin-bottom` 密接時，有時只會表現較大的那一個 （*Collapsing margin*）</li>
   <li class="fragment">`margin-top` 可能會超出父元素。</li>
 </ul>

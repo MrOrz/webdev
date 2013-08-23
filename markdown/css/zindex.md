@@ -1,7 +1,29 @@
+正常狀況
+------
+
+![正常情形](images/css/zindex-normal.jpg)
+
+---
+
+怪怪的
+------
+
+![不正常情形1](images/css/zindex-abnormal.jpg)
+
+---
+
+
+還是怪怪的
+------
+
+![不正常情形2](images/css/zindex-abnormal2.jpg)
+
+---
+
 圖層疊疊樂
 ---------
 
-<p class="leader trailer"> `z:index: 整數` </p>
+<p class="leader trailer"> `z-index: 整數` </p>
 <p>把元素變成「一層」</p>
 <hr>
 <div class="fragment">

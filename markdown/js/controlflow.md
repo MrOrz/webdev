@@ -27,7 +27,7 @@ for(初始敘述; 繼續執行條件; 重新進入敘述){
 }
 ```
 
-找小於 `LIMIT` 的最大費波那西數
+找小於 `LIMIT` 的[最大費波那西數](http://zh.wikipedia.org/zh-tw/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97)
 
 [[mrorz-js-loop?javascript,console]]
 
@@ -54,7 +54,7 @@ for(i=0; i<4; i+=1){ ... }
 課堂練習：判斷質數
 ----
 
-判斷 `NUM` 是否為質數
+判斷 `NUM` 是否為[質數](http://zh.wikipedia.org/zh-tw/%E8%B3%AA%E6%95%B8%E5%88%97%E8%A1%A8)
 
 （不被任何小於根號 `NUM`、大於 1 的整數整除）
 

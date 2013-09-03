@@ -97,5 +97,5 @@ Sibling Selector
 
 [[mrorz-css-sibselector]]
 
-* `input + label` 選出 `input` 的弟弟。
-* `input ~ input[type="submit"]` 選出 `input` 的兄弟姊妹中，是 `submit` 按鈕者。
+* `input + *` 選出 `input` 的最大的弟弟妹妹。
+* `input ~ *` 選出 `input` 的所有弟弟妹妹。

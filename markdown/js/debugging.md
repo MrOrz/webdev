@@ -3,24 +3,37 @@ console.log
 
 大家的好朋友。
 
-~~~
-  var arr = ['棋盤', '稿紙', '綠豆糕'];
-  console.log('arr: ', arr);
-  arr.shift(); // 移除第 0 個
-  console.log('shift 之後：arr: ', arr);
-~~~
+[[mrorz-js-debug]]
 
 ---
 
 中斷點
 -----
 
-* 開發人員工具的「Scripts」 面板
+* 開發人員工具的「Sources」 面板
 * 選擇要 debug 的檔案
 * 中斷時可用 console
 * "Pause on uncaught exception" 按鈕
 
 ![pause](images/js/pausebutton.png)
+
+
+[測試網頁](http://jsbin.com/mrorz-js-console/1)
+
+---
+
+Sources 面板 (1)
+-----
+
+先選擇要 debug 的檔案
+
+![pause](images/js/source1.png?borderless)
+
+---
+
+Sources 面板 (2)
+-----
+![pause](images/js/source2.png?borderless)
 
 ---
 

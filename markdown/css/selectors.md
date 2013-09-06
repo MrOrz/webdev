@@ -22,6 +22,9 @@
 
 ---
 
+<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference -->
+<!-- 介紹 Selector 與 Combinators ! Combinator 不算 specificity.-->
+
 Descendant & Child Selector
 ---------------------------
 

@@ -172,9 +172,9 @@ var mcdonalds = {
 
 人們會說，Javascript 的物件儲存的是「鍵值對（key-value pair）」。「鍵（key）」就是抽屜的名字，我們會拿著 key 在多層櫃裡來找想找的抽屜，而抽屜裡放著我們想要存取的值（value）。上述的 `mcdonalds` 物件裡，有三個 key：`income`、`outcome` 與 `location`，分別存著三個不同的值。
 
-另外也有人把從物件導向的名詞套到 Javascript 的物件上，把 key 稱為「屬性（property）」`；如 mcdonalds` 有「`income`」這個屬性，其值為 350000。
+另外也有人把從物件導向的名詞套到 Javascript 的物件上，把 key 稱為「屬性（property）」；如 `mcdonalds` 有「`income`」這個屬性，其值為 350000。
 
-### 物件裡的物件
+### 物件裡放物件
 
 <figure>
   <img src="images/programming/drawer-sorted.jpg" alt="Drawer" width="400">
@@ -307,6 +307,49 @@ shoppingList.push("稿紙");
 shoppingList.push("綠豆糕");
 ```
 
+### 陣列裡放物件
+
+和物件 Object 一樣，這個會自動編號的多層櫃，也可以放各種型態的資料。
+我們去雜貨店買完 `shoppingList` 裡的東西後，店家給了我們一張發票；我們發現店家的收銀機，裡面居然是用 Javascript 寫的（呃，怎麼發現的？）。
+
+結帳時，收銀機裡用一個陣列來記錄我們所買的東西、每項東西的單價以及數量。
+
+```
+var invoice = [];
+
+// 店員掃描布料的條碼，條碼機將下面資訊存入 invoice 陣列：
+invoice.push({
+  item: "布料",
+  quantity: 1,
+  price: 100
+});
+
+// 然後店員掃了棋盤。因為棋盤太便宜了所以手滑買了兩個。
+invoice.push({
+  item: "棋盤",
+  quantity: 2,
+  price: 50
+});
+
+// 印出發票！
+console.log(invoice);
+/* 印出下面的內容：
+[
+  {
+    item: "布料",
+    quantity: 1,
+    price: 100
+  },
+  {
+    item: "棋盤",
+    quantity: 2,
+    price: 50
+  }
+]
+*/
+```
+
+以上是陣列裡放物件的例子。
 
 3. 控制流程敘述 (Control Flow)
 ===========================

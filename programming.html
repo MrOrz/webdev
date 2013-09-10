@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Javascript Programming 新手捲軸</title>
+
+    <meta name="description" content="Javascript 新手教學">
+    <meta name="author" content="MrOrz">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="https://raw.github.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="css/theme/webdev.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <link rel="stylesheet" href="css/print/paper.css" type="text/css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <style>
+      h1,h2,h3,h4{
+        margin-top: 2em;
+        color: #807e1a;
+      }
+
+      body{
+        line-height: 1.5;
+      }
+
+      [data-markdown]{
+        width: 600px;
+        margin: -0 auto;
+      }
+
+      figure{
+        text-align: center;
+      }
+
+      figcaption{
+        font-size: 75%;
+      }
+
+      .left, .right{
+        margin: 0.6em 1em 1.6em;
+      }
+      .left{
+        float: left;
+      }
+      .right{
+        float: right;
+      }
+      .clear{
+        clear: both;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section data-markdown="markdown/programming/index.md"></section>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="plugin/markdown/marked.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/jsbin/jsbin.js"></script>
+
+    <script>
+      hljs.initHighlightingOnLoad();
+      var links = document.querySelectorAll('a.jsbin-embed');
+
+      function embed(link) {
+        var iframe = document.createElement('iframe'),
+            resize = document.createElement('div');
+        iframe.src = link.href;
+        iframe._src = link.href; // support for google slide embed
+        iframe.className = 'jsbin-embed';
+        iframe.style.border = '1px solid #aaa';
+        iframe.style.width = '100%';
+        iframe.style.minHeight = '300px';
+        link.parentNode.replaceChild(iframe, link);
+
+        var onmessage = function (event) {
+          event || (event = window.event);
+          iframe.style.height = event.data.height + 'px';
+        };
+
+        if (window.addEventListener) {
+          window.addEventListener('message', onmessage, false);
+        } else {
+          window.attachEvent('onmessage', onmessage);
+        }
+      }
+
+
+      for(i=0; i<links.length; ++i){
+        embed(links[i]);
+      }
+    </script>
+  </body>
+
+</html>

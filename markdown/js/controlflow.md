@@ -58,6 +58,7 @@ for(i=0; i<4; i+=1){ ... }
 [[mrorz-js-loopdetail?javascript,console]]
 
 ---
+
 <!-- 質數似乎太抽象！要想一個要重複執行才能得到結果的東西，又要在某些情形跳出。ex: 開樂透彩？ -->
 課堂練習：判斷質數
 ----
@@ -110,7 +111,6 @@ Labeled Break
 
 迴圈前可以加上 label 如下：
 
-{:[data-lang=javascript]}
 ```
   outerLoop: for(;;){
     ……

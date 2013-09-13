@@ -3,6 +3,7 @@ Events
 互動的主要要素。
 
 `$物件.on('事件', handler)`
+
 `$物件.on('事件', selector, handler)`
 
 ------

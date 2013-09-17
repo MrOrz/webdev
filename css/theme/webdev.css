@@ -194,7 +194,7 @@ body {
 .trailer {
   margin-bottom: 1em; }
 
-kbd {
+kbd, .reveal kbd {
   display: inline-block;
   vertical-align: bottom;
   padding: 0.1em 0.5em;
@@ -235,11 +235,11 @@ p > code, li > code {
 .row, .reveal .row {
   overflow: auto;
   margin: 20px -10px; }
-  .row .span1, .reveal .row .span1, .row .span2, .reveal .row .span2, .row .span3, .reveal .row .span3, .row .span4, .reveal .row .span4, .row .span5, .reveal .row .span5, .row .span6, .reveal .row .span6 {
+  .row .span1, .reveal .row .span1, .row .span2, .reveal .row .span2, .row .span3, .reveal .row .span3, .row .span4, .reveal .row .span4, .row .span5, .reveal .row .span5, .row .span6, .reveal .row .span6, .reveal .row .span1, .reveal .row .span2, .reveal .row .span3, .reveal .row .span4, .reveal .row .span5, .reveal .row .span6 {
     box-sizing: border-box;
     padding: 0 10px;
     float: left; }
-    .row .span1 img, .reveal .row .span1 img, .row .span2 img, .reveal .row .span2 img, .row .span3 img, .reveal .row .span3 img, .row .span4 img, .reveal .row .span4 img, .row .span5 img, .reveal .row .span5 img, .row .span6 img, .reveal .row .span6 img {
+    .row .span1 img, .reveal .row .span1 img, .row .span2 img, .reveal .row .span2 img, .row .span3 img, .reveal .row .span3 img, .row .span4 img, .reveal .row .span4 img, .row .span5 img, .reveal .row .span5 img, .row .span6 img, .reveal .row .span6 img, .reveal .row .span1 img, .reveal .row .span2 img, .reveal .row .span3 img, .reveal .row .span4 img, .reveal .row .span5 img, .reveal .row .span6 img {
       width: 100%;
       margin: 0;
       vertical-align: bottom; }

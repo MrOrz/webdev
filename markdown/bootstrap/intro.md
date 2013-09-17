@@ -9,11 +9,11 @@
 
 ![Bootstrap 3](images/bootstrap/bootstrap3.png)
 
-[Twitter Bootstrap 3 RC1](http://getbootstrap.com/)
+[Twitter Bootstrap 3.0.0](http://getbootstrap.com/)
 
 - - -
 
-上課以穩定版 2.3.2 為主。
+前一版 2.3.2 較單純。
 
 ---
 

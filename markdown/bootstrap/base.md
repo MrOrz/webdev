@@ -1,14 +1,29 @@
 Typography
 ----------
 
+預設的字體大小、行距、元素上下間距。
 
+![Line height](images/bootstrap/typography.png)
 
 [BaseCSS - Typography](http://getbootstrap.com/2.3.2/base-css.html#typography)
 
 ---
 
+Typography
+----------
+
+[[mrorz-bootstrap-typography]]
+
+`blockquote`、`.text-center`、`abbr`
+
+---
+
 Table
 ------
+
+[[mrorz-bootstrap-table]]
+
+`<table>` 上加上 `table` class。
 
 [Base CSS - Table](http://getbootstrap.com/2.3.2/base-css.html#tables)
 
@@ -17,6 +32,9 @@ Table
 Form
 -----
 
+輸入框外觀。
+
+[[mrorz-bootstrap-form]]
 
 [Base CSS - Form](http://getbootstrap.com/2.3.2/base-css.html#forms)
 
@@ -24,6 +42,8 @@ Form
 
 Horizontal Form
 ---------------
+
+較複雜的例子：
 
 [[mrorz-bs-hrform]]
 
@@ -37,5 +57,8 @@ Horizontal Form
 Images
 ------
 
+[[mrorz-bootstrap-image]]
+
+`.img-rounded`、`.img-circle`、`.img-polaroid`
 
 [Base CSS - Images](http://getbootstrap.com/2.3.2/base-css.html#images)

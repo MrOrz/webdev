@@ -1,7 +1,7 @@
 Round-trip Websites
 ---------
 
-![Round-trip websites](images/http/round-trip.png)
+![Round-trip websites](images/http/round-trip.png?borderless)
 
 每次都要刷新整個畫面
 
@@ -82,10 +82,10 @@ Google Geocoding API
 
 ---
 
-Youbike 資訊
+Facebook 垃圾社團資訊
 ------------
 
-[從官網偷來的資料](http://www.youbike.com.tw/genxml9.php?lat=25.037525&lng=121.56378199999995&radius=5&mode=0)
+廣告社團列表來源：[TonyQ 的《Facebook 廣告社團檢查器》](http://antispam.tonyq.org/groups)
 
 [[mrorz-http-youbike]]
 

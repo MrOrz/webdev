@@ -6,7 +6,7 @@ Request Headers
 * `Referer`：從哪個網址點進來的
 * `User-Agent`：瀏覽器資訊
 * `Cookie`：瀏覽器內的 cookie 資訊
-* `If-Modified-Since`：若網頁在此 timestamp 之後都沒更新後，就不用送了
+* `If-Modified-Since`：一個 timestamp，意義為「若網頁在此 timestamp 之後有更新才送資料」
 
 ------
 

@@ -36,19 +36,6 @@ HTML 文件架構
 
 ---
 
-HTML 文件架構（複雜版）
--------------------
-
-[HTML5 Boilerplate](http://html5boilerplate.com/)
-
-Boilerplate = 「樣板」
-
-[[mrorz-html-boilerplate2]]
-
-偵測 IE、瀏覽器支援度、標準化 CSS 等常用功能。
-
----
-
 IE 與 HTML5
 ----------
 
@@ -61,3 +48,16 @@ IE 與 HTML5
 ```
 
 參考資料：[html5shiv](http://code.google.com/p/html5shiv/) 官方說明。
+
+---
+
+HTML 文件架構（複雜版）
+-------------------
+
+[HTML5 Boilerplate](http://html5boilerplate.com/)
+
+Boilerplate = 「樣板」
+
+[[mrorz-html-boilerplate2]]
+
+偵測 IE、瀏覽器支援度、標準化 CSS 等常用功能。

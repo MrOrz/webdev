@@ -15,14 +15,18 @@ HTML 文件架構
 
 <ul>
   <li class="fragment">
+    `<!DOCTYPE html>` 告訴瀏覽器用最新標準解析此網頁
+  </li>
+  <li class="fragment">`<html>` 包住 `<head>` 和 `<body>`。</li>
+  <li class="fragment">
     `<head>` 存放「不是網頁內文」的其他資訊。
     <ul>
       <li class="fragment">`<title>` 瀏覽器分頁標題</li>
-      <li class="fragment">`<meta name="..." content="...">` 其他資訊</li>
+      <li class="fragment">`<meta charset="utf-8">` 設定網頁編碼</li>
+      <li class="fragment">`<meta name="..." content="...">` 其他設定</li>
     </ul>
   </li>
   <li class="fragment">`<body>` 網頁內容</li>
-  <li class="fragment">`<html>` 包住 `<head>` 和 `<body>`。</li>
 </ul>
 
 ---
@@ -31,8 +35,6 @@ HTML 文件架構
 -------------
 
 [[mrorz-html-combined]]
-
-`<!DOCTYPE html>` 告訴瀏覽器用 HTML5 解析此網頁
 
 ---
 

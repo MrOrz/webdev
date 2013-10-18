@@ -94,3 +94,17 @@ CSS Normalization
 [[mrorz-css-normalization]]
 
 統一各瀏覽器的 style。 <small>[規則說明](https://github.com/necolas/normalize.css/wiki)</small>
+
+---
+
+大綱
+----
+
+* 常用外觀樣式
+* 除錯工具介紹
+* CSS Selectors & Specificity
+* Box Model 與定位
+* CSS3
+* 難懂的屬性：`vertical-align`, `z-index`
+* Media Query
+

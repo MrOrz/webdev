@@ -22,6 +22,14 @@
 
 ---
 
+多個 Selector 套用相同樣式
+----
+用逗號 `,` 將 Selector 分開
+
+[[mrorz-css-multiselect]]
+
+---
+
 <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference -->
 <!-- 介紹 Selector 與 Combinators ! Combinator 不算 specificity.-->
 
@@ -53,6 +61,8 @@ Attribute Selector
 
 中括號； `[屬性 運算子 值]`
 
+[https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors](可用的運算子列表)
+
 ---
 
 Pseudo-Class
@@ -76,6 +86,10 @@ Pseudo-Class
 ------------
 
 [[mrorz-css-pseudocls]]
+
+老大 `:first-child`, 老么 `:last-child`
+
+老 N `:nth-child()`
 
 ---
 
@@ -102,3 +116,19 @@ Sibling Selector
 
 * `input + *` 選出 `input` 的最大的弟弟妹妹。
 * `input ~ *` 選出 `input` 的所有弟弟妹妹。
+
+---
+
+小結
+----
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#Selectors)
+
+### Basic Selector
+`tag`, `#id`, `.class`,
+`[attr]`, `*`
+
+### Pseudo-elements & Pseudo-classes
+`:before`, `:hover`
+
+### Combinator
+`A B`, `A>B`, `A+B`, `A~B`

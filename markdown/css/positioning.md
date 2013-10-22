@@ -43,7 +43,7 @@ float
 
 [[mrorz-css-flyingcode]]
 
-把 `.outer` 用 float or absolute positioning 拉出去展<small>(現)</small>了
+使 `.outer` 變為 float 或 absolute positioning，可以脫離 normal flow。
 
 ---
 
@@ -106,13 +106,31 @@ float
 
 [[mrorz-css-posabs]]
 
+`.child` 的第一個 `position != static` 祖先是 `.world`。
+
+`.child` 的 containing block 是 `.world`。
+
+因此 `.child` 的 `bottom`、`right` 是以 `.world` 為準。
+
+- - -
+
 你我都曾經 `position: absolute`。
 
 ---
 
 細說 `position` (2)
 ----------------------
-`absolute`, `fixed`, `relative` 用 `left`, `top`, `bottom`, `right` 調位置。
+
+`position` 為 `absolute`, `fixed`, `relative` 時，
+
+可用 `left`, `top`, `bottom`, `right` 調位置。
+
+[[mrorz-css-lefttop]]
+
+---
+
+細說 `position` (3)
+----------------------
 
 Absolute positioning 的元素不會撐開 parent block。
 
@@ -120,12 +138,17 @@ Absolute positioning 的元素不會撐開 parent block。
 
 ---
 
+`float`：文繞圖
+-----
+
+[[ajIKaf]]
+
+---
+
 細說 `float`
 ----------------------
 
 [[mrorz-css-floatsurround]]
-
-### 文繞圖
 
   - Normal flow 中的 box 圍繞 floated elements。
   - 複數個 float 會比鄰而居。

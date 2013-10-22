@@ -8,7 +8,9 @@
 一般的 vertical align
 --------------------
 
-Normal flow 中，此元素和其他*同一行*之元素的垂直對齊
+Normal flow 的每一行的上下緣，由行內元素決定。
+
+`vertical-align`：和此行上下緣的對齊方式。
 
 [[mrorz-css-va]]
 
@@ -22,6 +24,9 @@ Normal flow 中，此元素和其他*同一行*之元素的垂直對齊
 一般的 vertical align (2)
 ------------------------
 
+1. 最高的行內元素決定此行上下緣。
+2. 個別元素之 `vertical-align` 定義和此行的對齊。
+
 [[mrorz-css-va2]]
 
 ---
@@ -29,7 +34,14 @@ Normal flow 中，此元素和其他*同一行*之元素的垂直對齊
 教練我想垂直置中
 -------------
 
-<img class="borderless" src="images/css/vertical-centering.png" alt="垂直置中示意圖" height="200">
+<div class="row">
+  <div class="span2">
+    <img class="borderless" src="images/css/vertical-centering.png" alt="垂直置中示意圖">
+  </div>
+  <div class="span4">
+    [[equPoNU]]
+  </div>
+</div>
 
 <p class="fragment">`<td>` 以外，<br>沒有 CSS property 能讓任意高度元素垂直置中。</p>
 <ul class="fragment leader">

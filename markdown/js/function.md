@@ -130,17 +130,42 @@ var 函數名 = function(age) {
 Input 的數量
 -----------
 
-`function` 的 input 可以有很多個
+`function` 的 input 可以有很多個。
+
+[[AHICoMe?javascript,console]]
 
 ---
 
+一個 Output
+----------
 
-<!-- return 關鍵字！ -->
+`return` 敘述：把運算結果傳出去。
+
+[[eJUKod?javascript,console]]
+
+`return` 後面的值（`true`/`false`）會變成 `shouldGoMilitary(...)` 的值。
 
 ---
 
-這些也是函式
+運用 Output 
+----------
+
+「若 A 就 B，不然 C」
+`if( A ){ B } else {C}`
+
+[[UyITeXU?javascript,console]]
+
+Function 可以……
+
+* 讓程式很好讀。
+* 要修改也很容易。
+
+---
+
+這些也是函式！
 ---------
+
+瀏覽器的製作者幫我們寫好的 Function。
 
 * `parseInt(文字, 底數)`：input 文字，output 數字
 * `console.log(資料)`：input 資料，在終端機把資料印出來。

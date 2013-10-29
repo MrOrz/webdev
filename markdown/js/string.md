@@ -70,3 +70,7 @@ Javascript 字串無法被 `[ ]` 修改（immutable）
 [[UWiXUhu?javascript,console]]
 
 但有 `.replace()` 等方法可以用。
+
+-----
+
+[屬性與方法](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String#String_instances)

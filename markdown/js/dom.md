@@ -20,13 +20,7 @@ console.log('hash', location.hash);
 
 傳值進去會重新整理瀏覽器頁面。
 
----
 
-彈出式視窗
-----------
-`alert`, `confirm`, `prompt`
-
-[[mrorz-js-alert?javascript,live]]
 
 ---
 

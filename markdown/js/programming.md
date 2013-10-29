@@ -102,7 +102,7 @@ Output 也會反應在 DOM 上。
   </g>
   <g id="input2">
    <line id="svg_18" marker-end="url(#se_marker_end_svg_6)" y2="51.78125" x2="148.26316" y1="51.78125" x1="110.25" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="#1c1a1a" fill="none"/>
-   <text fill="#0c0c0c" stroke="#fcf9f9" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="72" y="57" id="svg_22" font-size="18" font-family="Monospace" text-anchor="middle" xml:space="preserve">確認框</text>
+   <text fill="#0c0c0c" stroke="#fcf9f9" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="72" y="57" id="svg_22" font-size="18" font-family="Monospace" text-anchor="middle" xml:space="preserve">勾勾元素</text>
   </g>
   <g id="output2">
    <line id="svg_21" marker-end="url(#se_marker_end_svg_7)" y2="51.28125" x2="281.25658" y1="51.28125" x1="243.24342" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="#1c1a1a" fill="none"/>

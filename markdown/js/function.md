@@ -170,3 +170,13 @@ Function 可以……
 * `parseInt(文字, 底數)`：input 文字，output 數字
 * `console.log(資料)`：input 資料，在終端機把資料印出來。
 * `str.indexOf(想找的字串)`：input 想找的東西，output 其在 `str` 的位置
+
+---
+
+LearnStreet 練習時間
+--------
+
+[LearnStreet](http://www.learnstreet.com/student/join/o4laIoVQ) 的「Function」
+
+![Lean street If](images/js/ls-function.png)
+約需 18 分鐘。

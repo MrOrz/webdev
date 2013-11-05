@@ -24,7 +24,7 @@ LearnStreet 練習時間
     <h4>1. Pushing Arrays</h4>
     <p><small>產生 `[1,2,…,100]`</small></p>
     <h4>2. Every Other One</h4>
-    <p><small>把第奇數個元素加總</small></p>
+    <p><small>把第 0、2、…個元素加總</small></p>
     <h4>3. First and Last</h4>
     <p><small>檢查第一個和最後一個是否相等</small></p>
     <h4>4. Reverse Swapping</h4>

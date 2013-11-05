@@ -26,11 +26,11 @@ console.log('hash', location.hash);
 
 資料儲存
 ----------
-`localStorage`, `sessionStorage`
+`localStorage`
 
 * 用法像 javascript object
 * `localStorage.KEY = VALUE`，`VALUE` 只能是字串
-* `localStorage` 會一直存在，`sessionStorage` 僅存在瀏覽器分頁中
+* `localStorage` 會一直存在
 
 <div class="row">
   <div class="span3">

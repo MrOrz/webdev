@@ -18,9 +18,15 @@ Function 函數
 
 建一個函數：
 
+#### Function definition
+
 `function 函式名 (引數們) { ... }`
 
+#### Function expression
+
 `var 函數名 = function (引數們) { ... }`
+
+------
 
 呼叫一個函數：
 `函數名(要傳的引數)`
@@ -44,7 +50,7 @@ Function 函數
 
 ---
 
-Function 函數
+First-class Function
 -----------
 
 [[mrorz-js-func?javascript,console]]
@@ -59,6 +65,43 @@ Function 函數
 [[OdAHiKI?javascript,console]]
 
 `function` 一蓋好，就傳進 `repeat` 中。
+
+---
+
+Function Scope
+------
+
+`function` 裡定義的變數，外面拿不到。
+
+[[iyefUd?javascript,console]]
+
+Scope：變數能被存取的範圍。
+
+在 function 裡定義的變數叫「`區域變數`」
+
+---
+
+Function Scope (II)
+------
+
+`function` 可以拿到外面定義的變數。
+
+[[eZUgajU?javascript,console]]
+
+---
+
+Function Scope (III)
+------
+
+若 function 內外變數名字相同，
+
+function 內只會看/改到區域變數。
+
+[[etEmOKe?javascript,console]]
+
+Function input 也算是區域變數。
+
+[延伸閱讀](http://blog.taian.su/201210/explaining-javascript-scope-and-closures-by-robert-nyman/)
 
 ---
 
@@ -99,7 +142,9 @@ Javascript 物件變數當引數時，為 pass-by-reference。
 特殊值：`undefined`
 -----
 
-`undefined`: 未定義。變數的預設值、function 預設的回傳值。
+`undefined`: 未定義。
+
+變數的預設值、function 預設的回傳值。
 
 [[mrorz-js-undef?javascript,console]]
 
@@ -108,4 +153,4 @@ Javascript 物件變數當引數時，為 pass-by-reference。
 特殊值：`null`
 -----
 
-`null`: 什麼都不是。
+`null`: 不同於 `undefined` 的「空」值。

@@ -24,10 +24,10 @@ DOM 這個 API 很長，相當困擾。
 
 ---
 
-一級 DOM 改造士: jQuery
+DOM 改造專家: jQuery
 --------
 
-### SPEC
+### 需求
 
 * 表單送出時，檢查是否接受出師表
 * 按「增加推薦人」時，蓋一個下面的東西：
@@ -39,6 +39,8 @@ DOM 這個 API 很長，相當困擾。
   ```
 * 按裡頭的「刪除」時，把整個 `<p>` 移除。
 
+------
+
 ### 希望
   寫少一點，作到的事情更多。
 
@@ -48,7 +50,7 @@ DOM 這個 API 很長，相當困擾。
 BEFORE
 --------
 
-[[mrorz-js-jquery-form]]
+[[mrorz-js-jquery-form?javascript]]
 
 
 ---
@@ -58,6 +60,6 @@ AFTER
 
 なんということでしょう!
 
-[[mrorz-js-jquery-form2]]
+[[mrorz-js-jquery-form2?javascript]]
 
 附加功能：支援 IE6~8。

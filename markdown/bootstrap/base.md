@@ -1,3 +1,14 @@
+預設全域外觀
+----------
+
+* 需要 `<!DOCTYPE html>`
+* CSS Normalize
+
+
+[CSS - Overview](http://getbootstrap.com/css/#overview)
+
+---
+
 Typography
 ----------
 
@@ -5,7 +16,7 @@ Typography
 
 ![Line height](images/bootstrap/typography.png)
 
-[BaseCSS - Typography](http://getbootstrap.com/2.3.2/base-css.html#typography)
+[CSS - Typography](http://getbootstrap.com/css/#type)
 
 ---
 
@@ -25,7 +36,7 @@ Table
 
 `<table>` 上加上 `table` class。
 
-[Base CSS - Table](http://getbootstrap.com/2.3.2/base-css.html#tables)
+[CSS - Table](http://getbootstrap.com/css/#tables)
 
 ---
 
@@ -36,21 +47,7 @@ Form
 
 [[mrorz-bootstrap-form]]
 
-[Base CSS - Form](http://getbootstrap.com/2.3.2/base-css.html#forms)
-
----
-
-Horizontal Form
----------------
-
-較複雜的例子：
-
-[[mrorz-bs-hrform]]
-
-* `form-horizontal` 包住全部
-* `.control-label` 加在 `<label>`
-* `.controls` 包住要放在 `label` 右邊的元素
-* `.control-group` 包住 `.control-label` 和 `.controls`
+[CSS - Form](http://getbootstrap.com/css.html#forms)
 
 ---
 
@@ -61,4 +58,4 @@ Images
 
 `.img-rounded`、`.img-circle`、`.img-polaroid`
 
-[Base CSS - Images](http://getbootstrap.com/2.3.2/base-css.html#images)
+[CSS - Images](http://getbootstrap.com/css.html#images)

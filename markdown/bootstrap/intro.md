@@ -1,19 +1,8 @@
 
-![Bootstrap](images/bootstrap/bootstrap.png)
-
-[Twitter Bootstrap 2.3.2](http://getbootstrap.com/2.3.2/)
-
----
-
-最近改版了。
-
 ![Bootstrap 3](images/bootstrap/bootstrap3.png)
 
 [Twitter Bootstrap 3.0.0](http://getbootstrap.com/)
 
-- - -
-
-前一版 2.3.2 較單純。
 
 ---
 
@@ -45,10 +34,10 @@ button 外觀
 
 已經引入 Bootstrap 的 CSS。
 
-加上 `class="btn"`
+加上 `class="btn btn-default"`
 
 
-[Base CSS - Buttons](http://getbootstrap.com/2.3.2/base-css.html#buttons)
+[CSS - Buttons](http://getbootstrap.com/css/#buttons)
 
 ---
 
@@ -88,5 +77,5 @@ Bootstrap
 
 `data-toggle="tab"`
 
-[Javascript - Tab](http://getbootstrap.com/2.3.2/javascript.html#tabs)
+[Javascript - Tab](http://getbootstrap.com/javascript/#tabs)
 

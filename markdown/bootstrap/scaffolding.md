@@ -1,14 +1,3 @@
-預設全域外觀
-----------
-
-* 需要 `<!DOCTYPE html>`
-* CSS Normalize
-
-
-[Scaffolding - Global Styles](http://getbootstrap.com/2.3.2/scaffolding.html#global)
-
----
-
 12 欄網格設計
 --------
 
@@ -23,12 +12,12 @@
 
 ---
 
-`row` & `spanN`
+`row` & `col-md-N`
 ---------------
 
 [[mrorz-bootstrap-zen]]
 
-[Scaffolding - Grid System](http://getbootstrap.com/2.3.2/scaffolding.html)
+[CSS - Grid System](http://getbootstrap.com/css/#grid-intro)
 
 ---
 
@@ -42,18 +31,30 @@
 
 
 <ul>
-  <li class="fragment">`.span*` 有 `float: left`、`margin-left`。</li>
-  <li class="fragment">`.spanN` 不同 N 有不同寬度。</li>
+  <li class="fragment">`.col-md-*` 有 `float: left`、 左右 `padding`、百分比寬度。</li>
+  <li class="fragment">`.col-md-N` 不同 N 有不同寬度。</li>
   <li class="fragment">`.row` 做 Clear-fix。</li>
 </ul>
 
+---
+
+`md`
+-----
+
+螢幕寬度不大於 `992px` 時：垂直排列
+
+螢幕寬度大於 `992px` 時：水平排列
+
+另有 `.col-xs-*`、`.col-sm-*`、`.col-lg-*`
+
+[Grid Options](http://getbootstrap.com/css/#grid-options)
 
 ---
 
 Container
 ---------
 
-固定寬度、垂直置中。
+整個 Layout 固定寬度、水平置中。
 
 [[mrorz-bootstrap-zen-container]]
 
@@ -61,14 +62,12 @@ Container
 
 ---
 
-bootstrap-responsive.css
+Container is Responsive
 ---------
 
-對不同螢幕寬度，設定不同 `.span*`, `.container` 寬。
+對不同螢幕寬度，設定不同 `.container` 寬。
 
-[[mrorz-bootstrap-responsive]]
-
-[Scaffolding - Layouts](http://getbootstrap.com/2.3.2/scaffolding.html#layouts)
+[[mrorz-bootstrap-zen-container]]
 
 ---
 
@@ -77,30 +76,9 @@ Nested Columns
 
 [[mrorz-bootstrap-nested]]
 
-在 `.row .spanN` 裡還可以有 `.row`。
+在 `.row .col-md-*` 裡還可以有 `.row`。
 
-內層的 `.spanM` 欄數加起來 `<= N`
-
-
----
-
-`row-fluid` 與 `spanN`
------------------------
-
-寬度以百分比 `%` 代替 `px`。
-
-[Scaffolding - Fluid Grid System](http://getbootstrap.com/2.3.2/scaffolding.html#fluidGridSystem)
-
----
-
-Nested Columns in row-fluid
----------------
-
-[[mrorz-bootstrap-nested-fluid]]
-
-在 `.row .spanN` 裡還可以有 `.row-fluid`。
-
-`.row-fluid` 內層的 `.spanM` 欄數加起來 `<= 12`
+內層的 `.col-md-*` 欄數加起來 `= 12`
 
 ---
 

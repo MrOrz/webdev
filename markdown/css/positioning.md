@@ -112,10 +112,6 @@ float
 
 因此 `.child` 的 `bottom`、`right` 是以 `.world` 為準。
 
-- - -
-
-你我都曾經 `position: absolute`。
-
 ---
 
 細說 `position` (2)

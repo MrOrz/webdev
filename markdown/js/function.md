@@ -191,3 +191,5 @@ LearnStreet 練習時間
 
 ![Lean street If](images/js/ls-function.png)
 約需 18 分鐘。
+
+若程式跑不出來，請先把程式貼到 [JSHint](http://www.jshint.com) 檢查語法。

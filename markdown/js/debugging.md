@@ -7,6 +7,29 @@ console.log
 
 ---
 
+Syntax Error!
+------
+
+若 console 裡頭出現
+
+![syntax error](images/js/syntaxerror.png)
+
+- - -
+
+把程式貼到 [JSHint](http://www.jshint.com)
+
+<div class="row">
+  <div class="span4 centered">
+    
+    ![JSHint](images/js/jshint.png)
+  </div>
+</div>
+
+
+檢查語法、回報變數使用情形等等
+
+---
+
 中斷點
 -----
 

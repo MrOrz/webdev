@@ -98,10 +98,10 @@
 
 1. 按 Run
 2. 用 `prompt` 讓使用者輸入一個 0 ~ 2 數字
-3. 輸出「你猜對了！好厲害！」或「正確答案是 X 喔。」。
+3. 輸出「Correct! You are lucky!」或「It should be X.」。
 
 [[mrorz-js-game]]
 
 ------
 
-[參考答案](http://jsbin.com/ahAkiMO/latest)
+提示：`parseInt`。[參考答案](http://jsbin.com/ahAkiMO/latest)

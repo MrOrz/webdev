@@ -5,25 +5,44 @@
 
 [[aHeyUjU?javascript,console]]
 
-給定年齡（yearsOld），印出行為能力資訊。
+---
+
+重複的程式碼
+----------
+
+給定年齡（yearsOld）與性別（sex），告訴我要不要當兵。
+```javascript
+var shouldGo = sex === 'Male' && yearsOld >= 19 && yearsOld <= 36;
+
+console.log("Should go military?", shouldGo);
 ```
-var result = yearsOld + " 歲，" +
-             (yearsOld >= 20 ? "完全行為能力人" : "限制行為能力或無行為能力人");
-console.log(result);
-```
+
+<div class="fragment">
+  <hr>
+  複製貼上程式碼的問題：
+  <ul>
+    <li class="fragment">一眼看不出是在檢查兵役</li>
+    <li class="fragment">未來兵役規則改變時，全部都要跟著改</li>
+  </ul>
+
+</div>
+
 
 ---
 
-輸入與輸出
+規律：輸入與輸出
 --------
 
-給定年齡（yearsOld），印出行為能力資訊。
+給定年齡（yearsOld）與性別（sex），告訴我要不要當兵。
+
+```javascript
+var shouldGo = sex === 'Male' && yearsOld >= 19 && yearsOld <= 36;
+
+console.log("Should go military?", shouldGo);
 ```
-var result = yearsOld + " 歲，" +
-             (yearsOld >= 20 ? "完全行為能力人" : "限制行為能力或無行為能力人");
-console.log(result);
-```
+
 -----
+
 <svg width="400" height="100" xmlns="http://www.w3.org/2000/svg" class="fragment">
  <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
  <defs>
@@ -44,7 +63,7 @@ console.log(result);
   </g>
   <g id="input2">
    <line fill="none" stroke="#1c1a1a" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x1="110.25" y1="51.78125" x2="148.26316" y2="51.78125" marker-end="url(#se_marker_end_svg_6)" id="svg_18"/>
-   <text xml:space="preserve" text-anchor="middle" font-family="Monospace" font-size="18" id="svg_1" y="56.5" x="80" stroke-width="0" stroke="#fcf9f9" fill="#0c0c0c">年齡</text>
+   <text xml:space="preserve" text-anchor="middle" font-family="Monospace" font-size="18" id="svg_1" y="56.5" x="80" stroke-width="0" stroke="#fcf9f9" fill="#0c0c0c">年齡性別</text>
   </g>
   <g id="output2">
    <line fill="none" stroke="#1c1a1a" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x1="243.24342" y1="51.28125" x2="281.25658" y2="51.28125" marker-end="url(#se_marker_end_svg_7)" id="svg_21"/>
@@ -84,7 +103,7 @@ Function
   </g>
   <g id="input2">
    <line fill="none" stroke="#1c1a1a" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x1="110.25" y1="51.78125" x2="148.26316" y2="51.78125" marker-end="url(#se_marker_end_svg_6)" id="svg_18"/>
-   <text xml:space="preserve" text-anchor="middle" font-family="Monospace" font-size="18" id="svg_1" y="56.5" x="80" stroke-width="0" stroke="#fcf9f9" fill="#0c0c0c">年齡</text>
+   <text xml:space="preserve" text-anchor="middle" font-family="Monospace" font-size="18" id="svg_1" y="56.5" x="80" stroke-width="0" stroke="#fcf9f9" fill="#0c0c0c">年齡性別</text>
   </g>
   <g id="output2">
    <line fill="none" stroke="#1c1a1a" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x1="243.24342" y1="51.28125" x2="281.25658" y2="51.28125" marker-end="url(#se_marker_end_svg_7)" id="svg_21"/>
@@ -94,11 +113,11 @@ Function
 </svg>
 
 ```
-// printBehavioralInfo 是一個變數，存著一個 function
-var printBehavioralInfo = function(age) {
-  var result = age + " 歲，" +
-               (age >= 20 ? "完全行為能力人" : "限制行為能力或無行為能力人");
-  console.log(result);
+// printMilitaryInfo 是一個變數，存著一個 function
+var printMilitaryInfo = function(yearsOld, sex) {
+  var shouldGo = sex === 'Male' && yearsOld >= 19 && yearsOld <= 36;
+
+  console.log("Should go military?", shouldGo);
 };
 ```
 
@@ -113,13 +132,12 @@ var printBehavioralInfo = function(age) {
 
 設定一個 Function：
 ```
-// 把第一個 input 取名為 age
-var 函數名 = function(age) {
+// 把 input 取名為 yearsOld 和 sex
+var 函數名 = function(yearsOld, sex) {
   // 進行判斷
-  var result = age + " 歲，" +
-               (age >= 20 ? "完全行為能力人" : "限制行為能力或無行為能力人");
+  var shouldGo = sex === 'Male' && yearsOld >= 19 && yearsOld <= 36;
   // 輸出 
-  console.log(result);
+  console.log("Should go military?", shouldGo);
 };
 ```
 
@@ -127,31 +145,24 @@ var 函數名 = function(age) {
 
 ---
 
-Input 的數量
------------
 
-`function` 的 input 可以有很多個。
-
-[[AHICoMe?javascript,console]]
-
----
-
-一個 Output
+單一 Output
 ----------
 
 `return` 敘述：把運算結果傳出去。
 
 [[eJUKod?javascript,console]]
 
-`return` 後面的值（`true`/`false`）會變成 `shouldGoMilitary(...)` 的值。
+`return` 後面的值，
+
+會變成 `shouldGoMilitary(...)` 的值。
 
 ---
 
 運用 Output 
 ----------
 
-「若 A 就 B，不然 C」
-`if( A ){ B } else {C}`
+若得知 Bob 是否有當過兵，那 Bob 是否能出國讀書？
 
 [[UyITeXU?javascript,console]]
 

@@ -193,3 +193,32 @@ LearnStreet 練習時間
 約需 18 分鐘。
 
 若程式跑不出來，請先把程式貼到 [JSHint](http://www.jshint.com) 檢查語法。
+
+---
+
+
+<div class="row">
+  <div class="span3">
+    <h4>1. Simple Addition Function</h4>
+    <p><small>回傳 `x`, `y` 加總。</small></p>
+    <h4>2. Division Problem</h4>
+    <p><small>回傳 `a/b`。</small></p>
+    <h4>3. Capitalize the First Letter</h4>
+    <p><small>提示：[`toUpperCase`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) 與 [`slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)。</small></p>
+    <h4>4. Capitalize Names</h4>
+    <p><small>把姓與名分開 Capitalize。</small></p>
+    <p><small>註：`substring()` 和 `slice()` 類似，但 `slice()` 較靈活。</small></p>
+  </div>
+  <div class="span3">
+    <h4>5. Square a Number</h4>
+    <p><small>回傳 `num` 平方。</small></p>
+    <h4>6. Sum of Squares</h4>
+    <p><small>回傳 `num1` 平方加 `num2` 平方。</small></p>
+    <h4>7. Area of Triangle</h4>
+    <p><small>給定底 `base`、高 `height`，回傳三角形面積。</small></p>
+    <h4>8. Just Came to Say Hello</h4>
+    <p><small>回傳 `"Hello, " + name`</small></p>
+    <h4>9. Global Variables</h4>
+    <p><small>請跳過此題。</small></p>
+  </div>
+</div>

@@ -30,6 +30,31 @@ LearnStreet 練習時間
 ---
 
 `for` 迴圈
+<div class="row">
+  <div class="span3">
+    <h4>1. Max of Two</h4>
+    <p><small>回傳 `a`, `b` 中較大者。</small></p>
+    <h4>2. Best of Three</h4>
+    <p><small>回傳 `a`~`c` 中最大者。</small></p>
+    <h4>3. Doesn't JS Rock?</h4>
+    <p><small>依照 password 是否正確，回傳對應訊息。</small></p>
+    <h4>4. Are you Chuck Norris</h4>
+    <p><small>只在 `username` 與 `password` 為指定值時才回傳 `successMessage`。</small></p>
+  </div>
+  <div class="span3">
+    <h4>5. Find the Number</h4>
+    <p><small>當 `a`、`b`、`a+b`、`a-b`、`b-a` 任一為 `42` 時回傳 `true`</small></p>
+    <h4>6. Five Letter Palindrom</h4>
+    <p><small>回傳是否為五字迴文。</small></p>
+    <p><small>註：若非五字，請記得回傳 `false`。</small></p>
+    <h4>7. FizzBuzz</h4>
+    <p><small>檢查 `num` 是否為 3 及 5 的倍數，回傳相對的文字。</small></p>
+    <h4>8. Nested If-Else Statements</h4>
+    <p><small>給定星期幾和天氣，決定應該要做什麼。</small></p>
+  </div>
+</div>
+
+---
 -----------
 
 ```

@@ -35,10 +35,10 @@ LearnStreet 練習時間
     <h4>5. Range</h4>
     <p><small>產生 `[0,1,…,n]`</small></p>
     <h4>6. Words</h4>
-    <p><small>手寫 `["one","two",…,"five"]`</small></p>
+    <p><small>請跳過此題。</small></p>
     <h4>7. If and Only If</h4>
     <p><small>`arr` 裡有 `6` 時，把 `item` 放到 `arr` 尾端</small></p>
     <h4>8. Delete Free Emails</h4>
-    <p><small>將 `eMails` 中字串含有 `free` 的字串替代為 `spam`</small></p>
+    <p><small>將 `eMails` 中字串含有 `"free"` 的字串整個替代為 `"spam"`</small></p>
   </div>
 </div>

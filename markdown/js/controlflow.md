@@ -29,7 +29,6 @@ LearnStreet 練習時間
 
 ---
 
-`for` 迴圈
 <div class="row">
   <div class="span3">
     <h4>1. Max of Two</h4>
@@ -55,18 +54,20 @@ LearnStreet 練習時間
 </div>
 
 ---
+
+`while` 迴圈
 -----------
 
-```
-for(;;){
+```js
+while(true){
   …重複執行的程式碼…
 }
 ```
 ------
 把下面程式貼進 Javascript 控制台
 
-```
-for(;;){
+```js
+while(true){
   console.log("一直一直執行呀～");
 }
 ```
@@ -98,7 +99,7 @@ You need a `break`
 
 先檢查「整個字串僅含阿拉伯數字與 "-"」。
 
-[[OROFefe?javascript,console]]
+[[mrorz-js-numcheck?javascript,console]]
 
 註：Javascript 字串可以用 `<`、`>`，比字典順序。
 
@@ -109,12 +110,25 @@ You need a `break`
 
 加入判斷「數字要有 10 個」
 
-[[AJETOfa?javascript,console]]
+[[OROFefe?javascript,console]]
 
 ---
 
 成品
 -----
+
+[[AJETOfa?javascript,console]]
+
+---
+
+繼續執行條件
+-----------
+
+```js
+while(繼續執行條件){
+  …重複執行的程式碼…
+}
+```
 
 [[iSIHoBa?javascript,console]]
 
@@ -126,17 +140,15 @@ You need a `break`
 
 <div class="row">
   <div class="span3">
-    <pre><code class="javascript">for(;;){
-  if(要跳出){break;}
-
+    <pre><code class="javascript">while(繼續條件){
   …重複執行的程式碼…
 }</code></pre>
 
   </div>
   <div class="span3">
-    <pre><code class="javascript">while(不要跳出){
+    <pre><code class="javascript">for(;繼續條件;){
   …重複執行的程式碼…
-}</code></pre>    
+}</code></pre>
 
   </div>
 </div>
@@ -147,15 +159,13 @@ You need a `break`
 
 ---
 
-`for` 迴圈細節 (1)
+`for` 迴圈細節
 --------------------
 
 <div class="row">
   <div class="span3">
     <pre><code class="javascript">初始化;
 for(;;){
-  if(要跳出){break;}
-
   …重複執行的程式碼…
 }</code></pre>
 
@@ -163,7 +173,7 @@ for(;;){
   <div class="span3">
     <pre><code class="javascript">for(初始化; 繼續條件; 條件改變){
   …重複執行的程式碼…
-}</code></pre>    
+}</code></pre>
 
   </div>
 </div>
@@ -176,38 +186,6 @@ for(;;){
 
 ---
 
-`for` 迴圈細節 (2)
-----
-
-從 0 印到 3 的範例。
-
-<div class="row">
-  <div class="span3">
-<pre><code class="javascript">var i=0;
-for(;;){
-  if ( i>=4 ) { break; }
-  ...
-  i += 1;
-}
-</code></pre>
-  </div>
-  <div class="span3">
-<pre><code class="javascript">for(初始化; 繼續條件; 條件改變){
-  ...
-}
-</code></pre>
-
-<pre><code class="javascript">var i;
-for(i=0; i<4; i+=1){ ... }
-</code></pre>
-  </div>
-</div>
-
-
-[[mrorz-js-loopdetail?javascript,console]]
-
----
-
 LearnStreet 練習時間
 --------
 
@@ -217,19 +195,28 @@ LearnStreet 練習時間
 
 約需 16 分鐘。
 
+若按 Run 沒有回應，請重新整理。
+
 ---
 
-課堂練習：無限猜數字
-------
-
-* 一樣猜 1 ~ 3 的數字
-* 一樣用 `alert` 告知結果
-* 告知結果後，再次請使用者猜數字
-* 若使用者按取消（`prompt`回傳`null`），跳出迴圈
-
-[[eZiXoCI?javascript,console]]
-
-[參考答案](http://jsbin.com/eSAwEWU/latest/edit)
+<div class="row">
+  <div class="span3">
+    <h4>1. Add 'Em Up</h4>
+    <p><small>用 `while` 算從 `1` 加到 `n`。</small></p>
+    <h4>2. Sum Odd Numbers</h4>
+    <p><small>同 1，但只加奇數。</small></p>
+    <h4>3. Auto Correct, Kind Of</h4>
+    <p><small>計算 `str1`、`str2` 有幾個字不一樣。</small></p>
+  </div>
+  <div class="span3">
+    <h4>4. Comparing String</h4>
+    <p><small>用 `while` 逐字比較兩個字串是否相等</small></p>
+    <h4>5. Count to 100, Again</h4>
+    <p><small>用 `for` 算從 `1` 加到 `n`。</small></p>
+    <h4>6. Word Count</h4>
+    <p><small>計算句子裡的單字數量（用空白的數量 + 1 來算）</small></p>
+  </div>
+</div>
 
 ---
 
@@ -237,26 +224,6 @@ LearnStreet 練習時間
 ----
 
 [[mrorz-js-nestedloop?javascript,console]]
-
----
-
-Labeled Break
--------------
-
-迴圈前可以加上 label 如下：
-
-```
-  outerLoop: for(;;){
-    ……
-      if(...){
-        break outerLoop;
-      }
-      if(...){
-        continue outerLoop;
-      }
-    ……
-  }
-```
 
 ---
 

@@ -34,6 +34,12 @@ Social Plugin : Like Button
 
 可設定要按讚的網址（URL to Like）、寬度與一些外觀。
 
+<div class="row">
+  <div class="span3 centered">
+    ![Facebook Get Code](images/http/facebook-iframe.png)
+  </div>
+</div>
+
 可透過 `iframe` 或 HTML5 + Facebook JS SDK 引入，或直接用一個連結來做。
 
 ---
@@ -43,7 +49,7 @@ Graph API / FQL
 
 [Graph API Reference](https://developers.facebook.com/docs/reference/api/)
 
-能讀取或發佈各種資源；每項資源裡有 fields（欄位）和 connections（巢狀資源）。
+能讀取或發佈各種資源；每項資源裡有 fields（欄位）和 edges（巢狀資源）。
 
 - - -
 
@@ -71,7 +77,7 @@ Graph API Explorer
 
 - - -
 
-Page 物件有[很多 connection](https://developers.facebook.com/docs/reference/api/page/#connections)。
+Page 物件有[很多 edge](https://developers.facebook.com/docs/graph-api/reference/page#edges)。
 
 `454607821247176/posts` -- 塗鴉牆文章
 
@@ -121,14 +127,14 @@ Access Token
 
 [Login Permissions Reference](https://developers.facebook.com/docs/reference/login/#permissions)
 
-Graph API 裡的 field 與 connection 都有[相對應的權限](https://developers.facebook.com/docs/reference/api/page/#connections)。
+Graph API 裡的 field 與 connection 都有[相對應的權限](https://developers.facebook.com/docs/graph-api/reference/page)。
 
 ---
 
 Javascript SDK
 -------------
 
-[Javascript SDK Reference](https://developers.facebook.com/docs/reference/javascript/)
+[Javascript SDK Reference](https://developers.facebook.com/docs/javascript/reference)
 
 `FB.init(...)` 放在特殊 function `fbAsyncInit` 中進行設定
 

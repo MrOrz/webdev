@@ -3,8 +3,8 @@
 
 <div class="row">
   <div class="span3">
-    ![Facebook Home](images/intro/fbhome.png)
-    [Facebook Home](https://www.facebook.com/home)
+    ![CCSP 官網](images/intro/ccsp.png)
+    [CCSP 官網](http://ccsp.ntumobile.org)
   </div>
   <div class="span3">
     ![2012新創企業實習媒合會](images/intro/match.png)

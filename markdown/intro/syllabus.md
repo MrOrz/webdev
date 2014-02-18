@@ -35,7 +35,6 @@ Syllabus
 - jQuery UI
 
 <aside class="notes">
-  worksheet2: 熟悉 JS 程式語言 <br>
   HW2：TODO List
 </aside>
 
@@ -49,7 +48,7 @@ Syllabus
 - CSS Preprocessors -- Sass
 
 <aside class="notes">
-  worksheet 3: 把之前的 hw 用 sass-convert 轉換成 sass<br>
+  worksheet 2: 把之前的 hw 用 sass-convert 轉換成 sass<br>
   HW3: 產品網站
 </aside>
 
@@ -65,6 +64,5 @@ Syllabus
 - 總結
 
 <aside class="notes">
-  worksheet 4: 朋友列表<br>
-  HW4：facebook 垃圾社團 checker？
+  HW4：facebook 垃圾社團 checker
 </aside>

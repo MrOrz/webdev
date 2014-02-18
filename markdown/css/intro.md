@@ -30,16 +30,25 @@ CSS Syntax
 
 ---
 
-怎麼加進 HTML
------------
+把 CSS 加進 HTML
+---------------
 
-在 `<head>` 中加入
+### `<link>`
 
 ```html
-<link rel="stylesheet" type="text/css" href="path/to/file.css">
+<head>
+  ...
+  <link rel="stylesheet" type="text/css" href="path/to/file.css">
+  ...
+</head>
 ```
 
-或直接把 CSS 寫在 HTML 檔的 `<style>` 裡；
+---
+
+把 CSS 加進 HTML (2)
+---------------
+
+### `<style>`
 
 [[mrorz-css-styletag]]
 
@@ -70,8 +79,7 @@ Cascading Style Sheet
   </div>
   <div class="span3">
     <h3>Inheritance</h3>
-
-    <p>某些屬性（如 color）預設會繼承自父元素。</p>
+    <p>某些外觀屬性（Ex: `color`）會透過 HTML 嵌套，繼承給裡面的元素</p>
 
     [[mrorz-css-inheritence]]
   </div>
@@ -84,7 +92,7 @@ CSS Reset
 
 [[mrorz-css-reset]]
 
-拿掉瀏覽器預設的 style。
+拿掉瀏覽器預設的外觀定義
 
 ---
 
@@ -93,17 +101,20 @@ CSS Normalization
 
 [[mrorz-css-normalization]]
 
-統一各瀏覽器的 style。 <small>[規則說明](https://github.com/necolas/normalize.css/wiki)</small>
+統一各瀏覽器的外觀定義 <small>[規則說明](https://github.com/necolas/normalize.css/wiki)</small>
 
 ---
 
 大綱
 ----
 
+<!-- CSS 屬性有交互作用，比較沒辦法用「課文」例子來講。 -->
+
 * 常用外觀樣式
 * 除錯工具介紹
+* 數值 & 字型
 * CSS Selectors & Specificity
-* Box Model 與定位
+* Box Model 與 Positioning
 * CSS3
 * 難懂的屬性：`vertical-align`, `z-index`
 * Media Query

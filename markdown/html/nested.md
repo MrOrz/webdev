@@ -28,10 +28,13 @@ Permitted Contents
 * `<ul>`、`<ol>` 裡面只能包 `<li>`。
 * `<tr>` 裡面只能包 `<td>` 與 `<th>`。
 
-但瀏覽器會[容忍部分錯誤](http://taligarsiel.com/Projects/howbrowserswork1.htm#Browsers_error_tolerance)。
+<div class="fragment">
+  <hr>
+  <p>瀏覽器會[容忍部分 HTML 錯誤](http://taligarsiel.com/Projects/howbrowserswork1.htm#Browsers_error_tolerance)。</p>
+  <p><small>說英文時文法有錯，老外有時也聽得懂，但還是要學好文法。</small></p>
+</div>
 
 ---
-
 
 常見嵌套錯誤
 ----------

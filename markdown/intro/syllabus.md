@@ -1,9 +1,9 @@
 Syllabus
 --------
 
-12 次上課
+10 次上課
 
-每次 2.5 小時（19:00 ~ 21:30）
+每次 3 小時（19:00 ~ 22:00）
 
 一週兩次（週二、週五）
 
@@ -28,7 +28,7 @@ Syllabus
 ---
 
 ### Javscript
-〈第四～七次上課〉
+〈第四～六次上課〉
 
 - Javascript 語法、基礎元素
 - 基本 DOM API，jQuery 操作、選取、事件
@@ -43,7 +43,7 @@ Syllabus
 
 ### CSS Frameworks
 
-〈第八、九次上課〉
+〈第七次上課〉
 
 - Compass 與 bootstrap-sass
 - CSS Preprocessors -- Sass
@@ -57,7 +57,7 @@ Syllabus
 
 ### Mashups & Social Network
 
-〈第十、十一、十二次上課〉
+〈第八～十次上課〉
 
 - HTTP，jQuery Ajax
 - Facebook Graph API & JS SDK

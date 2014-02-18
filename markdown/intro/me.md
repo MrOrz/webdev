@@ -33,4 +33,4 @@
   </div>
 </div>
 
-網路及平台服務程式設計助教 / [期末成果展 - NTU Cloud Expo](http://cloudexpo.ntumobile.org/)
+[網路及平台服務程式設計](http://ccsp.ntumobile.org/)助教 / [期末成果展 - NTU Cloud Expo](http://cloudexpo.ntumobile.org/)

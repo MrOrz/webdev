@@ -93,6 +93,25 @@ HTML5 語意標籤
 
 `<header>`、`<footer>`：文章段落或頁面的開頭、結尾
 
+
+---
+
+網頁排版
+--------
+
+![Mockup](images/html/webpage.jpg)
+
+<p><small>[圖片來源](http://msdn.microsoft.com/en-us/magazine/gg454786.aspx)</small></p>
+
+---
+
+網頁排版範例
+--------
+
+![html plannning](images/html/webpage-struct.jpg)
+
+<p><small>[圖片來源](http://msdn.microsoft.com/en-us/magazine/gg454786.aspx)</small></p>
+
 ---
 
 
@@ -111,12 +130,19 @@ HTML5 語意標籤
 通用屬性
 -------
 
-大部分 element 都有下面屬性：
-
 [[mrorz-html-general?live,html]]
+
+大部分 element 都有下面屬性
 
 <ul>
   <li class="fragment"><code>class</code>, <code>id</code>：替該 element 加上一個 classname / unique ID，使 CSS 的 selector 能選取、Javascript 方便操作。</li>
   <li class="fragment"><code>title</code>：工具提示（tooltip）</li>
   <li class="fragment"><code>style</code>：加上 CSS Declaration。</li>
 </ul>
+
+---
+
+參考資料
+-------
+
+<a href="https://developer.mozilla.org/en/HTML/Element" target="_blank">MDN HTML Elements</a> 標籤列表、屬性介紹

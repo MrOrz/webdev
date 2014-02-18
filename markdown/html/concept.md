@@ -62,12 +62,44 @@ Tag, Element, Attribute
 
 ---
 
-`<br>` 與 `&nbsp;`
+學 HTML 像學英文
+--------------
+
+![課本](images/html/english.jpg)
+
+<!-- 教學用的是看似瑣碎、沒有相關的課文們，但學到的東西會在寫作文時用到 -->
+
+<div class="row">
+  <div class="span3">
+    <ul>
+      <li>一篇課文</li>
+      <li>很多生字要背</li>
+      <li>記文法、片語</li>
+      <li>組裝成英文作文</li>
+    </ul>
+  </div>
+  <div class="span3">
+    <ul>
+      <li>一個 HTML 範例</li>
+      <li>很多標籤要記</li>
+      <li>記語法、常用結構片段</li>
+      <li>組裝成完整網頁</li>
+    </ul>
+  </div>
+</div>
+
+<small>[圖片來源](http://uxi0909gmailcom.blogspot.tw/2009/06/971_9164.html)</small>
+
+---
+
+第一課：換行與空白
 -----------------
 [[mrorz-html-space]]
 
-用 `<br>` 換行，空白鍵預設會重疊
+`<br>` ：換行
 
-`&nbsp;` 代表「空白 [character entity](http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references)」，可疊加
+空白鍵預設會重疊
 
-`<!-- -->` 是多行註解
+`&nbsp;` ：可疊加的「空白 [character entity](http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references)」
+
+`<!-- -->` ：多行註解

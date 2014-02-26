@@ -83,9 +83,7 @@ HTML5 語意標籤
 
 `<article>`：一篇文章
 
-`<section>` 可以包在 `<article>`，
-
-`<article>` 可以包在 `<section>`。
+兩者可以[互包](http://www.w3.org/html/wg/drafts/html/master/sections.html#article-example)。
 
 - - -
 

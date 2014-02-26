@@ -106,6 +106,23 @@ Layered Presentation
 
 ---
 
+處理 `z-index`
+-------------
+
+<div class="row">
+  <div class="span2">![正常情形](images/css/zindex-normal.jpg)</div>
+  <div class="span2">![不正常情形1](images/css/zindex-abnormal.jpg)</div>
+  <div class="span2">![不正常情形2](images/css/zindex-abnormal2.jpg)</div>
+</div>
+
+<ul class="fragment">
+  <li>替 topbar（含 dropdown menu）建立 stacking context。</li>
+  <li>替網頁主體建立 stacking context。</li>
+  <li>讓 topbar 的 z-index 高過網頁主體。</li>
+</ul>
+
+---
+
 萬丈高樓平地起
 ------------
 

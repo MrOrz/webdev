@@ -20,33 +20,67 @@
 
 ---
 
-圖層疊疊樂
----------
+Layered Presentation
+----------------
 
-<p class="leader trailer"> `z-index: 整數` </p>
-<p>把元素變成「一層」</p>
-<hr>
-<div class="fragment">
-  <ul style="vertical-align: middle;">
-    <li>類似 Photoshop 的群組（資料夾）</li>
-    <li>也像大廈裡的其中一層樓</li>
-    <li>[「Stacking Context」](http://www.w3.org/TR/CSS2/visuren.html#layers): 疊東西的地方</li>
-    <li>群組內可另外設 `z-index`（樓中樓）</li>
-  </ul>
-  <img src="images/css/ps_zindex.gif" alt="Photoshop 群組類比圖層" style="vertical-align: middle; margin-left: 1em;" />
-</div>
+![Layers in Microsoft Word](images/css/word-layers.png)
 
+決定誰在「前面」誰在「後面」
+
+[「Stacking Context」](http://www.w3.org/TR/CSS2/visuren.html#layers): 疊東西的地方＝樓層
+
+<p class="fragment">
+一開始所有元素都在同一樓層 <br>
+（Root stacking context ＝ `<html>`）
+</p>
 
 ---
 
-Stacking Context
-----------------
+萬丈高樓平地起
+------------
+
+<div class="row leader">
+  <div class="span2">
+    ![Elevator](images/css/elevator.jpg)
+    <small>
+      [圖片來源 - flickr](https://www.flickr.com/photos/ryochan/3708078394/)
+    </small>
+  </div>
+  <div class="span4">
+    <p class="leader trailer">`z-index` = 樓層號碼（整數）</p>
+    <hr>
+    <h4 class="leader">形成 stacking context（新樓層）</h4>
+    <ul>
+      <li>`position: 非 static`</li>
+      <li>`z-index != auto` 或 `opacity < 1`</li>
+    </ul>
+  </div>
+</div>
+
+---
+
+巢狀 Stacking Context
+--------
+
+* 樓層內加蓋
+* 不同樓層的樓中樓，不會交錯
+
+- - -
+
+[[mrorz-css-zindex]]
+
+---
+
+另一種比喻
+--------
+
+[「Stacking Context」](http://www.w3.org/TR/CSS2/visuren.html#layers): 疊東西的地方。
 
 <div class="row">
   <div class="span3">
-  
+
     <p class="trailer">疊東西的地方。</p>
-  
+
     ![Lunch](images/css/lunchbox.jpg)
 
     <a href="http://global.rakuten.com/zh-tw/store/wakei-seijyaku/item/10000780/" class="leader">
@@ -62,37 +96,13 @@ Stacking Context
     <a href="http://www.tpe-bendon.com.tw/share_main.asp?sn=2" class="leader">
       <small>圖片來源：樂天拍賣</small>
     </a>
-    
+
   </div>
 </div>
 
 <small>
   特別感謝 Lucien - [淺談 CSS 開發與除錯](http://selfecy.com/css-troubleshooting-slide/#/8/8)
 </small>
-
----
-
-萬丈高樓平地起
-------------
-
-<div class="row">
-  <div class="span3">
-    <p>蓋大樓：</p>
-    <ul>
-      <li>`z-index`： 樓層號碼。</li>
-      <li>stacking context：地基。</li>
-    </ul>
-  </div>
-  <div class="span3">
-    <p>形成 stacking context：</p>
-    <ul>
-      <li>`position: 非 static`</li>
-      <li>`z-index != 0` 或 `opacity < 1`</li>
-    </ul>
-  </div>
-</div>
-
-[[mrorz-css-zindex]]
 
 ---
 

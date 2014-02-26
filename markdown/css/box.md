@@ -97,6 +97,8 @@ CSS Box Model
   http://www.w3.org/TR/CSS2/visudet.html#Computing_heights_and_margins
 -->
 
+[[mrorz-css-display]]
+
 <table class="trailer">
   <tr>
     <th>值</th>
@@ -105,24 +107,22 @@ CSS Box Model
     <th>`inline`</th>
   </tr>
   <tr>
-    <th><small>排版方向</small></th>
+    <th><a href="http://www.w3.org/TR/CSS2/visuren.html#normal-flow"><small>排版<br>方向</small></a></th>
     <td>上到下</td>
     <td colspan="2">左到右，隨文字斷行</td>
   </tr>
   <tr>
-    <th>寬</th>
+    <th><a href="http://www.w3.org/TR/CSS2/visudet.html#Computing_widths_and_margins">寬</a></th>
     <td><small>預設以 margin edge 貼齊容器寬</small></td>
     <td><small>預設和內容同寬，margin、padding 會撐開左右鄰居。</small></td>
     <td><small>`width` 無用，必和內容同寬。margin, padding 行為同左。</small></td>
   </tr>
   <tr>
-    <th>高</th>
+    <th><a href="http://www.w3.org/TR/CSS2/visudet.html#Computing_heights_and_margins">高</a></th>
     <td colspan="2"><small>預設和內容同高，margin、padding 撐開上下鄰居</small></td>
     <td><small>`height` 無用，以 `line-height` 為準。垂直的 padding, margin 不影響行高。<small?</td>
   </tr>
 </table>
-
-[[mrorz-css-display]]
 
 
 ---

@@ -116,7 +116,7 @@ Javascript 物件變數只存 reference（物件的位置）。
 Javascript 沒有原生的 Object `equals` 方法。
 比較兩個 Javascript Object 是否每個 key、value 相同，[其實很麻煩](http://stackoverflow.com/questions/201183/how-do-you-determine-equality-for-two-javascript-objects)。
 
-[Underscore.js](http://underscorejs.org) : utility function library.
+[Lo-Dash.js](http://lodash.com/) : utility function library.
 
 
 ---

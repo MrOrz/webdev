@@ -2,39 +2,41 @@
 ----
 想要做的[目標網頁](http://www.csszengarden.com/?cssfile=001/001.css)
 
-<p class="fragment">`.sidebar` 固定在右邊 → 將它自 normal flow 中拿出來。</p>
-<div class="fragment">
+![範例](images/css/practice.png)
 
-  <p>兩種從 normal flow 拿出的方法：</p>
-
-  <ul>
-    <li>Absolute positioning: 設置 `position: absolute`</li>
-    <li>float: 設置 `float: right`</li>
-  </ul>
-
-  `position: fixed` 與 `float: left` 不適用於這裡。
-
-</div>
+`.sidebar` 佔據螢幕右邊 33%
 
 ---
 
-側欄（續）
+側欄 - 作法一
 --------
 
-左欄（`.intro` 與 `.main`）隨視窗大小而動
+![範例](images/css/practice.png)
 
-<ul class="fragment">
-  <li>
-    若 `.sidebar` 使用 `float: right`<br>
-     → 左欄什麼都不用設（留在 normal flow 中）<br>
-     注意若左欄較 .sidebar 長，那麼會變這樣 →
-     <img src="images/css/column.jpg" alt="float: right" style="vertical-align: -130px;">
-  </li>
-  <li>若使用 `position: absolute`<br>
-    → 左欄須設 `padding-right` (不然左欄會和 .sidebar 疊在一起)<br>
-    [範例結果](sample/css/zengarden.html)（[範例 CSS 檔](sample/css/zengarden.css)）
-  </li>
-</ul>
+左欄：`.intro` 與 `.main`；右欄：`.sidebar`
+
+- - -
+
+把 `.intro` 和 `.main` 包起來、然後水平排列左欄和右欄
+
+水平排列 → `float` 或 `display: inline-block`
+
+---
+
+側欄 - 作法二
+--------
+
+![範例](images/css/practice.png)
+
+左欄：`.intro` 與 `.main`；右欄：`.sidebar`
+
+- - -
+
+不修改 HTML 的作法
+
+`.intro` 和 `.main` 66%
+
+右欄 `position: absolute` 移到視窗右邊
 
 ---
 

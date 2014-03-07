@@ -1,9 +1,63 @@
-文字教學
-----------
+購物清單
+-------
 
-[教學](programming.html)
+<div class="row">
+    <div class="span3">
+        ![Shopping list](images/js/shopping_list.jpg)
+        <small>[圖片來源 - hobvias sudoneighm](http://www.flickr.com/photos/striatic/159109141/)</small>
+    </div>
+    <div class="span3">
+        <h3>「列表」</h3>
+        <ul>
+            <li>沒有明確的 key</li>
+            <li>有順序性</li>
+        </ul>
+    </div>
+</div>
 
 <!-- Platforms 0 to 8 http://scalingmountlu.com/2013/03/ -->
+
+---
+
+用陣列呈現列表
+-------------
+
+![多層櫃](images/programming/numbered-drawer.jpg)
+
+[圖片來源](http://www.bigstockphoto.com/zh/image-4195122/stock-photo-antique-wooden-medicine-cabinet-with-numbered-drawers-and-white-knobs)
+
+會自動編號（有順序）的多層櫃
+
+---
+
+建立陣列
+----------
+
+[[qihez?js,console]]
+
+用中括號 `shoppingList[N]` 來拿到第 N 個要買的東西，N 從 0 開始算。
+
+[陣列方法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)很像字串。
+
+---
+
+陣列實字 Array Literal
+-------
+
+```js
+var shoppingList = ["布料", "棋盤", "稿紙", "綠豆糕"];
+```
+
+以上陣列實字，和下面等價
+
+```js
+var shoppingList = [];
+shoppingList.push("布料");
+shoppingList.push("棋盤");
+shoppingList.push("稿紙");
+shoppingList.push("綠豆糕");
+```
+
 
 ---
 

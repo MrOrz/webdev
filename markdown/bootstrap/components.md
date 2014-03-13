@@ -5,11 +5,11 @@ Navbar
 
 ---
 
-Hero Unit
+Jumbotron
 ---------
 
 
-[Components - Typography](http://getbootstrap.com/2.3.2/components.html#typography)
+[Components - Jumbotron](http://getbootstrap.com/components/#jumbotron)
 
 
 ---
@@ -19,4 +19,4 @@ Media Object
 
 [[mrorz-bs-media]]
 
-[Components - Media Object](http://getbootstrap.com/2.3.2/components.html#media)
+[Components - Media Object](http://getbootstrap.com/components/#media)

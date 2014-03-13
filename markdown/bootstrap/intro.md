@@ -1,7 +1,7 @@
 
 ![Bootstrap 3](images/bootstrap/bootstrap3.png)
 
-[Twitter Bootstrap 3.0.0](http://getbootstrap.com/)
+[Twitter Bootstrap 3.1.1](http://getbootstrap.com/)
 
 
 ---

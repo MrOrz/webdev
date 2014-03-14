@@ -1,7 +1,7 @@
 Navbar
 ----
 
-[Components - Navbar](http://getbootstrap.com/2.3.2/components.html#navbar)
+[Components - Navbar](http://getbootstrap.com/components/#navbar)
 
 ---
 

@@ -110,6 +110,16 @@
 
 ---
 
+「Operator `==`」很難用
+----------
+
+[[tedusiki?js,console]]
+
+請使用沒有爭議的 `===`，或者是試著記熟 [`==` 型別轉換](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/)。
+
+
+---
+
 資料型態 (Data Type)
 ------------------
 

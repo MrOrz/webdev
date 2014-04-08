@@ -8,7 +8,7 @@ Syllabus
 一週兩次（週二、週五）
 
 - - -
-[課表](http://goo.gl/pP9C5x)
+[課表](https://docs.google.com/spreadsheet/pub?key=0AltiWyU4jeiodG5yb3VmbE9WenVTXzV3S0Ixa0N3UEE&output=html)
 
 ---
 
@@ -42,7 +42,7 @@ Syllabus
 
 ### CSS Frameworks
 
-〈第七次上課〉
+〈第七、八次上課〉
 
 - Compass 與 bootstrap-sass
 - CSS Preprocessors -- Sass
@@ -56,7 +56,7 @@ Syllabus
 
 ### Mashups & Social Network
 
-〈第八～十次上課〉
+〈第九、十次上課〉
 
 - HTTP，jQuery Ajax
 - Facebook Graph API & JS SDK

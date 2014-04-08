@@ -7,6 +7,9 @@
 
 ---
 
-交流平台
+課程互動
 -------
 
+* [Facebook](http://www.facebook.com/groups/htm237)
+
+* 左側「我有問題」

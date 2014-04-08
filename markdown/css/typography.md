@@ -1,6 +1,8 @@
 Generic Font Family
 -------------------
 
+`font-family` 的特殊值
+
 `serif`, `sans-serif`, `cursive`, `fantacy`,  `monospace`
 
 [[mrorz-css-typography]]
@@ -73,7 +75,7 @@ Web Font
 
 `font-family: Arial, sans-serif`
 
-```CSS
+```css
 /* All-in-one shorthand */
 font: 12px/1.4 Arial, sans-serif;
 ```

@@ -61,10 +61,6 @@
 <input type="text|file|submit|..." name="變數名字" value="值">
 ```
 
-`<label>` 之 `for` 屬性和 `<input>` 之 `id` 屬性配對。
-
-另外也可以用 `<label>` 包住 `<input>` 來配對。
-
 ---
 
 表單 - 勾勾和點點
@@ -73,6 +69,10 @@
 [[mrorz-html-form2]]
 
 `name` 屬性一樣 → 同一組。
+
+`<label>` 之 `for` 屬性和 `<input>` 之 `id` 屬性配對。
+
+另外也可以用 `<label>` 包住 `<input>` 來配對。
 
 ---
 

@@ -18,7 +18,7 @@ Function 函數
 
 建一個函數：
 
-#### Function definition
+#### Function declaration
 
 `function 函式名 (引數們) { ... }`
 

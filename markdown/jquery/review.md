@@ -79,18 +79,16 @@ Demo
 * 結束編輯時，將所有項目<u>依序</u>存進 `localStorage`。
 * 頁面剛被打開時，從 `localStorage` 裡撈之前存的資料
 
-[[mrorz-js-jquery-list]]
+[[rewuf]]
 
 ---
 
-課堂練習
+成品
 ----
 
-[[mrorz-js-jquery-list2]]
+[[wazek]]
 
-### SPEC
+### 課後練習
 
 * 點兩下 `<li>` 可以編輯。按 enter 鍵結束編輯。
 * 結束編輯時，將所有項目<u>依序</u>存進 `localStorage`。
-
-<p class="leader">提示：`dblclick`</p>

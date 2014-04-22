@@ -24,7 +24,6 @@ Event handler
 「callback」：未來某條件符合時，會被執行的 function。
 
 * 第一個引數是 [Event object](http://api.jquery.com/category/events/event-object/)
-* `event.target`：被觸發了該事件的 HTML Element。
 
 以下用 `event` 指稱 handler 裡的 event object。
 

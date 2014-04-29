@@ -21,14 +21,14 @@ Zurb Foundation
 
 ---
 
-Gumby 2 Framework
------------------
+Semantic UI
+------------
 
-Grid 很有趣，SASS-based
+第三勢力，受歡迎
 
-![Gumby](images/bootstrap/gumby.png)
+![Semantic UI](images/bootstrap/semantic.png)
 
-[Gumby Framework](http://gumbyframework.com/)
+[Semantic UI](http://semantic-ui.com/)
 
 ---
 
@@ -40,14 +40,3 @@ Made in Taiwan，jQuery UI 整合
 ![Kule](images/bootstrap/kule.png)
 
 [Kule CSS Lazy 2](http://www.kule.tw/)
-
----
-
-Flat UI Kit
-------------
-
-不太算是 framework。最近很有名
-
-![Flat UI](images/bootstrap/flat.png)
-
-[Flat UI Kit](http://designmodo.github.io/Flat-UI/)

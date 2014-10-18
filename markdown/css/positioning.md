@@ -89,7 +89,7 @@ float
 
 ### 使元素變成 absolute positioning
 
-* `absolute`: 相對於第一個非 `static` 的祖先 (containing block)
+* `absolute`: 相對於 containing block
 *  `fixed`: 相對於瀏覽器網頁視窗（viewport）
 
 - - -
@@ -98,6 +98,17 @@ float
 
 * `relative`: 不安份亂動
 * `static`: 預設值
+
+---
+
+`position` 與位置們
+----------------------
+
+`position` 為 `absolute`, `fixed`, `relative` 時，
+
+可用 `left`, `top`, `bottom`, `right` 調位置。
+
+[[mrorz-css-lefttop]]
 
 ---
 
@@ -114,18 +125,7 @@ float
 
 ---
 
-細說 `position` (2)
-----------------------
-
-`position` 為 `absolute`, `fixed`, `relative` 時，
-
-可用 `left`, `top`, `bottom`, `right` 調位置。
-
-[[mrorz-css-lefttop]]
-
----
-
-細說 `position` (3)
+`position` 與容器高度
 ----------------------
 
 Absolute positioning 的元素不會撐開 parent block。

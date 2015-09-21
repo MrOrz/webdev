@@ -83,7 +83,7 @@ Layered Presentation
 
     ![Lunch](images/css/lunchbox.jpg)
 
-    <a href="http://global.rakuten.com/zh-tw/store/wakei-seijyaku/item/10000780/" class="leader">
+    <a href="http://www.cwyuni.tw/blog/post/4455195-%E6%84%9B%E5%A6%BB%E4%BE%BF%E7%95%B6" class="leader">
       <small>圖片來源：酪梨壽司 - 愛妻便當</small>
     </a>
   </div>

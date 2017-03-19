@@ -4,7 +4,7 @@
 <div class="row">
   <div class="span3">
     ![CCSP 官網](images/intro/ccsp.png)
-    [CCSP 官網](http://ccsp.ntumobile.org)
+    [CCSP 官網](ntu-ccsp.github.io)
   </div>
   <div class="span3">
     ![2012新創企業實習媒合會](images/intro/match.png)

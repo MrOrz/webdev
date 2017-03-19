@@ -1,16 +1,47 @@
-Webdev
+Webdev 2017 / 網頁前端工程基礎 2017
 ======
 
 http://mrorz.github.io/webdev
 
-不囉嗦學 HTML/CSS/Javascript。
+* HTML
+  - Tag & Elements
+  - List of elements
+  - Nesting
+  - Page Structure
+  - [New] Deploy to Github
 
-[100 學年度第二學期 / 101 學年度第一學期 網路及平台服務程式設計（CCSP）課程投影片](http://mrorz.github.io/legacy/)
+* CSS
+  - Adding to HTML & CSS Reset
+  - Style a box! (background (* New: background-cover), font, width, height, shorthand properties)
+  - Debugging
+  - Units & Values * New: gradients
+  - Typography
+  - Break 1
+  - CSS selectors * first-part of original selectors
+  - Box model
+  - [New] `display` Property *Re-written from old " section
+  - Break 2
+  - [New] `position` Property *Re-written from old "positioning" section
+  - [New] Flexbox
+  - z-index
+  - [New] overflow
+  - Layout examples
+  - Break 3
+  - Compound CSS selectors * 2nd part of original selectors
+  - CSS specificity
+  - [New] Transforms
+  - [New] Transitions
+  - [New] Animations
+  - Media Queries
+  - Browser Compabilities
 
-[第 226 期資訊系統訓練班 HTML5, CSS/Sass, jQuery, bootstrap 新一代網頁設計 課程投影片](http://mrorz.github.io/)
+* Javascript
 
 
-若有錯誤缺漏與不足之處，煩請各位先進使用 github 訊息或開 github issue 通知小弟，不勝感激。
+* ReactJS
+  - create-react-app
+  - `import`, `export` and bound class properties
+  - After eject: babel & webpack config
 
 ---
 

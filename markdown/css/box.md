@@ -102,3 +102,50 @@ Collapsing margin 出沒之處：
 width = *border + padding* + content
 
 [[mrorz-css-borderbox]]
+
+---
+
+Percentage values
+------
+
+以下屬性都可以設定百分比。
+
+* `width` & `height`
+* `margin`
+* `padding`
+
+那 100% 是以什麼為準？
+
+---
+
+[Containing block](https://www.w3.org/TR/css3-box/#block-level0)
+---------
+
+Box A 的 Containing block ＝ 包含 A 且與 A 最近的 Block-level box（`display` 為 `block` 之類的 box，詳見[Spec](https://www.w3.org/TR/css3-box/#block-level)）。
+
+<aside>
+原文： The containing block of a box is a rectangle that is associated with the box and that is used in various definitions in this specification. Apart from a size and a position, the rectangle also has ‘direction’ and ‘block-progression’ properties. The containing block of a box is defined as follows:
+
+The containing block of the root element's top-level boxes is a rectangle with the dimensions of the viewport, anchored at the canvas's origin for continuous media and the page area for paged media. (See [MEDIAQ] and [CSS3PAGE] for definitions of continuous and paged media.) This containing block is called the initial containing block. The ‘direction’ and ‘block-progression’ of the initial containing block are the same as those of the root element.
+The containing block of other boxes is the rectangle formed by the content edge of their nearest ancestor box that is block-level. This may be an anonymous box. The ‘direction’ and ‘block-progression’ of the containing block are those of the box whose content edge it is.
+
+Note that the above is modified by the Absolute Positioning module [CSS3POS]: in particular, if a box's ‘position’ property is neither ‘static’ nor ‘relative’, its containing block is established differently.
+</aside>
+
+Containing block 的概念，會用在下面這些東西的計算：
+
+* 用百分比做單位的 `width`、`height`、`margin`，會以 containing block 的寬 / 高為準。
+* `width` 或 `height` 為 `auto`（預設值）時到底會有多寬或多高
+* `margin: auto` 時到底要留多少空白
+
+---
+
+Percentage values (續)
+------
+
+<!-- TODO: 表格 width / height, margin, padding v.s. percentage value 100%。注意 vertical padding。 -->
+
+---
+
+Percentage padding & 固定比例元素
+------

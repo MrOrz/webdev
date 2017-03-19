@@ -1,5 +1,5 @@
-Box 與 `display` 屬性
---------------------
+Box
+----
 
 <div class="row">
   <div class="span3">
@@ -40,7 +40,7 @@ CSS Box Model
 
 <div class="row">
   <div class="span3 centered">
-  
+
 ![加上寬度的說明圖](images/css/boxmodel-mdn.png?borderless)
 
   </div>
@@ -53,87 +53,11 @@ CSS Box Model
 
 <div class="row">
 	<div class="span3 centered">
-	
+
 ![Word 快取圖案 padding](images/css/word.jpg)
-	
+
 	</div>
 </div>
-
----
-
-`display` Property
-------------------
-
-<div class="row">
-  <div class="span3">
-    ![4 displayed boxes](images/css/box-intro.png)
-  </div>
-  <div class="span3 leader">
-    <ul>
-      <li>`<p>` 的 box 呈上下排列</li>
-      <li>`<em>` 的 box 排在字裡行間</li>
-    </ul>
-  </div>
-</div>
-
-<div class="fragment leader">
-
-<h3>和 `display` 有關</h3>
-
-`<p>`，`<h1>`~`<h6>`，`<div>` 預設 `display: block;`
-`<em>`，`<strong>`，`<span>` 預設 `display: inline;`
-
-</div>
-
----
-
-`display` 的值
---------------------
-
-<!--
-  Reference: CSS 2.1 SPEC 9.4, 10.3, 10.6
-  http://www.w3.org/TR/CSS2/visuren.html#normal-flow
-  http://www.w3.org/TR/CSS2/visudet.html#Computing_widths_and_margins
-  http://www.w3.org/TR/CSS2/visudet.html#Computing_heights_and_margins
--->
-
-[[mrorz-css-display]]
-
-<table class="trailer">
-  <tr>
-    <th>值</th>
-    <th>`block`</th>
-    <th>`inline-block`</th>
-    <th>`inline`</th>
-  </tr>
-  <tr>
-    <th><a href="http://www.w3.org/TR/CSS2/visuren.html#normal-flow"><small>排版<br>方向</small></a></th>
-    <td>上到下</td>
-    <td colspan="2">左到右，隨文字斷行</td>
-  </tr>
-  <tr>
-    <th><a href="http://www.w3.org/TR/CSS2/visudet.html#Computing_widths_and_margins">寬</a></th>
-    <td><small>預設以 margin edge 貼齊容器寬</small></td>
-    <td><small>預設和內容同寬，margin、padding 會撐開左右鄰居。</small></td>
-    <td><small>`width` 無用，必和內容同寬。margin, padding 行為同左。</small></td>
-  </tr>
-  <tr>
-    <th><a href="http://www.w3.org/TR/CSS2/visudet.html#Computing_heights_and_margins">高</a></th>
-    <td colspan="2"><small>預設和內容同高，margin、padding 撐開上下鄰居</small></td>
-    <td><small>`height` 無用，以 `line-height` 為準。垂直的 padding, margin 不影響行高。<small?</td>
-  </tr>
-</table>
-
-
----
-
-其他 `display` 值
--------------
-
-* `none`: 連 box 都沒有。完全沒有容身之處。
-* table 系列：當成 table 來排版，見 [SPEC](http://www.w3.org/TR/CSS2/tables.html#table-display)。
-
-[[mrorz-css-displayothers]]
 
 ---
 
@@ -144,39 +68,29 @@ CSS Box Model
 
 1：全部；2：上下、左右；3：上側下；4：上右下左。
 
----
-
-block 元素水平置中
---------------
-
-[[mrorz-css-margincaveat2]]
-
-`margin-left` 和 `margin-right` 同為 `auto` 時，
-
-元素會水平置中。
-
-（但 `width` 要小於螢幕寬度）
-
----
-
-垂直 `margin` 
---------------
-
-[[mrorz-css-margincaveat2]]
-
-<ul>
-  <li class="fragment">block 元素的 `margin-top`, `margin-bottom` 密接時，有時只會表現較大的那一個 （*Collapsing margin*）</li>
-  <li class="fragment">`margin-top` 可能會超出父元素。</li>
-</ul>
-
----
-
 `border` 與 `outline`
 --------------------
 
 [[mrorz-css-marginborderpadding]]
 
 `border` 會佔有空間、推開周圍元素；`outline` 不會。
+
+---
+
+[垂直邊界重疊（Collapsing margin）](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+--------------
+
+垂直邊界有時候會重疊在一起，只表現比較大的那一個。
+（`margin-left`、`margin-right` 永遠不會重疊。）
+
+[[mrorz-css-margincaveat2]]
+
+Collapsing margin 出沒之處：
+<ol>
+  <li class="fragment">相鄰元素彼此之間</li>
+  <li class="fragment">沒有 border 與 padding 的 parent 元素與其 child 元素之間（margin 會出現在 parent 之外）</li>
+  <li class="fragment">空元素自己的上下邊界</li>
+</ol>
 
 ---
 

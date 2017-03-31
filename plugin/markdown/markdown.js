@@ -119,7 +119,7 @@
 
     var createJSBinLinks = function(markdown) {
         var reMatcher = /\[\[(.+?)(?:\?(.+))?\]\]/g;
-        return markdown.replace(reMatcher, '<a class="jsbin-embed" href="https://jsbin.com/$1/embed/?$2">JS Bin</a>');
+        return markdown.replace(reMatcher, '<a class="jsbin-embed" href="http://jsbin.com/$1/embed/?$2">JS Bin</a>');
     };
 
     var querySlidingMarkdown = function() {

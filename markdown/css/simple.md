@@ -1,3 +1,15 @@
+可以上在 div 上的
+-------
+
+`width`, `min-width`, `max-width`
+
+`height`, `min-height`, `max-height`
+
+`background`, `border-radius`
+
+
+---
+
 `background`
 ------------
 
@@ -16,15 +28,6 @@
 
 ---
 
-`font`
-------
-
-[[mrorz-css-font]]
-
-[MDN Reference : font](https://developer.mozilla.org/en/CSS/font)
-
----
-
 CSS Shorthand Properties
 ------------------------
 
@@ -39,27 +42,12 @@ background-repeat: no-repeat;
 background-position: top right;
 ```
 
-- - -
-
-```
-font: italic bold .8em/1.2 Arial, sans-serif;
-```
-
-```  
-font-style: italic;
-font-weight: bold;
-font-size: .8em;
-line-height: 1.2;
-font-family: Arial, sans-serif;
-```
-
 <small>[MDN 相關文件](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties)</small>
 
 ---
 
 Shorthand Property 預設值陷阱
 ---------------------------
-
 
 [[mrorz-css-background2]]
 
@@ -72,7 +60,5 @@ background-color: red;
 background-color: transparent;
 background-image: url(http://mrorz.github.io/webdev/images/css/selector.gif);
 background-position: left center;
-
 ```
-
 

@@ -29,9 +29,7 @@ http://mrorz.github.io/webdev
   - Break 3
   - Compound CSS selectors * 2nd part of original selectors
   - CSS specificity
-  - [New] Transforms
-  - [New] Transitions
-  - [New] Animations
+  - Effects
   - Media Queries
   - Browser Compabilities
 

@@ -18,6 +18,15 @@ CSS Color
 
 ---
 
+漸層
+----
+
+[[mrorz-css-gradient]]
+
+<p class="fragment">[Ultimate Gradient Editor](http://www.colorzilla.com/gradient-editor/)</p>
+
+---
+
 特殊值 `inherit`
 ---------
 

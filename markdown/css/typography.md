@@ -39,6 +39,13 @@ Generic Font Family
 
 ---
 
+字體顏色
+-------
+
+`color` 屬性
+
+---
+
 `font-family`
 -------------
 
@@ -71,7 +78,7 @@ Web Font
 
 `font-size: 12px`
 
-`line-height: 1.4` 
+`line-height: 1.4`
 
 `font-family: Arial, sans-serif`
 
@@ -86,22 +93,44 @@ font: 12px/1.4 Arial, sans-serif;
 
 ---
 
-粗體與斜體
+粗體、斜體、大寫小字
 --------
+
+與字體本身相關的，為 `font-` 開頭。
 
 `font-style: normal | italic`
 
 `font-weight: normal | bold | 數字`
 
+`font-variant: small-caps`
+
 [[mrorz-css-weight]]
 
 ---
 
-底線、刪除線、大寫小字
+Shorthand: `font`
+-------
+
+```
+font: italic bold .8em/1.2 Arial, sans-serif;
+```
+
+```
+font-style: italic;
+font-weight: bold;
+font-size: .8em;
+line-height: 1.2;
+font-family: Arial, sans-serif;
+```
+
+
+---
+
+裝飾線、排版
 ------------------
 
 `text-decoration: none` | `underline` | `line-through`
 
-`font-variant: small-caps`
+`text-align: left` | `right` | `center`
 
 [[mrorz-css-decoration]]

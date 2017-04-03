@@ -74,9 +74,7 @@
 
 `display: block` 元素在寬度上，需要符合這個等式：
 
-```
-'margin-left' + 'border-left-width' + 'padding-left' + 'width' + 'padding-right' + 'border-right-width' + 'margin-right' = width of containing block
-```
+`margin-left` + `border-left-width` + `padding-left` + `width` + `padding-right` + `border-right-width` + `margin-right` = `width of containing block`
 
 <!--ＴＯＤＯ：圖，畫出預設值還有哪些可以設成 auto-->
 
@@ -86,6 +84,15 @@
 * `border-width`：0
 * `padding`: 0
 * `width`: `auto`
+
+---
+
+`display: block` 的寬度與 `auto`
+---
+
+```
+'margin-left' + 'border-left-width' + 'padding-left' + 'width' + 'padding-right' + 'border-right-width' + 'margin-right' = width of containing block
+```
 
 [計算寬度規則](https://www.w3.org/TR/CSS22/visudet.html#blockwidth)
 

@@ -69,38 +69,77 @@
 
 ---
 
-`display: block` 的寬度與 `auto`
+實務上最常接觸到的會是 `div`。
+
+其預設為 `display: block`。
+
+以下詳細介紹 `display: block` 的行為。
+
+---
+
+`display: block` 的寬度
 ---
 
 `display: block` 元素在寬度上，需要符合這個等式：
 
 `margin-left` + `border-left-width` + `padding-left` + `width` + `padding-right` + `border-right-width` + `margin-right` = `width of containing block`
 
-<!--ＴＯＤＯ：圖，畫出預設值還有哪些可以設成 auto-->
+![公式圖](https://docs.google.com/drawings/d/1pb-RbSDRf2pR6Vc2ft0SC8VA9BliRAwduuvUo0t048s/pub?w=949&h=285&borderless)
 
-預設值
+---
+
+`display: block` 預設值
+---
+
+![公式圖](https://docs.google.com/drawings/d/1pb-RbSDRf2pR6Vc2ft0SC8VA9BliRAwduuvUo0t048s/pub?w=949&h=285&borderless)
 
 * `margin`：0
 * `border-width`：0
 * `padding`: 0
 * `width`: `auto`
 
+<br/>
+
+
 ---
 
-`display: block` 的寬度與 `auto`
+特殊值 `auto`
+------
+
+「請瀏覽器幫我算」
+
+![Auto 可以下在哪一些上頭](https://docs.google.com/drawings/d/1e5B38xn1h2S-263NcNOqe_cvG8jehNMUbJ2miE2Ry0M/pub?w=601&h=202&borderless)
+
+
+<div class="row">
+  <div class="span3">
+    <h4>能設成 `auto` 的</h4>
+    <ul>
+      <li>[width](https://www.w3.org/TR/CSS22/visudet.html#propdef-width)</li>
+      <li>[height](https://www.w3.org/TR/CSS22/visudet.html#propdef-height)</li>
+      <li>[margin](https://www.w3.org/TR/CSS22/box.html#value-def-margin-width)</li>
+    </ul>
+  </div>
+  <div class="span3">
+    <h4>不能設成 `auto` 的</h4>
+    <ul>
+      <li>[border-width](https://www.w3.org/TR/CSS22/box.html#propdef-border-width)</li>
+      <li>[padding](https://www.w3.org/TR/CSS22/box.html#value-def-padding-width)</li>
+    </ul>
+  </div>
+</div>
+
 ---
 
-```
-'margin-left' + 'border-left-width' + 'padding-left' + 'width' + 'padding-right' + 'border-right-width' + 'margin-right' = width of containing block
-```
+[計算 `auto` 的實際寬度](https://www.w3.org/TR/CSS22/visudet.html#blockwidth)
+---
 
-[計算寬度規則](https://www.w3.org/TR/CSS22/visudet.html#blockwidth)
+![公式圖](https://docs.google.com/drawings/d/1pb-RbSDRf2pR6Vc2ft0SC8VA9BliRAwduuvUo0t048s/pub?w=949&h=285&borderless)
 
-1. 如果式子裡剛好只有一個 `auto` 值，就用等式來解出 `auto` 代表的寬度數字。
-1. **若 `width: auto`，則其他任何 `auto` 都會被計算為 `0`**，然後用等式來算 `width`。（所以寬度預設會填滿 containing block）
-1. 如果式子裡沒有任何 `auto` 的值，`margin-right` 的值就會被忽略，使得等式可以成立。（所以會變成靠左對齊之類的）
-1. 若左右邊界之間的寬度比 width of containing block 還寬，那麼設為 auto 的 margin-left 或 margin-right 就會被設為 0。
-2. 若 `margin-left` 與 `margin-right` 同時是 `auto`，那瀏覽器設寬度時會使 `margin-left` = `margin-right`。
+1. 若只有一個 `auto` 值，就用等式來解 `auto`。
+2. **若 `width: auto`，則其他任何 `auto` 都會被計算為 `0`**，然後用等式來算 `width`
+3. 若式子裡沒有任何 `auto` 的值，則忽略 `margin-right` 的設定，改成用等式計算 `margin-right`。（看上去會像是靠左對齊）
+4. 若 `margin-left` 與 `margin-right` 同時是 `auto`，那設寬度時會使 `margin-left` = `margin-right`。
 
 ---
 
@@ -113,16 +152,16 @@
 
 ---
 
-`display: block` 的高度與 `auto`
+[計算 `auto` 的實際高度](https://www.w3.org/TR/CSS22/visudet.html#normal-block)
 ---
 
-[計算高度規則](https://www.w3.org/TR/CSS22/visudet.html#normal-block)
-
 * `margin-top`、`margin-bottom` 的 `auto` 等於 `0`。
-* 若 `height: auto`，則高度就會被設成「上 content edge」到 X 的距離。
-  1. 若 box 裡最後的是文字，那 X 就是最後一行的底部。
-  2. 若 box 裡有子元素，X 就是子元素的「下 margin edge」或「下 border edge」。
-* 否則，`height` 會被設成 0。
+* 若 `height: auto`，則高度就會被設成「上 content edge」到內容底端的距離。（「內容」僅包含「在 normal flow 內」的元素）
+* 否則，`height` 則為 0。
+
+- - -
+
+綜合以上，形成 block 元素上的 height、垂直 padding 與垂直 margin 「推開」上下元素的效果。
 
 ---
 

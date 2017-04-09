@@ -156,7 +156,7 @@
 ---
 
 * `margin-top`、`margin-bottom` 的 `auto` 等於 `0`。
-* 若 `height: auto`，則高度就會被設成「上 content edge」到內容底端的距離。（「內容」僅包含「在 normal flow 內」的元素）
+* 若 `height: auto`，則高度就會被設成「上 content edge」到內容底端的距離。（「內容」僅包含「在 Normal flow 內」的元素）
 * 否則，`height` 則為 0。
 
 - - -

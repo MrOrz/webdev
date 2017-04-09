@@ -103,50 +103,41 @@ Absolute positioning (2)
 
 [[mrorz-css-fixed]]
 
-
 ---
 
-<h2 class="trailer">`position: absolute`</h2>
+containing block
+----------------------
 
-* `position: absolute`: 相對於 [containing block](https://www.w3.org/TR/css-position-3/#def-cb)
-* `position: fixed`: 相對於瀏覽器網頁視窗（viewport）
-
-<aside>
-position: absolute 的 containing block
-</aside>
+Containing block 的定義，會隨著 `position` 不同而變化！
 
 - - -
 
-### Normal flow
+### `position: static`, `relative`
 
-* `position: relative`: 不安份亂動
-* `position: static`: 預設值
+containing block 為 ancestor 中，最接近的 block-level box（[之前的 slide](#/7/10)）。
 
+### `position: fixed`
 
----
+containing block 為 viewport。
 
-`position` 與位置們
-----------------------
+### `position: absolute`
 
-`position` 為 `absolute`, `fixed`, `relative` 時，
-
-可用 `left`, `top`, `bottom`, `right` 調整元素與其 containing block 的相對位置。
-
-⋯⋯但 `position: fixed` 與 `position: absolute` 元素的 [containing block 定義不同](https://www.w3.org/TR/css-position-3/#def-cb)！
-
-[[mrorz-css-lefttop]]
-
-<aside>
-  absolute, fixed 為 absolute positioning
-  relative 為 normal flow
-
-  兩種 positioning scheme 底下
-
-</aside>
+containing block 為 ancestor 中，[最接近而且 `position` 不是 `static` 的元素的 padding edge]((https://www.w3.org/TR/css-position-3/#def-cb))。
 
 ---
 
-`position: absolute`
+`position: absolute` 的寬度
+---
+
+`position: absolute` 的元素在寬度上，需要符合這個等式：
+
+`left` + `margin-left` + `border-left-width` + `padding-left` + `width` + `padding-right` + `border-right-width` + `margin-right` + `right` = `width of containing block`
+
+`left`, `right` 可以是 auto。
+
+---
+
+`position: absolute` 與 `left`, `right`
 ----------------------
 
 `left`, `top`, `bottom`, `right`
@@ -154,8 +145,6 @@ position: absolute 的 containing block
 * 距離 containing block 的 padding edge 的距離。
 * 可以影響元素的寬或高。
 * 若為百分比，以 containing block 的寬 or 高為 100%。
-
-Containing block = 包含此元素的最接近的、`position` 不為 `static` 的 box。
 
 [[mrorz-css-posabs]]
 
@@ -179,8 +168,6 @@ Containing block = 視窗內容（viewport）。
 `position` 與容器高度
 ----------------------
 
- `position: absolute || relative` 的元素不會撐開 parent block。
-
-（[計算 parent 高度](https://www.w3.org/TR/CSS22/visudet.html#normal-block)時不計入 `position: absolute` 與 `position: relative` 的子元素」）
+`height: auto` 計算高度時，[只會計算 Normal flow 內的元素高度。](https://www.w3.org/TR/CSS22/visudet.html#normal-block)
 
 [[mrorz-css-absnoheight]]

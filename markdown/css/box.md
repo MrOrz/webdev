@@ -160,7 +160,9 @@ Percentage values
 [Containing block](https://www.w3.org/TR/css3-box/#block-level0)
 ---------
 
-Box A 的 Containing block ＝ 包含 A 且與 A 最近的 Block-level box（`display` 為 `block` 之類的 box，詳見[Spec](https://www.w3.org/TR/css3-box/#block-level)）。
+Box A 的 Containing block ＝ A 的 ancestor 中，與 A 最近的 Block-level box 的 [content edge](#/7/2)。
+
+[Block-level box](https://www.w3.org/TR/css3-box/#block-level0)：`display` 為 `block` 之類的 box。
 
 [[rotaxigotu/1]]
 

@@ -61,16 +61,51 @@ CSS Box Model
 
 ---
 
-`margin`、`padding`、<br>`border` 的 shorthand
+`margin`、`padding` shorthand
 --------------
 
 [[mrorz-css-margincaveat]]
 
 1：全部；2：上下、左右；3：上側下；4：上右下左。
 
+---
+
+`border`
+--------------
+
+`border` 為下面三個 property 的 shorthand：
+
+* [`border-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-style) 樣式（預設： `none`）
+* [`border-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-width) 粗細（預設： `medium`）
+* [`border-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-color) 顏色（預設： 與 `color` 相同）
+
+[[viqavehiru/3]]
 
 ---
 
+上下左右 `border`
+--------
+
+上下左右 border 的寬度、顏色、樣式可以分開設定。
+
+`border-bottom` 是 `border-bottom-style`、`border-bottom-width`、`border-bottom-color` 的 shorthand。
+
+[[kiconifupa/1]]
+
+（以此類推 `border-top`、`border-left`、`border-right`）
+
+---
+
+上下左右 `border` shorthand
+--------
+
+`border-style`、`border-width`、`border-color` 都可以設定 1~4 個值。
+
+規則同 `margin`。
+
+[[quponateso/2]]
+
+---
 
 `border` 與 `outline`
 --------------------

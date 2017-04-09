@@ -99,7 +99,7 @@ CSS Reset
 CSS Normalization
 -----------------
 
-[[mrorz-css-normalization]]
+[[comoyisiki/1]]
 
 統一各瀏覽器的外觀定義 <small>[規則說明](https://github.com/necolas/normalize.css/wiki)</small>
 

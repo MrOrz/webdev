@@ -46,7 +46,6 @@ CSS Box Model
   </div>
 </div>
 
-
 背景顏色寬(高)度 = 內容寬(高) + padding 寬(高)
 
 和 Word / PowerPoint 不同。
@@ -61,7 +60,21 @@ CSS Box Model
 
 ---
 
-`margin`、`padding` shorthand
+上下左右 `margin`、`padding`
+--------
+
+`margin` 是下面四個 property 的 shorthand：
+
+* `margin-top`
+* `margin-bottom`
+* `margin-left`
+* `margin-right`
+
+`padding` 以此類推。
+
+---
+
+上下左右 `margin`、`padding` shorthand
 --------------
 
 [[mrorz-css-margincaveat]]

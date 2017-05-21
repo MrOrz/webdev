@@ -36,7 +36,7 @@ Flex 的特色
 排版設定 - `flex-wrap`
 ---
 
-`flex-direction: nowrap | wrap | wrap-reverse`
+`flex-wrap: nowrap | wrap | wrap-reverse`
 
 * 寫在 flex container／預設 `nowrap`
 * `nowrap`：無論如何，將所有 flex item 排成一條線
@@ -109,6 +109,26 @@ Flex 的特色
 
 ---
 
+Main size shorthand - `flex`
+---
+
+```
+flex: auto | none |
+      <flex-grow> |
+      <flex-grow> <flex-shrink> |
+      <flex-grow> <flex-shrink> <flex-basis>
+```
+
+* 寫在 flex item／預設 `0 1 auto`
+* `auto` = `flex: 1 1 auto`
+* `none` = `flex: 0 0 auto`
+* 1 個值 = `flex: <值> 1 0;`
+* 其他：沒填的就會使用預設值。
+
+[spec 稱：「這樣的行為符合一般期待」](https://www.w3.org/TR/css-flexbox-1/#flex-common)
+
+---
+
 決定 Cross size
 ---
 
@@ -120,7 +140,7 @@ Flex 的特色
 Cross axis 對齊 - `align-items`
 ---
 
-`align-items: flex-start | flex-end`
+`align-items: stretch | flex-start | flex-end | center | baseline`
 
 * 寫在 flex container／預設 `stretch`
 
@@ -130,6 +150,6 @@ Cross axis 對齊 - `align-items`
 Main axis 對齊 - `justify-content`
 ---
 
-`justify-content: flex-start | flex-end`
+`justify-content: flex-start | flex-end | center | space-between | space-around`
 
 * 寫在 flex container／預設 `flex-start`
